@@ -1,0 +1,12 @@
+module Base
+{
+	sound Fart1
+	{
+		category = Player,
+		clip
+		{
+			file = media/sound/fart1.mp3,
+		}
+	}
+	
+}
