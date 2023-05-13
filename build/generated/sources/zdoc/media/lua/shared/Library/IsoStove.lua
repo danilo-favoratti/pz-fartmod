@@ -13,29 +13,18 @@
 IsoStove = {}
 
 ---@public
----@return String
-function IsoStove:getObjectName() end
-
----@private
+---@param arg0 boolean
+---@param arg1 boolean
 ---@return void
-function IsoStove:doOverlay() end
+function IsoStove:syncSpriteGridObjects(arg0, arg1) end
 
 ---@public
----@param arg0 ByteBuffer
----@param arg1 int
----@param arg2 boolean
----@return void
-function IsoStove:load(arg0, arg1, arg2) end
+---@return String
+function IsoStove:getActivatableType() end
 
 ---@private
 ---@return boolean
-function IsoStove:isSpriteGridOriginObject() end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 boolean
----@return void
-function IsoStove:save(arg0, arg1) end
+function IsoStove:hasMetal() end
 
 ---@public
 ---@param arg0 ByteBufferWriter
@@ -44,46 +33,36 @@ function IsoStove:syncIsoObjectSend(arg0) end
 
 ---@public
 ---@return void
+function IsoStove:sync() end
+
+---@public
+---@return void
+function IsoStove:addToWorld() end
+
+---@public
+---@return void
 function IsoStove:update() end
+
+---@public
+---@return boolean
+function IsoStove:Activated() end
 
 ---@public
 ---@return float
 function IsoStove:getMaxTemperature() end
 
 ---@public
----@return boolean
-function IsoStove:isMicrowave() end
+---@param arg0 float
+---@return void
+function IsoStove:setMaxTemperature(arg0) end
 
 ---@private
 ---@return void
 function IsoStove:doSound() end
 
 ---@public
----@return void
-function IsoStove:Toggle() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoStove:setBroken(arg0) end
-
----@private
 ---@return boolean
-function IsoStove:hasMetal() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoStove:setActivated(arg0) end
-
----@public
----@return int
-function IsoStove:getTimer() end
-
----@public
----@param arg0 int
----@return void
-function IsoStove:setTimer(arg0) end
+function IsoStove:isMicrowave() end
 
 ---@public
 ---@param arg0 boolean
@@ -98,40 +77,61 @@ function IsoStove:syncIsoObject(arg0, arg1, arg2, arg3) end
 function IsoStove:isBroken() end
 
 ---@public
+---@return float
+function IsoStove:getCurrentTemperature() end
+
+---@private
+---@return boolean
+function IsoStove:isSpriteGridOriginObject() end
+
+---@public
 ---@return int
-function IsoStove:isRunningFor() end
+function IsoStove:getTimer() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoStove:setActivated(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoStove:setBroken(arg0) end
 
 ---@public
 ---@return String
-function IsoStove:getActivatableType() end
+function IsoStove:getObjectName() end
 
 ---@public
 ---@return void
-function IsoStove:sync() end
+function IsoStove:Toggle() end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoStove:setTimer(arg0) end
 
 ---@public
 ---@return boolean
 function IsoStove:isTemperatureChanging() end
 
 ---@public
----@param arg0 float
----@return void
-function IsoStove:setMaxTemperature(arg0) end
-
----@public
----@param arg0 boolean
+---@param arg0 ByteBuffer
 ---@param arg1 boolean
 ---@return void
-function IsoStove:syncSpriteGridObjects(arg0, arg1) end
+function IsoStove:save(arg0, arg1) end
 
 ---@public
----@return float
-function IsoStove:getCurrentTemperature() end
-
----@public
----@return boolean
-function IsoStove:Activated() end
-
----@public
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@param arg2 boolean
 ---@return void
-function IsoStove:addToWorld() end
+function IsoStove:load(arg0, arg1, arg2) end
+
+---@private
+---@return void
+function IsoStove:doOverlay() end
+
+---@public
+---@return int
+function IsoStove:isRunningFor() end

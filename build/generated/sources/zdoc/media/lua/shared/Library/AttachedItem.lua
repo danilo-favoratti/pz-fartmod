@@ -4,9 +4,9 @@
 AttachedItem = {}
 
 ---@public
----@return String
-function AttachedItem:getLocation() end
-
----@public
 ---@return InventoryItem
 function AttachedItem:getItem() end
+
+---@public
+---@return String
+function AttachedItem:getLocation() end

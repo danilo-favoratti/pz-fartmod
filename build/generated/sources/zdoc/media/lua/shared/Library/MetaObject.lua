@@ -8,10 +8,6 @@ MetaObject = {}
 
 ---@public
 ---@return int
-function MetaObject:getY() end
-
----@public
----@return int
 function MetaObject:getX() end
 
 ---@public
@@ -20,7 +16,11 @@ function MetaObject:getUsed() end
 
 ---@public
 ---@return int
-function MetaObject:getType() end
+function MetaObject:getY() end
+
+---@public
+---@return RoomDef
+function MetaObject:getRoom() end
 
 ---@public
 ---@param arg0 boolean
@@ -28,5 +28,5 @@ function MetaObject:getType() end
 function MetaObject:setUsed(arg0) end
 
 ---@public
----@return RoomDef
-function MetaObject:getRoom() end
+---@return int
+function MetaObject:getType() end

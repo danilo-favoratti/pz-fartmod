@@ -27,49 +27,35 @@ SystemDisabler = {}
 function SystemDisabler:setDoCharacterStats(arg0) end
 
 ---@public
----@param arg0 boolean
----@return void
-function SystemDisabler:setWorldSyncEnable(arg0) end
-
----@public
----@return boolean
-function SystemDisabler:getOverrideServerConnectDebugCheck() end
-
----@public
----@param arg0 boolean
----@return void
-function SystemDisabler:setDoSurvivorCreation(arg0) end
-
----@public
----@return void
-function SystemDisabler:Reset() end
-
----@public
----@return boolean
-function SystemDisabler:getAllowDebugConnections() end
-
----@public
----@return boolean
-function SystemDisabler:getdoVehicleLowRider() end
-
----@public
----@param arg0 boolean
----@return void
-function SystemDisabler:setDoZombieCreation(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function SystemDisabler:setOverridePOVCharacters(arg0) end
-
----@public
 ---@return boolean
 function SystemDisabler:getDoMainLoopDealWithNetData() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
+function SystemDisabler:setWorldSyncEnable(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function SystemDisabler:setVehiclesEverywhere(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
 function SystemDisabler:setObjectStateSyncEnable(arg0) end
+
+---@public
+---@return boolean
+function SystemDisabler:getdoVehicleLowRider() end
+
+---@public
+---@return boolean
+function SystemDisabler:getOverrideServerConnectDebugCheck() end
+
+---@public
+---@return boolean
+function SystemDisabler:getAllowDebugConnections() end
 
 ---@public
 ---@return boolean
@@ -83,7 +69,12 @@ function SystemDisabler:setDoPlayerCreation(arg0) end
 ---@public
 ---@param arg0 boolean
 ---@return void
-function SystemDisabler:setVehiclesEverywhere(arg0) end
+function SystemDisabler:setEnableAdvancedSoundOptions(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function SystemDisabler:setOverridePOVCharacters(arg0) end
 
 ---@public
 ---@return boolean
@@ -92,4 +83,13 @@ function SystemDisabler:getEnableAdvancedSoundOptions() end
 ---@public
 ---@param arg0 boolean
 ---@return void
-function SystemDisabler:setEnableAdvancedSoundOptions(arg0) end
+function SystemDisabler:setDoZombieCreation(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function SystemDisabler:setDoSurvivorCreation(arg0) end
+
+---@public
+---@return void
+function SystemDisabler:Reset() end

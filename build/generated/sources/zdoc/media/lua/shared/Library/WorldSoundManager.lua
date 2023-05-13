@@ -5,6 +5,31 @@
 ---@field private resultBiggestSound WorldSoundManager.ResultBiggestSound
 WorldSoundManager = {}
 
+---@public
+---@return void
+function WorldSoundManager:initFrame() end
+
+---@public
+---@return WorldSoundManager.WorldSound
+function WorldSoundManager:getNew() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@param arg3 boolean
+---@param arg4 IsoZombie
+---@return WorldSoundManager.ResultBiggestSound
+function WorldSoundManager:getBiggestSoundZomb(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@return void
+function WorldSoundManager:KillCell() end
+
+---@public
+---@return void
+function WorldSoundManager:render() end
+
 ---@private
 ---@param arg0 float
 ---@param arg1 float
@@ -20,33 +45,13 @@ WorldSoundManager = {}
 function WorldSoundManager:DrawIsoLine(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
 
 ---@public
----@param arg0 IsoZombie
----@return float
----@overload fun(arg0:int)
-function WorldSoundManager:getHearingMultiplier(arg0) end
+---@param arg0 IsoCell
+---@return void
+function WorldSoundManager:init(arg0) end
 
 ---@public
----@param arg0 int
----@return float
-function WorldSoundManager:getHearingMultiplier(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@return float
-function WorldSoundManager:getStressFromSounds(arg0, arg1, arg2) end
-
----@public
----@param arg0 Object
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 int
----@param arg5 int
----@param arg6 boolean
----@return WorldSoundManager.WorldSound
-function WorldSoundManager:addSoundRepeating(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+---@return void
+function WorldSoundManager:update() end
 
 ---@public
 ---@param arg0 WorldSoundManager.WorldSound
@@ -108,40 +113,35 @@ function WorldSoundManager:addSound(arg0, arg1, arg2, arg3, arg4, arg5, arg6, ar
 function WorldSoundManager:addSound(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11) end
 
 ---@public
----@param arg0 IsoZombie
----@return WorldSoundManager.WorldSound
-function WorldSoundManager:getSoundZomb(arg0) end
+---@param arg0 int
+---@return float
+---@overload fun(arg0:IsoZombie)
+function WorldSoundManager:getHearingMultiplier(arg0) end
 
 ---@public
----@return void
-function WorldSoundManager:KillCell() end
+---@param arg0 IsoZombie
+---@return float
+function WorldSoundManager:getHearingMultiplier(arg0) end
+
+---@public
+---@param arg0 Object
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@param arg4 int
+---@param arg5 int
+---@param arg6 boolean
+---@return WorldSoundManager.WorldSound
+function WorldSoundManager:addSoundRepeating(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 
 ---@public
 ---@param arg0 int
 ---@param arg1 int
 ---@param arg2 int
----@param arg3 boolean
----@param arg4 IsoZombie
----@return WorldSoundManager.ResultBiggestSound
-function WorldSoundManager:getBiggestSoundZomb(arg0, arg1, arg2, arg3, arg4) end
+---@return float
+function WorldSoundManager:getStressFromSounds(arg0, arg1, arg2) end
 
 ---@public
+---@param arg0 IsoZombie
 ---@return WorldSoundManager.WorldSound
-function WorldSoundManager:getNew() end
-
----@public
----@return void
-function WorldSoundManager:initFrame() end
-
----@public
----@return void
-function WorldSoundManager:render() end
-
----@public
----@return void
-function WorldSoundManager:update() end
-
----@public
----@param arg0 IsoCell
----@return void
-function WorldSoundManager:init(arg0) end
+function WorldSoundManager:getSoundZomb(arg0) end

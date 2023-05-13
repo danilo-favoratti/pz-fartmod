@@ -19,36 +19,8 @@
 Fitness = {}
 
 ---@public
----@return void
-function Fitness:incStats() end
-
----@public
----@param arg0 String
----@return void
-function Fitness:removeStiffnessValue(arg0) end
-
----@private
----@return void
-function Fitness:updateExeTimer() end
-
----@public
----@return boolean
-function Fitness:onGoingStiffness() end
-
----@public
----@param arg0 String
----@return void
-function Fitness:setCurrentExercise(arg0) end
-
----@public
----@return IsoGameCharacter
-function Fitness:getParent() end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 int
----@return void
-function Fitness:load(arg0, arg1) end
+---@return HashMap|Unknown|Unknown
+function Fitness:getRegularityMap() end
 
 ---@private
 ---@param arg0 String
@@ -56,13 +28,9 @@ function Fitness:load(arg0, arg1) end
 function Fitness:increasePain(arg0) end
 
 ---@public
----@param arg0 String
----@return int
-function Fitness:getCurrentExeStiffnessTimer(arg0) end
-
----@public
+---@param arg0 HashMap|Unknown|Unknown
 ---@return void
-function Fitness:init() end
+function Fitness:setRegularityMap(arg0) end
 
 ---@private
 ---@return void
@@ -70,51 +38,7 @@ function Fitness:decreaseRegularity() end
 
 ---@public
 ---@return void
-function Fitness:initRegularityMapProfession() end
-
----@public
----@param arg0 ByteBuffer
----@return void
-function Fitness:save(arg0) end
-
----@public
----@return HashMap|Unknown|Unknown
-function Fitness:getRegularityMap() end
-
----@public
----@return void
-function Fitness:reduceEndurance() end
-
----@public
----@param arg0 String
----@return float
-function Fitness:getCurrentExeStiffnessInc(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function Fitness:setParent(arg0) end
-
----@public
----@return void
-function Fitness:update() end
-
----@public
----@param arg0 HashMap|Unknown|Unknown
----@return void
-function Fitness:setRegularityMap(arg0) end
-
----@public
----@return void
-function Fitness:incFutureStiffness() end
-
----@public
----@return void
 function Fitness:resetValues() end
-
----@public
----@return void
-function Fitness:exerciseRepeat() end
 
 ---@public
 ---@return void
@@ -123,4 +47,80 @@ function Fitness:incRegularity() end
 ---@public
 ---@param arg0 String
 ---@return float
+function Fitness:getCurrentExeStiffnessInc(arg0) end
+
+---@public
+---@param arg0 String
+---@return int
+function Fitness:getCurrentExeStiffnessTimer(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function Fitness:setCurrentExercise(arg0) end
+
+---@public
+---@return void
+function Fitness:exerciseRepeat() end
+
+---@public
+---@return void
+function Fitness:reduceEndurance() end
+
+---@public
+---@return boolean
+function Fitness:onGoingStiffness() end
+
+---@public
+---@param arg0 String
+---@return void
+function Fitness:removeStiffnessValue(arg0) end
+
+---@public
+---@return void
+function Fitness:incStats() end
+
+---@public
+---@param arg0 String
+---@return float
 function Fitness:getRegularity(arg0) end
+
+---@public
+---@return IsoGameCharacter
+function Fitness:getParent() end
+
+---@public
+---@return void
+function Fitness:init() end
+
+---@public
+---@return void
+function Fitness:incFutureStiffness() end
+
+---@private
+---@return void
+function Fitness:updateExeTimer() end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@return void
+function Fitness:load(arg0, arg1) end
+
+---@public
+---@return void
+function Fitness:update() end
+
+---@public
+---@param arg0 ByteBuffer
+---@return void
+function Fitness:save(arg0) end
+
+---@public
+---@return void
+function Fitness:initRegularityMapProfession() end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function Fitness:setParent(arg0) end

@@ -12,13 +12,26 @@
 RadialMenu = {}
 
 ---@private
----@return float
-function RadialMenu:getStartAngle() end
+---@param arg0 int
+---@return RadialMenu.Slice
+function RadialMenu:getSlice(arg0) end
 
 ---@public
 ---@param arg0 int
+---@param arg1 String
 ---@return void
-function RadialMenu:setJoypad(arg0) end
+function RadialMenu:setSliceText(arg0, arg1) end
+
+---@public
+---@param arg0 String
+---@param arg1 Texture
+---@return void
+function RadialMenu:addSlice(arg0, arg1) end
+
+---@private
+---@param arg0 String
+---@return void
+function RadialMenu:formatTextInsideCircle(arg0) end
 
 ---@public
 ---@param arg0 int
@@ -31,24 +44,16 @@ function RadialMenu:clear() end
 
 ---@public
 ---@param arg0 int
----@param arg1 Texture
 ---@return void
-function RadialMenu:setSliceTexture(arg0, arg1) end
-
----@public
----@param arg0 int
----@param arg1 String
----@return void
-function RadialMenu:setSliceText(arg0, arg1) end
-
----@public
----@return void
-function RadialMenu:render() end
+function RadialMenu:setJoypad(arg0) end
 
 ---@private
----@param arg0 int
----@return RadialMenu.Slice
-function RadialMenu:getSlice(arg0) end
+---@return float
+function RadialMenu:getStartAngle() end
+
+---@public
+---@return void
+function RadialMenu:update() end
 
 ---@public
 ---@param arg0 int
@@ -57,16 +62,11 @@ function RadialMenu:getSlice(arg0) end
 function RadialMenu:getSliceIndexFromMouse(arg0, arg1) end
 
 ---@public
----@return void
-function RadialMenu:update() end
-
----@private
----@param arg0 String
----@return void
-function RadialMenu:formatTextInsideCircle(arg0) end
-
----@public
----@param arg0 String
+---@param arg0 int
 ---@param arg1 Texture
 ---@return void
-function RadialMenu:addSlice(arg0, arg1) end
+function RadialMenu:setSliceTexture(arg0, arg1) end
+
+---@public
+---@return void
+function RadialMenu:render() end

@@ -3,18 +3,18 @@
 PlayerAimState = {}
 
 ---@public
----@param arg0 IsoGameCharacter
----@return void
-function PlayerAimState:enter(arg0) end
-
----@public
 ---@return PlayerAimState
 function PlayerAimState:instance() end
 
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function PlayerAimState:exit(arg0) end
+function PlayerAimState:enter(arg0) end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function PlayerAimState:execute(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
@@ -25,4 +25,4 @@ function PlayerAimState:animEvent(arg0, arg1) end
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function PlayerAimState:execute(arg0) end
+function PlayerAimState:exit(arg0) end

@@ -4,10 +4,41 @@
 ---@field private plrModes SearchMode.PlayerSearchMode[]
 SearchMode = {}
 
+---@public
+---@return void
+function SearchMode:update() end
+
+---@public
+---@param arg0 int
+---@return SearchMode.SearchModeFloat
+function SearchMode:getDarkness(arg0) end
+
+---@public
+---@return SearchMode
+function SearchMode:getInstance() end
+
+---@public
+---@return void
+function SearchMode:reset() end
+
 ---@private
 ---@param arg0 int
 ---@return void
 function SearchMode:FadeIn(arg0) end
+
+---@public
+---@param arg0 int
+---@return SearchMode.SearchModeFloat
+function SearchMode:getBlur(arg0) end
+
+---@public
+---@return float
+function SearchMode:getFadeTime() end
+
+---@public
+---@param arg0 int
+---@return boolean
+function SearchMode:isOverride(arg0) end
 
 ---@public
 ---@param arg0 int
@@ -16,13 +47,9 @@ function SearchMode:isEnabled(arg0) end
 
 ---@public
 ---@param arg0 int
----@return SearchMode.SearchModeFloat
-function SearchMode:getDesat(arg0) end
-
----@public
----@param arg0 int
----@return SearchMode.SearchModeFloat
-function SearchMode:getGradientWidth(arg0) end
+---@param arg1 boolean
+---@return void
+function SearchMode:setEnabled(arg0, arg1) end
 
 ---@public
 ---@param arg0 float
@@ -30,12 +57,9 @@ function SearchMode:getGradientWidth(arg0) end
 function SearchMode:setFadeTime(arg0) end
 
 ---@public
----@return void
-function SearchMode:reset() end
-
----@public
----@return SearchMode
-function SearchMode:getInstance() end
+---@param arg0 int
+---@return SearchMode.SearchModeFloat
+function SearchMode:getGradientWidth(arg0) end
 
 ---@public
 ---@param arg0 int
@@ -44,23 +68,9 @@ function SearchMode:getInstance() end
 function SearchMode:setOverride(arg0, arg1) end
 
 ---@public
----@return void
-function SearchMode:update() end
-
----@public
 ---@param arg0 int
 ---@return SearchMode.SearchModeFloat
 function SearchMode:getRadius(arg0) end
-
----@public
----@param arg0 int
----@return SearchMode.SearchModeFloat
-function SearchMode:getDarkness(arg0) end
-
----@public
----@param arg0 int
----@return boolean
-function SearchMode:isOverride(arg0) end
 
 ---@public
 ---@param arg0 int
@@ -73,16 +83,6 @@ function SearchMode:getSearchModeForPlayer(arg0) end
 function SearchMode:FadeOut(arg0) end
 
 ---@public
----@return float
-function SearchMode:getFadeTime() end
-
----@public
 ---@param arg0 int
 ---@return SearchMode.SearchModeFloat
-function SearchMode:getBlur(arg0) end
-
----@public
----@param arg0 int
----@param arg1 boolean
----@return void
-function SearchMode:setEnabled(arg0, arg1) end
+function SearchMode:getDesat(arg0) end

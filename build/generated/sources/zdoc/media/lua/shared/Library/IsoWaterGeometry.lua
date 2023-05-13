@@ -14,6 +14,14 @@
 IsoWaterGeometry = {}
 
 ---@public
+---@return float
+function IsoWaterGeometry:getFlow() end
+
+---@public
+---@return boolean
+function IsoWaterGeometry:isShore() end
+
+---@public
 ---@param arg0 IsoGridSquare
 ---@return IsoWaterGeometry
 function IsoWaterGeometry:init(arg0) end
@@ -22,11 +30,3 @@ function IsoWaterGeometry:init(arg0) end
 ---@param arg0 IsoGridSquare
 ---@return void
 function IsoWaterGeometry:hideWaterObjects(arg0) end
-
----@public
----@return float
-function IsoWaterGeometry:getFlow() end
-
----@public
----@return boolean
-function IsoWaterGeometry:isShore() end

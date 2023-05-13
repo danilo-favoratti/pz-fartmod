@@ -6,14 +6,14 @@ RZSForestCamp = {}
 function RZSForestCamp:getForestClutter() end
 
 ---@public
----@return ArrayList|Unknown
-function RZSForestCamp:getFireClutter() end
+---@param arg0 IsoMetaGrid.Zone
+---@return void
+function RZSForestCamp:randomizeZoneStory(arg0) end
 
 ---@public
 ---@return ArrayList|Unknown
 function RZSForestCamp:getCoolerClutter() end
 
 ---@public
----@param arg0 IsoMetaGrid.Zone
----@return void
-function RZSForestCamp:randomizeZoneStory(arg0) end
+---@return ArrayList|Unknown
+function RZSForestCamp:getFireClutter() end

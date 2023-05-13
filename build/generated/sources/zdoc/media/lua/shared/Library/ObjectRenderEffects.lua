@@ -81,13 +81,34 @@ function ObjectRenderEffects:update() end
 function ObjectRenderEffects:update(arg0, arg1) end
 
 ---@public
----@return ObjectRenderEffects
-function ObjectRenderEffects:alloc() end
+---@param arg0 ObjectRenderEffects
+---@return void
+function ObjectRenderEffects:add(arg0) end
 
 ---@public
 ---@param arg0 ObjectRenderEffects
 ---@return void
 function ObjectRenderEffects:release(arg0) end
+
+---@public
+---@param arg0 ObjectRenderEffects
+---@return void
+function ObjectRenderEffects:copyMainFromOther(arg0) end
+
+---@public
+---@return void
+function ObjectRenderEffects:init() end
+
+---@private
+---@param arg0 float
+---@param arg1 float
+---@return void
+function ObjectRenderEffects:updateOLD(arg0, arg1) end
+
+---@private
+---@param arg0 float
+---@return void
+function ObjectRenderEffects:lerpAll(arg0) end
 
 ---@public
 ---@param arg0 int
@@ -96,38 +117,17 @@ function ObjectRenderEffects:release(arg0) end
 function ObjectRenderEffects:getNextWindEffect(arg0, arg1) end
 
 ---@private
----@param arg0 float
----@param arg1 float
 ---@return void
-function ObjectRenderEffects:updateOLD(arg0, arg1) end
-
----@public
----@return void
-function ObjectRenderEffects:init() end
+function ObjectRenderEffects:swapTargetToLast() end
 
 ---@private
 ---@return ObjectRenderEffects
 function ObjectRenderEffects:reset() end
 
 ---@public
+---@return ObjectRenderEffects
+function ObjectRenderEffects:alloc() end
+
+---@public
 ---@return void
 function ObjectRenderEffects:updateStatic() end
-
----@public
----@param arg0 ObjectRenderEffects
----@return void
-function ObjectRenderEffects:add(arg0) end
-
----@private
----@return void
-function ObjectRenderEffects:swapTargetToLast() end
-
----@private
----@param arg0 float
----@return void
-function ObjectRenderEffects:lerpAll(arg0) end
-
----@public
----@param arg0 ObjectRenderEffects
----@return void
-function ObjectRenderEffects:copyMainFromOther(arg0) end

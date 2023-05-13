@@ -39,6 +39,10 @@
 PerkFactory_Perks = {}
 
 ---@public
+---@return int
+function PerkFactory_Perks:getMaxIndex() end
+
+---@public
 ---@param arg0 String
 ---@return PerkFactory.Perk
 function PerkFactory_Perks:FromString(arg0) end
@@ -47,7 +51,3 @@ function PerkFactory_Perks:FromString(arg0) end
 ---@param arg0 int
 ---@return PerkFactory.Perk
 function PerkFactory_Perks:fromIndex(arg0) end
-
----@public
----@return int
-function PerkFactory_Perks:getMaxIndex() end

@@ -22,23 +22,11 @@ Thermoregulator_ThermalNode = {}
 
 ---@public
 ---@return float
-function Thermoregulator_ThermalNode:getWindresist() end
+function Thermoregulator_ThermalNode:getBodyWetness() end
 
 ---@public
 ---@return float
-function Thermoregulator_ThermalNode:getHeatDelta() end
-
----@public
----@return float
-function Thermoregulator_ThermalNode:getBodyResponse() end
-
----@public
----@return float
-function Thermoregulator_ThermalNode:getSkinCelciusUI() end
-
----@public
----@return boolean
-function Thermoregulator_ThermalNode:hasDownstream() end
+function Thermoregulator_ThermalNode:getSecondaryDeltaUI() end
 
 ---@public
 ---@return boolean
@@ -46,27 +34,7 @@ function Thermoregulator_ThermalNode:hasUpstream() end
 
 ---@public
 ---@return float
-function Thermoregulator_ThermalNode:getBodyWetnessUI() end
-
----@private
----@return void
-function Thermoregulator_ThermalNode:calculateInsulation() end
-
----@public
----@return float
-function Thermoregulator_ThermalNode:getWindresistUI() end
-
----@public
----@return float
-function Thermoregulator_ThermalNode:getBodyWetness() end
-
----@public
----@return float
-function Thermoregulator_ThermalNode:getClothingWetnessUI() end
-
----@public
----@return float
-function Thermoregulator_ThermalNode:getInsulationUI() end
+function Thermoregulator_ThermalNode:getSkinCelciusUI() end
 
 ---@public
 ---@return float
@@ -74,15 +42,71 @@ function Thermoregulator_ThermalNode:getHeatDeltaUI() end
 
 ---@public
 ---@return float
-function Thermoregulator_ThermalNode:getSkinSurface() end
+function Thermoregulator_ThermalNode:getDistToCore() end
+
+---@public
+---@return float
+function Thermoregulator_ThermalNode:getCelcius() end
+
+---@public
+---@return float
+function Thermoregulator_ThermalNode:getPrimaryDeltaUI() end
+
+---@public
+---@return float
+function Thermoregulator_ThermalNode:getClothingWetness() end
+
+---@public
+---@return float
+function Thermoregulator_ThermalNode:getBodyWetnessUI() end
+
+---@public
+---@return float
+function Thermoregulator_ThermalNode:getHeatDelta() end
+
+---@public
+---@return float
+function Thermoregulator_ThermalNode:getInsulation() end
+
+---@public
+---@return float
+function Thermoregulator_ThermalNode:getWindresistUI() end
+
+---@public
+---@return float
+function Thermoregulator_ThermalNode:getSkinCelcius() end
+
+---@public
+---@return float
+function Thermoregulator_ThermalNode:getBodyResponse() end
+
+---@public
+---@return float
+function Thermoregulator_ThermalNode:getClothingWetnessUI() end
 
 ---@public
 ---@return float
 function Thermoregulator_ThermalNode:getSecondaryDelta() end
 
+---@private
+---@return void
+function Thermoregulator_ThermalNode:calculateInsulation() end
+
 ---@public
 ---@return float
-function Thermoregulator_ThermalNode:getSecondaryDeltaUI() end
+function Thermoregulator_ThermalNode:getSkinSurface() end
+
+---@public
+---@return float
+function Thermoregulator_ThermalNode:getBodyResponseUI() end
+
+---@public
+---@return float
+function Thermoregulator_ThermalNode:getPrimaryDelta() end
+
+---@public
+---@return float
+function Thermoregulator_ThermalNode:getWindresist() end
 
 ---@public
 ---@return boolean
@@ -93,33 +117,9 @@ function Thermoregulator_ThermalNode:isCore() end
 function Thermoregulator_ThermalNode:getName() end
 
 ---@public
----@return float
-function Thermoregulator_ThermalNode:getInsulation() end
+---@return boolean
+function Thermoregulator_ThermalNode:hasDownstream() end
 
 ---@public
 ---@return float
-function Thermoregulator_ThermalNode:getCelcius() end
-
----@public
----@return float
-function Thermoregulator_ThermalNode:getSkinCelcius() end
-
----@public
----@return float
-function Thermoregulator_ThermalNode:getPrimaryDelta() end
-
----@public
----@return float
-function Thermoregulator_ThermalNode:getDistToCore() end
-
----@public
----@return float
-function Thermoregulator_ThermalNode:getPrimaryDeltaUI() end
-
----@public
----@return float
-function Thermoregulator_ThermalNode:getBodyResponseUI() end
-
----@public
----@return float
-function Thermoregulator_ThermalNode:getClothingWetness() end
+function Thermoregulator_ThermalNode:getInsulationUI() end

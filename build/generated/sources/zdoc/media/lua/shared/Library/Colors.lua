@@ -118,11 +118,18 @@
 ---@field public Maroon Color
 Colors = {}
 
----@private
+---@public
 ---@param arg0 String
----@param arg1 Color
----@return Color
-function Colors:addColor(arg0, arg1) end
+---@return boolean
+function Colors:ColorExists(arg0) end
+
+---@public
+---@return ArrayList|Unknown
+function Colors:GetColorNames() end
+
+---@public
+---@return int
+function Colors:GetColorsCount() end
 
 ---@public
 ---@param arg0 String
@@ -130,23 +137,16 @@ function Colors:addColor(arg0, arg1) end
 function Colors:GetColorByName(arg0) end
 
 ---@public
----@param arg0 int
----@return Color
-function Colors:GetColorFromIndex(arg0) end
-
----@public
 ---@return Color
 function Colors:GetRandomColor() end
 
 ---@public
+---@param arg0 int
+---@return Color
+function Colors:GetColorFromIndex(arg0) end
+
+---@private
 ---@param arg0 String
----@return boolean
-function Colors:ColorExists(arg0) end
-
----@public
----@return int
-function Colors:GetColorsCount() end
-
----@public
----@return ArrayList|Unknown
-function Colors:GetColorNames() end
+---@param arg1 Color
+---@return Color
+function Colors:addColor(arg0, arg1) end

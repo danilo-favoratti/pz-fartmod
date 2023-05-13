@@ -28,75 +28,29 @@
 ---@field private snowFracOnDay int[]
 ErosionMain = {}
 
----@private
----@return boolean
-function ErosionMain:initConfig() end
-
----@public
----@return boolean
-function ErosionMain:isSnow() end
-
----@public
----@return void
-function ErosionMain:start() end
-
----@public
----@return void
-function ErosionMain:EveryTenMinutes() end
-
----@public
----@return void
-function ErosionMain:Reset() end
-
----@public
----@return void
-function ErosionMain:mainTimer() end
-
----@public
----@return int
-function ErosionMain:getEtick() end
-
 ---@public
 ---@param arg0 ByteBuffer
 ---@return void
 function ErosionMain:receiveState(arg0) end
 
 ---@public
----@return ErosionSeason
-function ErosionMain:getSeasons() end
+---@return void
+function ErosionMain:snowCheck() end
 
 ---@public
----@return ErosionConfig
-function ErosionMain:getConfig() end
+---@return void
+function ErosionMain:Reset() end
 
----@private
+---@public
 ---@param arg0 IsoGridSquare
 ---@return void
-function ErosionMain:loadGridsquare(arg0) end
-
----@public
----@return void
-function ErosionMain:DebugUpdateMapNow() end
-
----@private
----@return void
-function ErosionMain:updateMapNow() end
-
----@public
----@param arg0 IsoChunk
----@return void
-function ErosionMain:ChunkLoaded(arg0) end
+function ErosionMain:LoadGridsquare(arg0) end
 
 ---@private
 ---@param arg0 IsoGridSquare
 ---@param arg1 ErosionData.Square
 ---@return void
 function ErosionMain:initGridSquare(arg0, arg1) end
-
----@public
----@param arg0 ByteBuffer
----@return void
-function ErosionMain:sendState(arg0) end
 
 ---@private
 ---@param arg0 IsoGridSquare
@@ -109,12 +63,35 @@ function ErosionMain:getChunk(arg0) end
 function ErosionMain:loadChunk(arg0) end
 
 ---@public
----@return IsoSpriteManager
-function ErosionMain:getSpriteManager() end
+---@return void
+function ErosionMain:DebugUpdateMapNow() end
+
+---@public
+---@param arg0 IsoChunk
+---@return void
+function ErosionMain:ChunkLoaded(arg0) end
+
+---@public
+---@return void
+function ErosionMain:EveryTenMinutes() end
 
 ---@public
 ---@return int
-function ErosionMain:getSnowFractionYesterday() end
+function ErosionMain:getEtick() end
+
+---@public
+---@return void
+function ErosionMain:start() end
+
+---@private
+---@param arg0 IsoChunk
+---@param arg1 ErosionData.Chunk
+---@return void
+function ErosionMain:initChunk(arg0, arg1) end
+
+---@public
+---@return boolean
+function ErosionMain:isSnow() end
 
 ---@public
 ---@return int
@@ -122,18 +99,41 @@ function ErosionMain:getSnowFraction() end
 
 ---@public
 ---@return void
-function ErosionMain:snowCheck() end
+function ErosionMain:mainTimer() end
 
 ---@public
----@param arg0 IsoGridSquare
----@return void
-function ErosionMain:LoadGridsquare(arg0) end
+---@return ErosionConfig
+function ErosionMain:getConfig() end
 
 ---@private
----@param arg0 IsoChunk
----@param arg1 ErosionData.Chunk
+---@return boolean
+function ErosionMain:initConfig() end
+
+---@public
+---@return ErosionSeason
+function ErosionMain:getSeasons() end
+
+---@private
+---@param arg0 IsoGridSquare
 ---@return void
-function ErosionMain:initChunk(arg0, arg1) end
+function ErosionMain:loadGridsquare(arg0) end
+
+---@public
+---@param arg0 ByteBuffer
+---@return void
+function ErosionMain:sendState(arg0) end
+
+---@public
+---@return IsoSpriteManager
+function ErosionMain:getSpriteManager() end
+
+---@private
+---@return void
+function ErosionMain:updateMapNow() end
+
+---@public
+---@return int
+function ErosionMain:getSnowFractionYesterday() end
 
 ---@public
 ---@return ErosionMain

@@ -13,50 +13,52 @@
 ---@field private FONT UIFont
 DebugGlobalObjectState = {}
 
+---@public
+---@return void
+function DebugGlobalObjectState:reenter() end
+
+---@public
+---@return GameStateMachine.StateAction
+function DebugGlobalObjectState:update() end
+
 ---@private
 ---@return void
 function DebugGlobalObjectState:renderUI() end
 
 ---@public
----@return void
-function DebugGlobalObjectState:exit() end
+---@param arg0 String
+---@return Object
+function DebugGlobalObjectState:fromLua0(arg0) end
 
 ---@private
 ---@return void
 function DebugGlobalObjectState:restoreGameUI() end
 
----@private
----@param arg0 float
----@param arg1 float
----@param arg2 float
----@param arg3 float
----@param arg4 float
----@param arg5 float
----@param arg6 float
----@param arg7 float
----@param arg8 float
----@param arg9 int
+---@public
 ---@return void
-function DebugGlobalObjectState:DrawIsoRect(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+function DebugGlobalObjectState:enter() end
 
 ---@public
----@return GameStateMachine.StateAction
-function DebugGlobalObjectState:updateScene() end
+---@return void
+function DebugGlobalObjectState:yield() end
+
+---@public
+---@return void
+function DebugGlobalObjectState:renderScene() end
+
+---@public
+---@param arg0 String
+---@param arg1 Object
+---@return Object
+function DebugGlobalObjectState:fromLua1(arg0, arg1) end
 
 ---@private
 ---@return void
 function DebugGlobalObjectState:updateCursor() end
 
 ---@public
----@param arg0 String
----@param arg1 Object
----@param arg2 Object
----@return Object
-function DebugGlobalObjectState:fromLua2(arg0, arg1, arg2) end
-
----@public
 ---@return void
-function DebugGlobalObjectState:render() end
+function DebugGlobalObjectState:exit() end
 
 ---@private
 ---@param arg0 float
@@ -79,36 +81,34 @@ function DebugGlobalObjectState:saveGameUI() end
 
 ---@public
 ---@return GameStateMachine.StateAction
-function DebugGlobalObjectState:update() end
+function DebugGlobalObjectState:updateScene() end
+
+---@public
+---@return void
+function DebugGlobalObjectState:render() end
+
+---@public
+---@param arg0 String
+---@param arg1 Object
+---@param arg2 Object
+---@return Object
+function DebugGlobalObjectState:fromLua2(arg0, arg1, arg2) end
+
+---@private
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@param arg3 float
+---@param arg4 float
+---@param arg5 float
+---@param arg6 float
+---@param arg7 float
+---@param arg8 float
+---@param arg9 int
+---@return void
+function DebugGlobalObjectState:DrawIsoRect(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
 
 ---@public
 ---@param arg0 KahluaTable
 ---@return void
 function DebugGlobalObjectState:setTable(arg0) end
-
----@public
----@return void
-function DebugGlobalObjectState:yield() end
-
----@public
----@param arg0 String
----@return Object
-function DebugGlobalObjectState:fromLua0(arg0) end
-
----@public
----@return void
-function DebugGlobalObjectState:renderScene() end
-
----@public
----@param arg0 String
----@param arg1 Object
----@return Object
-function DebugGlobalObjectState:fromLua1(arg0, arg1) end
-
----@public
----@return void
-function DebugGlobalObjectState:reenter() end
-
----@public
----@return void
-function DebugGlobalObjectState:enter() end

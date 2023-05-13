@@ -14,9 +14,9 @@ function PlayerFallingState:enter(arg0) end
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function PlayerFallingState:exit(arg0) end
+function PlayerFallingState:execute(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function PlayerFallingState:execute(arg0) end
+function PlayerFallingState:exit(arg0) end

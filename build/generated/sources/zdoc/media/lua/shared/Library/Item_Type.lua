@@ -17,10 +17,10 @@
 Item_Type = {}
 
 ---@public
----@return Item.Type[]
-function Item_Type:values() end
-
----@public
 ---@param arg0 String
 ---@return Item.Type
 function Item_Type:valueOf(arg0) end
+
+---@public
+---@return Item.Type[]
+function Item_Type:values() end

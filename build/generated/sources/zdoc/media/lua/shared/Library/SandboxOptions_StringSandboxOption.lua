@@ -7,17 +7,22 @@
 SandboxOptions_StringSandboxOption = {}
 
 ---@public
+---@return boolean
+function SandboxOptions_StringSandboxOption:isCustom() end
+
+---@public
+---@param arg0 KahluaTable
+---@return void
+function SandboxOptions_StringSandboxOption:toTable(arg0) end
+
+---@public
 ---@return String
 function SandboxOptions_StringSandboxOption:getShortName() end
 
 ---@public
 ---@param arg0 String
 ---@return SandboxOptions.SandboxOption
-function SandboxOptions_StringSandboxOption:setPageName(arg0) end
-
----@public
----@return boolean
-function SandboxOptions_StringSandboxOption:isCustom() end
+function SandboxOptions_StringSandboxOption:setTranslation(arg0) end
 
 ---@public
 ---@return String
@@ -29,20 +34,12 @@ function SandboxOptions_StringSandboxOption:setCustom() end
 
 ---@public
 ---@return String
-function SandboxOptions_StringSandboxOption:getTranslatedName() end
-
----@public
----@return String
 function SandboxOptions_StringSandboxOption:getTooltip() end
 
 ---@public
----@return ConfigOption
-function SandboxOptions_StringSandboxOption:asConfigOption() end
-
----@public
----@param arg0 KahluaTable
----@return void
-function SandboxOptions_StringSandboxOption:toTable(arg0) end
+---@param arg0 String
+---@return SandboxOptions.SandboxOption
+function SandboxOptions_StringSandboxOption:setPageName(arg0) end
 
 ---@public
 ---@return String
@@ -54,6 +51,9 @@ function SandboxOptions_StringSandboxOption:getPageName() end
 function SandboxOptions_StringSandboxOption:fromTable(arg0) end
 
 ---@public
----@param arg0 String
----@return SandboxOptions.SandboxOption
-function SandboxOptions_StringSandboxOption:setTranslation(arg0) end
+---@return ConfigOption
+function SandboxOptions_StringSandboxOption:asConfigOption() end
+
+---@public
+---@return String
+function SandboxOptions_StringSandboxOption:getTranslatedName() end

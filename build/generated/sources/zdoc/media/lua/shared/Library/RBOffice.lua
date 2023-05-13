@@ -2,10 +2,9 @@
 RBOffice = {}
 
 ---@public
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param arg0 IsoGridSquare
 ---@return boolean
-function RBOffice:isValid(arg0, arg1) end
+function RBOffice:roomValid(arg0) end
 
 ---@public
 ---@param arg0 BuildingDef
@@ -13,6 +12,7 @@ function RBOffice:isValid(arg0, arg1) end
 function RBOffice:randomizeBuilding(arg0) end
 
 ---@public
----@param arg0 IsoGridSquare
+---@param arg0 BuildingDef
+---@param arg1 boolean
 ---@return boolean
-function RBOffice:roomValid(arg0) end
+function RBOffice:isValid(arg0, arg1) end

@@ -16,13 +16,18 @@
 ModelScript = {}
 
 ---@private
----@param arg0 ScriptParser.Block
----@return ModelAttachment
-function ModelScript:LoadAttachment(arg0) end
+---@param arg0 String
+---@param arg1 String
+---@return void
+function ModelScript:checkMesh(arg0, arg1) end
 
 ---@public
----@return void
-function ModelScript:ScriptsLoaded() end
+---@return String
+function ModelScript:getFileName() end
+
+---@public
+---@return String
+function ModelScript:getShaderName() end
 
 ---@public
 ---@return String
@@ -36,33 +41,18 @@ function ModelScript:getTextureName(arg0) end
 
 ---@public
 ---@return String
-function ModelScript:getFullType() end
-
----@public
----@param arg0 int
----@return ModelAttachment
----@overload fun(arg0:ModelAttachment)
-function ModelScript:removeAttachment(arg0) end
+function ModelScript:getName() end
 
 ---@public
 ---@param arg0 ModelAttachment
 ---@return ModelAttachment
+---@overload fun(arg0:int)
 function ModelScript:removeAttachment(arg0) end
 
 ---@public
 ---@param arg0 int
 ---@return ModelAttachment
-function ModelScript:getAttachment(arg0) end
-
----@public
----@return String
-function ModelScript:getMeshName() end
-
----@private
----@param arg0 String
----@param arg1 String
----@return void
-function ModelScript:checkTexture(arg0, arg1) end
+function ModelScript:removeAttachment(arg0) end
 
 ---@public
 ---@param arg0 ModelAttachment
@@ -71,8 +61,15 @@ function ModelScript:addAttachment(arg0) end
 
 ---@public
 ---@param arg0 String
+---@param arg1 String
+---@return void
+function ModelScript:Load(arg0, arg1) end
+
+---@public
+---@param arg0 int
+---@param arg1 ModelAttachment
 ---@return ModelAttachment
-function ModelScript:getAttachmentById(arg0) end
+function ModelScript:addAttachmentAt(arg0, arg1) end
 
 ---@private
 ---@param arg0 String
@@ -88,6 +85,10 @@ function ModelScript:check(arg0, arg1) end
 ---@return void
 function ModelScript:check(arg0, arg1, arg2) end
 
+---@public
+---@return void
+function ModelScript:ScriptsLoaded() end
+
 ---@private
 ---@param arg0 String
 ---@param arg1 Vector3f
@@ -95,39 +96,38 @@ function ModelScript:check(arg0, arg1, arg2) end
 function ModelScript:LoadVector3f(arg0, arg1) end
 
 ---@public
----@return void
-function ModelScript:reset() end
-
----@public
----@return String
-function ModelScript:getFileName() end
-
----@public
----@return String
-function ModelScript:getShaderName() end
-
----@public
----@param arg0 String
----@param arg1 String
----@return void
-function ModelScript:Load(arg0, arg1) end
-
----@public
----@param arg0 int
----@param arg1 ModelAttachment
----@return ModelAttachment
-function ModelScript:addAttachmentAt(arg0, arg1) end
-
----@public
----@return String
-function ModelScript:getName() end
+---@return int
+function ModelScript:getAttachmentCount() end
 
 ---@private
 ---@param arg0 String
 ---@param arg1 String
 ---@return void
-function ModelScript:checkMesh(arg0, arg1) end
+function ModelScript:checkTexture(arg0, arg1) end
 
 ---@public
----@return int
-function ModelScript:getAttachmentCount() end
+---@return String
+function ModelScript:getFullType() end
+
+---@public
+---@param arg0 String
+---@return ModelAttachment
+function ModelScript:getAttachmentById(arg0) end
+
+---@private
+---@param arg0 ScriptParser.Block
+---@return ModelAttachment
+function ModelScript:LoadAttachment(arg0) end
+
+---@public
+---@param arg0 int
+---@return ModelAttachment
+function ModelScript:getAttachment(arg0) end
+
+---@public
+---@return String
+function ModelScript:getMeshName() end
+
+---@public
+---@return void
+function ModelScript:reset() end

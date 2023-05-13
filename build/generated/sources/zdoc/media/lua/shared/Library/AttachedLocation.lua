@@ -5,13 +5,13 @@
 AttachedLocation = {}
 
 ---@public
+---@return String
+function AttachedLocation:getAttachmentName() end
+
+---@public
 ---@param arg0 String
 ---@return void
 function AttachedLocation:setAttachmentName(arg0) end
-
----@public
----@return String
-function AttachedLocation:getAttachmentName() end
 
 ---@public
 ---@return String

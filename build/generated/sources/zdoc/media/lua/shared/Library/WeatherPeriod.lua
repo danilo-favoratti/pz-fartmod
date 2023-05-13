@@ -55,36 +55,27 @@
 WeatherPeriod = {}
 
 ---@public
----@return float
-function WeatherPeriod:getTotalProgress() end
-
----@public
----@param arg0 ByteBuffer
+---@param arg0 DataInputStream
+---@param arg1 int
 ---@return void
-function WeatherPeriod:readNetWeatherData(arg0) end
-
----@public
----@return float
-function WeatherPeriod:getTotalStrength() end
+function WeatherPeriod:load(arg0, arg1) end
 
 ---@public
 ---@return boolean
-function WeatherPeriod:isThunderStorm() end
+function WeatherPeriod:hasTropical() end
 
 ---@public
 ---@param arg0 float
 ---@return void
 function WeatherPeriod:setKateBobStormProgress(arg0) end
 
----@public
----@return double
-function WeatherPeriod:getDuration() end
+---@private
+---@return void
+function WeatherPeriod:updateCurrentStage() end
 
 ---@public
----@param arg0 String
----@param arg1 double
----@return WeatherPeriod.WeatherStage
-function WeatherPeriod:createAndAddModdedStage(arg0, arg1) end
+---@return boolean
+function WeatherPeriod:hasStorm() end
 
 ---@private
 ---@param arg0 float
@@ -133,31 +124,12 @@ function WeatherPeriod:init(arg0, arg1, arg2, arg3, arg4) end
 function WeatherPeriod:init(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 
 ---@public
----@return boolean
-function WeatherPeriod:isBlizzard() end
+---@return float
+function WeatherPeriod:getMaxTemperatureInfluence() end
 
 ---@public
----@return double
-function WeatherPeriod:getWeatherNoise() end
-
----@public
----@return boolean
-function WeatherPeriod:hasStorm() end
-
----@public
----@param arg0 ClimateManager.AirFront
----@param arg1 double
----@return void
----@overload fun(arg0:ClimateManager.AirFront, arg1:double, arg2:int, arg3:float)
-function WeatherPeriod:initSimulationDebug(arg0, arg1) end
-
----@public
----@param arg0 ClimateManager.AirFront
----@param arg1 double
----@param arg2 int
----@param arg3 float
----@return void
-function WeatherPeriod:initSimulationDebug(arg0, arg1, arg2, arg3) end
+---@return WeatherPeriod.WeatherStage
+function WeatherPeriod:getCurrentStage() end
 
 ---@private
 ---@param arg0 ClimateManager.AirFront
@@ -166,70 +138,16 @@ function WeatherPeriod:initSimulationDebug(arg0, arg1, arg2, arg3) end
 function WeatherPeriod:startInit(arg0, arg1) end
 
 ---@public
----@return ClimateColorInfo
-function WeatherPeriod:getCloudColorPurplish() end
-
----@public
 ---@return float
-function WeatherPeriod:getMaxTemperatureInfluence() end
+function WeatherPeriod:getStageProgress() end
 
 ---@public
----@param arg0 ByteBuffer
----@return void
-function WeatherPeriod:writeNetWeatherData(arg0) end
-
----@public
----@return ClimateColorInfo
-function WeatherPeriod:getCloudColorBlizzard() end
-
----@private
----@return void
-function WeatherPeriod:createWeatherPattern() end
-
----@public
----@return ClimateColorInfo
-function WeatherPeriod:getCloudColor() end
-
----@public
----@return ClimateColorInfo
-function WeatherPeriod:getCloudColorBlueish() end
-
----@protected
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@return void
-function WeatherPeriod:reseed(arg0, arg1, arg2) end
-
----@public
----@param arg0 ClimateColorInfo
----@return void
-function WeatherPeriod:setCloudColor(arg0) end
-
----@public
----@param arg0 double
----@return void
-function WeatherPeriod:update(arg0) end
+---@return double
+function WeatherPeriod:getWeatherNoise() end
 
 ---@public
 ---@return boolean
-function WeatherPeriod:isTropicalStorm() end
-
----@public
----@return boolean
-function WeatherPeriod:isRunning() end
-
----@public
----@return float
-function WeatherPeriod:getPrecipitationFinal() end
-
----@public
----@return boolean
-function WeatherPeriod:hasHeavyRain() end
-
----@private
----@return void
-function WeatherPeriod:updateCurrentStage() end
+function WeatherPeriod:hasBlizzard() end
 
 ---@private
 ---@param arg0 int
@@ -247,24 +165,7 @@ function WeatherPeriod:createStage(arg0, arg1, arg2) end
 
 ---@public
 ---@return boolean
-function WeatherPeriod:hasBlizzard() end
-
----@public
----@param arg0 boolean
----@return void
-function WeatherPeriod:setDummy(arg0) end
-
----@public
----@return float
-function WeatherPeriod:getRainThreshold() end
-
----@public
----@return boolean
-function WeatherPeriod:getPrintStuff() end
-
----@public
----@return ClimateColorInfo
-function WeatherPeriod:getCloudColorTropical() end
+function WeatherPeriod:endCreateModdedPeriod() end
 
 ---@private
 ---@param arg0 String
@@ -272,37 +173,30 @@ function WeatherPeriod:getCloudColorTropical() end
 function WeatherPeriod:print(arg0) end
 
 ---@public
----@return ClimateColorInfo
-function WeatherPeriod:getCloudColorGreenish() end
+---@return boolean
+function WeatherPeriod:isBlizzard() end
 
 ---@public
----@return int
-function WeatherPeriod:getFrontType() end
-
----@public
----@return ClimateColorInfo
-function WeatherPeriod:getCloudColorReddish() end
-
----@private
+---@param arg0 ByteBuffer
 ---@return void
-function WeatherPeriod:linkWeatherStages() end
+function WeatherPeriod:readNetWeatherData(arg0) end
+
+---@public
+---@return ClimateColorInfo
+function WeatherPeriod:getCloudColorPurplish() end
 
 ---@public
 ---@return float
-function WeatherPeriod:getCurrentStrength() end
-
----@public
----@param arg0 DataOutputStream
----@return void
-function WeatherPeriod:save(arg0) end
-
----@private
----@return void
-function WeatherPeriod:clearCurrentWeatherStages() end
+function WeatherPeriod:getTotalStrength() end
 
 ---@public
 ---@return float
-function WeatherPeriod:getStageProgress() end
+function WeatherPeriod:getRainThreshold() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function WeatherPeriod:setDummy(arg0) end
 
 ---@public
 ---@param arg0 boolean
@@ -310,6 +204,118 @@ function WeatherPeriod:getStageProgress() end
 ---@param arg2 float
 ---@return boolean
 function WeatherPeriod:startCreateModdedPeriod(arg0, arg1, arg2) end
+
+---@public
+---@return float
+function WeatherPeriod:getCurrentStrength() end
+
+---@public
+---@return ClimateColorInfo
+function WeatherPeriod:getCloudColor() end
+
+---@public
+---@return int
+function WeatherPeriod:getFrontType() end
+
+---@public
+---@return boolean
+function WeatherPeriod:hasHeavyRain() end
+
+---@private
+---@return void
+function WeatherPeriod:clearCurrentWeatherStages() end
+
+---@public
+---@return ClimateColorInfo
+function WeatherPeriod:getCloudColorBlizzard() end
+
+---@public
+---@return double
+function WeatherPeriod:getDuration() end
+
+---@public
+---@param arg0 double
+---@return void
+function WeatherPeriod:update(arg0) end
+
+---@public
+---@param arg0 ClimateManager.AirFront
+---@param arg1 double
+---@return void
+---@overload fun(arg0:ClimateManager.AirFront, arg1:double, arg2:int, arg3:float)
+function WeatherPeriod:initSimulationDebug(arg0, arg1) end
+
+---@public
+---@param arg0 ClimateManager.AirFront
+---@param arg1 double
+---@param arg2 int
+---@param arg3 float
+---@return void
+function WeatherPeriod:initSimulationDebug(arg0, arg1, arg2, arg3) end
+
+---@public
+---@return boolean
+function WeatherPeriod:isThunderStorm() end
+
+---@public
+---@param arg0 ClimateColorInfo
+---@return void
+function WeatherPeriod:setCloudColor(arg0) end
+
+---@private
+---@return void
+function WeatherPeriod:linkWeatherStages() end
+
+---@private
+---@return boolean
+function WeatherPeriod:endInit() end
+
+---@protected
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return void
+function WeatherPeriod:reseed(arg0, arg1, arg2) end
+
+---@public
+---@return float
+function WeatherPeriod:getPrecipitationFinal() end
+
+---@public
+---@param arg0 DataOutputStream
+---@return void
+function WeatherPeriod:save(arg0) end
+
+---@public
+---@return ClimateColorInfo
+function WeatherPeriod:getCloudColorBlueish() end
+
+---@private
+---@return void
+function WeatherPeriod:createWeatherPattern() end
+
+---@private
+---@param arg0 int
+---@param arg1 float
+---@return void
+function WeatherPeriod:createSingleStage(arg0, arg1) end
+
+---@public
+---@return ClimateColorInfo
+function WeatherPeriod:getCloudColorReddish() end
+
+---@public
+---@return ClimateManager.AirFront
+function WeatherPeriod:getFrontCache() end
+
+---@public
+---@param arg0 ByteBuffer
+---@return void
+function WeatherPeriod:writeNetWeatherData(arg0) end
+
+---@public
+---@return boolean
+function WeatherPeriod:isRunning() end
 
 ---@public
 ---@param arg0 int
@@ -326,46 +332,12 @@ function WeatherPeriod:createAndAddStage(arg0, arg1) end
 function WeatherPeriod:createAndAddStage(arg0, arg1, arg2) end
 
 ---@public
----@return void
-function WeatherPeriod:stopWeatherPeriod() end
-
----@public
----@return float
-function WeatherPeriod:getWindAngleDegrees() end
-
----@private
 ---@return boolean
-function WeatherPeriod:endInit() end
+function WeatherPeriod:getPrintStuff() end
 
 ---@public
----@return ClimateManager.AirFront
-function WeatherPeriod:getFrontCache() end
-
----@private
----@param arg0 int
----@param arg1 float
----@return void
-function WeatherPeriod:createSingleStage(arg0, arg1) end
-
----@private
----@return void
-function WeatherPeriod:resetClimateManagerOverrides() end
-
----@public
----@return int
-function WeatherPeriod:getCurrentStageID() end
-
----@public
----@return boolean
-function WeatherPeriod:endCreateModdedPeriod() end
-
----@public
----@return WeatherPeriod.WeatherStage
-function WeatherPeriod:getCurrentStage() end
-
----@public
----@return boolean
-function WeatherPeriod:hasTropical() end
+---@return ClimateColorInfo
+function WeatherPeriod:getCloudColorGreenish() end
 
 ---@public
 ---@param arg0 int
@@ -373,14 +345,17 @@ function WeatherPeriod:hasTropical() end
 ---@return void
 function WeatherPeriod:setKateBobStormCoords(arg0, arg1) end
 
+---@private
+---@return void
+function WeatherPeriod:resetClimateManagerOverrides() end
+
 ---@public
 ---@return ArrayList|Unknown
 function WeatherPeriod:getWeatherStages() end
 
 ---@public
----@param arg0 double
----@return WeatherPeriod.WeatherStage
-function WeatherPeriod:getStageForWorldAge(arg0) end
+---@return boolean
+function WeatherPeriod:isTropicalStorm() end
 
 ---@public
 ---@param arg0 boolean
@@ -388,7 +363,32 @@ function WeatherPeriod:getStageForWorldAge(arg0) end
 function WeatherPeriod:setPrintStuff(arg0) end
 
 ---@public
----@param arg0 DataInputStream
----@param arg1 int
+---@param arg0 double
+---@return WeatherPeriod.WeatherStage
+function WeatherPeriod:getStageForWorldAge(arg0) end
+
+---@public
 ---@return void
-function WeatherPeriod:load(arg0, arg1) end
+function WeatherPeriod:stopWeatherPeriod() end
+
+---@public
+---@return float
+function WeatherPeriod:getWindAngleDegrees() end
+
+---@public
+---@return ClimateColorInfo
+function WeatherPeriod:getCloudColorTropical() end
+
+---@public
+---@param arg0 String
+---@param arg1 double
+---@return WeatherPeriod.WeatherStage
+function WeatherPeriod:createAndAddModdedStage(arg0, arg1) end
+
+---@public
+---@return float
+function WeatherPeriod:getTotalProgress() end
+
+---@public
+---@return int
+function WeatherPeriod:getCurrentStageID() end

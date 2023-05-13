@@ -8,5 +8,4 @@ local function TNT_Fart ()
 	end
 end
 
-
 Events.EveryTenMinutes.Add(TNT_Fart)

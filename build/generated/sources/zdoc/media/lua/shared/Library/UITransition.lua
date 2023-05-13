@@ -11,11 +11,23 @@ UITransition = {}
 
 ---@public
 ---@return void
-function UITransition:UpdateAll() end
+function UITransition:update() end
+
+---@public
+---@return float
+function UITransition:fraction() end
 
 ---@public
 ---@return void
-function UITransition:update() end
+function UITransition:reset() end
+
+---@public
+---@return float
+function UITransition:getElapsed() end
+
+---@public
+---@return void
+function UITransition:UpdateAll() end
 
 ---@public
 ---@param arg0 boolean
@@ -29,23 +41,11 @@ function UITransition:setFadeIn(arg0) end
 function UITransition:init(arg0, arg1) end
 
 ---@public
----@param arg0 boolean
----@return void
-function UITransition:setIgnoreUpdateTime(arg0) end
-
----@public
----@return void
-function UITransition:reset() end
-
----@public
 ---@param arg0 float
 ---@return void
 function UITransition:setElapsed(arg0) end
 
 ---@public
----@return float
-function UITransition:getElapsed() end
-
----@public
----@return float
-function UITransition:fraction() end
+---@param arg0 boolean
+---@return void
+function UITransition:setIgnoreUpdateTime(arg0) end

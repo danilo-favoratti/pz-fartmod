@@ -4,9 +4,13 @@
 WorldMapMarkersV1 = {}
 
 ---@public
----@param arg0 WorldMapMarkersV1.WorldMapMarkerV1
+---@param arg0 LuaManager.Exposer
 ---@return void
-function WorldMapMarkersV1:removeMarker(arg0) end
+function WorldMapMarkersV1:setExposed(arg0) end
+
+---@public
+---@return void
+function WorldMapMarkersV1:clear() end
 
 ---@public
 ---@param arg0 int
@@ -20,10 +24,6 @@ function WorldMapMarkersV1:removeMarker(arg0) end
 function WorldMapMarkersV1:addGridSquareMarker(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 
 ---@public
----@param arg0 LuaManager.Exposer
+---@param arg0 WorldMapMarkersV1.WorldMapMarkerV1
 ---@return void
-function WorldMapMarkersV1:setExposed(arg0) end
-
----@public
----@return void
-function WorldMapMarkersV1:clear() end
+function WorldMapMarkersV1:removeMarker(arg0) end

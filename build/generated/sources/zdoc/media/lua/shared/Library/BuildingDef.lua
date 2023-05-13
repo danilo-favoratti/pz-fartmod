@@ -24,141 +24,8 @@
 BuildingDef = {}
 
 ---@public
----@param arg0 String
----@return boolean
-function BuildingDef:containsRoom(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@return long
-function BuildingDef:calculateMetaID(arg0, arg1) end
-
----@public
----@return int
-function BuildingDef:getChunkX() end
-
----@public
----@return int
-function BuildingDef:getX() end
-
----@public
----@return void
-function BuildingDef:refreshSquares() end
-
----@public
----@param arg0 boolean
----@return void
-function BuildingDef:setAllExplored(arg0) end
-
----@public
----@return boolean
-function BuildingDef:isAlarmed() end
-
----@public
----@return int
-function BuildingDef:getY2() end
-
----@public
----@return KahluaTable
-function BuildingDef:getTable() end
-
----@public
----@return int
-function BuildingDef:getY() end
-
----@public
----@param arg0 float
----@param arg1 float
----@param arg2 Vector2f
----@return float
-function BuildingDef:getClosestPoint(arg0, arg1, arg2) end
-
----@public
----@return boolean
-function BuildingDef:isHasBeenVisited() end
-
----@public
----@return int
-function BuildingDef:getChunkY() end
-
----@public
----@param arg0 int
----@return void
-function BuildingDef:setKeySpawned(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function BuildingDef:setHasBeenVisited(arg0) end
-
----@public
----@return boolean
-function BuildingDef:isAnyChunkNewlyLoaded() end
-
----@public
 ---@return int
 function BuildingDef:getW() end
-
----@public
----@param arg0 String
----@return RoomDef
-function BuildingDef:getRoom(arg0) end
-
----@public
----@return IsoMetaGrid.Zone
-function BuildingDef:getZone() end
-
----@public
----@return boolean
-function BuildingDef:isAllExplored() end
-
----@public
----@return int
-function BuildingDef:getID() end
-
----@public
----@return RoomDef
-function BuildingDef:getFirstRoom() end
-
----@public
----@param arg0 ArrayList|Unknown
----@return void
-function BuildingDef:CalculateBounds(arg0) end
-
----@public
----@return IsoGridSquare
-function BuildingDef:getFreeSquareInRoom() end
-
----@public
----@param arg0 boolean
----@return void
-function BuildingDef:setAlarmed(arg0) end
-
----@public
----@return void
-function BuildingDef:Dispose() end
-
----@public
----@param arg0 int
----@return void
-function BuildingDef:setKeyId(arg0) end
-
----@public
----@return int
-function BuildingDef:getH() end
-
----@public
----@return boolean
-function BuildingDef:isFullyStreamedIn() end
-
----@public
----@return int
-function BuildingDef:getKeyId() end
-
----@public
----@return ArrayList|Unknown
-function BuildingDef:getRooms() end
 
 ---@public
 ---@return int
@@ -175,10 +42,143 @@ function BuildingDef:getKeySpawned() end
 function BuildingDef:overlapsChunk(arg0, arg1) end
 
 ---@public
+---@return boolean
+function BuildingDef:isAllExplored() end
+
+---@public
+---@return int
+function BuildingDef:getH() end
+
+---@public
 ---@param arg0 int
 ---@return RoomDef
 function BuildingDef:getRandomRoom(arg0) end
 
 ---@public
 ---@return void
+function BuildingDef:Dispose() end
+
+---@public
+---@return void
 function BuildingDef:recalculate() end
+
+---@public
+---@param arg0 String
+---@return boolean
+function BuildingDef:containsRoom(arg0) end
+
+---@public
+---@return int
+function BuildingDef:getKeyId() end
+
+---@public
+---@return KahluaTable
+function BuildingDef:getTable() end
+
+---@public
+---@return int
+function BuildingDef:getY2() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function BuildingDef:setAllExplored(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function BuildingDef:setKeyId(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return long
+function BuildingDef:calculateMetaID(arg0, arg1) end
+
+---@public
+---@param arg0 String
+---@return RoomDef
+function BuildingDef:getRoom(arg0) end
+
+---@public
+---@return boolean
+function BuildingDef:isFullyStreamedIn() end
+
+---@public
+---@return boolean
+function BuildingDef:isAnyChunkNewlyLoaded() end
+
+---@public
+---@return int
+function BuildingDef:getChunkY() end
+
+---@public
+---@return int
+function BuildingDef:getY() end
+
+---@public
+---@return RoomDef
+function BuildingDef:getFirstRoom() end
+
+---@public
+---@param arg0 ArrayList|Unknown
+---@return void
+function BuildingDef:CalculateBounds(arg0) end
+
+---@public
+---@return int
+function BuildingDef:getID() end
+
+---@public
+---@return void
+function BuildingDef:refreshSquares() end
+
+---@public
+---@return IsoGridSquare
+function BuildingDef:getFreeSquareInRoom() end
+
+---@public
+---@return ArrayList|Unknown
+function BuildingDef:getRooms() end
+
+---@public
+---@return int
+function BuildingDef:getX() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function BuildingDef:setHasBeenVisited(arg0) end
+
+---@public
+---@return int
+function BuildingDef:getChunkX() end
+
+---@public
+---@return boolean
+function BuildingDef:isAlarmed() end
+
+---@public
+---@param arg0 int
+---@return void
+function BuildingDef:setKeySpawned(arg0) end
+
+---@public
+---@return IsoMetaGrid.Zone
+function BuildingDef:getZone() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function BuildingDef:setAlarmed(arg0) end
+
+---@public
+---@param arg0 float
+---@param arg1 float
+---@param arg2 Vector2f
+---@return float
+function BuildingDef:getClosestPoint(arg0, arg1, arg2) end
+
+---@public
+---@return boolean
+function BuildingDef:isHasBeenVisited() end

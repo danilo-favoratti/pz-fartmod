@@ -6,43 +6,30 @@
 ---@field private NextCircleIsoMarkerID int
 IsoMarkers = {}
 
+---@private
+---@return void
+function IsoMarkers:updateIsoMarkers() end
+
 ---@public
----@param arg0 IsoGridSquare
----@param arg1 float
----@param arg2 float
----@param arg3 float
----@param arg4 float
+---@param arg0 int
+---@return IsoMarkers.IsoMarker
+function IsoMarkers:getIsoMarker(arg0) end
+
+---@public
+---@param arg0 int
 ---@return IsoMarkers.CircleIsoMarker
-function IsoMarkers:addCircleIsoMarker(arg0, arg1, arg2, arg3, arg4) end
+function IsoMarkers:getCircleIsoMarker(arg0) end
+
+---@public
+---@return void
+function IsoMarkers:render() end
 
 ---@public
 ---@param arg0 IsoCell.PerPlayerRender
 ---@param arg1 int
 ---@param arg2 int
 ---@return void
-function IsoMarkers:renderIsoMarkersDeferred(arg0, arg1, arg2) end
-
----@public
----@param arg0 IsoMarkers.CircleIsoMarker
----@return boolean
----@overload fun(arg0:int)
-function IsoMarkers:removeCircleIsoMarker(arg0) end
-
----@public
----@param arg0 int
----@return boolean
-function IsoMarkers:removeCircleIsoMarker(arg0) end
-
----@public
----@param arg0 int
----@return boolean
----@overload fun(arg0:IsoMarkers.IsoMarker)
-function IsoMarkers:removeIsoMarker(arg0) end
-
----@public
----@param arg0 IsoMarkers.IsoMarker
----@return boolean
-function IsoMarkers:removeIsoMarker(arg0) end
+function IsoMarkers:renderIsoMarkers(arg0, arg1, arg2) end
 
 ---@public
 ---@param arg0 String
@@ -85,40 +72,50 @@ function IsoMarkers:addIsoMarker(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7)
 function IsoMarkers:addIsoMarker(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10) end
 
 ---@public
----@return void
-function IsoMarkers:reset() end
-
----@public
----@param arg0 IsoCell.PerPlayerRender
----@param arg1 int
----@param arg2 int
----@return void
-function IsoMarkers:renderCircleIsoMarkers(arg0, arg1, arg2) end
-
----@public
----@param arg0 IsoCell.PerPlayerRender
----@param arg1 int
----@param arg2 int
----@return void
-function IsoMarkers:renderIsoMarkers(arg0, arg1, arg2) end
-
----@public
----@return void
-function IsoMarkers:init() end
-
----@public
 ---@param arg0 int
----@return IsoMarkers.CircleIsoMarker
-function IsoMarkers:getCircleIsoMarker(arg0) end
+---@return boolean
+---@overload fun(arg0:IsoMarkers.IsoMarker)
+function IsoMarkers:removeIsoMarker(arg0) end
+
+---@public
+---@param arg0 IsoMarkers.IsoMarker
+---@return boolean
+function IsoMarkers:removeIsoMarker(arg0) end
 
 ---@private
 ---@return void
 function IsoMarkers:updateCircleIsoMarkers() end
 
 ---@public
+---@param arg0 IsoGridSquare
+---@param arg1 float
+---@param arg2 float
+---@param arg3 float
+---@param arg4 float
+---@return IsoMarkers.CircleIsoMarker
+function IsoMarkers:addCircleIsoMarker(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@param arg0 IsoMarkers.CircleIsoMarker
+---@return boolean
+---@overload fun(arg0:int)
+function IsoMarkers:removeCircleIsoMarker(arg0) end
+
+---@public
 ---@param arg0 int
----@return IsoMarkers.IsoMarker
-function IsoMarkers:getIsoMarker(arg0) end
+---@return boolean
+function IsoMarkers:removeCircleIsoMarker(arg0) end
+
+---@public
+---@param arg0 IsoCell.PerPlayerRender
+---@param arg1 int
+---@param arg2 int
+---@return void
+function IsoMarkers:renderIsoMarkersDeferred(arg0, arg1, arg2) end
+
+---@public
+---@return void
+function IsoMarkers:update() end
 
 ---@public
 ---@param arg0 IsoCell.PerPlayerRender
@@ -129,12 +126,15 @@ function IsoMarkers:renderIsoMarkersOnSquare(arg0, arg1, arg2) end
 
 ---@public
 ---@return void
-function IsoMarkers:update() end
+function IsoMarkers:init() end
 
 ---@public
 ---@return void
-function IsoMarkers:render() end
+function IsoMarkers:reset() end
 
----@private
+---@public
+---@param arg0 IsoCell.PerPlayerRender
+---@param arg1 int
+---@param arg2 int
 ---@return void
-function IsoMarkers:updateIsoMarkers() end
+function IsoMarkers:renderCircleIsoMarkers(arg0, arg1, arg2) end

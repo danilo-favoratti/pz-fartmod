@@ -2,13 +2,13 @@
 ServerOptions_TextServerOption = {}
 
 ---@public
----@return String
-function ServerOptions_TextServerOption:getTooltip() end
+---@return ConfigOption
+function ServerOptions_TextServerOption:asConfigOption() end
 
 ---@public
 ---@return String
 function ServerOptions_TextServerOption:getType() end
 
 ---@public
----@return ConfigOption
-function ServerOptions_TextServerOption:asConfigOption() end
+---@return String
+function ServerOptions_TextServerOption:getTooltip() end

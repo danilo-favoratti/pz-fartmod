@@ -4,44 +4,50 @@
 TraitCollection = {}
 
 ---@public
+---@return String
+function TraitCollection:toString() end
+
+---@private
+---@param arg0 int
+---@return TraitCollection.TraitSlot
+function TraitCollection:getSlotInternal(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function TraitCollection:add(arg0) end
+
+---@public
+---@param arg0 String
+---@param arg1 boolean
+---@return void
+function TraitCollection:set(arg0, arg1) end
+
+---@public
 ---@param arg0 String
 ---@return boolean
 ---@overload fun(arg0:Object)
-function TraitCollection:remove(arg0) end
+function TraitCollection:contains(arg0) end
 
 ---@public
 ---@param arg0 Object
 ---@return boolean
-function TraitCollection:remove(arg0) end
-
----@private
----@param arg0 String
----@return TraitCollection.TraitSlot
-function TraitCollection:getOrCreateSlotInternal(arg0) end
-
----@public
----@return void
-function TraitCollection:clear() end
+function TraitCollection:contains(arg0) end
 
 ---@public
 ---@param arg0 Object
 ---@return boolean
 ---@overload fun(arg0:String)
-function TraitCollection:contains(arg0) end
+function TraitCollection:remove(arg0) end
 
 ---@public
 ---@param arg0 String
 ---@return boolean
-function TraitCollection:contains(arg0) end
+function TraitCollection:remove(arg0) end
 
 ---@public
----@return boolean
-function TraitCollection:isEmpty() end
-
----@public
----@param arg0 Collection|Unknown
 ---@return void
-function TraitCollection:addAll(arg0) end
+function TraitCollection:clear() end
 
 ---@private
 ---@param arg0 int
@@ -54,14 +60,23 @@ function TraitCollection:deactivateTraitSlot(arg0) end
 function TraitCollection:getTraitSlot(arg0) end
 
 ---@public
+---@return int
+function TraitCollection:size() end
+
+---@private
+---@param arg0 String
+---@return int
+function TraitCollection:indexOfTrait(arg0) end
+
+---@private
+---@param arg0 String
+---@return TraitCollection.TraitSlot
+function TraitCollection:getOrCreateSlotInternal(arg0) end
+
+---@public
 ---@param arg0 Collection|Unknown
 ---@return void
 function TraitCollection:removeAll(arg0) end
-
----@public
----@param arg0 String
----@return void
-function TraitCollection:add(arg0) end
 
 ---@public
 ---@param arg0 int
@@ -69,25 +84,10 @@ function TraitCollection:add(arg0) end
 function TraitCollection:get(arg0) end
 
 ---@public
----@return String
-function TraitCollection:toString() end
+---@return boolean
+function TraitCollection:isEmpty() end
 
 ---@public
----@param arg0 String
----@param arg1 boolean
+---@param arg0 Collection|Unknown
 ---@return void
-function TraitCollection:set(arg0, arg1) end
-
----@private
----@param arg0 String
----@return int
-function TraitCollection:indexOfTrait(arg0) end
-
----@public
----@return int
-function TraitCollection:size() end
-
----@private
----@param arg0 int
----@return TraitCollection.TraitSlot
-function TraitCollection:getSlotInternal(arg0) end
+function TraitCollection:addAll(arg0) end

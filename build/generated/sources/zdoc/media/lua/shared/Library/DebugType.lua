@@ -39,10 +39,10 @@ DebugType = {}
 function DebugType:valueOf(arg0) end
 
 ---@public
----@return DebugType[]
-function DebugType:values() end
-
----@public
 ---@param arg0 DebugType
 ---@return boolean
 function DebugType:Do(arg0) end
+
+---@public
+---@return DebugType[]
+function DebugType:values() end

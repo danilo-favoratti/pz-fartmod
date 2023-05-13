@@ -8,10 +8,10 @@
 ---@field private previewSound GameSounds.IPreviewSound
 GameSounds = {}
 
----@public
----@param arg0 String
----@return GameSound
-function GameSounds:getOrCreateSound(arg0) end
+---@private
+---@param arg0 GameSound
+---@return void
+function GameSounds:initClipEvents(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -23,18 +23,9 @@ function GameSounds:getSound(arg0) end
 function GameSounds:saveINI() end
 
 ---@public
----@param arg0 String
----@return boolean
-function GameSounds:isKnownSound(arg0) end
-
----@public
----@return ArrayList|Unknown
-function GameSounds:getCategories() end
-
----@private
----@param arg0 GameSound
+---@param arg0 boolean
 ---@return void
-function GameSounds:initClipEvents(arg0) end
+function GameSounds:fix3DListenerPosition(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -43,17 +34,16 @@ function GameSounds:ReloadFile(arg0) end
 
 ---@public
 ---@param arg0 String
----@return ArrayList|Unknown
-function GameSounds:getSoundsInCategory(arg0) end
+---@return GameSound
+function GameSounds:getOrCreateSound(arg0) end
 
 ---@public
----@param arg0 GameSound
----@return void
-function GameSounds:addSound(arg0) end
+---@return boolean
+function GameSounds:isPreviewPlaying() end
 
 ---@public
 ---@return void
-function GameSounds:ScriptsLoaded() end
+function GameSounds:Reset() end
 
 ---@public
 ---@return void
@@ -61,7 +51,11 @@ function GameSounds:loadINI() end
 
 ---@public
 ---@return void
-function GameSounds:Reset() end
+function GameSounds:stopPreview() end
+
+---@public
+---@return void
+function GameSounds:ScriptsLoaded() end
 
 ---@public
 ---@param arg0 String
@@ -69,18 +63,24 @@ function GameSounds:Reset() end
 function GameSounds:previewSound(arg0) end
 
 ---@public
----@return void
-function GameSounds:stopPreview() end
-
----@public
----@return boolean
-function GameSounds:isPreviewPlaying() end
-
----@public
----@param arg0 boolean
----@return void
-function GameSounds:fix3DListenerPosition(arg0) end
+---@param arg0 String
+---@return ArrayList|Unknown
+function GameSounds:getSoundsInCategory(arg0) end
 
 ---@private
 ---@return void
 function GameSounds:loadNonBankSounds() end
+
+---@public
+---@param arg0 GameSound
+---@return void
+function GameSounds:addSound(arg0) end
+
+---@public
+---@return ArrayList|Unknown
+function GameSounds:getCategories() end
+
+---@public
+---@param arg0 String
+---@return boolean
+function GameSounds:isKnownSound(arg0) end

@@ -16,9 +16,9 @@ function LuaTimedAction:stop() end
 function LuaTimedAction:update() end
 
 ---@public
----@return void
-function LuaTimedAction:perform() end
-
----@public
 ---@return boolean
 function LuaTimedAction:valid() end
+
+---@public
+---@return void
+function LuaTimedAction:perform() end

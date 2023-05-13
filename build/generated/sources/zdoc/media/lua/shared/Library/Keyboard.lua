@@ -141,25 +141,15 @@ Keyboard = {}
 
 ---@public
 ---@return boolean
-function Keyboard:areRepeatEventsEnabled() end
-
----@public
----@return boolean
 function Keyboard:getEventKeyState() end
-
----@public
----@param arg0 int
----@return String
-function Keyboard:getKeyName(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function Keyboard:enableRepeatEvents(arg0) end
 
 ---@public
 ---@return char
 function Keyboard:getEventCharacter() end
+
+---@public
+---@return boolean
+function Keyboard:areRepeatEventsEnabled() end
 
 ---@public
 ---@return boolean
@@ -170,17 +160,9 @@ function Keyboard:next() end
 function Keyboard:isRepeatEvent() end
 
 ---@public
----@param arg0 char
----@return void
-function Keyboard:addCharEvent(arg0) end
-
----@public
----@return void
-function Keyboard:create() end
-
----@public
----@return int
-function Keyboard:getEventKey() end
+---@param arg0 int
+---@return String
+function Keyboard:getKeyName(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -188,22 +170,15 @@ function Keyboard:getEventKey() end
 function Keyboard:getKeyIndex(arg0) end
 
 ---@public
+---@param arg0 boolean
+---@return void
+function Keyboard:enableRepeatEvents(arg0) end
+
+---@public
 ---@param arg0 int
 ---@param arg1 int
 ---@return void
 function Keyboard:addKeyEvent(arg0, arg1) end
-
----@public
----@return void
-function Keyboard:poll() end
-
----@public
----@return void
-function Keyboard:initKeyNames() end
-
----@public
----@return void
-function Keyboard:destroy() end
 
 ---@public
 ---@return boolean
@@ -214,6 +189,31 @@ function Keyboard:isCreated() end
 function Keyboard:getEventNanoseconds() end
 
 ---@public
+---@return void
+function Keyboard:initKeyNames() end
+
+---@public
+---@return int
+function Keyboard:getEventKey() end
+
+---@public
+---@return void
+function Keyboard:poll() end
+
+---@public
+---@return void
+function Keyboard:create() end
+
+---@public
 ---@param arg0 int
 ---@return boolean
 function Keyboard:isKeyDown(arg0) end
+
+---@public
+---@param arg0 char
+---@return void
+function Keyboard:addCharEvent(arg0) end
+
+---@public
+---@return void
+function Keyboard:destroy() end

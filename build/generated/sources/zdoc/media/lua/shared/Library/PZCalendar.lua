@@ -8,22 +8,13 @@ PZCalendar = {}
 function PZCalendar:isLeapYear(arg0) end
 
 ---@public
+---@return PZCalendar
+function PZCalendar:getInstance() end
+
+---@public
 ---@param arg0 int
 ---@return int
 function PZCalendar:get(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 int
----@return void
-function PZCalendar:set(arg0, arg1, arg2, arg3, arg4) end
-
----@public
----@return long
-function PZCalendar:getTimeInMillis() end
 
 ---@public
 ---@param arg0 long
@@ -35,5 +26,14 @@ function PZCalendar:setTimeInMillis(arg0) end
 function PZCalendar:getTime() end
 
 ---@public
----@return PZCalendar
-function PZCalendar:getInstance() end
+---@return long
+function PZCalendar:getTimeInMillis() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@param arg4 int
+---@return void
+function PZCalendar:set(arg0, arg1, arg2, arg3, arg4) end

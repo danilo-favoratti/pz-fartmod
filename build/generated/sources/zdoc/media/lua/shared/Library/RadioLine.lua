@@ -8,34 +8,8 @@
 RadioLine = {}
 
 ---@public
----@return boolean
-function RadioLine:isCustomAirTime() end
-
----@public
----@param arg0 String
----@return void
-function RadioLine:setText(arg0) end
-
----@public
----@param arg0 float
----@return void
-function RadioLine:setAirTime(arg0) end
-
----@public
 ---@return float
-function RadioLine:getAirTime() end
-
----@public
----@return float
-function RadioLine:getG() end
-
----@public
----@return float
-function RadioLine:getR() end
-
----@public
----@return String
-function RadioLine:getEffectsString() end
+function RadioLine:getB() end
 
 ---@public
 ---@return String
@@ -43,4 +17,30 @@ function RadioLine:getText() end
 
 ---@public
 ---@return float
-function RadioLine:getB() end
+function RadioLine:getR() end
+
+---@public
+---@param arg0 float
+---@return void
+function RadioLine:setAirTime(arg0) end
+
+---@public
+---@return String
+function RadioLine:getEffectsString() end
+
+---@public
+---@return boolean
+function RadioLine:isCustomAirTime() end
+
+---@public
+---@return float
+function RadioLine:getG() end
+
+---@public
+---@param arg0 String
+---@return void
+function RadioLine:setText(arg0) end
+
+---@public
+---@return float
+function RadioLine:getAirTime() end

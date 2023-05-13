@@ -12,28 +12,28 @@ RadialProgressBar = {}
 function RadialProgressBar:update() end
 
 ---@public
+---@return void
+function RadialProgressBar:render() end
+
+---@public
 ---@param arg0 float
 ---@return void
 function RadialProgressBar:setValue(arg0) end
 
 ---@public
----@return float
-function RadialProgressBar:getValue() end
-
----@public
 ---@return Texture
 function RadialProgressBar:getTexture() end
 
----@public
+---@private
+---@param arg0 Texture
 ---@return void
-function RadialProgressBar:render() end
+function RadialProgressBar:printTexture(arg0) end
 
 ---@public
 ---@param arg0 Texture
 ---@return void
 function RadialProgressBar:setTexture(arg0) end
 
----@private
----@param arg0 Texture
----@return void
-function RadialProgressBar:printTexture(arg0) end
+---@public
+---@return float
+function RadialProgressBar:getValue() end

@@ -22,46 +22,22 @@
 ---@field private data char[]
 AngelCodeFont = {}
 
----@public
----@param arg0 String
----@return int
----@overload fun(arg0:String, arg1:boolean)
----@overload fun(arg0:String, arg1:int, arg2:int)
----@overload fun(arg0:String, arg1:int, arg2:int, arg3:boolean)
-function AngelCodeFont:getWidth(arg0) end
-
----@public
----@param arg0 String
----@param arg1 boolean
----@return int
-function AngelCodeFont:getWidth(arg0, arg1) end
-
----@public
----@param arg0 String
----@param arg1 int
----@param arg2 int
----@return int
-function AngelCodeFont:getWidth(arg0, arg1, arg2) end
-
----@public
----@param arg0 String
----@param arg1 int
----@param arg2 int
----@param arg3 boolean
----@return int
-function AngelCodeFont:getWidth(arg0, arg1, arg2, arg3) end
-
----@private
----@param arg0 InputStream
----@return void
-function AngelCodeFont:parseFnt(arg0) end
-
 ---@private
 ---@param arg0 String
 ---@param arg1 int
 ---@param arg2 int
 ---@return void
 function AngelCodeFont:render(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 String
+---@return int
+function AngelCodeFont:getHeight(arg0) end
+
+---@private
+---@param arg0 String
+---@return AngelCodeFont.CharDef
+function AngelCodeFont:parseChar(arg0) end
 
 ---@public
 ---@param arg0 float
@@ -145,29 +121,33 @@ function AngelCodeFont:drawString(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7
 function AngelCodeFont:drawString(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
 
 ---@public
----@param arg0 Asset.State
----@param arg1 Asset.State
----@param arg2 Asset
----@return void
-function AngelCodeFont:onStateChanged(arg0, arg1, arg2) end
-
----@public
+---@param arg0 String
 ---@return int
-function AngelCodeFont:getLineHeight() end
-
----@public
----@return boolean
-function AngelCodeFont:isEmpty() end
+---@overload fun(arg0:String, arg1:boolean)
+---@overload fun(arg0:String, arg1:int, arg2:int)
+---@overload fun(arg0:String, arg1:int, arg2:int, arg3:boolean)
+function AngelCodeFont:getWidth(arg0) end
 
 ---@public
 ---@param arg0 String
+---@param arg1 boolean
 ---@return int
-function AngelCodeFont:getYOffset(arg0) end
+function AngelCodeFont:getWidth(arg0, arg1) end
 
----@private
+---@public
 ---@param arg0 String
----@return AngelCodeFont.CharDef
-function AngelCodeFont:parseChar(arg0) end
+---@param arg1 int
+---@param arg2 int
+---@return int
+function AngelCodeFont:getWidth(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 String
+---@param arg1 int
+---@param arg2 int
+---@param arg3 boolean
+---@return int
+function AngelCodeFont:getWidth(arg0, arg1, arg2, arg3) end
 
 ---@public
 ---@return void
@@ -176,4 +156,24 @@ function AngelCodeFont:destroy() end
 ---@public
 ---@param arg0 String
 ---@return int
-function AngelCodeFont:getHeight(arg0) end
+function AngelCodeFont:getYOffset(arg0) end
+
+---@public
+---@return int
+function AngelCodeFont:getLineHeight() end
+
+---@private
+---@param arg0 InputStream
+---@return void
+function AngelCodeFont:parseFnt(arg0) end
+
+---@public
+---@param arg0 Asset.State
+---@param arg1 Asset.State
+---@param arg2 Asset
+---@return void
+function AngelCodeFont:onStateChanged(arg0, arg1, arg2) end
+
+---@public
+---@return boolean
+function AngelCodeFont:isEmpty() end

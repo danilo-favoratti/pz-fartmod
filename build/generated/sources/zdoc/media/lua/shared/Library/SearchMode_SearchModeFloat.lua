@@ -9,6 +9,41 @@
 SearchMode_SearchModeFloat = {}
 
 ---@public
+---@return float
+function SearchMode_SearchModeFloat:getInterior() end
+
+---@public
+---@return float
+function SearchMode_SearchModeFloat:getStepsize() end
+
+---@public
+---@param arg0 float
+---@return void
+function SearchMode_SearchModeFloat:setExterior(arg0) end
+
+---@public
+---@return void
+function SearchMode_SearchModeFloat:equalise() end
+
+---@public
+---@param arg0 float
+---@return void
+function SearchMode_SearchModeFloat:setInterior(arg0) end
+
+---@public
+---@return void
+function SearchMode_SearchModeFloat:reset() end
+
+---@public
+---@return float
+function SearchMode_SearchModeFloat:getMin() end
+
+---@public
+---@param arg0 float
+---@return void
+function SearchMode_SearchModeFloat:setTargetInterior(arg0) end
+
+---@public
 ---@param arg0 float
 ---@return void
 function SearchMode_SearchModeFloat:update(arg0) end
@@ -28,7 +63,15 @@ function SearchMode_SearchModeFloat:set(arg0, arg1, arg2, arg3) end
 
 ---@public
 ---@return float
+function SearchMode_SearchModeFloat:getTargetExterior() end
+
+---@public
+---@return float
 function SearchMode_SearchModeFloat:getMax() end
+
+---@public
+---@return float
+function SearchMode_SearchModeFloat:getTargetInterior() end
 
 ---@public
 ---@param arg0 float
@@ -38,47 +81,4 @@ function SearchMode_SearchModeFloat:setTargets(arg0, arg1) end
 
 ---@public
 ---@return float
-function SearchMode_SearchModeFloat:getTargetExterior() end
-
----@public
----@param arg0 float
----@return void
-function SearchMode_SearchModeFloat:setExterior(arg0) end
-
----@public
----@return float
 function SearchMode_SearchModeFloat:getExterior() end
-
----@public
----@return float
-function SearchMode_SearchModeFloat:getStepsize() end
-
----@public
----@return float
-function SearchMode_SearchModeFloat:getTargetInterior() end
-
----@public
----@return float
-function SearchMode_SearchModeFloat:getInterior() end
-
----@public
----@return void
-function SearchMode_SearchModeFloat:equalise() end
-
----@public
----@return void
-function SearchMode_SearchModeFloat:reset() end
-
----@public
----@return float
-function SearchMode_SearchModeFloat:getMin() end
-
----@public
----@param arg0 float
----@return void
-function SearchMode_SearchModeFloat:setTargetInterior(arg0) end
-
----@public
----@param arg0 float
----@return void
-function SearchMode_SearchModeFloat:setInterior(arg0) end

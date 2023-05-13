@@ -141,97 +141,162 @@
 IsoZombie = {}
 
 ---@public
----@param arg0 IsoGameCharacter
----@return void
-function IsoZombie:pathToCharacter(arg0) end
-
----@public
----@return boolean
-function IsoZombie:isReanimate() end
-
----@public
 ---@param arg0 float
 ---@return void
-function IsoZombie:addBlood(arg0) end
+---@overload fun(arg0:String)
+function IsoZombie:DoFootstepSound(arg0) end
 
 ---@public
----@param arg0 float
----@param arg1 float
----@param arg2 float
----@param arg3 ColorInfo
----@param arg4 boolean
----@param arg5 boolean
----@param arg6 Shader
+---@param arg0 String
 ---@return void
-function IsoZombie:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function IsoZombie:DoFootstepSound(arg0) end
 
 ---@public
----@return boolean
-function IsoZombie:isRemoteZombie() end
+---@return float
+function IsoZombie:getTargetSeenTime() end
 
 ---@public
----@param arg0 boolean
----@return void
-function IsoZombie:setFakeDead(arg0) end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 boolean
----@return void
-function IsoZombie:save(arg0, arg1) end
-
----@public
----@return HumanVisual
-function IsoZombie:getHumanVisual() end
-
----@public
----@return boolean
-function IsoZombie:shouldDoFenceLunge() end
-
----@public
----@return void
----@overload fun(arg0:boolean)
-function IsoZombie:DoZombieInventory() end
-
----@private
----@param arg0 boolean
----@return void
-function IsoZombie:DoZombieInventory(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@param arg1 HandWeapon
----@param arg2 JVector2
----@return Float
-function IsoZombie:calcHitDir(arg0, arg1, arg2) end
-
----@private
----@return void
-function IsoZombie:updateZombieTripping() end
+---@return HitReactionNetworkAI
+function IsoZombie:getHitReactionNetworkAI() end
 
 ---@public
 ---@param arg0 IsoMovingObject
----@param arg1 float
----@return void
-function IsoZombie:addAggro(arg0, arg1) end
+---@return boolean
+function IsoZombie:isLeadAggro(arg0) end
 
 ---@private
 ---@return void
-function IsoZombie:checkClimbThroughWindowHit() end
+function IsoZombie:processAggroList() end
 
 ---@public
----@param arg0 HandWeapon
----@param arg1 IsoGameCharacter
----@param arg2 boolean
----@param arg3 float
----@param arg4 boolean
+---@param arg0 int
 ---@return void
-function IsoZombie:hitConsequences(arg0, arg1, arg2, arg3, arg4) end
+function IsoZombie:setHitTime(arg0) end
+
+---@public
+---@return ItemVisuals
+---@overload fun(arg0:ItemVisuals)
+function IsoZombie:getItemVisuals() end
+
+---@public
+---@param arg0 ItemVisuals
+---@return void
+function IsoZombie:getItemVisuals(arg0) end
+
+---@public
+---@param arg0 BodyPartType
+---@param arg1 boolean
+---@return void
+function IsoZombie:addVisualBandage(arg0, arg1) end
+
+---@public
+---@return boolean
+function IsoZombie:shouldDoInventory() end
+
+---@public
+---@return boolean
+function IsoZombie:isFakeDead() end
+
+---@public
+---@return void
+function IsoZombie:Wander() end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoZombie:setWalkType(arg0) end
+
+---@public
+---@return boolean
+---@overload fun(arg0:IsoMovingObject)
+function IsoZombie:isZombieAttacking() end
+
+---@public
+---@param arg0 IsoMovingObject
+---@return boolean
+function IsoZombie:isZombieAttacking(arg0) end
+
+---@public
+---@return boolean
+function IsoZombie:isSolidForSeparate() end
+
+---@public
+---@return void
+function IsoZombie:addRandomVisualDamages() end
+
+---@public
+---@return void
+function IsoZombie:playHurtSound() end
+
+---@public
+---@param arg0 float
+---@return void
+---@overload fun(arg0:int, arg1:int)
+function IsoZombie:setThumpCondition(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return void
+function IsoZombie:setThumpCondition(arg0, arg1) end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoZombie:setSkeleton(arg0) end
+function IsoZombie:setSitAgainstWall(arg0) end
+
+---@public
+---@return boolean
+function IsoZombie:isHitLegsWhileOnFloor() end
+
+---@public
+---@return void
+function IsoZombie:update() end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoZombie:setHitHeadWhileOnFloor(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:setCanCrawlUnderVehicle(arg0) end
+
+---@private
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@return void
+function IsoZombie:renderAtlasTexture(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 InventoryItem
+---@return void
+function IsoZombie:addItemToSpawnAtDeath(arg0) end
+
+---@private
+---@param arg0 HandWeapon
+---@param arg1 IsoGameCharacter
+---@return void
+function IsoZombie:processHitDirection(arg0, arg1) end
+
+---@public
+---@return NetworkCharacterAI
+function IsoZombie:getNetworkCharacterAI() end
+
+---@public
+---@return void
+function IsoZombie:onWornItemsChanged() end
+
+---@public
+---@return void
+function IsoZombie:preupdate() end
+
+---@public
+---@param arg0 int
+---@return int
+function IsoZombie:getScreenProperX(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
@@ -248,98 +313,61 @@ function IsoZombie:Kill(arg0, arg1) end
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoZombie:setStaggerBack(arg0) end
+function IsoZombie:setHitLegsWhileOnFloor(arg0) end
 
 ---@public
 ---@return void
-function IsoZombie:becomeCorpse() end
-
----@private
----@return void
-function IsoZombie:registerVariableCallbacks() end
-
----@public
----@param arg0 IsoMovingObject
----@param arg1 boolean
----@return void
-function IsoZombie:spotted(arg0, arg1) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoZombie:setFemaleEtc(arg0) end
-
----@public
----@param arg0 int
----@return void
-function IsoZombie:setCrawlerType(arg0) end
-
----@public
----@param arg0 JVector2
----@return void
-function IsoZombie:Move(arg0) end
-
----@public
----@return void
-function IsoZombie:initCanCrawlUnderVehicle() end
+function IsoZombie:DoCorpseInventory() end
 
 ---@public
 ---@return boolean
-function IsoZombie:isNoTeeth() end
+function IsoZombie:isTargetVisible() end
 
 ---@public
----@param arg0 BaseVehicle
----@return void
-function IsoZombie:setVehicleHitLocation(arg0) end
+---@return float
+function IsoZombie:getTurnDelta() end
 
 ---@public
----@return void
-function IsoZombie:clearItemsToSpawnAtDeath() end
+---@return boolean
+function IsoZombie:isSitAgainstWall() end
 
----@public
+---@protected
 ---@param arg0 int
----@return void
-function IsoZombie:setThumpTimer(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoZombie:setCrawler(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoZombie:setImmortalTutorialZombie(arg0) end
-
----@public
----@return IsoPlayer
-function IsoZombie:getReanimatedPlayer() end
-
----@public
----@param arg0 float
 ---@param arg1 float
 ---@param arg2 float
 ---@return void
-function IsoZombie:pathToLocationF(arg0, arg1, arg2) end
+function IsoZombie:updateAlpha(arg0, arg1, arg2) end
+
+---@protected
+---@return void
+function IsoZombie:calculateStats() end
+
+---@protected
+---@return int
+function IsoZombie:getSandboxMemoryDuration() end
+
+---@public
+---@return String
+function IsoZombie:getRealState() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoZombie:setAlwaysKnockedDown(arg0) end
+function IsoZombie:setJawStabAttach(arg0) end
 
 ---@public
----@param arg0 boolean
+---@param arg0 ActionContext
 ---@return void
-function IsoZombie:setCanWalk(arg0) end
+function IsoZombie:actionStateChanged(arg0) end
 
 ---@public
----@return boolean
-function IsoZombie:WanderFromWindow() end
-
----@public
----@param arg0 JVector2
+---@param arg0 SharedDescriptors.Descriptor
 ---@return void
-function IsoZombie:setHitAngle(arg0) end
+function IsoZombie:useDescriptor(arg0) end
+
+---@public
+---@return void
+function IsoZombie:initializeStates() end
 
 ---@public
 ---@param arg0 BaseVehicle
@@ -371,183 +399,60 @@ function IsoZombie:Hit(arg0, arg1, arg2, arg3, arg4) end
 function IsoZombie:Hit(arg0, arg1, arg2, arg3, arg4, arg5) end
 
 ---@public
----@param arg0 float
----@param arg1 float
----@return boolean
-function IsoZombie:isTargetInCone(arg0, arg1) end
+---@return void
+function IsoZombie:resetForReuse() end
 
 ---@public
----@param arg0 BaseVehicle
 ---@return boolean
-function IsoZombie:isVehicleCollisionActive(arg0) end
+function IsoZombie:isSkeleton() end
 
 ---@public
----@param arg0 float
----@return void
-function IsoZombie:DoZombieSpeeds(arg0) end
-
----@private
----@return void
-function IsoZombie:updateEatBodyTarget() end
+---@return SharedDescriptors.Descriptor
+function IsoZombie:getSharedDescriptor() end
 
 ---@public
----@param arg0 BaseVehicle
 ---@return boolean
-function IsoZombie:testCollideWithVehicles(arg0) end
+function IsoZombie:isProne() end
 
----@protected
----@param arg0 float
----@param arg1 float
+---@public
 ---@return boolean
-function IsoZombie:renderTextureInsteadOfModel(arg0, arg1) end
-
----@private
----@param arg0 String
----@return void
-function IsoZombie:renderTextureOverHead(arg0) end
+function IsoZombie:isKnifeDeath() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoZombie:setNoTeeth(arg0) end
+function IsoZombie:setReanimate(arg0) end
 
 ---@public
----@return boolean
-function IsoZombie:isOnlyJawStab() end
+---@param arg0 boolean
+---@return void
+function IsoZombie:setReanimatedPlayer(arg0) end
 
 ---@public
----@return String
-function IsoZombie:GetAnimSetName() end
+---@return float
+function IsoZombie:getThumpCondition() end
+
+---@private
+---@return void
+function IsoZombie:updateInternal() end
+
+---@public
+---@return void
+function IsoZombie:postupdate() end
+
+---@public
+---@return void
+function IsoZombie:updateVocalProperties() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:setForceFakeDead(arg0) end
 
 ---@public
 ---@param arg0 String
 ---@return void
 function IsoZombie:clothingItemChanged(arg0) end
-
----@public
----@return boolean
-function IsoZombie:isStaggerBack() end
-
----@public
----@param arg0 int
----@return void
-function IsoZombie:dressInPersistentOutfitID(arg0) end
-
----@public
----@return boolean
-function IsoZombie:isFacingTarget() end
-
----@public
----@return boolean
-function IsoZombie:isAlwaysKnockedDown() end
-
----@private
----@return void
-function IsoZombie:postUpdateInternal() end
-
----@public
----@return int
-function IsoZombie:getHitHeadWhileOnFloor() end
-
----@public
----@return boolean
-function IsoZombie:isTargetLocationKnown() end
-
----@public
----@param arg0 int
----@param arg1 int
----@return void
-function IsoZombie:setTurnAlertedValues(arg0, arg1) end
-
----@public
----@return void
----@overload fun(arg0:SurvivorDesc)
-function IsoZombie:InitSpritePartsZombie() end
-
----@public
----@param arg0 SurvivorDesc
----@return void
-function IsoZombie:InitSpritePartsZombie(arg0) end
-
----@public
----@return boolean
-function IsoZombie:isCanWalk() end
-
----@public
----@return ItemVisuals
----@overload fun(arg0:ItemVisuals)
-function IsoZombie:getItemVisuals() end
-
----@public
----@param arg0 ItemVisuals
----@return void
-function IsoZombie:getItemVisuals(arg0) end
-
----@public
----@return boolean
-function IsoZombie:isForceEatingAnimation() end
-
----@public
----@param arg0 float
----@return void
----@overload fun(arg0:int, arg1:int)
-function IsoZombie:setThumpCondition(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@return void
-function IsoZombie:setThumpCondition(arg0, arg1) end
-
----@public
----@return IsoMovingObject
-function IsoZombie:getEatBodyTarget() end
-
----@public
----@return void
-function IsoZombie:onMouseLeftClick() end
-
----@public
----@return IsoMovingObject
-function IsoZombie:getTarget() end
-
----@public
----@param arg0 String
----@return void
----@overload fun(arg0:float)
-function IsoZombie:DoFootstepSound(arg0) end
-
----@public
----@param arg0 float
----@return void
-function IsoZombie:DoFootstepSound(arg0) end
-
----@public
----@param arg0 String
----@return void
-function IsoZombie:dressInClothingItem(arg0) end
-
----@public
----@param arg0 JVector2
----@return void
-function IsoZombie:MoveUnmodded(arg0) end
-
----@public
----@return void
-function IsoZombie:removeFromWorld() end
-
----@public
----@return int
-function IsoZombie:getSharedDescriptorID() end
-
----@public
----@return boolean
-function IsoZombie:isUseless() end
-
----@public
----@param arg0 ByteBuffer
----@return void
-function IsoZombie:writeInventory(arg0) end
 
 ---@public
 ---@param arg0 IsoMovingObject
@@ -564,326 +469,120 @@ function IsoZombie:setEatBodyTarget(arg0, arg1) end
 function IsoZombie:setEatBodyTarget(arg0, arg1, arg2) end
 
 ---@public
+---@return void
+function IsoZombie:onMouseLeftClick() end
+
+---@public
+---@param arg0 int
+---@return int
+function IsoZombie:getScreenProperY(arg0) end
+
+---@public
+---@return boolean
+function IsoZombie:shouldGetUpFromCrawl() end
+
+---@public
+---@return boolean
+function IsoZombie:isStaggerBack() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:setUseless(arg0) end
+
+---@public
+---@param arg0 JVector2
+---@return void
+function IsoZombie:MoveUnmodded(arg0) end
+
+---@public
 ---@param arg0 ByteBuffer
+---@return void
+function IsoZombie:writeInventory(arg0) end
+
+---@public
+---@return float
+function IsoZombie:getEatSpeed() end
+
+---@public
+---@param arg0 int
 ---@param arg1 int
----@param arg2 boolean
 ---@return void
-function IsoZombie:load(arg0, arg1, arg2) end
-
----@public
----@param arg0 float
----@return void
-function IsoZombie:setTargetSeenTime(arg0) end
-
----@public
----@param arg0 IsoObject
----@return void
-function IsoZombie:collideWith(arg0) end
-
----@public
----@param arg0 String
----@return void
-function IsoZombie:dressInNamedOutfit(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoZombie:setJawStabAttach(arg0) end
-
----@public
----@param arg0 int
----@return void
-function IsoZombie:setThumpFlag(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoZombie:setHitLegsWhileOnFloor(arg0) end
-
----@public
----@param arg0 BaseVehicle
----@return void
-function IsoZombie:setVehicle4TestCollision(arg0) end
-
----@public
----@return void
-function IsoZombie:setAsSurvivor() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoZombie:setReanimatedPlayer(arg0) end
-
----@public
----@return float
-function IsoZombie:getTurnDelta() end
-
----@private
----@return void
-function IsoZombie:damageSheetRope() end
-
----@public
----@return String
-function IsoZombie:getObjectName() end
-
----@public
----@param arg0 ActionContext
----@return void
-function IsoZombie:actionStateChanged(arg0) end
-
----@public
----@return void
-function IsoZombie:renderlast() end
-
----@public
----@param arg0 IsoGridSquare
----@return boolean
-function IsoZombie:tryThump(arg0) end
-
----@public
----@return boolean
-function IsoZombie:isAttacking() end
-
----@public
----@return void
-function IsoZombie:DoCorpseInventory() end
-
----@private
----@param arg0 IsoGameCharacter
----@return boolean
-function IsoZombie:shouldBecomeCrawler(arg0) end
-
----@public
----@return void
-function IsoZombie:postupdate() end
-
----@public
----@return boolean
-function IsoZombie:isKnifeDeath() end
-
----@public
----@return void
-function IsoZombie:DoZombieStats() end
-
----@public
----@return boolean
-function IsoZombie:isProne() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoZombie:setKnifeDeath(arg0) end
-
----@public
----@return JVector2
-function IsoZombie:getHitAngle() end
-
----@public
----@return void
-function IsoZombie:resetForReuse() end
-
----@private
----@return void
-function IsoZombie:updateCharacterTextureAnimTime() end
-
----@public
----@return float
-function IsoZombie:getThumpCondition() end
-
----@public
----@return void
-function IsoZombie:initializeStates() end
-
----@public
----@return boolean
-function IsoZombie:isTargetVisible() end
-
----@public
----@return void
-function IsoZombie:addRandomBloodDirtHolesEtc() end
-
----@public
----@param arg0 int
----@return void
-function IsoZombie:setHitTime(arg0) end
-
----@public
----@return boolean
-function IsoZombie:isSolidForSeparate() end
-
----@public
----@return void
-function IsoZombie:addRandomVisualDamages() end
-
----@private
----@param arg0 HandWeapon
----@param arg1 IsoGameCharacter
----@return void
-function IsoZombie:processHitDirection(arg0, arg1) end
-
----@public
----@return boolean
----@overload fun(arg0:IsoMovingObject)
-function IsoZombie:isZombieAttacking() end
-
----@public
----@param arg0 IsoMovingObject
----@return boolean
-function IsoZombie:isZombieAttacking(arg0) end
-
----@public
----@param arg0 String
----@return void
-function IsoZombie:setWalkType(arg0) end
-
----@public
----@return boolean
-function IsoZombie:isLocal() end
-
----@public
----@return void
-function IsoZombie:Wander() end
-
----@public
----@return void
-function IsoZombie:update() end
-
----@public
----@return float
-function IsoZombie:getTargetSeenTime() end
-
----@public
----@return String
-function IsoZombie:getPlayerAttackPosition() end
-
----@public
----@return HitReactionNetworkAI
-function IsoZombie:getHitReactionNetworkAI() end
-
----@public
----@param arg0 SharedDescriptors.Descriptor
----@return void
-function IsoZombie:useDescriptor(arg0) end
-
----@public
----@return boolean
-function IsoZombie:isFakeDead() end
-
----@public
----@return boolean
-function IsoZombie:shouldDoInventory() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoZombie:setCanCrawlUnderVehicle(arg0) end
-
----@public
----@return boolean
-function IsoZombie:isSkeleton() end
-
----@private
----@return void
-function IsoZombie:processAggroList() end
-
----@public
----@return NetworkCharacterAI
-function IsoZombie:getNetworkCharacterAI() end
-
----@public
----@return void
-function IsoZombie:onWornItemsChanged() end
-
----@public
----@param arg0 IsoMovingObject
----@return boolean
-function IsoZombie:isLeadAggro(arg0) end
-
----@public
----@return void
-function IsoZombie:addRandomVisualBandages() end
-
----@public
----@param arg0 int
----@return void
-function IsoZombie:setHitHeadWhileOnFloor(arg0) end
-
----@public
----@return void
-function IsoZombie:playHurtSound() end
-
----@public
----@param arg0 int
----@return int
-function IsoZombie:getScreenProperX(arg0) end
-
----@public
----@param arg0 InventoryItem
----@return void
-function IsoZombie:addItemToSpawnAtDeath(arg0) end
-
----@public
----@param arg0 BodyPartType
----@param arg1 boolean
----@return void
-function IsoZombie:addVisualBandage(arg0, arg1) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoZombie:setSitAgainstWall(arg0) end
-
----@protected
----@param arg0 int
----@param arg1 float
----@param arg2 float
----@return void
-function IsoZombie:updateAlpha(arg0, arg1, arg2) end
-
----@public
----@return int
-function IsoZombie:getCrawlerType() end
-
----@public
----@return void
-function IsoZombie:preupdate() end
-
----@private
----@return void
-function IsoZombie:updateInternal() end
-
----@private
----@param arg0 float
----@param arg1 float
----@param arg2 float
----@return void
-function IsoZombie:renderAtlasTexture(arg0, arg1, arg2) end
+function IsoZombie:setTurnAlertedValues(arg0, arg1) end
 
 ---@public
 ---@return boolean
 function IsoZombie:isJawStabAttach() end
 
 ---@public
----@return void
-function IsoZombie:clearAggroList() end
+---@return boolean
+function IsoZombie:isCanWalk() end
 
 ---@public
+---@return void
+---@overload fun(arg0:boolean)
+function IsoZombie:DoZombieInventory() end
+
+---@private
 ---@param arg0 boolean
 ---@return void
-function IsoZombie:setDressInRandomOutfit(arg0) end
+function IsoZombie:DoZombieInventory(arg0) end
 
----@public
----@return int
-function IsoZombie:getThumpTimer() end
+---@private
+---@return void
+function IsoZombie:damageSheetRope() end
 
 ---@public
 ---@return boolean
-function IsoZombie:isPushableForSeparate() end
+function IsoZombie:isZombie() end
+
+---@private
+---@return void
+function IsoZombie:postUpdateInternal() end
 
 ---@public
----@param arg0 boolean
+---@param arg0 float
+---@param arg1 float
 ---@return void
-function IsoZombie:setWasFakeDead(arg0) end
+function IsoZombie:applyDamageFromVehicle(arg0, arg1) end
+
+---@public
+---@return void
+function IsoZombie:removeFromWorld() end
+
+---@public
+---@return int
+function IsoZombie:getHitTime() end
+
+---@public
+---@return int
+function IsoZombie:getHitHeadWhileOnFloor() end
+
+---@public
+---@return void
+function IsoZombie:dressInRandomOutfit() end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoZombie:dressInClothingItem(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoZombie:setPlayerAttackPosition(arg0) end
+
+---@public
+---@return boolean
+function IsoZombie:WanderFromWindow() end
+
+---@public
+---@return void
+function IsoZombie:RespondToSound() end
+
+---@public
+---@return void
+function IsoZombie:clearAggroList() end
 
 ---@public
 ---@param arg0 float
@@ -897,31 +596,20 @@ function IsoZombie:getZombieWalkTowardSpeed(arg0, arg1, arg2) end
 ---@return void
 function IsoZombie:setOnlyJawStab(arg0) end
 
----@public
----@return short
-function IsoZombie:getOnlineID() end
-
----@public
----@param arg0 boolean
+---@private
 ---@return void
-function IsoZombie:setForceEatingAnimation(arg0) end
+function IsoZombie:checkClimbThroughWindowHit() end
 
----@public
+---@private
+---@param arg0 IsoGameCharacter
 ---@return boolean
-function IsoZombie:isForceFakeDead() end
+function IsoZombie:shouldBecomeCrawler(arg0) end
 
 ---@public
+---@param arg0 IsoMovingObject
+---@param arg1 boolean
 ---@return void
-function IsoZombie:RespondToSound() end
-
----@public
----@return boolean
-function IsoZombie:isHitLegsWhileOnFloor() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoZombie:makeInactive(arg0) end
+function IsoZombie:spotted(arg0, arg1) end
 
 ---@public
 ---@param arg0 IsoMovingObject
@@ -930,93 +618,220 @@ function IsoZombie:setTarget(arg0) end
 
 ---@public
 ---@return void
-function IsoZombie:toggleCrawling() end
+---@overload fun(arg0:SurvivorDesc)
+function IsoZombie:InitSpritePartsZombie() end
 
----@protected
+---@public
+---@param arg0 SurvivorDesc
 ---@return void
-function IsoZombie:calculateStats() end
+function IsoZombie:InitSpritePartsZombie(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoZombie:setThumpTimer(arg0) end
+
+---@private
+---@return void
+function IsoZombie:updateCharacterTextureAnimTime() end
+
+---@public
+---@return String
+function IsoZombie:getPlayerAttackPosition() end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoZombie:dressInPersistentOutfitID(arg0) end
+
+---@public
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@return void
+function IsoZombie:pathToLocationF(arg0, arg1, arg2) end
+
+---@public
+---@return boolean
+function IsoZombie:isLocal() end
+
+---@public
+---@return boolean
+function IsoZombie:isNoTeeth() end
+
+---@public
+---@param arg0 BaseVehicle
+---@return boolean
+function IsoZombie:testCollideWithVehicles(arg0) end
+
+---@public
+---@return String
+function IsoZombie:GetAnimSetName() end
 
 ---@public
 ---@return BaseVisual
 function IsoZombie:getVisual() end
 
+---@private
+---@return void
+function IsoZombie:updateZombieTripping() end
+
 ---@protected
----@param arg0 AnimationPlayer
----@return void
-function IsoZombie:onAnimPlayerCreated(arg0) end
-
----@public
----@return float
-function IsoZombie:getEatSpeed() end
-
----@public
----@param arg0 String
----@return void
-function IsoZombie:setPlayerAttackPosition(arg0) end
-
----@public
+---@param arg0 float
+---@param arg1 float
 ---@return boolean
-function IsoZombie:isZombie() end
-
----@public
----@return boolean
-function IsoZombie:isBecomeCrawler() end
+function IsoZombie:renderTextureInsteadOfModel(arg0, arg1) end
 
 ---@public
 ---@param arg0 float
----@param arg1 float
 ---@return void
-function IsoZombie:applyDamageFromVehicle(arg0, arg1) end
+function IsoZombie:addBlood(arg0) end
 
 ---@public
----@return boolean
-function IsoZombie:shouldGetUpFromCrawl() end
+---@param arg0 ByteBuffer
+---@param arg1 boolean
+---@return void
+function IsoZombie:save(arg0, arg1) end
 
 ---@public
----@return int
-function IsoZombie:getHitTime() end
-
----@private
----@return void
-function IsoZombie:checkClimbOverFenceHit() end
+---@return HumanVisual
+function IsoZombie:getHumanVisual() end
 
 ---@public
 ---@return void
-function IsoZombie:dressInRandomOutfit() end
-
----@public
----@return boolean
-function IsoZombie:isUsingWornItems() end
+function IsoZombie:becomeCorpse() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoZombie:setUseless(arg0) end
+function IsoZombie:setBecomeCrawler(arg0) end
+
+---@public
+---@return void
+function IsoZombie:addRandomBloodDirtHolesEtc() end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoZombie:DoZombieSpeeds(arg0) end
+
+---@public
+---@param arg0 IsoDeadBody
+---@return void
+function IsoZombie:setBodyToEat(arg0) end
+
+---@private
+---@param arg0 String
+---@return void
+function IsoZombie:renderTextureOverHead(arg0) end
 
 ---@public
 ---@return boolean
-function IsoZombie:isCanCrawlUnderVehicle() end
+function IsoZombie:isRemoteZombie() end
+
+---@public
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@param arg3 ColorInfo
+---@param arg4 boolean
+---@param arg5 boolean
+---@param arg6 Shader
+---@return void
+function IsoZombie:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:setSkeleton(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:setStaggerBack(arg0) end
+
+---@public
+---@return boolean
+function IsoZombie:shouldDoFenceLunge() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:setAlwaysKnockedDown(arg0) end
+
+---@public
+---@param arg0 BaseVehicle
+---@return void
+function IsoZombie:setVehicle4TestCollision(arg0) end
+
+---@public
+---@param arg0 BaseVehicle
+---@return boolean
+function IsoZombie:isVehicleCollisionActive(arg0) end
 
 ---@public
 ---@param arg0 int
----@return int
-function IsoZombie:getScreenProperY(arg0) end
+---@return void
+function IsoZombie:setCrawlerType(arg0) end
 
 ---@public
----@return boolean
-function IsoZombie:isSitAgainstWall() end
-
----@public
----@return SharedDescriptors.Descriptor
-function IsoZombie:getSharedDescriptor() end
+---@param arg0 IsoGameCharacter
+---@return void
+function IsoZombie:pathToCharacter(arg0) end
 
 ---@public
 ---@return boolean
 function IsoZombie:wasFakeDead() end
 
 ---@public
----@return ActionContext
-function IsoZombie:getActionContext() end
+---@return void
+function IsoZombie:initCanCrawlUnderVehicle() end
+
+---@public
+---@param arg0 JVector2
+---@return void
+function IsoZombie:Move(arg0) end
+
+---@public
+---@param arg0 BaseVehicle
+---@return void
+function IsoZombie:setVehicleHitLocation(arg0) end
+
+---@public
+---@param arg0 HandWeapon
+---@param arg1 IsoGameCharacter
+---@param arg2 boolean
+---@param arg3 float
+---@param arg4 boolean
+---@return void
+function IsoZombie:hitConsequences(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@param arg0 IsoMovingObject
+---@param arg1 float
+---@return void
+function IsoZombie:addAggro(arg0, arg1) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:setFakeDead(arg0) end
+
+---@public
+---@return boolean
+function IsoZombie:isReanimate() end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@param arg1 HandWeapon
+---@param arg2 JVector2
+---@return Float
+function IsoZombie:calcHitDir(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:knockDown(arg0) end
 
 ---@public
 ---@param arg0 IsoMovingObject
@@ -1024,22 +839,82 @@ function IsoZombie:getActionContext() end
 function IsoZombie:isPushedByForSeparate(arg0) end
 
 ---@public
----@param arg0 boolean
 ---@return void
-function IsoZombie:knockDown(arg0) end
+function IsoZombie:getZombieLungeSpeed() end
+
+---@public
+---@param arg0 IsoObject
+---@return void
+function IsoZombie:collideWith(arg0) end
+
+---@public
+---@return void
+function IsoZombie:setAsSurvivor() end
+
+---@public
+---@return boolean
+function IsoZombie:isCrawling() end
 
 ---@private
 ---@return void
-function IsoZombie:updateSearchForCorpse() end
+function IsoZombie:updateEatBodyTarget() end
 
 ---@public
----@param arg0 boolean
----@return void
-function IsoZombie:setReanimate(arg0) end
+---@return float
+function IsoZombie:getFootstepVolume() end
+
+---@public
+---@return ActionContext
+function IsoZombie:getActionContext() end
+
+---@public
+---@param arg0 float
+---@return boolean
+function IsoZombie:canBeDeletedUnnoticed(arg0) end
+
+---@public
+---@return boolean
+function IsoZombie:isReanimatedPlayer() end
+
+---@public
+---@return boolean
+function IsoZombie:wasLocal() end
+
+---@public
+---@return boolean
+function IsoZombie:isFacingTarget() end
 
 ---@public
 ---@return void
-function IsoZombie:updateVocalProperties() end
+function IsoZombie:DoZombieStats() end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return boolean
+function IsoZombie:tryThump(arg0) end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@param arg2 boolean
+---@return void
+function IsoZombie:load(arg0, arg1, arg2) end
+
+---@public
+---@return boolean
+function IsoZombie:isUseless() end
+
+---@public
+---@return JVector2
+function IsoZombie:getHitAngle() end
+
+---@public
+---@return boolean
+function IsoZombie:isOnlyJawStab() end
+
+---@private
+---@return void
+function IsoZombie:checkClimbOverFenceHit() end
 
 ---@private
 ---@param arg0 int
@@ -1049,48 +924,173 @@ function IsoZombie:climbFenceWindowHit(arg0, arg1) end
 
 ---@public
 ---@return boolean
-function IsoZombie:isCrawling() end
-
----@public
----@param arg0 IsoDeadBody
----@return void
-function IsoZombie:setBodyToEat(arg0) end
-
----@public
----@return float
-function IsoZombie:getFootstepVolume() end
+function IsoZombie:isCanCrawlUnderVehicle() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoZombie:setForceFakeDead(arg0) end
+function IsoZombie:setKnifeDeath(arg0) end
+
+---@public
+---@return boolean
+function IsoZombie:isTargetLocationKnown() end
+
+---@public
+---@return void
+function IsoZombie:renderlast() end
+
+---@public
+---@return boolean
+function IsoZombie:isAttacking() end
+
+---@public
+---@return IsoPlayer
+function IsoZombie:getReanimatedPlayer() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:setWasFakeDead(arg0) end
+
+---@public
+---@return boolean
+function IsoZombie:isUsingWornItems() end
+
+---@public
+---@return void
+function IsoZombie:clearItemsToSpawnAtDeath() end
+
+---@public
+---@return void
+function IsoZombie:toggleCrawling() end
+
+---@public
+---@return int
+function IsoZombie:getSharedDescriptorID() end
+
+---@public
+---@return boolean
+function IsoZombie:isBecomeCrawler() end
+
+---@public
+---@return boolean
+function IsoZombie:isForceEatingAnimation() end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoZombie:setThumpFlag(arg0) end
 
 ---@public
 ---@return String
-function IsoZombie:getRealState() end
-
----@public
----@param arg0 float
----@return boolean
-function IsoZombie:canBeDeletedUnnoticed(arg0) end
-
----@public
----@return void
-function IsoZombie:getZombieLungeSpeed() end
-
----@protected
----@return int
-function IsoZombie:getSandboxMemoryDuration() end
+function IsoZombie:getObjectName() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoZombie:setBecomeCrawler(arg0) end
+function IsoZombie:setCrawler(arg0) end
+
+---@public
+---@return int
+function IsoZombie:getThumpTimer() end
 
 ---@public
 ---@return boolean
-function IsoZombie:wasLocal() end
+function IsoZombie:isForceFakeDead() end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoZombie:dressInNamedOutfit(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:setImmortalTutorialZombie(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:setCanWalk(arg0) end
+
+---@public
+---@param arg0 float
+---@param arg1 float
+---@return boolean
+function IsoZombie:isTargetInCone(arg0, arg1) end
+
+---@protected
+---@param arg0 AnimationPlayer
+---@return void
+function IsoZombie:onAnimPlayerCreated(arg0) end
+
+---@public
+---@return void
+function IsoZombie:addRandomVisualBandages() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:setForceEatingAnimation(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoZombie:setTargetSeenTime(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:setFemaleEtc(arg0) end
+
+---@private
+---@return void
+function IsoZombie:registerVariableCallbacks() end
+
+---@public
+---@return IsoMovingObject
+function IsoZombie:getTarget() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:setDressInRandomOutfit(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:makeInactive(arg0) end
 
 ---@public
 ---@return boolean
-function IsoZombie:isReanimatedPlayer() end
+function IsoZombie:isPushableForSeparate() end
+
+---@public
+---@param arg0 JVector2
+---@return void
+function IsoZombie:setHitAngle(arg0) end
+
+---@public
+---@return short
+function IsoZombie:getOnlineID() end
+
+---@public
+---@return int
+function IsoZombie:getCrawlerType() end
+
+---@public
+---@return boolean
+function IsoZombie:isAlwaysKnockedDown() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoZombie:setNoTeeth(arg0) end
+
+---@public
+---@return IsoMovingObject
+function IsoZombie:getEatBodyTarget() end
+
+---@private
+---@return void
+function IsoZombie:updateSearchForCorpse() end

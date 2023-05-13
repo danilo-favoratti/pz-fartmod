@@ -12,51 +12,12 @@
 TraitFactory_Trait = {}
 
 ---@public
----@return int
-function TraitFactory_Trait:getCost() end
-
----@public
----@return boolean
-function TraitFactory_Trait:isFree() end
-
----@public
 ---@return String
-function TraitFactory_Trait:getLeftLabel() end
-
----@public
----@return ArrayList|Unknown
-function TraitFactory_Trait:getMutuallyExclusiveTraits() end
-
----@public
----@param arg0 String
----@return void
-function TraitFactory_Trait:setDescription(arg0) end
-
----@public
----@return String
-function TraitFactory_Trait:getDescription() end
-
----@public
----@return String
-function TraitFactory_Trait:getRightLabel() end
-
----@public
----@param arg0 boolean
----@return void
-function TraitFactory_Trait:setRemoveInMP(arg0) end
+function TraitFactory_Trait:getType() end
 
 ---@public
 ---@return List|Unknown
 function TraitFactory_Trait:getFreeRecipes() end
-
----@public
----@return HashMap|Unknown|Unknown
-function TraitFactory_Trait:getXPBoostMap() end
-
----@public
----@param arg0 List|Unknown
----@return void
-function TraitFactory_Trait:setFreeRecipes(arg0) end
 
 ---@public
 ---@return String
@@ -69,13 +30,52 @@ function TraitFactory_Trait:getLabel() end
 function TraitFactory_Trait:addXPBoost(arg0, arg1) end
 
 ---@public
----@return Texture
-function TraitFactory_Trait:getTexture() end
+---@param arg0 List|Unknown
+---@return void
+function TraitFactory_Trait:setFreeRecipes(arg0) end
+
+---@public
+---@return HashMap|Unknown|Unknown
+function TraitFactory_Trait:getXPBoostMap() end
+
+---@public
+---@return int
+function TraitFactory_Trait:getCost() end
+
+---@public
+---@return String
+function TraitFactory_Trait:getLeftLabel() end
 
 ---@public
 ---@return boolean
 function TraitFactory_Trait:isRemoveInMP() end
 
 ---@public
+---@param arg0 boolean
+---@return void
+function TraitFactory_Trait:setRemoveInMP(arg0) end
+
+---@public
+---@return Texture
+function TraitFactory_Trait:getTexture() end
+
+---@public
+---@param arg0 String
+---@return void
+function TraitFactory_Trait:setDescription(arg0) end
+
+---@public
+---@return ArrayList|Unknown
+function TraitFactory_Trait:getMutuallyExclusiveTraits() end
+
+---@public
 ---@return String
-function TraitFactory_Trait:getType() end
+function TraitFactory_Trait:getDescription() end
+
+---@public
+---@return boolean
+function TraitFactory_Trait:isFree() end
+
+---@public
+---@return String
+function TraitFactory_Trait:getRightLabel() end

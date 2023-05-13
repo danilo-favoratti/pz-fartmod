@@ -9,25 +9,25 @@ MediaData_MediaLineData = {}
 function MediaData_MediaLineData:getColor() end
 
 ---@public
----@return float
-function MediaData_MediaLineData:getG() end
-
----@public
----@return float
-function MediaData_MediaLineData:getB() end
+---@return String
+function MediaData_MediaLineData:getTranslatedText() end
 
 ---@public
 ---@return String
 function MediaData_MediaLineData:getCodes() end
 
 ---@public
----@return float
-function MediaData_MediaLineData:getR() end
-
----@public
 ---@return String
 function MediaData_MediaLineData:getTextGuid() end
 
 ---@public
----@return String
-function MediaData_MediaLineData:getTranslatedText() end
+---@return float
+function MediaData_MediaLineData:getR() end
+
+---@public
+---@return float
+function MediaData_MediaLineData:getB() end
+
+---@public
+---@return float
+function MediaData_MediaLineData:getG() end

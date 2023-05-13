@@ -17,39 +17,19 @@ SteamWorkshopItem = {}
 ---@private
 ---@param arg0 Path
 ---@return String
-function SteamWorkshopItem:validateMediaFolder(arg0) end
-
----@private
----@param arg0 Path
----@return String
-function SteamWorkshopItem:validateModFolder(arg0) end
-
----@public
----@param arg0 String
----@return String
-function SteamWorkshopItem:getExtendedErrorInfo(arg0) end
-
----@public
----@param arg0 String
----@return void
-function SteamWorkshopItem:setVisibility(arg0) end
+function SteamWorkshopItem:validateModDotInfo(arg0) end
 
 ---@public
 ---@return String
-function SteamWorkshopItem:validateContents() end
-
----@private
----@param arg0 Path
----@return String
-function SteamWorkshopItem:validateMapsFolder(arg0) end
-
----@public
----@return boolean
-function SteamWorkshopItem:submitUpdate() end
+function SteamWorkshopItem:getTitle() end
 
 ---@public
 ---@return String
-function SteamWorkshopItem:getVisibility() end
+function SteamWorkshopItem:getFolderName() end
+
+---@public
+---@return String
+function SteamWorkshopItem:getSubmitDescription() end
 
 ---@public
 ---@param arg0 String
@@ -57,17 +37,44 @@ function SteamWorkshopItem:getVisibility() end
 function SteamWorkshopItem:setID(arg0) end
 
 ---@public
----@return ArrayList|Unknown
-function SteamWorkshopItem:getTags() end
-
----@public
 ---@return String
-function SteamWorkshopItem:getDescription() end
+function SteamWorkshopItem:getVisibility() end
 
 ---@public
----@param arg0 KahluaTable
 ---@return boolean
-function SteamWorkshopItem:getUpdateProgress(arg0) end
+function SteamWorkshopItem:create() end
+
+---@public
+---@return int
+function SteamWorkshopItem:getVisibilityInteger() end
+
+---@private
+---@param arg0 Path
+---@return String
+function SteamWorkshopItem:validateBuildingsFolder(arg0) end
+
+---@public
+---@return boolean
+function SteamWorkshopItem:submitUpdate() end
+
+---@public
+---@param arg0 int
+---@return void
+function SteamWorkshopItem:setVisibilityInteger(arg0) end
+
+---@public
+---@return boolean
+function SteamWorkshopItem:writeWorkshopTxt() end
+
+---@private
+---@param arg0 Path
+---@return String
+function SteamWorkshopItem:validateCreativeFolder(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function SteamWorkshopItem:setTitle(arg0) end
 
 ---@public
 ---@return String
@@ -77,73 +84,40 @@ function SteamWorkshopItem:getID() end
 ---@return String
 function SteamWorkshopItem:getContentFolder() end
 
----@public
----@param arg0 String
----@return void
-function SteamWorkshopItem:setDescription(arg0) end
-
----@public
----@return String
-function SteamWorkshopItem:getSubmitDescription() end
-
----@public
+---@private
 ---@param arg0 Path
 ---@return String
-function SteamWorkshopItem:validatePreviewImage(arg0) end
-
----@public
----@param arg0 int
----@return void
-function SteamWorkshopItem:setVisibilityInteger(arg0) end
-
----@public
----@return int
-function SteamWorkshopItem:getVisibilityInteger() end
-
----@public
----@return String
-function SteamWorkshopItem:getFolderName() end
+function SteamWorkshopItem:validateMapFolder(arg0) end
 
 ---@public
 ---@return ArrayList|Unknown
 function SteamWorkshopItem:getAllowedTags() end
 
 ---@public
----@return boolean
-function SteamWorkshopItem:create() end
-
----@private
----@param arg0 Path
 ---@return String
-function SteamWorkshopItem:validateModDotInfo(arg0) end
+function SteamWorkshopItem:getPreviewImage() end
 
----@private
----@param arg0 Path
----@return String
-function SteamWorkshopItem:validateMapDotInfo(arg0) end
+---@public
+---@return String[]
+function SteamWorkshopItem:getSubmitTags() end
 
 ---@public
 ---@return int
 function SteamWorkshopItem:getUpdateProgressTotal() end
 
 ---@public
----@param arg0 ArrayList|Unknown
----@return void
-function SteamWorkshopItem:setTags(arg0) end
-
----@private
----@param arg0 Path
 ---@return String
-function SteamWorkshopItem:validateBuildingsFolder(arg0) end
-
----@private
----@param arg0 Path
----@return String
-function SteamWorkshopItem:validateCreativeFolder(arg0) end
+function SteamWorkshopItem:getChangeNote() end
 
 ---@public
+---@param arg0 String
+---@return void
+function SteamWorkshopItem:setVisibility(arg0) end
+
+---@private
+---@param arg0 Path
 ---@return String
-function SteamWorkshopItem:getTitle() end
+function SteamWorkshopItem:validateModsFolder(arg0) end
 
 ---@private
 ---@param arg0 Path
@@ -151,35 +125,17 @@ function SteamWorkshopItem:getTitle() end
 function SteamWorkshopItem:validateFileTypes(arg0) end
 
 ---@public
+---@return String
+function SteamWorkshopItem:getDescription() end
+
+---@public
 ---@param arg0 String
 ---@return void
-function SteamWorkshopItem:setTitle(arg0) end
+function SteamWorkshopItem:setDescription(arg0) end
 
 ---@public
----@return boolean
-function SteamWorkshopItem:readWorkshopTxt() end
-
----@private
----@param arg0 Path
----@return String
-function SteamWorkshopItem:validateModsFolder(arg0) end
-
----@public
----@return boolean
-function SteamWorkshopItem:writeWorkshopTxt() end
-
----@public
----@return String
-function SteamWorkshopItem:getChangeNote() end
-
----@public
----@return String[]
-function SteamWorkshopItem:getSubmitTags() end
-
----@private
----@param arg0 Path
----@return String
-function SteamWorkshopItem:validateMapFolder(arg0) end
+---@return ArrayList|Unknown
+function SteamWorkshopItem:getTags() end
 
 ---@public
 ---@param arg0 String
@@ -187,5 +143,49 @@ function SteamWorkshopItem:validateMapFolder(arg0) end
 function SteamWorkshopItem:setChangeNote(arg0) end
 
 ---@public
+---@param arg0 KahluaTable
+---@return boolean
+function SteamWorkshopItem:getUpdateProgress(arg0) end
+
+---@private
+---@param arg0 Path
 ---@return String
-function SteamWorkshopItem:getPreviewImage() end
+function SteamWorkshopItem:validateModFolder(arg0) end
+
+---@public
+---@return boolean
+function SteamWorkshopItem:readWorkshopTxt() end
+
+---@public
+---@param arg0 ArrayList|Unknown
+---@return void
+function SteamWorkshopItem:setTags(arg0) end
+
+---@public
+---@param arg0 Path
+---@return String
+function SteamWorkshopItem:validatePreviewImage(arg0) end
+
+---@private
+---@param arg0 Path
+---@return String
+function SteamWorkshopItem:validateMapsFolder(arg0) end
+
+---@public
+---@param arg0 String
+---@return String
+function SteamWorkshopItem:getExtendedErrorInfo(arg0) end
+
+---@private
+---@param arg0 Path
+---@return String
+function SteamWorkshopItem:validateMediaFolder(arg0) end
+
+---@public
+---@return String
+function SteamWorkshopItem:validateContents() end
+
+---@private
+---@param arg0 Path
+---@return String
+function SteamWorkshopItem:validateMapDotInfo(arg0) end

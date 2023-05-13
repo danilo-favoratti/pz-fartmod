@@ -13,25 +13,13 @@
 ---@field private doFadeIn boolean
 SearchMode_PlayerSearchMode = {}
 
----@public
----@return SearchMode.SearchModeFloat
-function SearchMode_PlayerSearchMode:getDesat() end
+---@private
+---@return boolean
+function SearchMode_PlayerSearchMode:isPlayerExterior() end
 
 ---@public
 ---@return SearchMode.SearchModeFloat
-function SearchMode_PlayerSearchMode:getDarkness() end
-
----@public
----@return float
-function SearchMode_PlayerSearchMode:getShaderDarkness() end
-
----@public
----@return float
-function SearchMode_PlayerSearchMode:getShaderRadius() end
-
----@public
----@return float
-function SearchMode_PlayerSearchMode:getShaderDesat() end
+function SearchMode_PlayerSearchMode:getRadius() end
 
 ---@public
 ---@return SearchMode.SearchModeFloat
@@ -49,18 +37,30 @@ function SearchMode_PlayerSearchMode:getShaderGradientWidth() end
 ---@return SearchMode.SearchModeFloat
 function SearchMode_PlayerSearchMode:getGradientWidth() end
 
----@private
----@return void
-function SearchMode_PlayerSearchMode:update() end
+---@public
+---@return float
+function SearchMode_PlayerSearchMode:getShaderDarkness() end
 
----@private
----@return boolean
-function SearchMode_PlayerSearchMode:isPlayerExterior() end
+---@public
+---@return SearchMode.SearchModeFloat
+function SearchMode_PlayerSearchMode:getDesat() end
 
 ---@public
 ---@return boolean
 function SearchMode_PlayerSearchMode:isShaderEnabled() end
 
+---@private
+---@return void
+function SearchMode_PlayerSearchMode:update() end
+
 ---@public
 ---@return SearchMode.SearchModeFloat
-function SearchMode_PlayerSearchMode:getRadius() end
+function SearchMode_PlayerSearchMode:getDarkness() end
+
+---@public
+---@return float
+function SearchMode_PlayerSearchMode:getShaderDesat() end
+
+---@public
+---@return float
+function SearchMode_PlayerSearchMode:getShaderRadius() end

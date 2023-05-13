@@ -4,17 +4,13 @@
 WorldMapStyleV1_WorldMapStyleLayerV1 = {}
 
 ---@public
----@param arg0 String
----@return void
-function WorldMapStyleV1_WorldMapStyleLayerV1:setId(arg0) end
-
----@public
 ---@return String
 function WorldMapStyleV1_WorldMapStyleLayerV1:getTypeString() end
 
 ---@public
----@return String
-function WorldMapStyleV1_WorldMapStyleLayerV1:getId() end
+---@param arg0 String
+---@return void
+function WorldMapStyleV1_WorldMapStyleLayerV1:setId(arg0) end
 
 ---@public
 ---@param arg0 float
@@ -24,3 +20,7 @@ function WorldMapStyleV1_WorldMapStyleLayerV1:setMinZoom(arg0) end
 ---@public
 ---@return float
 function WorldMapStyleV1_WorldMapStyleLayerV1:getMinZoom() end
+
+---@public
+---@return String
+function WorldMapStyleV1_WorldMapStyleLayerV1:getId() end

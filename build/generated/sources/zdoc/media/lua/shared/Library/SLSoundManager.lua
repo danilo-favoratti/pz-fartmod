@@ -15,22 +15,41 @@
 SLSoundManager = {}
 
 ---@public
----@param arg0 String
----@return void
-function SLSoundManager:print(arg0) end
+---@return boolean
+function SLSoundManager:getLuaDebug() end
 
 ---@public
----@return ArrayList|Unknown
-function SLSoundManager:getStorySounds() end
+---@return JVector2
+function SLSoundManager:getRandomBorderPosition() end
 
 ---@public
 ---@return void
 function SLSoundManager:loadSounds() end
 
----@private
----@param arg0 StorySound
+---@public
 ---@return void
-function SLSoundManager:addStorySound(arg0) end
+function SLSoundManager:updateKeys() end
+
+---@public
+---@return void
+function SLSoundManager:render() end
+
+---@public
+---@param arg0 String
+---@return void
+function SLSoundManager:print(arg0) end
+
+---@public
+---@return boolean
+function SLSoundManager:getDebug() end
+
+---@public
+---@return SLSoundManager
+function SLSoundManager:getInstance() end
+
+---@public
+---@return void
+function SLSoundManager:thunderTest() end
 
 ---@public
 ---@param arg0 int
@@ -41,7 +60,7 @@ function SLSoundManager:update(arg0, arg1, arg2) end
 
 ---@public
 ---@return void
-function SLSoundManager:render() end
+function SLSoundManager:init() end
 
 ---@private
 ---@param arg0 UIFont
@@ -55,34 +74,15 @@ function SLSoundManager:renderLine(arg0, arg1, arg2, arg3) end
 ---@return float
 function SLSoundManager:getRandomBorderRange() end
 
----@public
+---@private
+---@param arg0 StorySound
 ---@return void
-function SLSoundManager:init() end
+function SLSoundManager:addStorySound(arg0) end
 
 ---@public
 ---@return void
 function SLSoundManager:renderDebug() end
 
 ---@public
----@return void
-function SLSoundManager:thunderTest() end
-
----@public
----@return boolean
-function SLSoundManager:getDebug() end
-
----@public
----@return JVector2
-function SLSoundManager:getRandomBorderPosition() end
-
----@public
----@return boolean
-function SLSoundManager:getLuaDebug() end
-
----@public
----@return void
-function SLSoundManager:updateKeys() end
-
----@public
----@return SLSoundManager
-function SLSoundManager:getInstance() end
+---@return ArrayList|Unknown
+function SLSoundManager:getStorySounds() end

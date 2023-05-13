@@ -4,15 +4,6 @@
 DataCell = {}
 
 ---@protected
----@return DataRoot
-function DataCell:getDataRoot() end
-
----@protected
----@param arg0 List|Unknown
----@return void
-function DataCell:getAllChunks(arg0) end
-
----@protected
 ---@param arg0 int
 ---@return DataChunk
 function DataCell:getChunk(arg0) end
@@ -21,6 +12,15 @@ function DataCell:getChunk(arg0) end
 ---@param arg0 DataChunk
 ---@return void
 function DataCell:setChunk(arg0) end
+
+---@protected
+---@return DataRoot
+function DataCell:getDataRoot() end
+
+---@protected
+---@param arg0 List|Unknown
+---@return void
+function DataCell:getAllChunks(arg0) end
 
 ---@protected
 ---@param arg0 int

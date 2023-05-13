@@ -6,76 +6,9 @@
 InventoryContainer = {}
 
 ---@public
----@return float
-function InventoryContainer:getEquippedWeight() end
-
----@public
----@param arg0 String
----@return void
-function InventoryContainer:setCanBeEquipped(arg0) end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 boolean
----@return void
-function InventoryContainer:save(arg0, arg1) end
-
----@public
----@return float
-function InventoryContainer:getContentsWeight() end
-
----@public
----@param arg0 int
----@return void
-function InventoryContainer:setCapacity(arg0) end
-
----@public
----@return String
-function InventoryContainer:getCategory() end
-
----@public
----@return float
-function InventoryContainer:getInventoryWeight() end
-
----@public
----@return ItemContainer
-function InventoryContainer:getInventory() end
-
----@public
----@return int
-function InventoryContainer:getCapacity() end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 int
----@return void
-function InventoryContainer:load(arg0, arg1) end
-
----@public
----@return String
-function InventoryContainer:getClothingExtraSubmenu() end
-
----@public
----@return int
-function InventoryContainer:getSaveType() end
-
----@public
----@param arg0 IsoGameCharacter
----@return int
-function InventoryContainer:getEffectiveCapacity(arg0) end
-
----@public
----@return int
-function InventoryContainer:getWeightReduction() end
-
----@public
 ---@param arg0 int
 ---@return void
 function InventoryContainer:setWeightReduction(arg0) end
-
----@public
----@return boolean
-function InventoryContainer:IsInventoryContainer() end
 
 ---@public
 ---@param arg0 ObjectTooltip
@@ -90,8 +23,26 @@ function InventoryContainer:DoTooltip(arg0) end
 function InventoryContainer:DoTooltip(arg0, arg1) end
 
 ---@public
+---@return boolean
+function InventoryContainer:IsInventoryContainer() end
+
+---@public
 ---@return void
 function InventoryContainer:updateAge() end
+
+---@public
+---@return int
+function InventoryContainer:getSaveType() end
+
+---@public
+---@return String
+function InventoryContainer:canBeEquipped() end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@return void
+function InventoryContainer:load(arg0, arg1) end
 
 ---@public
 ---@param arg0 float
@@ -108,9 +59,58 @@ function InventoryContainer:setItemContainer(arg0) end
 function InventoryContainer:getItemContainer() end
 
 ---@public
----@return String
-function InventoryContainer:canBeEquipped() end
+---@param arg0 String
+---@return void
+function InventoryContainer:setCanBeEquipped(arg0) end
+
+---@public
+---@return int
+function InventoryContainer:getWeightReduction() end
+
+---@public
+---@return float
+function InventoryContainer:getEquippedWeight() end
+
+---@public
+---@return float
+function InventoryContainer:getInventoryWeight() end
 
 ---@public
 ---@return float
 function InventoryContainer:getBloodLevel() end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return int
+function InventoryContainer:getEffectiveCapacity(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function InventoryContainer:setCapacity(arg0) end
+
+---@public
+---@return ItemContainer
+function InventoryContainer:getInventory() end
+
+---@public
+---@return String
+function InventoryContainer:getClothingExtraSubmenu() end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 boolean
+---@return void
+function InventoryContainer:save(arg0, arg1) end
+
+---@public
+---@return String
+function InventoryContainer:getCategory() end
+
+---@public
+---@return float
+function InventoryContainer:getContentsWeight() end
+
+---@public
+---@return int
+function InventoryContainer:getCapacity() end

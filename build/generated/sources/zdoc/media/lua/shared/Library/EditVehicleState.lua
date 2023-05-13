@@ -9,33 +9,50 @@
 ---@field private m_table KahluaTable
 EditVehicleState = {}
 
----@public
+---@private
 ---@return void
-function EditVehicleState:exit() end
+function EditVehicleState:renderUI() end
 
 ---@private
 ---@return void
-function EditVehicleState:restoreGameUI() end
+function EditVehicleState:updateScene() end
+
+---@public
+---@return GameStateMachine.StateAction
+function EditVehicleState:update() end
+
+---@public
+---@param arg0 String
+---@param arg1 Object
+---@return Object
+function EditVehicleState:fromLua1(arg0, arg1) end
 
 ---@public
 ---@return void
-function EditVehicleState:render() end
+function EditVehicleState:reenter() end
+
+---@public
+---@return EditVehicleState
+function EditVehicleState:checkInstance() end
+
+---@public
+---@param arg0 String
+---@return void
+function EditVehicleState:setScript(arg0) end
 
 ---@private
 ---@param arg0 String
 ---@return ArrayList|Unknown
 function EditVehicleState:readScript(arg0) end
 
----@private
----@param arg0 String
----@param arg1 ArrayList|Unknown
----@return void
-function EditVehicleState:writeScript(arg0, arg1) end
-
 ---@public
----@param arg0 KahluaTable
+---@param arg0 String
+---@return Object
+function EditVehicleState:fromLua0(arg0) end
+
+---@private
 ---@return void
-function EditVehicleState:setTable(arg0) end
+function EditVehicleState:restoreGameUI() end
 
 ---@private
 ---@param arg0 VehicleScript
@@ -47,13 +64,27 @@ function EditVehicleState:vehicleScriptToText(arg0, arg1) end
 ---@return void
 function EditVehicleState:renderScene() end
 
----@private
----@return void
-function EditVehicleState:updateScene() end
-
 ---@public
 ---@return void
 function EditVehicleState:yield() end
+
+---@private
+---@param arg0 String
+---@param arg1 ArrayList|Unknown
+---@return void
+function EditVehicleState:writeScript(arg0, arg1) end
+
+---@private
+---@return void
+function EditVehicleState:saveGameUI() end
+
+---@public
+---@return void
+function EditVehicleState:exit() end
+
+---@public
+---@return void
+function EditVehicleState:enter() end
 
 ---@private
 ---@param arg0 String
@@ -63,41 +94,10 @@ function EditVehicleState:yield() end
 function EditVehicleState:updateScript(arg0, arg1, arg2) end
 
 ---@public
----@param arg0 String
+---@param arg0 KahluaTable
 ---@return void
-function EditVehicleState:setScript(arg0) end
-
----@public
----@return void
-function EditVehicleState:enter() end
-
----@public
----@param arg0 String
----@return Object
-function EditVehicleState:fromLua0(arg0) end
-
----@public
----@return GameStateMachine.StateAction
-function EditVehicleState:update() end
-
----@public
----@return EditVehicleState
-function EditVehicleState:checkInstance() end
-
----@private
----@return void
-function EditVehicleState:saveGameUI() end
-
----@private
----@return void
-function EditVehicleState:renderUI() end
+function EditVehicleState:setTable(arg0) end
 
 ---@public
 ---@return void
-function EditVehicleState:reenter() end
-
----@public
----@param arg0 String
----@param arg1 Object
----@return Object
-function EditVehicleState:fromLua1(arg0, arg1) end
+function EditVehicleState:render() end

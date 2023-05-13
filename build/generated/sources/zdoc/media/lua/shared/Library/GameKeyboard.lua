@@ -8,9 +8,13 @@
 GameKeyboard = {}
 
 ---@public
----@param arg0 int
----@return boolean
-function GameKeyboard:isKeyPressed(arg0) end
+---@param arg0 boolean
+---@return void
+function GameKeyboard:setDoLuaKeyPressed(arg0) end
+
+---@public
+---@return void
+function GameKeyboard:poll() end
 
 ---@public
 ---@param arg0 int
@@ -19,11 +23,15 @@ function GameKeyboard:eatKeyPress(arg0) end
 
 ---@public
 ---@return void
-function GameKeyboard:poll() end
+function GameKeyboard:update() end
 
 ---@public
 ---@return KeyEventQueue
 function GameKeyboard:getEventQueue() end
+
+---@public
+---@return KeyEventQueue
+function GameKeyboard:getEventQueuePolling() end
 
 ---@public
 ---@param arg0 int
@@ -36,14 +44,6 @@ function GameKeyboard:isKeyDown(arg0) end
 function GameKeyboard:wasKeyDown(arg0) end
 
 ---@public
----@param arg0 boolean
----@return void
-function GameKeyboard:setDoLuaKeyPressed(arg0) end
-
----@public
----@return KeyEventQueue
-function GameKeyboard:getEventQueuePolling() end
-
----@public
----@return void
-function GameKeyboard:update() end
+---@param arg0 int
+---@return boolean
+function GameKeyboard:isKeyPressed(arg0) end

@@ -6,6 +6,11 @@ CrawlingZombieTurnState = {}
 
 ---@public
 ---@param arg0 IsoGameCharacter
+---@return void
+function CrawlingZombieTurnState:execute(arg0) end
+
+---@public
+---@param arg0 IsoGameCharacter
 ---@param arg1 AnimEvent
 ---@return void
 function CrawlingZombieTurnState:animEvent(arg0, arg1) end
@@ -13,17 +18,7 @@ function CrawlingZombieTurnState:animEvent(arg0, arg1) end
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function CrawlingZombieTurnState:execute(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
 function CrawlingZombieTurnState:enter(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function CrawlingZombieTurnState:exit(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
@@ -34,3 +29,8 @@ function CrawlingZombieTurnState:calculateDir(arg0, arg1) end
 ---@public
 ---@return CrawlingZombieTurnState
 function CrawlingZombieTurnState:instance() end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function CrawlingZombieTurnState:exit(arg0) end

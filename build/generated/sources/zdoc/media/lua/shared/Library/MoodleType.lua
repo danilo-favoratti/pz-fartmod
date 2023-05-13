@@ -29,13 +29,7 @@ MoodleType = {}
 ---@public
 ---@param arg0 MoodleType
 ---@return int
-function MoodleType:ToIndex(arg0) end
-
----@public
----@param arg0 MoodleType
----@param arg1 int
----@return String
-function MoodleType:getDisplayName(arg0, arg1) end
+function MoodleType:GoodBadNeutral(arg0) end
 
 ---@public
 ---@param arg0 MoodleType
@@ -44,13 +38,13 @@ function MoodleType:getDisplayName(arg0, arg1) end
 function MoodleType:getDescriptionText(arg0, arg1) end
 
 ---@public
----@return MoodleType[]
-function MoodleType:values() end
+---@param arg0 String
+---@return MoodleType
+function MoodleType:FromString(arg0) end
 
 ---@public
----@param arg0 MoodleType
----@return int
-function MoodleType:GoodBadNeutral(arg0) end
+---@return MoodleType[]
+function MoodleType:values() end
 
 ---@public
 ---@param arg0 int
@@ -63,6 +57,12 @@ function MoodleType:FromIndex(arg0) end
 function MoodleType:valueOf(arg0) end
 
 ---@public
----@param arg0 String
----@return MoodleType
-function MoodleType:FromString(arg0) end
+---@param arg0 MoodleType
+---@return int
+function MoodleType:ToIndex(arg0) end
+
+---@public
+---@param arg0 MoodleType
+---@param arg1 int
+---@return String
+function MoodleType:getDisplayName(arg0, arg1) end

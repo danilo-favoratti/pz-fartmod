@@ -13,100 +13,22 @@
 ---@field private sendEvery OnceEvery
 AlarmClock = {}
 
----@private
----@return void
-function AlarmClock:randomizeAlarm() end
-
----@public
----@return void
-function AlarmClock:update() end
-
----@public
----@return boolean
-function AlarmClock:isAlarmSet() end
-
----@public
----@return void
-function AlarmClock:stopRinging() end
-
----@public
----@param arg0 String
----@return void
-function AlarmClock:setAlarmSound(arg0) end
-
----@private
----@param arg0 IsoPlayer
----@return void
-function AlarmClock:wakeUp(arg0) end
-
----@public
----@return int
-function AlarmClock:getMinute() end
-
 ---@public
 ---@return String
-function AlarmClock:getCategory() end
-
----@public
----@param arg0 int
----@return void
-function AlarmClock:setMinute(arg0) end
+function AlarmClock:getAlarmSound() end
 
 ---@public
 ---@return boolean
 function AlarmClock:isDigital() end
 
 ---@public
----@param arg0 boolean
----@return void
-function AlarmClock:setAlarmSet(arg0) end
-
----@public
----@return void
-function AlarmClock:syncAlarmClock() end
-
----@public
----@return boolean
-function AlarmClock:isRinging() end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 boolean
----@return void
-function AlarmClock:save(arg0, arg1) end
-
----@public
----@return IsoGridSquare
-function AlarmClock:getAlarmSquare() end
-
----@public
----@return boolean
-function AlarmClock:finishupdate() end
-
----@public
 ---@return int
-function AlarmClock:getSoundRadius() end
-
----@public
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
----@return void
-function AlarmClock:DoTooltip(arg0, arg1) end
-
----@public
----@return boolean
-function AlarmClock:shouldUpdateInWorld() end
+function AlarmClock:getHour() end
 
 ---@public
 ---@param arg0 int
 ---@return void
-function AlarmClock:setSoundRadius(arg0) end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 int
----@return void
-function AlarmClock:load(arg0, arg1) end
+function AlarmClock:setMinute(arg0) end
 
 ---@private
 ---@param arg0 IsoGridSquare
@@ -114,13 +36,19 @@ function AlarmClock:load(arg0, arg1) end
 function AlarmClock:wakeUpPlayers(arg0) end
 
 ---@public
+---@param arg0 String
 ---@return void
-function AlarmClock:syncStopRinging() end
+function AlarmClock:setAlarmSound(arg0) end
 
----@private
----@param arg0 ItemContainer
----@return IsoPlayer
-function AlarmClock:getOwnerPlayer(arg0) end
+---@public
+---@return void
+function AlarmClock:update() end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 boolean
+---@return void
+function AlarmClock:save(arg0, arg1) end
 
 ---@public
 ---@param arg0 BaseSoundEmitter
@@ -132,9 +60,17 @@ function AlarmClock:updateSound(arg0) end
 function AlarmClock:syncAlarmClock_World() end
 
 ---@public
----@param arg0 IsoPlayer
+---@param arg0 int
 ---@return void
-function AlarmClock:syncAlarmClock_Player(arg0) end
+function AlarmClock:setSoundRadius(arg0) end
+
+---@public
+---@return int
+function AlarmClock:getSoundRadius() end
+
+---@public
+---@return boolean
+function AlarmClock:shouldUpdateInWorld() end
 
 ---@public
 ---@param arg0 int
@@ -142,13 +78,77 @@ function AlarmClock:syncAlarmClock_Player(arg0) end
 function AlarmClock:setHour(arg0) end
 
 ---@public
+---@return boolean
+function AlarmClock:isAlarmSet() end
+
+---@public
 ---@return int
 function AlarmClock:getSaveType() end
 
+---@private
+---@param arg0 IsoPlayer
+---@return void
+function AlarmClock:wakeUp(arg0) end
+
+---@private
+---@param arg0 ItemContainer
+---@return IsoPlayer
+function AlarmClock:getOwnerPlayer(arg0) end
+
+---@private
+---@return void
+function AlarmClock:randomizeAlarm() end
+
 ---@public
----@return int
-function AlarmClock:getHour() end
+---@return void
+function AlarmClock:stopRinging() end
+
+---@public
+---@param arg0 IsoPlayer
+---@return void
+function AlarmClock:syncAlarmClock_Player(arg0) end
 
 ---@public
 ---@return String
-function AlarmClock:getAlarmSound() end
+function AlarmClock:getCategory() end
+
+---@public
+---@param arg0 ObjectTooltip
+---@param arg1 ObjectTooltip.Layout
+---@return void
+function AlarmClock:DoTooltip(arg0, arg1) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function AlarmClock:setAlarmSet(arg0) end
+
+---@public
+---@return boolean
+function AlarmClock:finishupdate() end
+
+---@public
+---@return boolean
+function AlarmClock:isRinging() end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@return void
+function AlarmClock:load(arg0, arg1) end
+
+---@public
+---@return IsoGridSquare
+function AlarmClock:getAlarmSquare() end
+
+---@public
+---@return void
+function AlarmClock:syncStopRinging() end
+
+---@public
+---@return void
+function AlarmClock:syncAlarmClock() end
+
+---@public
+---@return int
+function AlarmClock:getMinute() end

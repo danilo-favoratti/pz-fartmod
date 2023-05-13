@@ -12,10 +12,13 @@ WalkTowardState = {}
 ---@return boolean
 function WalkTowardState:isMoving(arg0) end
 
----@public
+---@private
 ---@param arg0 IsoGameCharacter
----@return void
-function WalkTowardState:exit(arg0) end
+---@param arg1 float
+---@param arg2 float
+---@param arg3 float
+---@return boolean
+function WalkTowardState:isPathClear(arg0, arg1, arg2, arg3) end
 
 ---@public
 ---@param arg0 IsoZombie
@@ -24,8 +27,9 @@ function WalkTowardState:exit(arg0) end
 function WalkTowardState:calculateTargetLocation(arg0, arg1) end
 
 ---@public
----@return WalkTowardState
-function WalkTowardState:instance() end
+---@param arg0 IsoGameCharacter
+---@return void
+function WalkTowardState:exit(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
@@ -36,17 +40,13 @@ function WalkTowardState:animEvent(arg0, arg1) end
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function WalkTowardState:execute(arg0) end
-
----@private
----@param arg0 IsoGameCharacter
----@param arg1 float
----@param arg2 float
----@param arg3 float
----@return boolean
-function WalkTowardState:isPathClear(arg0, arg1, arg2, arg3) end
+function WalkTowardState:enter(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function WalkTowardState:enter(arg0) end
+function WalkTowardState:execute(arg0) end
+
+---@public
+---@return WalkTowardState
+function WalkTowardState:instance() end

@@ -7,9 +7,16 @@
 SandboxOptions_IntegerSandboxOption = {}
 
 ---@public
----@param arg0 String
----@return SandboxOptions.SandboxOption
-function SandboxOptions_IntegerSandboxOption:setTranslation(arg0) end
+---@return String
+function SandboxOptions_IntegerSandboxOption:getTableName() end
+
+---@public
+---@return ConfigOption
+function SandboxOptions_IntegerSandboxOption:asConfigOption() end
+
+---@public
+---@return String
+function SandboxOptions_IntegerSandboxOption:getTranslatedName() end
 
 ---@public
 ---@return String
@@ -21,12 +28,9 @@ function SandboxOptions_IntegerSandboxOption:getPageName() end
 function SandboxOptions_IntegerSandboxOption:fromTable(arg0) end
 
 ---@public
----@return String
-function SandboxOptions_IntegerSandboxOption:getTooltip() end
-
----@public
----@return String
-function SandboxOptions_IntegerSandboxOption:getTableName() end
+---@param arg0 String
+---@return SandboxOptions.SandboxOption
+function SandboxOptions_IntegerSandboxOption:setPageName(arg0) end
 
 ---@public
 ---@param arg0 KahluaTable
@@ -38,22 +42,18 @@ function SandboxOptions_IntegerSandboxOption:toTable(arg0) end
 function SandboxOptions_IntegerSandboxOption:getShortName() end
 
 ---@public
----@return boolean
-function SandboxOptions_IntegerSandboxOption:isCustom() end
-
----@public
 ---@return void
 function SandboxOptions_IntegerSandboxOption:setCustom() end
 
 ---@public
 ---@return String
-function SandboxOptions_IntegerSandboxOption:getTranslatedName() end
+function SandboxOptions_IntegerSandboxOption:getTooltip() end
+
+---@public
+---@return boolean
+function SandboxOptions_IntegerSandboxOption:isCustom() end
 
 ---@public
 ---@param arg0 String
 ---@return SandboxOptions.SandboxOption
-function SandboxOptions_IntegerSandboxOption:setPageName(arg0) end
-
----@public
----@return ConfigOption
-function SandboxOptions_IntegerSandboxOption:asConfigOption() end
+function SandboxOptions_IntegerSandboxOption:setTranslation(arg0) end

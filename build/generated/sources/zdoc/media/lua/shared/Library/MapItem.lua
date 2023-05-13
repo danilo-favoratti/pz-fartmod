@@ -6,39 +6,8 @@
 MapItem = {}
 
 ---@public
----@return void
-function MapItem:LoadWorldMap() end
-
----@public
 ---@return boolean
 function MapItem:IsMap() end
-
----@public
----@return MapItem
-function MapItem:getSingleton() end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 boolean
----@return void
-function MapItem:save(arg0, arg1) end
-
----@public
----@return void
-function MapItem:SaveWorldMap() end
-
----@public
----@return WorldMapSymbols
-function MapItem:getSymbols() end
-
----@public
----@param arg0 String
----@return void
-function MapItem:setMapID(arg0) end
-
----@public
----@return String
-function MapItem:getMapID() end
 
 ---@public
 ---@param arg0 ByteBuffer
@@ -47,9 +16,40 @@ function MapItem:getMapID() end
 function MapItem:load(arg0, arg1) end
 
 ---@public
+---@return void
+function MapItem:Reset() end
+
+---@public
+---@return void
+function MapItem:LoadWorldMap() end
+
+---@public
+---@return String
+function MapItem:getMapID() end
+
+---@public
+---@return WorldMapSymbols
+function MapItem:getSymbols() end
+
+---@public
+---@return MapItem
+function MapItem:getSingleton() end
+
+---@public
 ---@return int
 function MapItem:getSaveType() end
 
 ---@public
+---@param arg0 ByteBuffer
+---@param arg1 boolean
 ---@return void
-function MapItem:Reset() end
+function MapItem:save(arg0, arg1) end
+
+---@public
+---@param arg0 String
+---@return void
+function MapItem:setMapID(arg0) end
+
+---@public
+---@return void
+function MapItem:SaveWorldMap() end

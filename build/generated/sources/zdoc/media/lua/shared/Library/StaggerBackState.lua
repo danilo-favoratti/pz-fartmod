@@ -4,6 +4,11 @@ StaggerBackState = {}
 
 ---@public
 ---@param arg0 IsoGameCharacter
+---@return void
+function StaggerBackState:execute(arg0) end
+
+---@public
+---@param arg0 IsoGameCharacter
 ---@param arg1 AnimEvent
 ---@return void
 function StaggerBackState:animEvent(arg0, arg1) end
@@ -16,7 +21,7 @@ function StaggerBackState:getMaxStaggerTime(arg0) end
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function StaggerBackState:execute(arg0) end
+function StaggerBackState:exit(arg0) end
 
 ---@public
 ---@return StaggerBackState
@@ -26,8 +31,3 @@ function StaggerBackState:instance() end
 ---@param arg0 IsoGameCharacter
 ---@return void
 function StaggerBackState:enter(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function StaggerBackState:exit(arg0) end

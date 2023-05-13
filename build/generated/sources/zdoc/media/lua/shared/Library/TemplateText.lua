@@ -4,6 +4,10 @@
 TemplateText = {}
 
 ---@public
+---@return void
+function TemplateText:Reset() end
+
+---@public
 ---@param arg0 String
 ---@param arg1 IReplace
 ---@return void
@@ -17,21 +21,23 @@ function TemplateText:RegisterKey(arg0, arg1) end
 function TemplateText:RegisterKey(arg0, arg1) end
 
 ---@public
----@return void
-function TemplateText:Reset() end
+---@param arg0 int
+---@return int
+---@overload fun(arg0:float)
+---@overload fun(arg0:int, arg1:int)
+---@overload fun(arg0:float, arg1:float)
+function TemplateText:RandNext(arg0) end
 
 ---@public
 ---@param arg0 float
 ---@return float
----@overload fun(arg0:int)
----@overload fun(arg0:float, arg1:float)
----@overload fun(arg0:int, arg1:int)
 function TemplateText:RandNext(arg0) end
 
 ---@public
 ---@param arg0 int
+---@param arg1 int
 ---@return int
-function TemplateText:RandNext(arg0) end
+function TemplateText:RandNext(arg0, arg1) end
 
 ---@public
 ---@param arg0 float
@@ -40,10 +46,8 @@ function TemplateText:RandNext(arg0) end
 function TemplateText:RandNext(arg0, arg1) end
 
 ---@public
----@param arg0 int
----@param arg1 int
----@return int
-function TemplateText:RandNext(arg0, arg1) end
+---@return void
+function TemplateText:Initialize() end
 
 ---@public
 ---@param arg0 String
@@ -63,7 +67,3 @@ function TemplateText:Build(arg0, arg1) end
 ---@param arg1 IReplaceProvider
 ---@return String
 function TemplateText:Build(arg0, arg1) end
-
----@public
----@return void
-function TemplateText:Initialize() end

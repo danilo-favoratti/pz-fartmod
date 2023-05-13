@@ -160,72 +160,68 @@
 IsoGridSquare = {}
 
 ---@public
----@param arg0 IsoGridSquare
----@param arg1 boolean
----@param arg2 boolean
----@param arg3 boolean
----@return boolean
----@overload fun(arg0:IsoGridSquare, arg1:boolean, arg2:boolean, arg3:boolean, arg4:boolean)
----@overload fun(arg0:IsoGridSquare, arg1:boolean, arg2:boolean, arg3:boolean, arg4:boolean, arg5:IsoGridSquare.GetSquare)
-function IsoGridSquare:CalculateCollide(arg0, arg1, arg2, arg3) end
+---@return IsoWaterGeometry
+function IsoGridSquare:getWater() end
 
 ---@public
----@param arg0 IsoGridSquare
----@param arg1 boolean
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 boolean
----@return boolean
-function IsoGridSquare:CalculateCollide(arg0, arg1, arg2, arg3, arg4) end
+---@param arg0 boolean
+---@return void
+function IsoGridSquare:BurnWalls(arg0) end
 
 ---@public
----@param arg0 IsoGridSquare
----@param arg1 boolean
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 boolean
----@param arg5 IsoGridSquare.GetSquare
----@return boolean
-function IsoGridSquare:CalculateCollide(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param arg0 boolean
+---@param arg1 int
+---@param arg2 String
+---@param arg3 String
+---@param arg4 KahluaTable
+---@return IsoThumpable
+function IsoGridSquare:AddStairs(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
 ---@return int
 function IsoGridSquare:getLightcache() end
 
 ---@public
----@return ArrayList|Unknown
-function IsoGridSquare:getLightInfluenceR() end
+---@param arg0 IsoGridSquare
+---@return IsoObject
+function IsoGridSquare:getTransparentWallTo(arg0) end
 
 ---@public
----@return String
-function IsoGridSquare:getZoneType() end
+---@return IsoBrokenGlass
+function IsoGridSquare:addBrokenGlass() end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return boolean
+function IsoGridSquare:isWindowBlockedTo(arg0) end
 
 ---@public
 ---@return int
 function IsoGridSquare:getRecalcLightTime() end
 
 ---@public
----@param arg0 IsoMovingObject
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@return boolean
-function IsoGridSquare:testCollideAdjacent(arg0, arg1, arg2, arg3) end
-
----@private
----@return IsoObject
-function IsoGridSquare:getSpecialSolid() end
-
----@public
----@return boolean
----@overload fun(arg0:IsoGridSquare, arg1:int)
-function IsoGridSquare:isSafeToSpawn() end
-
----@public
 ---@param arg0 IsoGridSquare
----@param arg1 int
+---@return IsoThumpable
+function IsoGridSquare:getWindowThumpableTo(arg0) end
+
+---@public
 ---@return void
-function IsoGridSquare:isSafeToSpawn(arg0, arg1) end
+function IsoGridSquare:transmitStopFire() end
+
+---@public
+---@param arg0 IsoWorldInventoryObject
+---@return void
+function IsoGridSquare:removeWorldObject(arg0) end
+
+---@public
+---@return boolean
+---@overload fun(arg0:boolean)
+function IsoGridSquare:IsOnScreen() end
+
+---@public
+---@param arg0 boolean
+---@return boolean
+function IsoGridSquare:IsOnScreen(arg0) end
 
 ---@public
 ---@param arg0 int
@@ -245,9 +241,181 @@ function IsoGridSquare:getMatrixBit(arg0, arg1, arg2, arg3) end
 function IsoGridSquare:getMatrixBit(arg0, arg1, arg2, arg3) end
 
 ---@public
+---@return void
+function IsoGridSquare:smoke() end
+
+---@public
+---@return void
+function IsoGridSquare:RecalcAllWithNeighboursMineOnly() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoGridSquare:setCachedIsFree(arg0) end
+
+---@public
 ---@param arg0 IsoGridSquare
+---@return IsoObject
+---@overload fun(arg0:IsoMovingObject, arg1:IsoGridSquare, arg2:IsoGridSquare)
+function IsoGridSquare:testCollideSpecialObjects(arg0) end
+
+---@private
+---@param arg0 IsoMovingObject
+---@param arg1 IsoGridSquare
+---@param arg2 IsoGridSquare
 ---@return boolean
-function IsoGridSquare:isWindowTo(arg0) end
+function IsoGridSquare:testCollideSpecialObjects(arg0, arg1, arg2) end
+
+---@public
+---@return boolean
+function IsoGridSquare:hasSupport() end
+
+---@public
+---@param arg0 boolean
+---@return IsoObject
+function IsoGridSquare:getHoppable(arg0) end
+
+---@public
+---@return ArrayList|Unknown
+function IsoGridSquare:getStaticMovingObjects() end
+
+---@public
+---@param arg0 HandWeapon
+---@return void
+function IsoGridSquare:syncIsoTrap(arg0) end
+
+---@public
+---@return IsoTree
+function IsoGridSquare:getTree() end
+
+---@public
+---@return int
+function IsoGridSquare:getPuddlesDir() end
+
+---@public
+---@return void
+function IsoGridSquare:removeAllWorldObjects() end
+
+---@public
+---@param arg0 IsoObject
+---@return int
+function IsoGridSquare:transmitRemoveItemFromSquare(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return void
+function IsoGridSquare:setVertLight(arg0, arg1, arg2) end
+
+---@public
+---@return int
+function IsoGridSquare:getRoomSize() end
+
+---@public
+---@param arg0 IsoRainSplash
+---@return void
+function IsoGridSquare:setRainSplash(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 IsoTrap
+---@param arg2 IsoTrap.ExplosionMode
+---@return void
+function IsoGridSquare:drawCircleExplosion(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoGridSquare:setX(arg0) end
+
+---@public
+---@return void
+function IsoGridSquare:StartFire() end
+
+---@public
+---@return float
+function IsoGridSquare:getLampostTotalB() end
+
+---@public
+---@return Integer
+function IsoGridSquare:getID() end
+
+---@public
+---@return Boolean
+function IsoGridSquare:getWallFull() end
+
+---@public
+---@return void
+function IsoGridSquare:RecalcProperties() end
+
+---@public
+---@return int
+function IsoGridSquare:getX() end
+
+---@public
+---@param arg0 IsoTrap
+---@return void
+function IsoGridSquare:explosion(arg0) end
+
+---@public
+---@return void
+function IsoGridSquare:RenderOpenDoorOnly() end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoGridSquare:setTrapPositionY(arg0) end
+
+---@public
+---@return boolean
+function IsoGridSquare:TreatAsSolidFloor() end
+
+---@public
+---@return void
+function IsoGridSquare:setHourSeenToCurrent() end
+
+---@public
+---@return void
+function IsoGridSquare:EnsureSurroundNotNull() end
+
+---@public
+---@param arg0 int
+---@return boolean
+function IsoGridSquare:getCanSee(arg0) end
+
+---@public
+---@return void
+function IsoGridSquare:RecalcPropertiesIfNeeded() end
+
+---@public
+---@param arg0 IsoMovingObject
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@return boolean
+---@overload fun(arg0:IsoMovingObject, arg1:int, arg2:int, arg3:int, arg4:IsoGridSquare.GetSquare)
+function IsoGridSquare:testPathFindAdjacent(arg0, arg1, arg2, arg3) end
+
+---@public
+---@param arg0 IsoMovingObject
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@param arg4 IsoGridSquare.GetSquare
+---@return boolean
+function IsoGridSquare:testPathFindAdjacent(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@return boolean
+function IsoGridSquare:isAdjacentToWindow() end
+
+---@public
+---@param arg0 ColorInfo
+---@param arg1 float
+---@param arg2 float
+---@return void
+function IsoGridSquare:interpolateLight(arg0, arg1, arg2) end
 
 ---@public
 ---@param arg0 InventoryItem
@@ -287,180 +455,12 @@ function IsoGridSquare:AddWorldInventoryItem(arg0, arg1, arg2, arg3, arg4) end
 function IsoGridSquare:AddWorldInventoryItem(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
----@return IsoObject
-function IsoGridSquare:getFloor() end
-
----@public
----@param arg0 IsoObject
----@param arg1 int
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 boolean
----@param arg5 boolean
----@param arg6 boolean
----@param arg7 boolean
----@param arg8 boolean
----@param arg9 Shader
----@return int
-function IsoGridSquare:DoWallLightingNW(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
-
----@return IsoObject
----@overload fun(arg0:boolean)
-function IsoGridSquare:getWall() end
-
----@public
----@param arg0 boolean
----@return IsoObject
-function IsoGridSquare:getWall(arg0) end
-
----@public
----@param arg0 int
----@param arg1 boolean
----@return void
-function IsoGridSquare:setCouldSee(arg0, arg1) end
-
----@public
----@param arg0 int
----@param arg1 float
----@return void
-function IsoGridSquare:setTargetDarkMulti(arg0, arg1) end
-
----@public
----@param arg0 IsoDirections
----@param arg1 boolean
----@return IsoObject
-function IsoGridSquare:getDoorOrWindowOrWindowFrame(arg0, arg1) end
-
----@public
----@param arg0 int
----@param arg1 float
----@return void
-function IsoGridSquare:splatBlood(arg0, arg1) end
-
----@public
 ---@return boolean
-function IsoGridSquare:isOverlayDone() end
-
----@public
----@param arg0 int
----@param arg1 long
----@return boolean
-function IsoGridSquare:getIsDissolved(arg0, arg1) end
-
----@public
----@param arg0 IsoGameCharacter
----@param arg1 int
----@param arg2 Stack|Unknown
----@return IsoGameCharacter
-function IsoGridSquare:FindFriend(arg0, arg1, arg2) end
-
----@public
----@param arg0 IsoGridSquare
----@return void
-function IsoGridSquare:setS(arg0) end
-
----@public
----@return void
-function IsoGridSquare:ClearTileObjectsExceptFloor() end
+function IsoGridSquare:connectedWithFloor() end
 
 ---@private
----@param arg0 IsoObject
----@param arg1 int
----@param arg2 int
----@param arg3 boolean
----@param arg4 Consumer|Unknown
----@param arg5 Shader
----@return int
-function IsoGridSquare:performDrawWall(arg0, arg1, arg2, arg3, arg4, arg5) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@return boolean
-function IsoGridSquare:getCollideMatrix(arg0, arg1, arg2) end
-
----@public
----@return IsoGenerator
-function IsoGridSquare:getGenerator() end
-
----@public
----@return boolean
-function IsoGridSquare:HasSlopedRoofNorth() end
-
----@public
----@return ArrayList|Unknown
-function IsoGridSquare:getLightInfluenceG() end
-
----@public
----@param arg0 IsoGridSquare
----@return IsoObject
-function IsoGridSquare:getDoorTo(arg0) end
-
----@public
----@param arg0 IsoPlayer
----@param arg1 boolean
----@return boolean
-function IsoGridSquare:damageSpriteSheetRopeFromBottom(arg0, arg1) end
-
----@public
----@param arg0 int
 ---@return void
-function IsoGridSquare:setZ(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@return float
-function IsoGridSquare:scoreAsWaypoint(arg0, arg1) end
-
----@public
----@param arg0 IsoMovingObject
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@return boolean
----@overload fun(arg0:IsoMovingObject, arg1:int, arg2:int, arg3:int, arg4:IsoGridSquare.GetSquare)
-function IsoGridSquare:testPathFindAdjacent(arg0, arg1, arg2, arg3) end
-
----@public
----@param arg0 IsoMovingObject
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 IsoGridSquare.GetSquare
----@return boolean
-function IsoGridSquare:testPathFindAdjacent(arg0, arg1, arg2, arg3, arg4) end
-
----@public
----@return PZArrayList|Unknown
-function IsoGridSquare:getObjects() end
-
----@public
----@return void
----@overload fun(arg0:boolean)
-function IsoGridSquare:Burn() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoGridSquare:Burn(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@return boolean
----@overload fun(arg0:IsoGridSquare, arg1:IsoGridSquare.GetSquare)
-function IsoGridSquare:CalculateVisionBlocked(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@param arg1 IsoGridSquare.GetSquare
----@return boolean
-function IsoGridSquare:CalculateVisionBlocked(arg0, arg1) end
-
----@public
----@return KahluaTable
-function IsoGridSquare:getLuaMovingObjectList() end
+function IsoGridSquare:debugPrintGridSquare() end
 
 ---@public
 ---@param arg0 IsoGridSquare
@@ -475,115 +475,12 @@ function IsoGridSquare:ReCalculatePathFind(arg0) end
 function IsoGridSquare:ReCalculatePathFind(arg0, arg1) end
 
 ---@public
----@param arg0 IsoGridSquare
----@return IsoObject
----@overload fun(arg0:IsoMovingObject, arg1:IsoGridSquare, arg2:IsoGridSquare)
-function IsoGridSquare:testCollideSpecialObjects(arg0) end
-
----@private
----@param arg0 IsoMovingObject
----@param arg1 IsoGridSquare
----@param arg2 IsoGridSquare
----@return boolean
-function IsoGridSquare:testCollideSpecialObjects(arg0, arg1, arg2) end
+---@return IsoChunk
+function IsoGridSquare:getChunk() end
 
 ---@public
----@param arg0 IsoDeadBody
----@param arg1 boolean
----@return void
-function IsoGridSquare:removeCorpse(arg0, arg1) end
-
----@public
----@param arg0 IsoDirections
----@return boolean
-function IsoGridSquare:hasOpenDoorOnEdge(arg0) end
-
----@public
----@param arg0 IsoObjectType
----@return boolean
-function IsoGridSquare:Has(arg0) end
-
----@public
----@return boolean
----@overload fun(arg0:boolean)
-function IsoGridSquare:IsOnScreen() end
-
----@public
----@param arg0 boolean
----@return boolean
-function IsoGridSquare:IsOnScreen(arg0) end
-
----@public
----@return IsoWindow
----@overload fun(arg0:boolean)
-function IsoGridSquare:getWindow() end
-
----@public
----@param arg0 boolean
----@return IsoWindow
-function IsoGridSquare:getWindow(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@return float
----@overload fun(arg0:IsoMovingObject)
-function IsoGridSquare:DistToProper(arg0) end
-
----@public
----@param arg0 IsoMovingObject
----@return float
-function IsoGridSquare:DistToProper(arg0) end
-
----@public
----@return long
-function IsoGridSquare:getHashCodeObjects() end
-
----@public
----@param arg0 int
----@param arg1 boolean
----@param arg2 boolean
----@return boolean
-function IsoGridSquare:RenderMinusFloorFxMask(arg0, arg1, arg2) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoGridSquare:setOverlayDone(arg0) end
-
----@public
----@param arg0 int
----@return float
-function IsoGridSquare:getLightLevel(arg0) end
-
----@public
----@return void
-function IsoGridSquare:stopFire() end
-
----@public
----@param arg0 int
----@return void
-function IsoGridSquare:setRoomID(arg0) end
-
----@public
----@param arg0 int
----@param arg1 boolean
----@param arg2 long
----@return void
-function IsoGridSquare:setPlayerCutawayFlag(arg0, arg1, arg2) end
-
----@public
----@return ArrayList|Unknown
-function IsoGridSquare:getMovingObjects() end
-
----@public
----@param arg0 int
----@param arg1 byte
----@param arg2 byte
----@param arg3 byte
----@param arg4 boolean
----@return int
----@overload fun(arg0:int, arg1:int, arg2:int, arg3:int, arg4:boolean)
-function IsoGridSquare:setMatrixBit(arg0, arg1, arg2, arg3, arg4) end
+---@return PropertyContainer
+function IsoGridSquare:getProperties() end
 
 ---@public
 ---@param arg0 int
@@ -592,637 +489,25 @@ function IsoGridSquare:setMatrixBit(arg0, arg1, arg2, arg3, arg4) end
 ---@param arg3 int
 ---@param arg4 boolean
 ---@return int
+---@overload fun(arg0:int, arg1:byte, arg2:byte, arg3:byte, arg4:boolean)
 function IsoGridSquare:setMatrixBit(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
----@return IWorldRegion
-function IsoGridSquare:getIsoWorldRegion() end
-
----@private
----@param arg0 IsoObject
----@param arg1 boolean
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 int
----@param arg5 boolean
----@param arg6 boolean
----@return void
-function IsoGridSquare:calculateWallAlphaCommon(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
-
----@public
----@return void
-function IsoGridSquare:removeLightSwitch() end
-
----@public
----@return IsoCompost
-function IsoGridSquare:getCompost() end
-
----@param arg0 IsoObject
----@return void
-function IsoGridSquare:RereouteWallMaskTo(arg0) end
-
 ---@param arg0 int
----@param arg1 int
----@param arg2 int
----@return boolean
-function IsoGridSquare:IsWindow(arg0, arg1, arg2) end
-
----@public
----@return boolean
-function IsoGridSquare:isSolidFloor() end
-
----@public
----@return void
-function IsoGridSquare:recalcHashCodeObjects() end
-
----@public
----@param arg0 boolean
----@return void
----@overload fun(arg0:boolean, arg1:IsoGridSquare.GetSquare)
-function IsoGridSquare:RecalcAllWithNeighbours(arg0) end
-
----@public
----@param arg0 boolean
----@param arg1 IsoGridSquare.GetSquare
----@return void
-function IsoGridSquare:RecalcAllWithNeighbours(arg0, arg1) end
-
----@public
----@return ArrayList|Unknown
-function IsoGridSquare:getWorldObjects() end
-
----@public
----@return boolean
-function IsoGridSquare:HasStairsBelow() end
-
----@public
----@param arg0 int
----@return void
-function IsoGridSquare:setTrapPositionX(arg0) end
-
----@public
----@return IsoGridOcclusionData
-function IsoGridSquare:getOrCreateOcclusionData() end
-
----@public
----@return int
-function IsoGridSquare:getTrapPositionX() end
-
----@public
----@return boolean
-function IsoGridSquare:HasStairsWest() end
-
----@public
----@return boolean
-function IsoGridSquare:HasStairsNorth() end
-
----@public
----@param arg0 String
----@return void
-function IsoGridSquare:removeErosionObject(arg0) end
-
----@public
----@return int
-function IsoGridSquare:getRoomID() end
-
----@public
----@param arg0 IsoObject
----@param arg1 int
----@return void
-function IsoGridSquare:transmitAddObjectToSquare(arg0, arg1) end
-
----@public
----@return int
-function IsoGridSquare:getHashCodeObjectsInt() end
-
----@public
----@return void
-function IsoGridSquare:BurnWallsTCOnly() end
-
----@public
----@param arg0 IsoWorldRegion
----@return void
-function IsoGridSquare:setIsoWorldRegion(arg0) end
-
----@public
----@return int
-function IsoGridSquare:getHourLastSeen() end
-
----@public
----@return void
-function IsoGridSquare:clearWater() end
-
----@public
----@param arg0 IsoObject
----@param arg1 int
----@return int
-function IsoGridSquare:placeWallAndDoorCheck(arg0, arg1) end
-
----@public
----@return boolean
-function IsoGridSquare:isOutside() end
-
----@public
----@param arg0 int
----@return void
-function IsoGridSquare:setLightcache(arg0) end
-
----@param arg0 boolean[][][]
----@param arg1 DataInputStream
----@return void
----@overload fun(arg0:boolean[][][], arg1:ByteBuffer)
----@overload fun(arg0:boolean[][][], arg1:byte[], arg2:int)
-function IsoGridSquare:loadmatrix(arg0, arg1) end
-
----@private
----@param arg0 boolean[][][]
----@param arg1 ByteBuffer
----@return void
-function IsoGridSquare:loadmatrix(arg0, arg1) end
-
----@private
----@param arg0 boolean[][][]
----@param arg1 byte[]
----@param arg2 int
----@return int
-function IsoGridSquare:loadmatrix(arg0, arg1, arg2) end
-
----@param arg0 Shader
----@return int
-function IsoGridSquare:renderFloor(arg0) end
-
----@public
----@return boolean
-function IsoGridSquare:hasModData() end
-
----@private
----@param arg0 IsoObject
----@param arg1 boolean
----@return boolean
-function IsoGridSquare:isWindowOrWindowFrame(arg0, arg1) end
-
----@public
----@param arg0 boolean
----@return IsoObject
-function IsoGridSquare:getDoor(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@return void
----@overload fun(arg0:IsoGridSquare, arg1:IsoGridSquare.GetSquare)
-function IsoGridSquare:ReCalculateVisionBlocked(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@param arg1 IsoGridSquare.GetSquare
----@return void
-function IsoGridSquare:ReCalculateVisionBlocked(arg0, arg1) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoGridSquare:setHasFlies(arg0) end
-
----@public
----@param arg0 IsoObject
----@return void
----@overload fun(arg0:IsoObject, arg1:int)
-function IsoGridSquare:AddSpecialObject(arg0) end
-
----@public
----@param arg0 IsoObject
----@param arg1 int
----@return void
-function IsoGridSquare:AddSpecialObject(arg0, arg1) end
-
----@public
----@return IsoPlayer
-function IsoGridSquare:getPlayer() end
-
----@public
----@return IsoBuilding
-function IsoGridSquare:getRoofHideBuilding() end
-
----@public
----@param arg0 int
----@param arg1 boolean
----@return void
-function IsoGridSquare:setCanSee(arg0, arg1) end
-
----@public
----@return ArrayList|Unknown
-function IsoGridSquare:getDeferedCharacters() end
-
----@public
----@return void
-function IsoGridSquare:fixPlacedItemRenderOffsets() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoGridSquare:setbDoSlowPathfinding(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoGridSquare:setSolidFloor(arg0) end
-
----@public
----@return IsoRainSplash
-function IsoGridSquare:getRainSplash() end
-
----@public
----@param arg0 IsoDirections
----@return IsoGridSquare
-function IsoGridSquare:getAdjacentSquare(arg0) end
-
----@public
----@param arg0 int
----@param arg1 boolean
----@param arg2 long
----@return void
-function IsoGridSquare:setIsDissolved(arg0, arg1, arg2) end
-
----@public
----@return float
-function IsoGridSquare:getDarkStep() end
-
----@public
----@return IsoBrokenGlass
-function IsoGridSquare:getBrokenGlass() end
-
----@public
----@return void
-function IsoGridSquare:DirtySlice() end
-
----@return boolean
-function IsoGridSquare:HasNoCharacters() end
-
----@public
----@param arg0 int
----@param arg1 boolean
----@param arg2 boolean
----@return void
-function IsoGridSquare:renderCharacters(arg0, arg1, arg2) end
-
----@public
----@return float
-function IsoGridSquare:getLampostTotalG() end
-
----@public
----@return IsoObject
-function IsoGridSquare:getSheetRope() end
-
----@public
----@return IsoGridSquare
-function IsoGridSquare:getS() end
-
----@public
----@param arg0 IsoGridSquare
----@return IsoObject
-function IsoGridSquare:getDoorFrameTo(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@return void
-function IsoGridSquare:setE(arg0) end
-
----@public
----@param arg0 IsoObject
----@param arg1 int
----@param arg2 boolean
----@param arg3 boolean
+---@param arg1 byte
+---@param arg2 byte
+---@param arg3 byte
 ---@param arg4 boolean
----@param arg5 boolean
----@param arg6 Shader
 ---@return int
-function IsoGridSquare:DoWallLightingN(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
-
----@public
----@return void
-function IsoGridSquare:InvalidateSpecialObjectPaths() end
-
----@public
----@return void
-function IsoGridSquare:setCollisionMode() end
-
----@public
----@param arg0 IsoGameCharacter
----@param arg1 int
----@param arg2 ArrayList|Unknown
----@return IsoGameCharacter
----@overload fun(arg0:IsoGameCharacter, arg1:int, arg2:ArrayList|Unknown, arg3:IsoGameCharacter, arg4:int)
-function IsoGridSquare:FindEnemy(arg0, arg1, arg2) end
-
----@public
----@param arg0 IsoGameCharacter
----@param arg1 int
----@param arg2 ArrayList|Unknown
----@param arg3 IsoGameCharacter
----@param arg4 int
----@return IsoGameCharacter
-function IsoGridSquare:FindEnemy(arg0, arg1, arg2, arg3, arg4) end
-
----@public
----@param arg0 ColorInfo
----@return void
-function IsoGridSquare:setLightInfoServerGUIOnly(arg0) end
-
----@public
----@return IsoObject
-function IsoGridSquare:getWallSE() end
-
----@public
----@param arg0 IsoObjectType
----@return IsoCurtain
-function IsoGridSquare:getCurtain(arg0) end
-
----@public
----@param arg0 boolean
----@param arg1 boolean
----@return void
-function IsoGridSquare:removeBlood(arg0, arg1) end
-
----@public
----@param arg0 IsoGridSquare
----@return float
----@overload fun(arg0:IsoMovingObject)
----@overload fun(arg0:int, arg1:int)
-function IsoGridSquare:DistTo(arg0) end
-
----@public
----@param arg0 IsoMovingObject
----@return float
-function IsoGridSquare:DistTo(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@return float
-function IsoGridSquare:DistTo(arg0, arg1) end
+function IsoGridSquare:setMatrixBit(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
 ---@return boolean
-function IsoGridSquare:isSolidFloorCached() end
-
----@private
----@param arg0 IsoObject
----@return boolean
-function IsoGridSquare:isSpriteOnSouthOrEastWall(arg0) end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 int
----@return void
----@overload fun(arg0:ByteBuffer, arg1:int, arg2:boolean)
-function IsoGridSquare:load(arg0, arg1) end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 int
----@param arg2 boolean
----@return void
-function IsoGridSquare:load(arg0, arg1, arg2) end
-
----@public
----@param arg0 IsoObject
----@param arg1 int
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 boolean
----@param arg5 boolean
----@param arg6 Shader
----@return int
-function IsoGridSquare:DoWallLightingW(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
-
----@public
----@param arg0 IsoFlagType
----@return boolean
----@overload fun(arg0:String)
-function IsoGridSquare:Is(arg0) end
-
----@public
----@param arg0 String
----@return boolean
-function IsoGridSquare:Is(arg0) end
-
----@public
----@param arg0 ArrayList|Unknown
----@return void
-function IsoGridSquare:setLightInfluenceR(arg0) end
-
----@public
----@return void
-function IsoGridSquare:softClear() end
-
----@param arg0 IsoGridSquare
----@return void
----@overload fun(arg0:IsoGridSquare, arg1:IsoGridSquare.GetSquare)
----@overload fun(arg0:boolean, arg1:IsoGridSquare, arg2:IsoGridSquare.GetSquare)
-function IsoGridSquare:ReCalculateAll(arg0) end
-
----@param arg0 IsoGridSquare
----@param arg1 IsoGridSquare.GetSquare
----@return void
-function IsoGridSquare:ReCalculateAll(arg0, arg1) end
-
----@param arg0 boolean
----@param arg1 IsoGridSquare
----@param arg2 IsoGridSquare.GetSquare
----@return void
-function IsoGridSquare:ReCalculateAll(arg0, arg1, arg2) end
-
----@public
----@return boolean
-function IsoGridSquare:isbDoSlowPathfinding() end
-
----@public
----@param arg0 IsoGridSquare
----@return void
----@overload fun(arg0:IsoGridSquare, arg1:IsoGridSquare.GetSquare)
-function IsoGridSquare:ReCalculateCollide(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@param arg1 IsoGridSquare.GetSquare
----@return void
-function IsoGridSquare:ReCalculateCollide(arg0, arg1) end
-
----@public
----@return IsoMetaGrid.Zone
-function IsoGridSquare:getZone() end
-
----@public
----@param arg0 int
----@return void
-function IsoGridSquare:setRecalcLightTime(arg0) end
-
----@private
----@param arg0 IsoObject
----@param arg1 boolean
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 IsoFlagType
----@param arg5 IsoFlagType
----@param arg6 IsoFlagType
----@param arg7 boolean
----@param arg8 int
----@param arg9 boolean
----@param arg10 boolean
----@return boolean
-function IsoGridSquare:calculateWallAlphaAndCircleStencilEdge(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10) end
-
----@public
----@return ZomboidBitFlag
-function IsoGridSquare:getHasTypes() end
-
----@public
----@param arg0 boolean
----@return IsoObject
-function IsoGridSquare:getWallHoppable(arg0) end
-
----@public
----@param arg0 IsoPlayer
----@param arg1 boolean
----@return boolean
-function IsoGridSquare:removeSheetRopeFromBottom(arg0, arg1) end
-
----@public
----@param arg0 IsoRoom
----@return void
-function IsoGridSquare:setRoom(arg0) end
-
----@param arg0 boolean
----@return boolean
-function IsoGridSquare:HasDoor(arg0) end
-
----@public
----@return void
-function IsoGridSquare:setHourSeenToCurrent() end
-
----@public
----@param arg0 int
----@return boolean
-function IsoGridSquare:isCanSee(arg0) end
-
----@public
----@param arg0 IsoDirections
----@return IsoGridSquare
-function IsoGridSquare:getTileInDirection(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 boolean
----@return boolean
-function IsoGridSquare:testCollideAdjacentAdvanced(arg0, arg1, arg2, arg3) end
+function IsoGridSquare:isCacheIsFree() end
 
 ---@public
 ---@return boolean
 function IsoGridSquare:hasWindowOrWindowFrame() end
-
----@public
----@return void
-function IsoGridSquare:ResetIsoWorldRegion() end
-
----@public
----@return void
-function IsoGridSquare:discard() end
-
----@public
----@param arg0 boolean
----@return IsoObject
-function IsoGridSquare:getThumpableWall(arg0) end
-
----@public
----@return void
-function IsoGridSquare:explodeTrap() end
-
----@public
----@return void
-function IsoGridSquare:transmitModdata() end
-
----@public
----@return boolean
-function IsoGridSquare:isVehicleIntersecting() end
-
----@private
----@param arg0 Shader
----@return int
-function IsoGridSquare:renderFloorInternal(arg0) end
-
----@public
----@param arg0 IsoDirections
----@return IsoObject
-function IsoGridSquare:getOpenDoor(arg0) end
-
----@public
----@param arg0 int
----@return boolean
-function IsoGridSquare:isSeen(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@return void
-function IsoGridSquare:setN(arg0) end
-
----@public
----@return PZArrayList|Unknown
-function IsoGridSquare:getLocalTemporaryObjects() end
-
----@public
----@return float
-function IsoGridSquare:getTotalWeightOfItemsOnFloor() end
-
----@public
----@return IsoGridSquare
-function IsoGridSquare:getE() end
-
----@public
----@return boolean
-function IsoGridSquare:HasTree() end
-
----@public
----@param arg0 ArrayDeque|Unknown
----@param arg1 int
----@return void
-function IsoGridSquare:getSquaresForThread(arg0, arg1) end
-
----@public
----@param arg0 IsoGridSquare
----@return void
-function IsoGridSquare:setW(arg0) end
-
----@public
----@param arg0 int
----@return float
-function IsoGridSquare:getDarkMulti(arg0) end
-
----@public
----@return boolean
-function IsoGridSquare:haveFire() end
-
----@public
----@return int
-function IsoGridSquare:getTrapPositionY() end
-
----@public
----@return IsoGridSquare
-function IsoGridSquare:getN() end
-
----@public
----@return IsoPuddlesGeometry
-function IsoGridSquare:getPuddles() end
-
----@public
----@return void
-function IsoGridSquare:RecalcAllWithNeighboursMineOnly() end
-
----@public
----@param arg0 IsoObject
----@return void
-function IsoGridSquare:transmitRemoveItemFromSquareOnServer(arg0) end
 
 ---@public
 ---@param arg0 IsoCell
@@ -1245,31 +530,25 @@ function IsoGridSquare:getNew(arg0, arg1, arg2, arg3, arg4) end
 function IsoGridSquare:getNew(arg0, arg1, arg2, arg3, arg4, arg5) end
 
 ---@public
----@param arg0 String
----@return IsoObject
-function IsoGridSquare:addFloor(arg0) end
+---@return void
+function IsoGridSquare:discard() end
 
 ---@public
----@return float
-function IsoGridSquare:getLampostTotalB() end
+---@param arg0 IsoGameCharacter
+---@param arg1 int
+---@param arg2 ArrayList|Unknown
+---@return IsoGameCharacter
+---@overload fun(arg0:IsoGameCharacter, arg1:int, arg2:ArrayList|Unknown, arg3:IsoGameCharacter, arg4:int)
+function IsoGridSquare:FindEnemy(arg0, arg1, arg2) end
 
 ---@public
----@return boolean
-function IsoGridSquare:isCommonGrass() end
-
----@public
----@return IsoGridSquare
-function IsoGridSquare:getW() end
-
----@public
----@param arg0 IsoGridSquare
----@return boolean
-function IsoGridSquare:isBlockedTo(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@return IsoObject
-function IsoGridSquare:getWallHoppableTo(arg0) end
+---@param arg0 IsoGameCharacter
+---@param arg1 int
+---@param arg2 ArrayList|Unknown
+---@param arg3 IsoGameCharacter
+---@param arg4 int
+---@return IsoGameCharacter
+function IsoGridSquare:FindEnemy(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
 ---@param arg0 int
@@ -1279,181 +558,182 @@ function IsoGridSquare:getWallHoppableTo(arg0) end
 function IsoGridSquare:getVisionMatrix(arg0, arg1, arg2) end
 
 ---@public
----@param arg0 HandWeapon
----@return void
-function IsoGridSquare:syncIsoTrap(arg0) end
+---@param arg0 IsoGridSquare
+---@return IsoObject
+function IsoGridSquare:getWallHoppableTo(arg0) end
 
 ---@public
----@param arg0 boolean
 ---@return void
-function IsoGridSquare:switchLight(arg0) end
+function IsoGridSquare:transmitModdata() end
 
 ---@public
----@param arg0 float
----@return void
-function IsoGridSquare:setLampostTotalR(arg0) end
+---@return IsoGridSquare
+function IsoGridSquare:getE() end
 
 ---@public
 ---@param arg0 int
----@return void
-function IsoGridSquare:renderDeferredCharacters(arg0) end
+---@return boolean
+function IsoGridSquare:isCouldSee(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return boolean
+function IsoGridSquare:isFree(arg0) end
+
+---@public
+---@return PZArrayList|Unknown
+function IsoGridSquare:getLocalTemporaryObjects() end
+
+---@public
+---@return boolean
+function IsoGridSquare:isCachedIsFree() end
+
+---@public
+---@return IsoRaindrop
+function IsoGridSquare:getRainDrop() end
 
 ---@public
 ---@return boolean
 function IsoGridSquare:isSolid() end
 
 ---@public
----@return IsoBuilding
-function IsoGridSquare:getBuilding() end
+---@return void
+---@overload fun(arg0:boolean)
+function IsoGridSquare:Burn() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoGridSquare:Burn(arg0) end
+
+---@public
+---@return void
+function IsoGridSquare:restackSheetRope() end
+
+---@public
+---@param arg0 IsoDirections
+---@return boolean
+function IsoGridSquare:hasClosedDoorOnEdge(arg0) end
+
+---@param arg0 boolean[][][]
+---@param arg1 DataInputStream
+---@return void
+---@overload fun(arg0:boolean[][][], arg1:ByteBuffer)
+---@overload fun(arg0:boolean[][][], arg1:byte[], arg2:int)
+function IsoGridSquare:loadmatrix(arg0, arg1) end
 
 ---@private
----@param arg0 IsoObject
----@param arg1 Color
+---@param arg0 boolean[][][]
+---@param arg1 ByteBuffer
 ---@return void
-function IsoGridSquare:fudgeShadowsToAlpha(arg0, arg1) end
+function IsoGridSquare:loadmatrix(arg0, arg1) end
 
----@public
----@param arg0 int
----@param arg1 boolean
----@return void
-function IsoGridSquare:setIsSeen(arg0, arg1) end
-
----@public
----@return void
-function IsoGridSquare:EnsureSurroundNotNull() end
-
----@public
----@return boolean
-function IsoGridSquare:hasSupport() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoGridSquare:setCachedIsFree(arg0) end
-
----@public
----@return Boolean
-function IsoGridSquare:getWallFull() end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function IsoGridSquare:addDeferredCharacter(arg0) end
-
----@public
----@param arg0 int
----@return void
-function IsoGridSquare:setID(arg0) end
-
----@public
----@return ArrayList|Unknown
-function IsoGridSquare:getStaticMovingObjects() end
-
----@public
----@return List|Unknown
-function IsoGridSquare:getDeadBodys() end
-
----@public
----@return void
-function IsoGridSquare:transmitStopFire() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoGridSquare:BurnWalls(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@return IsoThumpable
-function IsoGridSquare:getWindowThumpableTo(arg0) end
-
----@public
----@return boolean
-function IsoGridSquare:TreatAsSolidFloor() end
-
----@public
----@param arg0 int
----@param arg1 int
+---@private
+---@param arg0 boolean[][][]
+---@param arg1 byte[]
 ---@param arg2 int
----@return void
-function IsoGridSquare:setVertLight(arg0, arg1, arg2) end
-
----@public
 ---@return int
-function IsoGridSquare:getRoomSize() end
+function IsoGridSquare:loadmatrix(arg0, arg1, arg2) end
 
 ---@public
----@param arg0 int
----@param arg1 IsoTrap
----@param arg2 IsoTrap.ExplosionMode
+---@param arg0 IsoRoom
 ---@return void
-function IsoGridSquare:drawCircleExplosion(arg0, arg1, arg2) end
-
----@public
----@return boolean
-function IsoGridSquare:isCacheIsFree() end
-
----@public
----@param arg0 IsoRainSplash
----@return void
-function IsoGridSquare:setRainSplash(arg0) end
-
----@public
----@return PropertyContainer
-function IsoGridSquare:getProperties() end
+function IsoGridSquare:setRoom(arg0) end
 
 ---@public
 ---@param arg0 IsoGridSquare
+---@param arg1 boolean
+---@param arg2 boolean
+---@param arg3 boolean
 ---@return boolean
-function IsoGridSquare:isWindowBlockedTo(arg0) end
+---@overload fun(arg0:IsoGridSquare, arg1:boolean, arg2:boolean, arg3:boolean, arg4:boolean)
+---@overload fun(arg0:IsoGridSquare, arg1:boolean, arg2:boolean, arg3:boolean, arg4:boolean, arg5:IsoGridSquare.GetSquare)
+function IsoGridSquare:CalculateCollide(arg0, arg1, arg2, arg3) end
 
 ---@public
+---@param arg0 IsoGridSquare
+---@param arg1 boolean
+---@param arg2 boolean
+---@param arg3 boolean
+---@param arg4 boolean
+---@return boolean
+function IsoGridSquare:CalculateCollide(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@param arg0 IsoGridSquare
+---@param arg1 boolean
+---@param arg2 boolean
+---@param arg3 boolean
+---@param arg4 boolean
+---@param arg5 IsoGridSquare.GetSquare
+---@return boolean
+function IsoGridSquare:CalculateCollide(arg0, arg1, arg2, arg3, arg4, arg5) end
+
+---@param arg0 IsoGridSquare
 ---@return void
-function IsoGridSquare:RecalcPropertiesIfNeeded() end
+---@overload fun(arg0:IsoGridSquare, arg1:IsoGridSquare.GetSquare)
+---@overload fun(arg0:boolean, arg1:IsoGridSquare, arg2:IsoGridSquare.GetSquare)
+function IsoGridSquare:ReCalculateAll(arg0) end
+
+---@param arg0 IsoGridSquare
+---@param arg1 IsoGridSquare.GetSquare
+---@return void
+function IsoGridSquare:ReCalculateAll(arg0, arg1) end
+
+---@param arg0 boolean
+---@param arg1 IsoGridSquare
+---@param arg2 IsoGridSquare.GetSquare
+---@return void
+function IsoGridSquare:ReCalculateAll(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 IsoObject
+---@return void
+---@overload fun(arg0:IsoObject, arg1:int)
+function IsoGridSquare:AddTileObject(arg0) end
+
+---@public
+---@param arg0 IsoObject
+---@param arg1 int
+---@return void
+function IsoGridSquare:AddTileObject(arg0, arg1) end
+
+---@public
+---@return IsoDeadBody
+function IsoGridSquare:getDeadBody() end
 
 ---@public
 ---@param arg0 boolean
 ---@return IsoObject
-function IsoGridSquare:getHoppable(arg0) end
+function IsoGridSquare:getHoppableWall(arg0) end
 
 ---@public
 ---@return void
-function IsoGridSquare:removeAllWorldObjects() end
+function IsoGridSquare:setCollisionMode() end
 
 ---@public
----@param arg0 int
----@return boolean
-function IsoGridSquare:getCanSee(arg0) end
-
----@public
----@return boolean
-function IsoGridSquare:isAdjacentToWindow() end
-
----@public
+---@param arg0 ByteBuffer
+---@param arg1 int
 ---@return void
-function IsoGridSquare:StartFire() end
+---@overload fun(arg0:ByteBuffer, arg1:int, arg2:boolean)
+function IsoGridSquare:load(arg0, arg1) end
 
 ---@public
----@return boolean
-function IsoGridSquare:connectedWithFloor() end
-
----@public
----@param arg0 IsoDirections
----@return IsoGridSquare
-function IsoGridSquare:getAdjacentPathSquare(arg0) end
-
----@public
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@param arg2 boolean
 ---@return void
-function IsoGridSquare:smoke() end
+function IsoGridSquare:load(arg0, arg1, arg2) end
 
----@public
+---@private
 ---@param arg0 IsoObject
+---@param arg1 int
+---@param arg2 int
+---@param arg3 boolean
+---@param arg4 Consumer|Unknown
+---@param arg5 Shader
 ---@return int
-function IsoGridSquare:transmitRemoveItemFromSquare(arg0) end
-
----@public
----@return IsoChunk
-function IsoGridSquare:getChunk() end
+function IsoGridSquare:performDrawWallOnly(arg0, arg1, arg2, arg3, arg4, arg5) end
 
 ---@public
 ---@param arg0 IsoObject
@@ -1461,32 +741,13 @@ function IsoGridSquare:getChunk() end
 function IsoGridSquare:RemoveTileObject(arg0) end
 
 ---@public
+---@return List|Unknown
+function IsoGridSquare:getDeadBodys() end
+
+---@public
 ---@param arg0 IsoGridSquare
----@return IsoObject
-function IsoGridSquare:getTransparentWallTo(arg0) end
-
----@public
----@return IsoBrokenGlass
-function IsoGridSquare:addBrokenGlass() end
-
----@public
----@param arg0 boolean
----@param arg1 int
----@param arg2 String
----@param arg3 String
----@param arg4 KahluaTable
----@return IsoThumpable
-function IsoGridSquare:AddStairs(arg0, arg1, arg2, arg3, arg4) end
-
----@private
----@param arg0 boolean
----@return IsoObject
-function IsoGridSquare:getSpecialWall(arg0) end
-
----@public
----@param arg0 int
----@return void
-function IsoGridSquare:setX(arg0) end
+---@return IsoWindow
+function IsoGridSquare:getWindowTo(arg0) end
 
 ---@param arg0 boolean[][][]
 ---@param arg1 DataOutputStream
@@ -1509,82 +770,224 @@ function IsoGridSquare:savematrix(arg0, arg1) end
 function IsoGridSquare:savematrix(arg0, arg1, arg2) end
 
 ---@public
----@param arg0 IsoWorldInventoryObject
----@return void
-function IsoGridSquare:removeWorldObject(arg0) end
+---@param arg0 boolean
+---@return IsoObject
+function IsoGridSquare:getWindowFrame(arg0) end
+
+---@private
+---@param arg0 boolean
+---@return IsoObject
+function IsoGridSquare:getSpecialWall(arg0) end
 
 ---@public
----@return int
-function IsoGridSquare:getPuddlesDir() end
+---@return float
+function IsoGridSquare:getHoursSinceLastSeen() end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoGridSquare:setRecalcLightTime(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoGridSquare:renderDeferredCharacters(arg0) end
 
 ---@public
 ---@param arg0 IsoObject
----@param arg1 IsoDirections
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 boolean
----@param arg5 boolean
----@param arg6 boolean
----@param arg7 boolean
----@param arg8 boolean
----@param arg9 WallShaperWhole
 ---@return void
-function IsoGridSquare:DoCutawayShader(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+function IsoGridSquare:AddSpecialTileObject(arg0) end
 
 ---@public
+---@param arg0 IsoGridSquare
 ---@return void
-function IsoGridSquare:RecalcProperties() end
+function IsoGridSquare:setN(arg0) end
 
 ---@public
----@return IsoRaindrop
-function IsoGridSquare:getRainDrop() end
+---@return boolean
+function IsoGridSquare:HasTree() end
 
 ---@public
----@return void
-function IsoGridSquare:RenderOpenDoorOnly() end
+---@return IsoGridOcclusionData
+function IsoGridSquare:getOcclusionData() end
 
 ---@public
----@return int
-function IsoGridSquare:getX() end
-
----@public
----@return Integer
-function IsoGridSquare:getID() end
-
----@public
----@param arg0 IsoTrap
----@return void
-function IsoGridSquare:explosion(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoGridSquare:setCacheIsFree(arg0) end
+---@param arg0 IsoPlayer
+---@param arg1 boolean
+---@return boolean
+function IsoGridSquare:removeSheetRopeFromBottom(arg0, arg1) end
 
 ---@public
 ---@param arg0 IsoGridSquare
 ---@return boolean
-function IsoGridSquare:isWallTo(arg0) end
+function IsoGridSquare:isBlockedTo(arg0) end
 
 ---@public
----@param arg0 IsoDirections
----@param arg1 boolean
----@return boolean
-function IsoGridSquare:hasDoorOnEdge(arg0, arg1) end
+---@return IsoGridSquare
+function IsoGridSquare:getW() end
 
 ---@public
----@return KahluaTable
-function IsoGridSquare:getModData() end
-
----@public
----@param arg0 String
----@return IsoObject
-function IsoGridSquare:getContainerItem(arg0) end
+---@param arg0 IsoObject
+---@return void
+function IsoGridSquare:transmitRemoveItemFromSquareOnServer(arg0) end
 
 ---@public
 ---@param arg0 boolean
+---@return IsoThumpable
+function IsoGridSquare:getThumpableWindow(arg0) end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return float
+---@overload fun(arg0:IsoMovingObject)
+---@overload fun(arg0:int, arg1:int)
+function IsoGridSquare:DistTo(arg0) end
+
+---@public
+---@param arg0 IsoMovingObject
+---@return float
+function IsoGridSquare:DistTo(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return float
+function IsoGridSquare:DistTo(arg0, arg1) end
+
+---@public
+---@return IsoPuddlesGeometry
+function IsoGridSquare:getPuddles() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return int
+function IsoGridSquare:getVertLight(arg0, arg1) end
+
+---@public
+---@param arg0 IsoDirections
+---@return IsoGridSquare
+function IsoGridSquare:getAdjacentSquare(arg0) end
+
+---@public
+---@return void
+function IsoGridSquare:DirtySlice() end
+
+---@public
+---@return IsoBrokenGlass
+function IsoGridSquare:getBrokenGlass() end
+
+---@public
+---@return IsoObject
+function IsoGridSquare:getPlayerBuiltFloor() end
+
+---@public
+---@return IsoPlayer
+function IsoGridSquare:getPlayer() end
+
+---@public
+---@return IsoObject
+function IsoGridSquare:getWallSE() end
+
+---@public
+---@return ErosionData.Square
+function IsoGridSquare:getErosionData() end
+
+---@public
+---@return void
+function IsoGridSquare:clearWater() end
+
+---@public
+---@return IsoRoom
+function IsoGridSquare:getRoom() end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return void
+function IsoGridSquare:setE(arg0) end
+
+---@public
+---@param arg0 String
 ---@return boolean
-function IsoGridSquare:isFree(arg0) end
+---@overload fun(arg0:IsoFlagType)
+function IsoGridSquare:Is(arg0) end
+
+---@public
+---@param arg0 IsoFlagType
+---@return boolean
+function IsoGridSquare:Is(arg0) end
+
+---@public
+---@param arg0 ArrayList|Unknown
+---@return void
+function IsoGridSquare:setLightInfluenceG(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoGridSquare:setDarkStep(arg0) end
+
+---@public
+---@return float
+function IsoGridSquare:getDarkStep() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@param arg3 boolean
+---@param arg4 boolean
+---@return LosUtil.TestResults
+function IsoGridSquare:testVisionAdjacent(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@param arg0 IsoObject
+---@return void
+---@overload fun(arg0:IsoObject, arg1:int)
+function IsoGridSquare:AddSpecialObject(arg0) end
+
+---@public
+---@param arg0 IsoObject
+---@param arg1 int
+---@return void
+function IsoGridSquare:AddSpecialObject(arg0, arg1) end
+
+---@public
+---@return BaseVehicle
+function IsoGridSquare:getVehicleContainer() end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoGridSquare:setY(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return IsoObject
+function IsoGridSquare:getDoor(arg0) end
+
+---@public
+---@return boolean
+function IsoGridSquare:isSolidTrans() end
+
+---@public
+---@return boolean
+function IsoGridSquare:isSolidFloorCached() end
+
+---@public
+---@return IsoWindow
+---@overload fun(arg0:boolean)
+function IsoGridSquare:getWindow() end
+
+---@public
+---@param arg0 boolean
+---@return IsoWindow
+function IsoGridSquare:getWindow(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoGridSquare:setTrapPositionX(arg0) end
 
 ---@private
 ---@param arg0 int
@@ -1594,69 +997,58 @@ function IsoGridSquare:isFree(arg0) end
 ---@return LosUtil.TestResults
 function IsoGridSquare:DoDiagnalCheck(arg0, arg1, arg2, arg3) end
 
----@param arg0 IsoFlagType
----@return void
-function IsoGridSquare:RemoveAllWith(arg0) end
-
 ---@public
----@param arg0 boolean
----@return void
-function IsoGridSquare:setHaveElectricity(arg0) end
-
----@public
----@param arg0 boolean
 ---@return boolean
----@overload fun(arg0:boolean, arg1:boolean)
-function IsoGridSquare:isFreeOrMidair(arg0) end
+function IsoGridSquare:HasStairsWest() end
 
 ---@public
 ---@param arg0 boolean
 ---@param arg1 boolean
----@return boolean
-function IsoGridSquare:isFreeOrMidair(arg0, arg1) end
-
----@private
----@param arg0 IsoObject
----@param arg1 int
----@param arg2 int
----@param arg3 boolean
----@param arg4 Consumer|Unknown
----@param arg5 Shader
----@return int
-function IsoGridSquare:performDrawWallOnly(arg0, arg1, arg2, arg3, arg4, arg5) end
-
 ---@return void
-function IsoGridSquare:cacheLightInfo() end
+function IsoGridSquare:removeBlood(arg0, arg1) end
 
 ---@public
 ---@param arg0 boolean
----@return boolean
-function IsoGridSquare:hasBlockedDoor(arg0) end
+---@return IsoThumpable
+function IsoGridSquare:getHoppableThumpable(arg0) end
 
 ---@public
----@return IsoZombie
-function IsoGridSquare:getZombie() end
+---@param arg0 float
+---@return void
+function IsoGridSquare:setLampostTotalB(arg0) end
 
 ---@public
----@return boolean
-function IsoGridSquare:HasSlopedRoofWest() end
+---@param arg0 int
+---@return void
+function IsoGridSquare:CalcVisibility(arg0) end
 
 ---@public
----@return int
-function IsoGridSquare:getTrapPositionZ() end
+---@return void
+function IsoGridSquare:clearPuddles() end
 
 ---@public
----@return ArrayList|Unknown
-function IsoGridSquare:getLightInfluenceB() end
-
----@public
----@param arg0 IsoGridSquare
----@return boolean
-function IsoGridSquare:isDoorTo(arg0) end
+---@return ZomboidBitFlag
+function IsoGridSquare:getHasTypes() end
 
 ---@public
 ---@return boolean
-function IsoGridSquare:HasElevatedFloor() end
+function IsoGridSquare:HasPushable() end
+
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return boolean
+function IsoGridSquare:IsWindow(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 int
+---@param arg1 float
+---@return void
+function IsoGridSquare:setDarkMulti(arg0, arg1) end
+
+---@public
+---@return boolean
+function IsoGridSquare:HasSlopedRoof() end
 
 ---@private
 ---@param arg0 IsoObject
@@ -1684,49 +1076,125 @@ function IsoGridSquare:HasElevatedFloor() end
 function IsoGridSquare:performDrawWallSegmentSingle(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20) end
 
 ---@public
----@param arg0 boolean
+---@return IsoGridSquare
+function IsoGridSquare:getS() end
+
+---@public
+---@param arg0 int
+---@param arg1 boolean
+---@param arg2 long
+---@return void
+function IsoGridSquare:setIsDissolved(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 int
+---@return boolean
+function IsoGridSquare:getSeen(arg0) end
+
+---@public
+---@param arg0 IsoGridSquare
 ---@return IsoObject
-function IsoGridSquare:getThumpableWallOrHoppable(arg0) end
+function IsoGridSquare:getHoppableTo(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 long
+---@return boolean
+function IsoGridSquare:getPlayerCutawayFlag(arg0, arg1) end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return boolean
+function IsoGridSquare:isHoppableTo(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 boolean
+---@param arg2 boolean
+---@return void
+function IsoGridSquare:renderCharacters(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return IsoObject
+function IsoGridSquare:getDoorFrameTo(arg0) end
+
+---@param arg0 IsoGridSquare.GetSquare
+---@return void
+function IsoGridSquare:setBlockedGridPointers(arg0) end
 
 ---@public
 ---@param arg0 int
 ---@return void
-function IsoGridSquare:CalcVisibility(arg0) end
+function IsoGridSquare:setLightcache(arg0) end
+
+---@public
+---@return IsoRainSplash
+function IsoGridSquare:getRainSplash() end
+
+---@public
+---@param arg0 ColorInfo
+---@return void
+function IsoGridSquare:setLightInfoServerGUIOnly(arg0) end
 
 ---@public
 ---@param arg0 boolean
----@return IsoObject
-function IsoGridSquare:getDoorOrWindow(arg0) end
+---@return void
+function IsoGridSquare:setSolidFloor(arg0) end
 
 ---@public
----@param arg0 boolean
----@return IsoThumpable
-function IsoGridSquare:getHoppableThumpable(arg0) end
+---@return void
+function IsoGridSquare:fixPlacedItemRenderOffsets() end
 
 ---@public
----@param arg0 String
----@return long
----@overload fun(arg0:String, arg1:boolean)
-function IsoGridSquare:playSound(arg0) end
+---@return int
+function IsoGridSquare:getTrapPositionZ() end
 
 ---@public
----@param arg0 String
+---@return boolean
+function IsoGridSquare:isInARoom() end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoGridSquare:checkRoomSeen(arg0) end
+
+---@public
+---@return ArrayList|Unknown
+function IsoGridSquare:getMovingObjects() end
+
+---@public
+---@return boolean
+function IsoGridSquare:isSolidFloor() end
+
+---@public
+---@return void
+function IsoGridSquare:BurnWallsTCOnly() end
+
+---@public
+---@return boolean
+function IsoGridSquare:HasElevatedFloor() end
+
+---@public
+---@param arg0 byte[]
+---@return boolean
+function IsoGridSquare:toBoolean(arg0) end
+
+---@public
+---@param arg0 IsoDirections
 ---@param arg1 boolean
----@return long
-function IsoGridSquare:playSound(arg0, arg1) end
+---@return boolean
+function IsoGridSquare:hasDoorOnEdge(arg0, arg1) end
 
 ---@public
----@return void
-function IsoGridSquare:FixStackableObjects() end
+---@return IWorldRegion
+function IsoGridSquare:getIsoWorldRegion() end
 
 ---@public
----@return KahluaTable
-function IsoGridSquare:getLuaTileObjectList() end
-
----@public
----@param arg0 IsoObject
----@return void
-function IsoGridSquare:DeleteTileObject(arg0) end
+---@param arg0 String
+---@param arg1 char[]
+---@return boolean
+function IsoGridSquare:auth(arg0, arg1) end
 
 ---@public
 ---@param arg0 int
@@ -1736,17 +1204,263 @@ function IsoGridSquare:DeleteTileObject(arg0) end
 function IsoGridSquare:getPathMatrix(arg0, arg1, arg2) end
 
 ---@public
----@return boolean
-function IsoGridSquare:hasFlies() end
+---@param arg0 ArrayList|Unknown
+---@return void
+function IsoGridSquare:setLightInfluenceB(arg0) end
 
 ---@public
+---@return boolean
+---@overload fun(arg0:IsoGridSquare, arg1:int)
+function IsoGridSquare:isSafeToSpawn() end
+
+---@public
+---@param arg0 IsoGridSquare
+---@param arg1 int
 ---@return void
-function IsoGridSquare:BurnTick() end
+function IsoGridSquare:isSafeToSpawn(arg0, arg1) end
 
 ---@public
 ---@param arg0 boolean
+---@return void
+function IsoGridSquare:setCacheIsFree(arg0) end
+
+---@public
+---@param arg0 String
+---@return IsoObject
+function IsoGridSquare:getContainerItem(arg0) end
+
+---@public
+---@return KahluaTable
+function IsoGridSquare:getLuaTileObjectList() end
+
+---@public
+---@return boolean
+function IsoGridSquare:HasStairsBelow() end
+
+---@public
+---@return KahluaTable
+function IsoGridSquare:getModData() end
+
+---@public
+---@param arg0 boolean
+---@return boolean
+function IsoGridSquare:hasBlockedDoor(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return boolean
+---@overload fun(arg0:boolean, arg1:boolean)
+function IsoGridSquare:isFreeOrMidair(arg0) end
+
+---@public
+---@param arg0 boolean
+---@param arg1 boolean
+---@return boolean
+function IsoGridSquare:isFreeOrMidair(arg0, arg1) end
+
+---@public
+---@return boolean
+function IsoGridSquare:isOutside() end
+
+---@public
+---@param arg0 IsoObject
+---@param arg1 IsoDirections
+---@param arg2 boolean
+---@param arg3 boolean
+---@param arg4 boolean
+---@param arg5 boolean
+---@param arg6 boolean
+---@param arg7 boolean
+---@param arg8 boolean
+---@param arg9 WallShaperWhole
+---@return void
+function IsoGridSquare:DoCutawayShader(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+
+---@public
+---@param arg0 float
+---@param arg1 float
 ---@return float
-function IsoGridSquare:getGridSneakModifier(arg0) end
+function IsoGridSquare:getApparentZ(arg0, arg1) end
+
+---@private
+---@param arg0 IsoObject
+---@param arg1 boolean
+---@param arg2 boolean
+---@param arg3 boolean
+---@param arg4 IsoFlagType
+---@param arg5 IsoFlagType
+---@param arg6 IsoFlagType
+---@param arg7 boolean
+---@param arg8 int
+---@param arg9 boolean
+---@param arg10 boolean
+---@return boolean
+function IsoGridSquare:calculateWallAlphaAndCircleStencilEdge(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10) end
+
+---@public
+---@return int
+function IsoGridSquare:getY() end
+
+---@public
+---@return void
+function IsoGridSquare:recalcHashCodeObjects() end
+
+---@public
+---@param arg0 IsoSprite
+---@param arg1 IsoDirections
+---@param arg2 boolean
+---@param arg3 boolean
+---@param arg4 boolean
+---@return void
+function IsoGridSquare:DoCutawayShaderSprite(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@return boolean
+function IsoGridSquare:HasSlopedRoofWest() end
+
+---@public
+---@return boolean
+function IsoGridSquare:shouldSave() end
+
+---@public
+---@return ArrayList|Unknown
+function IsoGridSquare:getSpecialObjects() end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoGridSquare:removeErosionObject(arg0) end
+
+---@public
+---@return int
+function IsoGridSquare:getHourLastSeen() end
+
+---@public
+---@param arg0 IsoPlayer
+---@param arg1 boolean
+---@return boolean
+function IsoGridSquare:damageSpriteSheetRopeFromBottom(arg0, arg1) end
+
+---@public
+---@return IsoCompost
+function IsoGridSquare:getCompost() end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return boolean
+function IsoGridSquare:isSomethingTo(arg0) end
+
+---@private
+---@param arg0 Shader
+---@return int
+function IsoGridSquare:renderFloorInternal(arg0) end
+
+---@return IsoObject
+---@overload fun(arg0:boolean)
+function IsoGridSquare:getWall() end
+
+---@public
+---@param arg0 boolean
+---@return IsoObject
+function IsoGridSquare:getWall(arg0) end
+
+---@public
+---@param arg0 IsoWorldRegion
+---@return void
+function IsoGridSquare:setIsoWorldRegion(arg0) end
+
+---@param arg0 IsoGridSquare
+---@return void
+function IsoGridSquare:ReCalculateMineOnly(arg0) end
+
+---@public
+---@param arg0 IsoObject
+---@return int
+function IsoGridSquare:RemoveTileObjectErosionNoRecalc(arg0) end
+
+---@public
+---@return IsoGenerator
+function IsoGridSquare:getGenerator() end
+
+---@public
+---@return void
+function IsoGridSquare:FixStackableObjects() end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return float
+---@overload fun(arg0:IsoMovingObject)
+function IsoGridSquare:DistToProper(arg0) end
+
+---@public
+---@param arg0 IsoMovingObject
+---@return float
+function IsoGridSquare:DistToProper(arg0) end
+
+---@private
+---@param arg0 IsoObject
+---@return boolean
+function IsoGridSquare:isSpriteOnSouthOrEastWall(arg0) end
+
+---@public
+---@param arg0 IsoDirections
+---@param arg1 boolean
+---@return IsoObject
+function IsoGridSquare:getDoorOrWindowOrWindowFrame(arg0, arg1) end
+
+---@private
+---@param arg0 String
+---@param arg1 String
+---@return boolean
+function IsoGridSquare:validateUser(arg0, arg1) end
+
+---@public
+---@return ArrayList|Unknown
+function IsoGridSquare:getLightInfluenceG() end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return boolean
+function IsoGridSquare:isWindowTo(arg0) end
+
+---@public
+---@return boolean
+function IsoGridSquare:isOverlayDone() end
+
+---@public
+---@param arg0 IsoObject
+---@param arg1 int
+---@return void
+function IsoGridSquare:transmitAddObjectToSquare(arg0, arg1) end
+
+---@public
+---@param arg0 int
+---@param arg1 float
+---@return void
+function IsoGridSquare:splatBlood(arg0, arg1) end
+
+---@public
+---@return boolean
+function IsoGridSquare:HasStairsNorth() end
+
+---@public
+---@return void
+function IsoGridSquare:ClearTileObjectsExceptFloor() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return boolean
+function IsoGridSquare:getCollideMatrix(arg0, arg1, arg2) end
+
+---@public
+---@return String
+function IsoGridSquare:getZoneType() end
+
+---@param arg0 boolean
+---@return boolean
+function IsoGridSquare:HasDoor(arg0) end
 
 ---@param arg0 int
 ---@param arg1 boolean
@@ -1770,192 +1484,196 @@ function IsoGridSquare:renderMinusFloor(arg0, arg1, arg2, arg3, arg4, arg5, arg6
 ---@return boolean
 function IsoGridSquare:renderMinusFloor(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
 
----@private
----@param arg0 String
----@param arg1 String
----@return boolean
-function IsoGridSquare:validateUser(arg0, arg1) end
-
 ---@public
----@return IsoCell
-function IsoGridSquare:getCell() end
-
----@public
----@param arg0 IsoSprite
----@param arg1 IsoDirections
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 boolean
+---@param arg0 int
+---@param arg1 float
 ---@return void
-function IsoGridSquare:DoCutawayShaderSprite(arg0, arg1, arg2, arg3, arg4) end
+function IsoGridSquare:setTargetDarkMulti(arg0, arg1) end
 
----@public
----@return IsoTree
-function IsoGridSquare:getTree() end
-
----@public
----@return boolean
-function IsoGridSquare:shouldSave() end
-
----@public
----@return int
-function IsoGridSquare:hashCodeNoOverride() end
+---@private
+---@return IsoObject
+function IsoGridSquare:getSpecialSolid() end
 
 ---@public
 ---@return ArrayList|Unknown
-function IsoGridSquare:getSpecialObjects() end
-
----@public
----@return IsoObject
-function IsoGridSquare:getPlayerBuiltFloor() end
-
----@public
----@return IsoWaterGeometry
-function IsoGridSquare:getWater() end
-
----@public
----@param arg0 IsoGridSquare
----@return boolean
-function IsoGridSquare:isSomethingTo(arg0) end
-
----@public
----@param arg0 boolean
----@return boolean
-function IsoGridSquare:hasBlockedWindow(arg0) end
-
----@public
----@return void
-function IsoGridSquare:explode() end
-
----@public
----@return float
-function IsoGridSquare:getPuddlesInGround() end
-
----@public
----@return BaseVehicle
-function IsoGridSquare:getVehicleContainer() end
-
----@public
----@param arg0 IsoObject
----@return int
-function IsoGridSquare:RemoveTileObjectErosionNoRecalc(arg0) end
-
----@public
----@return ColorInfo
-function IsoGridSquare:getDefColorInfo() end
-
----@public
----@param arg0 int
----@return void
-function IsoGridSquare:checkRoomSeen(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@return IsoThumpable
-function IsoGridSquare:getHoppableThumpableTo(arg0) end
-
----@public
----@param arg0 int
----@return void
-function IsoGridSquare:setTrapPositionZ(arg0) end
-
----@public
----@return ErosionData.Square
-function IsoGridSquare:getErosionData() end
-
----@public
----@return IsoRoom
-function IsoGridSquare:getRoom() end
-
----@public
----@param arg0 int
----@return float
-function IsoGridSquare:getTargetDarkMulti(arg0) end
-
----@public
----@param arg0 ArrayList|Unknown
----@return void
-function IsoGridSquare:setLightInfluenceB(arg0) end
-
----@public
----@return int
-function IsoGridSquare:getY() end
-
----@public
----@return boolean
-function IsoGridSquare:haveDoor() end
-
----@public
----@param arg0 int
----@return boolean
-function IsoGridSquare:getSeen(arg0) end
-
----@param arg0 IsoGridSquare.GetSquare
----@return void
-function IsoGridSquare:setBlockedGridPointers(arg0) end
+function IsoGridSquare:getLightInfluenceR() end
 
 ---@private
 ---@param arg0 IsoObject
----@param arg1 ColorInfo
+---@param arg1 Color
 ---@return void
-function IsoGridSquare:renderAttachedSpritesWithNoWallLighting(arg0, arg1) end
-
----@public
----@return boolean
-function IsoGridSquare:haveElectricity() end
-
----@public
----@param arg0 float
----@return void
-function IsoGridSquare:setDarkStep(arg0) end
-
----@public
----@param arg0 int
----@param arg1 float
----@return void
-function IsoGridSquare:setDarkMulti(arg0, arg1) end
-
----@public
----@param arg0 float
----@param arg1 float
----@return float
-function IsoGridSquare:getApparentZ(arg0, arg1) end
-
----@public
----@return boolean
-function IsoGridSquare:hasWindowFrame() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoGridSquare:setSolidFloorCached(arg0) end
+function IsoGridSquare:fudgeShadowsToAlpha(arg0, arg1) end
 
 ---@public
 ---@return int
-function IsoGridSquare:getWallType() end
+function IsoGridSquare:getHashCodeObjectsInt() end
 
 ---@public
----@return boolean
-function IsoGridSquare:isCachedIsFree() end
+---@return ArrayList|Unknown
+function IsoGridSquare:getWorldObjects() end
 
 ---@public
----@param arg0 boolean
----@return boolean
-function IsoGridSquare:hasFloor(arg0) end
-
----@public
----@return boolean
-function IsoGridSquare:HasPushable() end
+---@return IsoBuilding
+function IsoGridSquare:getBuilding() end
 
 ---@public
 ---@param arg0 int
 ---@return void
-function IsoGridSquare:setY(arg0) end
+function IsoGridSquare:setZ(arg0) end
+
+---@public
+---@param arg0 IsoDirections
+---@return boolean
+function IsoGridSquare:hasOpenDoorOnEdge(arg0) end
+
+---@public
+---@return int
+function IsoGridSquare:getRoomID() end
+
+---@public
+---@param arg0 int
+---@param arg1 boolean
+---@return void
+function IsoGridSquare:setCouldSee(arg0, arg1) end
+
+---@public
+---@param arg0 IsoObject
+---@param arg1 int
+---@param arg2 boolean
+---@param arg3 boolean
+---@param arg4 boolean
+---@param arg5 boolean
+---@param arg6 boolean
+---@param arg7 boolean
+---@param arg8 boolean
+---@param arg9 Shader
+---@return int
+function IsoGridSquare:DoWallLightingNW(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+
+---@public
+---@return KahluaTable
+function IsoGridSquare:getLuaMovingObjectList() end
 
 ---@public
 ---@param arg0 IsoGridSquare
 ---@return boolean
-function IsoGridSquare:isDoorBlockedTo(arg0) end
+---@overload fun(arg0:IsoGridSquare, arg1:IsoGridSquare.GetSquare)
+function IsoGridSquare:CalculateVisionBlocked(arg0) end
+
+---@public
+---@param arg0 IsoGridSquare
+---@param arg1 IsoGridSquare.GetSquare
+---@return boolean
+function IsoGridSquare:CalculateVisionBlocked(arg0, arg1) end
+
+---@public
+---@param arg0 IsoDeadBody
+---@param arg1 boolean
+---@return void
+function IsoGridSquare:removeCorpse(arg0, arg1) end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 ObjectOutputStream
+---@return void
+---@overload fun(arg0:ByteBuffer, arg1:ObjectOutputStream, arg2:boolean)
+function IsoGridSquare:save(arg0, arg1) end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 ObjectOutputStream
+---@param arg2 boolean
+---@return void
+function IsoGridSquare:save(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 IsoObjectType
+---@return boolean
+function IsoGridSquare:Has(arg0) end
+
+---@public
+---@return int
+function IsoGridSquare:getTrapPositionY() end
+
+---@public
+---@param arg0 int
+---@return float
+function IsoGridSquare:getDarkMulti(arg0) end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return IsoObject
+function IsoGridSquare:getDoorTo(arg0) end
+
+---@public
+---@param arg0 IsoMovingObject
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@return boolean
+function IsoGridSquare:testCollideAdjacent(arg0, arg1, arg2, arg3) end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return void
+function IsoGridSquare:setS(arg0) end
+
+---@public
+---@return boolean
+function IsoGridSquare:haveBlood() end
+
+---@public
+---@return boolean
+function IsoGridSquare:HasStairs() end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoGridSquare:setRoomID(arg0) end
+
+---@public
+---@param arg0 IsoDirections
+---@return IsoGridSquare
+function IsoGridSquare:getTileInDirection(arg0) end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return IsoObject
+function IsoGridSquare:getBedTo(arg0) end
+
+---@return boolean
+function IsoGridSquare:HasNoCharacters() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return boolean
+function IsoGridSquare:isSameStaircase(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 IsoDeadBody
+---@param arg1 boolean
+---@return void
+function IsoGridSquare:addCorpse(arg0, arg1) end
+
+---@public
+---@param arg0 int
+---@return boolean
+function IsoGridSquare:isSeen(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return IsoObject
+function IsoGridSquare:getThumpableWall(arg0) end
+
+---@public
+---@return int
+function IsoGridSquare:getZ() end
+
+---@public
+---@return void
+function IsoGridSquare:ResetIsoWorldRegion() end
 
 ---@public
 ---@param arg0 IsoGridSquare
@@ -1963,53 +1681,145 @@ function IsoGridSquare:isDoorBlockedTo(arg0) end
 function IsoGridSquare:getWindowFrameTo(arg0) end
 
 ---@public
----@return IsoGridOcclusionData
-function IsoGridSquare:getOcclusionData() end
-
----@public
----@param arg0 byte[]
----@return boolean
-function IsoGridSquare:toBoolean(arg0) end
-
----@public
----@param arg0 boolean
----@return IsoObject
-function IsoGridSquare:getHoppableWall(arg0) end
-
----@public
 ---@param arg0 boolean
 ---@return boolean
 function IsoGridSquare:isNotBlocked(arg0) end
 
 ---@public
----@param arg0 String
----@param arg1 char[]
----@return boolean
-function IsoGridSquare:auth(arg0, arg1) end
+---@return float
+function IsoGridSquare:getLampostTotalR() end
 
 ---@public
----@return boolean
-function IsoGridSquare:HasSlopedRoof() end
+---@return PZArrayList|Unknown
+function IsoGridSquare:getObjects() end
 
 ---@public
----@return boolean
-function IsoGridSquare:isInARoom() end
-
----@public
----@param arg0 ColorInfo
----@param arg1 float
----@param arg2 float
+---@param arg0 IsoRaindrop
 ---@return void
-function IsoGridSquare:interpolateLight(arg0, arg1, arg2) end
-
----@public
----@param arg0 IsoDirections
----@return boolean
-function IsoGridSquare:hasClosedDoorOnEdge(arg0) end
+function IsoGridSquare:setRainDrop(arg0) end
 
 ---@public
 ---@return boolean
-function IsoGridSquare:haveBlood() end
+function IsoGridSquare:HasSlopedRoofNorth() end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return void
+function IsoGridSquare:setW(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 boolean
+---@return void
+function IsoGridSquare:setIsSeen(arg0, arg1) end
+
+---@public
+---@return IsoDoor
+function IsoGridSquare:getIsoDoor() end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return void
+---@overload fun(arg0:IsoGridSquare, arg1:IsoGridSquare.GetSquare)
+function IsoGridSquare:ReCalculateVisionBlocked(arg0) end
+
+---@public
+---@param arg0 IsoGridSquare
+---@param arg1 IsoGridSquare.GetSquare
+---@return void
+function IsoGridSquare:ReCalculateVisionBlocked(arg0, arg1) end
+
+---@public
+---@return float
+function IsoGridSquare:getTotalWeightOfItemsOnFloor() end
+
+---@public
+---@return float
+function IsoGridSquare:getLampostTotalG() end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoGridSquare:setLampostTotalG(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoGridSquare:switchLight(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+---@overload fun(arg0:boolean, arg1:IsoGridSquare.GetSquare)
+function IsoGridSquare:RecalcAllWithNeighbours(arg0) end
+
+---@public
+---@param arg0 boolean
+---@param arg1 IsoGridSquare.GetSquare
+---@return void
+function IsoGridSquare:RecalcAllWithNeighbours(arg0, arg1) end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return boolean
+function IsoGridSquare:isDoorBlockedTo(arg0) end
+
+---@public
+---@return boolean
+function IsoGridSquare:haveFire() end
+
+---@private
+---@param arg0 IsoObject
+---@param arg1 boolean
+---@param arg2 boolean
+---@param arg3 boolean
+---@param arg4 int
+---@param arg5 boolean
+---@param arg6 boolean
+---@return void
+function IsoGridSquare:calculateWallAlphaCommon(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+
+---@public
+---@param arg0 int
+---@return float
+function IsoGridSquare:getTargetDarkMulti(arg0) end
+
+---@public
+---@return IsoGridSquare
+function IsoGridSquare:getN() end
+
+---@private
+---@param arg0 IsoObject
+---@param arg1 int
+---@param arg2 int
+---@param arg3 boolean
+---@param arg4 Consumer|Unknown
+---@param arg5 Shader
+---@return int
+function IsoGridSquare:performDrawWall(arg0, arg1, arg2, arg3, arg4, arg5) end
+
+---@public
+---@return void
+function IsoGridSquare:ClearTileObjects() end
+
+---@public
+---@return void
+function IsoGridSquare:disableErosion() end
+
+---@public
+---@return boolean
+function IsoGridSquare:isCommonGrass() end
+
+---@public
+---@return IsoObject
+function IsoGridSquare:getFloor() end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@param arg1 int
+---@param arg2 Stack|Unknown
+---@return IsoGameCharacter
+function IsoGridSquare:FindFriend(arg0, arg1, arg2) end
 
 ---@public
 ---@param arg0 String
@@ -2023,27 +1833,329 @@ function IsoGridSquare:DoSplat(arg0, arg1, arg2, arg3, arg4, arg5) end
 
 ---@public
 ---@param arg0 IsoGridSquare
----@return IsoObject
-function IsoGridSquare:getHoppableTo(arg0) end
-
----@public
----@param arg0 boolean
 ---@return IsoThumpable
-function IsoGridSquare:getThumpableWindow(arg0) end
-
----@public
----@return IsoDeadBody
-function IsoGridSquare:getDeadBody() end
+function IsoGridSquare:getHoppableThumpableTo(arg0) end
 
 ---@public
 ---@return int
-function IsoGridSquare:getZ() end
+function IsoGridSquare:getWallType() end
+
+---@return void
+function IsoGridSquare:cacheLightInfo() end
+
+---@param arg0 IsoFlagType
+---@return void
+function IsoGridSquare:RemoveAllWith(arg0) end
 
 ---@public
----@param arg0 IsoDeadBody
+---@param arg0 boolean
+---@return IsoObject
+function IsoGridSquare:getWallHoppable(arg0) end
+
+---@public
+---@param arg0 ArrayList|Unknown
+---@return void
+function IsoGridSquare:setLightInfluenceR(arg0) end
+
+---@param arg0 Shader
+---@return int
+function IsoGridSquare:renderFloor(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoGridSquare:setHasFlies(arg0) end
+
+---@public
+---@return ColorInfo
+function IsoGridSquare:getDefColorInfo() end
+
+---@public
+---@return float
+function IsoGridSquare:getPuddlesInGround() end
+
+---@public
+---@param arg0 boolean
+---@return boolean
+function IsoGridSquare:hasBlockedWindow(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoGridSquare:setLampostTotalR(arg0) end
+
+---@public
+---@return boolean
+function IsoGridSquare:haveElectricity() end
+
+---@public
+---@param arg0 String
+---@return long
+---@overload fun(arg0:String, arg1:boolean)
+function IsoGridSquare:playSound(arg0) end
+
+---@public
+---@param arg0 String
+---@param arg1 boolean
+---@return long
+function IsoGridSquare:playSound(arg0, arg1) end
+
+---@public
+---@return boolean
+function IsoGridSquare:hasWindowFrame() end
+
+---@public
+---@return IsoGridOcclusionData
+function IsoGridSquare:getOrCreateOcclusionData() end
+
+---@public
+---@param arg0 String
+---@return IsoObject
+function IsoGridSquare:addFloor(arg0) end
+
+---@public
+---@return ArrayList|Unknown
+function IsoGridSquare:getDeferedCharacters() end
+
+---@public
+---@return void
+function IsoGridSquare:softClear() end
+
+---@public
+---@param arg0 int
+---@param arg1 boolean
+---@param arg2 long
+---@return void
+function IsoGridSquare:setPlayerCutawayFlag(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoGridSquare:setSolidFloorCached(arg0) end
+
+---@public
+---@return int
+function IsoGridSquare:getTrapPositionX() end
+
+---@public
+---@param arg0 IsoDirections
+---@return IsoObject
+function IsoGridSquare:getOpenDoor(arg0) end
+
+---@private
+---@param arg0 IsoObject
+---@param arg1 boolean
+---@return boolean
+function IsoGridSquare:isWindowOrWindowFrame(arg0, arg1) end
+
+---@param arg0 IsoObject
+---@return void
+function IsoGridSquare:RereouteWallMaskTo(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return boolean
+function IsoGridSquare:hasFloor(arg0) end
+
+---@public
+---@return void
+function IsoGridSquare:explodeTrap() end
+
+---@public
+---@return IsoBuilding
+function IsoGridSquare:getRoofHideBuilding() end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return void
+---@overload fun(arg0:IsoGridSquare, arg1:IsoGridSquare.GetSquare)
+function IsoGridSquare:ReCalculateCollide(arg0) end
+
+---@public
+---@param arg0 IsoGridSquare
+---@param arg1 IsoGridSquare.GetSquare
+---@return void
+function IsoGridSquare:ReCalculateCollide(arg0, arg1) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@param arg3 boolean
+---@return boolean
+function IsoGridSquare:testCollideAdjacentAdvanced(arg0, arg1, arg2, arg3) end
+
+---@public
+---@return boolean
+function IsoGridSquare:haveDoor() end
+
+---@public
+---@param arg0 IsoObjectType
+---@return IsoCurtain
+function IsoGridSquare:getCurtain(arg0) end
+
+---@public
+---@param arg0 int
 ---@param arg1 boolean
 ---@return void
-function IsoGridSquare:addCorpse(arg0, arg1) end
+function IsoGridSquare:setCanSee(arg0, arg1) end
+
+---@public
+---@return void
+function IsoGridSquare:explode() end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoGridSquare:setTrapPositionZ(arg0) end
+
+---@public
+---@return boolean
+function IsoGridSquare:isVehicleIntersecting() end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return boolean
+function IsoGridSquare:isDoorTo(arg0) end
+
+---@public
+---@return void
+function IsoGridSquare:InvalidateSpecialObjectPaths() end
+
+---@public
+---@return ArrayList|Unknown
+function IsoGridSquare:getLightInfluenceB() end
+
+---@public
+---@param arg0 boolean
+---@return IsoObject
+function IsoGridSquare:getThumpableWallOrHoppable(arg0) end
+
+---@public
+---@return void
+function IsoGridSquare:removeLightSwitch() end
+
+---@public
+---@return IsoCell
+function IsoGridSquare:getCell() end
+
+---@public
+---@param arg0 boolean
+---@return IsoObject
+function IsoGridSquare:getDoorOrWindow(arg0) end
+
+---@public
+---@param arg0 IsoDirections
+---@return IsoGridSquare
+function IsoGridSquare:getAdjacentPathSquare(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return float
+function IsoGridSquare:scoreAsWaypoint(arg0, arg1) end
+
+---@public
+---@param arg0 int
+---@return boolean
+function IsoGridSquare:isCanSee(arg0) end
+
+---@public
+---@return void
+function IsoGridSquare:stopFire() end
+
+---@private
+---@param arg0 IsoObject
+---@param arg1 ColorInfo
+---@return void
+function IsoGridSquare:renderAttachedSpritesWithNoWallLighting(arg0, arg1) end
+
+---@public
+---@param arg0 int
+---@param arg1 boolean
+---@param arg2 boolean
+---@return boolean
+function IsoGridSquare:RenderMinusFloorFxMask(arg0, arg1, arg2) end
+
+---@public
+---@return long
+function IsoGridSquare:getHashCodeObjects() end
+
+---@public
+---@return IsoZombie
+function IsoGridSquare:getZombie() end
+
+---@public
+---@param arg0 ArrayDeque|Unknown
+---@param arg1 int
+---@return void
+function IsoGridSquare:getSquaresForThread(arg0, arg1) end
+
+---@public
+---@return IsoMetaGrid.Zone
+function IsoGridSquare:getZone() end
+
+---@public
+---@param arg0 IsoObject
+---@param arg1 int
+---@param arg2 boolean
+---@param arg3 boolean
+---@param arg4 boolean
+---@param arg5 boolean
+---@param arg6 Shader
+---@return int
+function IsoGridSquare:DoWallLightingW(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoGridSquare:setOverlayDone(arg0) end
+
+---@public
+---@param arg0 IsoObject
+---@param arg1 int
+---@param arg2 boolean
+---@param arg3 boolean
+---@param arg4 boolean
+---@param arg5 boolean
+---@param arg6 Shader
+---@return int
+function IsoGridSquare:DoWallLightingN(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+
+---@public
+---@param arg0 int
+---@param arg1 long
+---@return boolean
+function IsoGridSquare:getIsDissolved(arg0, arg1) end
+
+---@public
+---@param arg0 IsoObject
+---@param arg1 int
+---@return int
+function IsoGridSquare:placeWallAndDoorCheck(arg0, arg1) end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function IsoGridSquare:addDeferredCharacter(arg0) end
+
+---@public
+---@param arg0 int
+---@return float
+function IsoGridSquare:getLightLevel(arg0) end
+
+---@public
+---@return boolean
+function IsoGridSquare:hasModData() end
+
+---@public
+---@return int
+function IsoGridSquare:hashCodeNoOverride() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoGridSquare:setbDoSlowPathfinding(arg0) end
 
 ---@private
 ---@param arg0 IsoObject
@@ -2064,154 +2176,42 @@ function IsoGridSquare:addCorpse(arg0, arg1) end
 function IsoGridSquare:calculateWallAlphaAndCircleStencilCorner(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13) end
 
 ---@public
----@param arg0 IsoGridSquare
 ---@return IsoObject
-function IsoGridSquare:getBedTo(arg0) end
-
----@public
----@return boolean
-function IsoGridSquare:HasStairs() end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@return boolean
-function IsoGridSquare:isSameStaircase(arg0, arg1, arg2) end
+function IsoGridSquare:getSheetRope() end
 
 ---@public
 ---@param arg0 IsoGridSquare
 ---@return boolean
-function IsoGridSquare:isHoppableTo(arg0) end
+function IsoGridSquare:isWallTo(arg0) end
 
 ---@public
+---@param arg0 IsoObject
 ---@return void
-function IsoGridSquare:disableErosion() end
-
----@public
----@return void
-function IsoGridSquare:ClearTileObjects() end
-
----@public
----@param arg0 int
----@param arg1 long
----@return boolean
-function IsoGridSquare:getPlayerCutawayFlag(arg0, arg1) end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 ObjectOutputStream
----@return void
----@overload fun(arg0:ByteBuffer, arg1:ObjectOutputStream, arg2:boolean)
-function IsoGridSquare:save(arg0, arg1) end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 ObjectOutputStream
----@param arg2 boolean
----@return void
-function IsoGridSquare:save(arg0, arg1, arg2) end
-
----@public
----@param arg0 float
----@return void
-function IsoGridSquare:setLampostTotalG(arg0) end
+function IsoGridSquare:DeleteTileObject(arg0) end
 
 ---@public
 ---@param arg0 boolean
----@return IsoObject
-function IsoGridSquare:getWindowFrame(arg0) end
+---@return void
+function IsoGridSquare:setHaveElectricity(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return float
+function IsoGridSquare:getGridSneakModifier(arg0) end
 
 ---@public
 ---@return void
-function IsoGridSquare:restackSheetRope() end
+function IsoGridSquare:BurnTick() end
 
 ---@public
 ---@return boolean
-function IsoGridSquare:isSolidTrans() end
+function IsoGridSquare:isbDoSlowPathfinding() end
 
 ---@public
----@param arg0 ArrayList|Unknown
----@return void
-function IsoGridSquare:setLightInfluenceG(arg0) end
-
----@private
----@return void
-function IsoGridSquare:debugPrintGridSquare() end
-
----@public
----@param arg0 int
----@return void
-function IsoGridSquare:setTrapPositionY(arg0) end
-
----@public
----@return void
-function IsoGridSquare:clearPuddles() end
-
----@public
----@param arg0 IsoObject
----@return void
----@overload fun(arg0:IsoObject, arg1:int)
-function IsoGridSquare:AddTileObject(arg0) end
-
----@public
----@param arg0 IsoObject
----@param arg1 int
----@return void
-function IsoGridSquare:AddTileObject(arg0, arg1) end
-
----@public
----@param arg0 float
----@return void
-function IsoGridSquare:setLampostTotalB(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@return int
-function IsoGridSquare:getVertLight(arg0, arg1) end
-
----@public
----@param arg0 IsoObject
----@return void
-function IsoGridSquare:AddSpecialTileObject(arg0) end
-
----@public
----@return IsoDoor
-function IsoGridSquare:getIsoDoor() end
-
----@public
----@return float
-function IsoGridSquare:getHoursSinceLastSeen() end
-
----@public
----@return float
-function IsoGridSquare:getLampostTotalR() end
-
----@public
----@param arg0 IsoRaindrop
----@return void
-function IsoGridSquare:setRainDrop(arg0) end
-
----@public
----@param arg0 int
 ---@return boolean
-function IsoGridSquare:isCouldSee(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@return IsoWindow
-function IsoGridSquare:getWindowTo(arg0) end
-
----@param arg0 IsoGridSquare
----@return void
-function IsoGridSquare:ReCalculateMineOnly(arg0) end
+function IsoGridSquare:hasFlies() end
 
 ---@public
 ---@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 boolean
----@param arg4 boolean
----@return LosUtil.TestResults
-function IsoGridSquare:testVisionAdjacent(arg0, arg1, arg2, arg3, arg4) end
+---@return void
+function IsoGridSquare:setID(arg0) end

@@ -48,21 +48,29 @@
 ---@field private electricityShutOffEventCallback FMOD_STUDIO_EVENT_CALLBACK
 AmbientStreamManager = {}
 
----@public
----@param arg0 RoomDef
+---@private
 ---@return void
-function AmbientStreamManager:doAlarm(arg0) end
+function AmbientStreamManager:checkHaveElectricity() end
 
 ---@public
+---@return BaseAmbientStreamManager
+function AmbientStreamManager:getInstance() end
+
+---@private
 ---@return void
-function AmbientStreamManager:update() end
+function AmbientStreamManager:updatePowerSupply() end
 
 ---@public
 ---@param arg0 float
 ---@param arg1 float
----@param arg2 Vector2f
----@return BuildingDef
-function AmbientStreamManager:getNearestBuilding(arg0, arg1, arg2) end
+---@param arg2 int
+---@param arg3 String
+---@return void
+function AmbientStreamManager:addAmbientEmitter(arg0, arg1, arg2, arg3) end
+
+---@public
+---@return void
+function AmbientStreamManager:addRandomAmbient() end
 
 ---@public
 ---@param arg0 float
@@ -73,12 +81,8 @@ function AmbientStreamManager:getNearestBuilding(arg0, arg1, arg2) end
 function AmbientStreamManager:addDaytimeAmbientEmitter(arg0, arg1, arg2, arg3) end
 
 ---@public
----@return BaseAmbientStreamManager
-function AmbientStreamManager:getInstance() end
-
----@public
 ---@return void
-function AmbientStreamManager:doGunEvent() end
+function AmbientStreamManager:init() end
 
 ---@public
 ---@param arg0 String
@@ -90,13 +94,29 @@ function AmbientStreamManager:doGunEvent() end
 ---@return void
 function AmbientStreamManager:addBlend(arg0, arg1, arg2, arg3, arg4, arg5) end
 
----@private
----@return void
-function AmbientStreamManager:updatePowerSupply() end
+---@public
+---@param arg0 float
+---@param arg1 float
+---@param arg2 Vector2f
+---@return BuildingDef
+function AmbientStreamManager:getNearestBuilding(arg0, arg1, arg2) end
 
 ---@public
 ---@return void
-function AmbientStreamManager:init() end
+function AmbientStreamManager:update() end
+
+---@public
+---@param arg0 RoomDef
+---@return void
+function AmbientStreamManager:doAlarm(arg0) end
+
+---@public
+---@return void
+function AmbientStreamManager:doOneShotAmbients() end
+
+---@public
+---@return void
+function AmbientStreamManager:stop() end
 
 ---@public
 ---@param arg0 String
@@ -108,30 +128,10 @@ function AmbientStreamManager:init() end
 function AmbientStreamManager:addAmbient(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
----@param arg0 float
----@param arg1 float
----@param arg2 int
----@param arg3 String
 ---@return void
-function AmbientStreamManager:addAmbientEmitter(arg0, arg1, arg2, arg3) end
+function AmbientStreamManager:doGunEvent() end
 
 ---@private
 ---@param arg0 Vector2f
 ---@return void
 function AmbientStreamManager:getListenerPos(arg0) end
-
----@public
----@return void
-function AmbientStreamManager:addRandomAmbient() end
-
----@private
----@return void
-function AmbientStreamManager:checkHaveElectricity() end
-
----@public
----@return void
-function AmbientStreamManager:doOneShotAmbients() end
-
----@public
----@return void
-function AmbientStreamManager:stop() end

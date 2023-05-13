@@ -72,6 +72,16 @@
 MoodlesUI = {}
 
 ---@public
+---@param arg0 double
+---@param arg1 double
+---@return void
+function MoodlesUI:onMouseMoveOutside(arg0, arg1) end
+
+---@public
+---@return boolean
+function MoodlesUI:CurrentlyAnimating() end
+
+---@public
 ---@param arg0 UIElement
 ---@param arg1 int
 ---@param arg2 int
@@ -86,18 +96,13 @@ function MoodlesUI:Nest(arg0, arg1, arg2, arg3, arg4) end
 function MoodlesUI:setCharacter(arg0) end
 
 ---@public
----@param arg0 double
----@param arg1 double
 ---@return void
-function MoodlesUI:onMouseMoveOutside(arg0, arg1) end
+function MoodlesUI:update() end
 
 ---@public
+---@param arg0 MoodleType
 ---@return void
-function MoodlesUI:render() end
-
----@public
----@return boolean
-function MoodlesUI:CurrentlyAnimating() end
+function MoodlesUI:wiggle(arg0) end
 
 ---@public
 ---@param arg0 double
@@ -106,14 +111,9 @@ function MoodlesUI:CurrentlyAnimating() end
 function MoodlesUI:onMouseMove(arg0, arg1) end
 
 ---@public
+---@return void
+function MoodlesUI:render() end
+
+---@public
 ---@return MoodlesUI
 function MoodlesUI:getInstance() end
-
----@public
----@return void
-function MoodlesUI:update() end
-
----@public
----@param arg0 MoodleType
----@return void
-function MoodlesUI:wiggle(arg0) end

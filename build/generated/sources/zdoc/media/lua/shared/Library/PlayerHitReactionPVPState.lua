@@ -20,9 +20,9 @@ function PlayerHitReactionPVPState:animEvent(arg0, arg1) end
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function PlayerHitReactionPVPState:execute(arg0) end
+function PlayerHitReactionPVPState:enter(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function PlayerHitReactionPVPState:enter(arg0) end
+function PlayerHitReactionPVPState:execute(arg0) end

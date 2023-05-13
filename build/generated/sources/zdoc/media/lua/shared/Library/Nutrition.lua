@@ -35,17 +35,87 @@
 Nutrition = {}
 
 ---@public
+---@return boolean
+function Nutrition:characterHaveWeightTrouble() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function Nutrition:setIncWeight(arg0) end
+
+---@public
+---@return boolean
+function Nutrition:isDecWeight() end
+
+---@public
+---@return double
+function Nutrition:getWeight() end
+
+---@public
+---@return float
+function Nutrition:getCalories() end
+
+---@public
+---@return float
+function Nutrition:getProteins() end
+
+---@private
+---@return void
+function Nutrition:updateCalories() end
+
+---@public
+---@return boolean
+function Nutrition:isIncWeightLot() end
+
+---@public
+---@param arg0 double
+---@return void
+function Nutrition:setWeight(arg0) end
+
+---@public
 ---@param arg0 boolean
 ---@return void
 function Nutrition:setDecWeight(arg0) end
 
 ---@public
----@return float
-function Nutrition:getCarbohydrates() end
+---@param arg0 ByteBuffer
+---@return void
+function Nutrition:save(arg0) end
 
 ---@public
 ---@return boolean
 function Nutrition:canAddFitnessXp() end
+
+---@public
+---@param arg0 float
+---@return void
+function Nutrition:setCalories(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function Nutrition:setLipids(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function Nutrition:setIncWeightLot(arg0) end
+
+---@public
+---@return void
+function Nutrition:syncWeight() end
+
+---@public
+---@return float
+function Nutrition:getLipids() end
+
+---@public
+---@return void
+function Nutrition:update() end
+
+---@public
+---@return void
+function Nutrition:applyWeightFromTraits() end
 
 ---@public
 ---@return void
@@ -54,73 +124,19 @@ function Nutrition:applyTraitFromWeight() end
 ---@public
 ---@param arg0 float
 ---@return void
-function Nutrition:setLipids(arg0) end
-
----@public
----@return boolean
-function Nutrition:isIncWeightLot() end
-
----@public
----@param arg0 float
----@return void
-function Nutrition:setCalories(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function Nutrition:setIncWeightLot(arg0) end
-
----@public
----@param arg0 float
----@return void
 function Nutrition:setCarbohydrates(arg0) end
 
 ---@public
----@return double
-function Nutrition:getWeight() end
-
----@public
----@param arg0 boolean
----@return void
-function Nutrition:setIncWeight(arg0) end
-
----@public
----@return float
-function Nutrition:getLipids() end
-
----@public
----@param arg0 float
----@return void
-function Nutrition:setProteins(arg0) end
-
----@public
----@return float
-function Nutrition:getProteins() end
+---@return boolean
+function Nutrition:isIncWeight() end
 
 ---@private
 ---@return void
 function Nutrition:updateWeight() end
 
 ---@public
----@param arg0 double
----@return void
-function Nutrition:setWeight(arg0) end
-
----@public
----@return void
-function Nutrition:syncWeight() end
-
----@public
----@return void
-function Nutrition:update() end
-
----@private
----@return void
-function Nutrition:updateCalories() end
-
----@public
----@return boolean
-function Nutrition:isIncWeight() end
+---@return float
+function Nutrition:getCarbohydrates() end
 
 ---@public
 ---@param arg0 ByteBuffer
@@ -128,22 +144,6 @@ function Nutrition:isIncWeight() end
 function Nutrition:load(arg0) end
 
 ---@public
----@return boolean
-function Nutrition:characterHaveWeightTrouble() end
-
----@public
----@return float
-function Nutrition:getCalories() end
-
----@public
----@return boolean
-function Nutrition:isDecWeight() end
-
----@public
----@param arg0 ByteBuffer
+---@param arg0 float
 ---@return void
-function Nutrition:save(arg0) end
-
----@public
----@return void
-function Nutrition:applyWeightFromTraits() end
+function Nutrition:setProteins(arg0) end

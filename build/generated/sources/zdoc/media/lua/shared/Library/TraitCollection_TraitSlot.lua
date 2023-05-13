@@ -13,10 +13,10 @@ function TraitCollection_TraitSlot:toString() end
 function TraitCollection_TraitSlot:set(arg0) end
 
 ---@public
+---@return boolean
+function TraitCollection_TraitSlot:isSet() end
+
+---@public
 ---@param arg0 String
 ---@return boolean
 function TraitCollection_TraitSlot:isName(arg0) end
-
----@public
----@return boolean
-function TraitCollection_TraitSlot:isSet() end

@@ -104,8 +104,17 @@
 IsoFlagType = {}
 
 ---@public
+---@return IsoFlagType[]
+function IsoFlagType:values() end
+
+---@public
 ---@return int
 function IsoFlagType:index() end
+
+---@public
+---@param arg0 String
+---@return IsoFlagType
+function IsoFlagType:FromString(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -116,12 +125,3 @@ function IsoFlagType:valueOf(arg0) end
 ---@param arg0 int
 ---@return IsoFlagType
 function IsoFlagType:fromIndex(arg0) end
-
----@public
----@param arg0 String
----@return IsoFlagType
-function IsoFlagType:FromString(arg0) end
-
----@public
----@return IsoFlagType[]
-function IsoFlagType:values() end

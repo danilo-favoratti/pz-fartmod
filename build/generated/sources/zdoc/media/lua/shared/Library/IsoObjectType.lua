@@ -36,7 +36,17 @@ IsoObjectType = {}
 ---@public
 ---@param arg0 String
 ---@return IsoObjectType
+function IsoObjectType:FromString(arg0) end
+
+---@public
+---@param arg0 String
+---@return IsoObjectType
 function IsoObjectType:valueOf(arg0) end
+
+---@public
+---@param arg0 int
+---@return IsoObjectType
+function IsoObjectType:fromIndex(arg0) end
 
 ---@public
 ---@return IsoObjectType[]
@@ -45,13 +55,3 @@ function IsoObjectType:values() end
 ---@public
 ---@return int
 function IsoObjectType:index() end
-
----@public
----@param arg0 String
----@return IsoObjectType
-function IsoObjectType:FromString(arg0) end
-
----@public
----@param arg0 int
----@return IsoObjectType
-function IsoObjectType:fromIndex(arg0) end

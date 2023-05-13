@@ -6,12 +6,12 @@ RadioScript_ExitOption = {}
 
 ---@public
 ---@return int
-function RadioScript_ExitOption:getStartDelay() end
-
----@public
----@return int
 function RadioScript_ExitOption:getChance() end
 
 ---@public
 ---@return String
 function RadioScript_ExitOption:getScriptname() end
+
+---@public
+---@return int
+function RadioScript_ExitOption:getStartDelay() end

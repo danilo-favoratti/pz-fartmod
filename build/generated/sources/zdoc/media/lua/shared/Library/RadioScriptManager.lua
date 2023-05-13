@@ -6,9 +6,44 @@
 RadioScriptManager = {}
 
 ---@public
+---@return void
+function RadioScriptManager:update() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 boolean
+---@return void
+function RadioScriptManager:simulateChannelUntil(arg0, arg1, arg2) end
+
+---@public
+---@return void
+function RadioScriptManager:reset() end
+
+---@public
+---@param arg0 List|Unknown
+---@return void
+function RadioScriptManager:Load(arg0) end
+
+---@public
+---@return boolean
+function RadioScriptManager:hasInstance() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return void
+function RadioScriptManager:UpdateScripts(arg0, arg1, arg2) end
+
+---@public
 ---@param arg0 int
 ---@return void
-function RadioScriptManager:RemoveChannel(arg0) end
+function RadioScriptManager:init(arg0) end
+
+---@public
+---@return int
+function RadioScriptManager:getCurrentTimeStamp() end
 
 ---@public
 ---@return Map|Unknown|Unknown
@@ -20,14 +55,25 @@ function RadioScriptManager:getChannels() end
 function RadioScriptManager:Save(arg0) end
 
 ---@public
----@return RadioScriptManager
-function RadioScriptManager:getInstance() end
+---@param arg0 int
+---@return void
+function RadioScriptManager:RemoveChannel(arg0) end
 
 ---@public
 ---@param arg0 int
 ---@param arg1 boolean
 ---@return void
 function RadioScriptManager:simulateScriptsUntil(arg0, arg1) end
+
+---@public
+---@param arg0 RadioChannel
+---@param arg1 boolean
+---@return void
+function RadioScriptManager:AddChannel(arg0, arg1) end
+
+---@public
+---@return ArrayList|Unknown
+function RadioScriptManager:getChannelsList() end
 
 ---@public
 ---@param arg0 int
@@ -37,56 +83,10 @@ function RadioScriptManager:simulateScriptsUntil(arg0, arg1) end
 function RadioScriptManager:PlayerListensChannel(arg0, arg1, arg2) end
 
 ---@public
----@param arg0 RadioChannel
----@param arg1 boolean
----@return void
-function RadioScriptManager:AddChannel(arg0, arg1) end
-
----@public
----@return boolean
-function RadioScriptManager:hasInstance() end
-
----@public
----@return void
-function RadioScriptManager:reset() end
-
----@public
 ---@param arg0 String
 ---@return RadioChannel
 function RadioScriptManager:getRadioChannel(arg0) end
 
 ---@public
----@param arg0 int
----@param arg1 int
----@param arg2 boolean
----@return void
-function RadioScriptManager:simulateChannelUntil(arg0, arg1, arg2) end
-
----@public
----@return void
-function RadioScriptManager:update() end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@return void
-function RadioScriptManager:UpdateScripts(arg0, arg1, arg2) end
-
----@public
----@param arg0 List|Unknown
----@return void
-function RadioScriptManager:Load(arg0) end
-
----@public
----@return int
-function RadioScriptManager:getCurrentTimeStamp() end
-
----@public
----@return ArrayList|Unknown
-function RadioScriptManager:getChannelsList() end
-
----@public
----@param arg0 int
----@return void
-function RadioScriptManager:init(arg0) end
+---@return RadioScriptManager
+function RadioScriptManager:getInstance() end

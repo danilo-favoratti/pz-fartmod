@@ -4,8 +4,9 @@
 PresetEntry = {}
 
 ---@public
----@return String
-function PresetEntry:getName() end
+---@param arg0 String
+---@return void
+function PresetEntry:setName(arg0) end
 
 ---@public
 ---@return int
@@ -17,6 +18,5 @@ function PresetEntry:getFrequency() end
 function PresetEntry:setFrequency(arg0) end
 
 ---@public
----@param arg0 String
----@return void
-function PresetEntry:setName(arg0) end
+---@return String
+function PresetEntry:getName() end

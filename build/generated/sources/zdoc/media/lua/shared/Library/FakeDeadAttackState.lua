@@ -3,14 +3,13 @@
 FakeDeadAttackState = {}
 
 ---@public
----@param arg0 IsoGameCharacter
----@return void
-function FakeDeadAttackState:enter(arg0) end
+---@return FakeDeadAttackState
+function FakeDeadAttackState:instance() end
 
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function FakeDeadAttackState:execute(arg0) end
+function FakeDeadAttackState:exit(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
@@ -19,10 +18,11 @@ function FakeDeadAttackState:execute(arg0) end
 function FakeDeadAttackState:animEvent(arg0, arg1) end
 
 ---@public
----@return FakeDeadAttackState
-function FakeDeadAttackState:instance() end
+---@param arg0 IsoGameCharacter
+---@return void
+function FakeDeadAttackState:execute(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function FakeDeadAttackState:exit(arg0) end
+function FakeDeadAttackState:enter(arg0) end

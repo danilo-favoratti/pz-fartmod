@@ -7,8 +7,12 @@
 IsoZombieGiblets = {}
 
 ---@public
----@return boolean
-function IsoZombieGiblets:Serialize() end
+---@return String
+function IsoZombieGiblets:getObjectName() end
+
+---@public
+---@return void
+function IsoZombieGiblets:update() end
 
 ---@public
 ---@param arg0 float
@@ -22,9 +26,5 @@ function IsoZombieGiblets:Serialize() end
 function IsoZombieGiblets:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 
 ---@public
----@return void
-function IsoZombieGiblets:update() end
-
----@public
----@return String
-function IsoZombieGiblets:getObjectName() end
+---@return boolean
+function IsoZombieGiblets:Serialize() end

@@ -36,25 +36,11 @@ Stats = {}
 
 ---@public
 ---@return float
-function Stats:getEndurancelast() end
+function Stats:getSanity() end
 
 ---@public
 ---@return float
-function Stats:getStress() end
-
----@public
----@return boolean
-function Stats:getEnduranceRecharging() end
-
----@public
----@param arg0 float
----@return void
-function Stats:setMorale(arg0) end
-
----@public
----@param arg0 float
----@return void
-function Stats:setDrunkenness(arg0) end
+function Stats:getSickness() end
 
 ---@public
 ---@param arg0 float
@@ -63,28 +49,11 @@ function Stats:setEndurancewarn(arg0) end
 
 ---@public
 ---@return float
-function Stats:getDrunkenness() end
-
----@public
----@return float
-function Stats:getSanity() end
-
----@public
----@return float
-function Stats:getSickness() end
-
----@public
----@return float
-function Stats:getEndurance() end
+function Stats:getHunger() end
 
 ---@public
 ---@return int
 function Stats:getNumVeryCloseZombies() end
-
----@public
----@param arg0 float
----@return void
-function Stats:setEndurance(arg0) end
 
 ---@public
 ---@param arg0 boolean
@@ -92,21 +61,17 @@ function Stats:setEndurance(arg0) end
 function Stats:setTripping(arg0) end
 
 ---@public
----@return float
-function Stats:getHunger() end
+---@return boolean
+function Stats:getEnduranceRecharging() end
+
+---@public
+---@return boolean
+function Stats:isTripping() end
 
 ---@public
 ---@param arg0 float
 ---@return void
-function Stats:setFear(arg0) end
-
----@public
----@return float
-function Stats:getThirst() end
-
----@public
----@return int
-function Stats:getNumVisibleZombies() end
+function Stats:setFitness(arg0) end
 
 ---@public
 ---@param arg0 float
@@ -116,24 +81,16 @@ function Stats:setBoredom(arg0) end
 ---@public
 ---@param arg0 float
 ---@return void
-function Stats:setSanity(arg0) end
-
----@public
----@param arg0 float
----@return void
-function Stats:setPain(arg0) end
-
----@public
----@return boolean
-function Stats:isTripping() end
+function Stats:setMorale(arg0) end
 
 ---@public
 ---@return float
 function Stats:getFitness() end
 
 ---@public
----@return float
-function Stats:getIdleboredom() end
+---@param arg0 int
+---@return void
+function Stats:setNumVisibleZombies(arg0) end
 
 ---@public
 ---@param arg0 float
@@ -141,68 +98,22 @@ function Stats:getIdleboredom() end
 function Stats:setAnger(arg0) end
 
 ---@public
----@return float
-function Stats:getStressFromCigarettes() end
-
----@public
----@return float
-function Stats:getEndurancedanger() end
-
----@public
----@return int
-function Stats:getNumChasingZombies() end
-
----@public
----@return void
-function Stats:resetStats() end
-
----@public
----@return float
-function Stats:getTrippingRotAngle() end
-
----@public
----@return float
-function Stats:getPain() end
-
----@public
----@param arg0 float
----@return void
-function Stats:setPanic(arg0) end
-
----@public
----@return float
-function Stats:getPanic() end
-
----@public
 ---@param arg0 float
 ---@return void
 function Stats:setFatigue(arg0) end
 
 ---@public
----@return float
-function Stats:getMaxStressFromCigarettes() end
-
----@public
 ---@param arg0 float
 ---@return void
-function Stats:setStress(arg0) end
+function Stats:setDrunkenness(arg0) end
+
+---@public
+---@return int
+function Stats:getNumVisibleZombies() end
 
 ---@public
 ---@return float
-function Stats:getMorale() end
-
----@public
----@param arg0 float
----@return void
-function Stats:setEndurancedanger(arg0) end
-
----@public
----@return float
-function Stats:getFear() end
-
----@public
----@return float
-function Stats:getFatigue() end
+function Stats:getTrippingRotAngle() end
 
 ---@public
 ---@param arg0 DataInputStream
@@ -217,14 +128,115 @@ function Stats:load(arg0) end
 function Stats:load(arg0, arg1) end
 
 ---@public
+---@return float
+function Stats:getEndurance() end
+
+---@public
+---@param arg0 float
+---@return void
+function Stats:setPain(arg0) end
+
+---@public
+---@return float
+function Stats:getFear() end
+
+---@public
+---@return float
+function Stats:getEndurancewarn() end
+
+---@public
+---@param arg0 float
+---@return void
+function Stats:setTrippingRotAngle(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function Stats:setHunger(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function Stats:setSanity(arg0) end
+
+---@public
+---@return float
+function Stats:getFatigue() end
+
+---@public
+---@param arg0 float
+---@return void
+function Stats:setIdleboredom(arg0) end
+
+---@public
+---@return float
+function Stats:getIdleboredom() end
+
+---@public
+---@return int
+function Stats:getNumChasingZombies() end
+
+---@public
+---@return float
+function Stats:getEndurancedanger() end
+
+---@public
+---@param arg0 float
+---@return void
+function Stats:setStressFromCigarettes(arg0) end
+
+---@public
+---@return float
+function Stats:getPanic() end
+
+---@public
+---@return float
+function Stats:getStressFromCigarettes() end
+
+---@public
+---@param arg0 float
+---@return void
+function Stats:setThirst(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function Stats:setStress(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function Stats:setPanic(arg0) end
+
+---@public
+---@return float
+function Stats:getMorale() end
+
+---@public
+---@return float
+function Stats:getBoredom() end
+
+---@public
+---@return float
+function Stats:getAnger() end
+
+---@public
+---@return float
+function Stats:getPain() end
+
+---@public
 ---@param arg0 float
 ---@return void
 function Stats:setSickness(arg0) end
 
 ---@public
----@param arg0 int
+---@param arg0 float
 ---@return void
-function Stats:setNumVisibleZombies(arg0) end
+function Stats:setEndurancelast(arg0) end
+
+---@public
+---@return float
+function Stats:getThirst() end
 
 ---@public
 ---@param arg0 DataOutputStream
@@ -242,48 +254,36 @@ function Stats:save(arg0) end
 function Stats:getVisibleZombies() end
 
 ---@public
----@param arg0 float
----@return void
-function Stats:setEndurancelast(arg0) end
-
----@public
----@param arg0 float
----@return void
-function Stats:setFitness(arg0) end
-
----@public
----@param arg0 float
----@return void
-function Stats:setStressFromCigarettes(arg0) end
+---@return float
+function Stats:getMaxStressFromCigarettes() end
 
 ---@public
 ---@return float
-function Stats:getAnger() end
+function Stats:getDrunkenness() end
 
 ---@public
 ---@return float
-function Stats:getEndurancewarn() end
+function Stats:getEndurancelast() end
 
 ---@public
 ---@param arg0 float
 ---@return void
-function Stats:setIdleboredom(arg0) end
+function Stats:setFear(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function Stats:setEndurance(arg0) end
+
+---@public
+---@return void
+function Stats:resetStats() end
+
+---@public
+---@param arg0 float
+---@return void
+function Stats:setEndurancedanger(arg0) end
 
 ---@public
 ---@return float
-function Stats:getBoredom() end
-
----@public
----@param arg0 float
----@return void
-function Stats:setThirst(arg0) end
-
----@public
----@param arg0 float
----@return void
-function Stats:setHunger(arg0) end
-
----@public
----@param arg0 float
----@return void
-function Stats:setTrippingRotAngle(arg0) end
+function Stats:getStress() end

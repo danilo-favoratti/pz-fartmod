@@ -12,33 +12,33 @@ HairStyle = {}
 
 ---@public
 ---@return boolean
+function HairStyle:isNoChoose() end
+
+---@public
+---@return boolean
 function HairStyle:isGrowReference() end
-
----@public
----@return String
-function HairStyle:getName() end
-
----@public
----@param arg0 String
----@return String
-function HairStyle:getAlternate(arg0) end
-
----@public
----@return int
-function HairStyle:getLevel() end
 
 ---@public
 ---@return boolean
 function HairStyle:isValid() end
 
 ---@public
----@return ArrayList|Unknown
-function HairStyle:getTrimChoices() end
-
----@public
 ---@return boolean
 function HairStyle:isAttachedHair() end
 
 ---@public
----@return boolean
-function HairStyle:isNoChoose() end
+---@return ArrayList|Unknown
+function HairStyle:getTrimChoices() end
+
+---@public
+---@return String
+function HairStyle:getName() end
+
+---@public
+---@return int
+function HairStyle:getLevel() end
+
+---@public
+---@param arg0 String
+---@return String
+function HairStyle:getAlternate(arg0) end

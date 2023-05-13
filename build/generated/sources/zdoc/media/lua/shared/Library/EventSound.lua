@@ -6,17 +6,14 @@
 EventSound = {}
 
 ---@public
----@return ArrayList|Unknown
-function EventSound:getDataPoints() end
+---@param arg0 ArrayList|Unknown
+---@return void
+function EventSound:setDataPoints(arg0) end
 
 ---@public
 ---@param arg0 String
 ---@return void
 function EventSound:setName(arg0) end
-
----@public
----@return String
-function EventSound:getName() end
 
 ---@public
 ---@param arg0 ArrayList|Unknown
@@ -28,9 +25,12 @@ function EventSound:setStorySounds(arg0) end
 function EventSound:getStorySounds() end
 
 ---@public
----@param arg0 ArrayList|Unknown
----@return void
-function EventSound:setDataPoints(arg0) end
+---@return Color
+function EventSound:getColor() end
+
+---@public
+---@return String
+function EventSound:getName() end
 
 ---@public
 ---@param arg0 Color
@@ -38,5 +38,5 @@ function EventSound:setDataPoints(arg0) end
 function EventSound:setColor(arg0) end
 
 ---@public
----@return Color
-function EventSound:getColor() end
+---@return ArrayList|Unknown
+function EventSound:getDataPoints() end

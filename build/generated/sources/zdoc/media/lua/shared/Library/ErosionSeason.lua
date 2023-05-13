@@ -50,20 +50,56 @@
 ErosionSeason = {}
 
 ---@public
----@return double
-function ErosionSeason:getMaxDaylightSummer() end
+---@return int
+function ErosionSeason:getTempMin() end
+
+---@private
+---@param arg0 int
+---@return void
+function ErosionSeason:setYearData(arg0) end
+
+---@private
+---@param arg0 GregorianCalendar
+---@param arg1 GregorianCalendar
+---@return float
+function ErosionSeason:dayDiff(arg0, arg1) end
 
 ---@public
----@return String
-function ErosionSeason:getSeasonName() end
+---@param arg0 int
+---@return boolean
+function ErosionSeason:isSeason(arg0) end
 
 ---@public
 ---@return int
-function ErosionSeason:getSeasonLag() end
+function ErosionSeason:getLat() end
+
+---@public
+---@return void
+function ErosionSeason:Reset() end
+
+---@private
+---@param arg0 double
+---@return double
+function ErosionSeason:degree(arg0) end
+
+---@public
+---@return float
+function ErosionSeason:getRainDayStrength() end
+
+---@private
+---@param arg0 double
+---@param arg1 double
+---@param arg2 double
+---@return double
+function ErosionSeason:lerp(arg0, arg1, arg2) end
 
 ---@public
 ---@return boolean
-function ErosionSeason:isThunderDay() end
+function ErosionSeason:isRainDay() end
+
+---@public
+---@return int
+function ErosionSeason:getSeedB() end
 
 ---@public
 ---@param arg0 int
@@ -72,17 +108,36 @@ function ErosionSeason:isThunderDay() end
 ---@return GregorianCalendar
 function ErosionSeason:getWinterStartDay(arg0, arg1, arg2) end
 
+---@private
+---@param arg0 double
+---@return double
+function ErosionSeason:radian(arg0) end
+
 ---@public
----@return float
-function ErosionSeason:getSeasonStrength() end
+---@return ErosionSeason
+function ErosionSeason:clone() end
 
 ---@public
 ---@return float
-function ErosionSeason:getDayTemperature() end
+function ErosionSeason:getDayMeanTemperature() end
 
 ---@public
 ---@return int
-function ErosionSeason:getTempMax() end
+function ErosionSeason:getTempDiff() end
+
+---@public
+---@return float
+function ErosionSeason:getDawn() end
+
+---@private
+---@param arg0 long
+---@param arg1 GregorianCalendar
+---@return void
+function ErosionSeason:setDaylightData(arg0, arg1) end
+
+---@public
+---@return boolean
+function ErosionSeason:isSunnyDay() end
 
 ---@public
 ---@return float
@@ -90,11 +145,119 @@ function ErosionSeason:getDayNoiseVal() end
 
 ---@public
 ---@return float
-function ErosionSeason:getDaylight() end
+function ErosionSeason:getDusk() end
 
 ---@public
 ---@return int
-function ErosionSeason:getTempMin() end
+function ErosionSeason:getTempMax() end
+
+---@private
+---@param arg0 float
+---@param arg1 GregorianCalendar
+---@param arg2 int
+---@param arg3 int
+---@return void
+function ErosionSeason:setSeasonData(arg0, arg1, arg2, arg3) end
+
+---@public
+---@return boolean
+function ErosionSeason:isThunderDay() end
+
+---@public
+---@return float
+function ErosionSeason:getDayHighNoon() end
+
+---@public
+---@return float
+function ErosionSeason:getDayTemperature() end
+
+---@public
+---@return int
+function ErosionSeason:getSeedC() end
+
+---@public
+---@return int
+function ErosionSeason:getSeasonLag() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return void
+function ErosionSeason:setDay(arg0, arg1, arg2) end
+
+---@public
+---@return float
+function ErosionSeason:getSeasonProgression() end
+
+---@public
+---@return float
+function ErosionSeason:getHighNoon() end
+
+---@public
+---@return double
+function ErosionSeason:getMaxDaylightSummer() end
+
+---@public
+---@return float
+function ErosionSeason:getRainYearAverage() end
+
+---@public
+---@return float
+function ErosionSeason:getDaylight() end
+
+---@public
+---@return float
+function ErosionSeason:getSeasonDay() end
+
+---@public
+---@param arg0 int
+---@return void
+function ErosionSeason:setCurSeason(arg0) end
+
+---@public
+---@return float
+function ErosionSeason:getSeasonStrength() end
+
+---@private
+---@param arg0 double
+---@param arg1 double
+---@param arg2 double
+---@return double
+function ErosionSeason:clerp(arg0, arg1, arg2) end
+
+---@public
+---@return double
+function ErosionSeason:getMaxDaylightWinter() end
+
+---@public
+---@return int
+function ErosionSeason:getSeason() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@param arg4 int
+---@param arg5 float
+---@param arg6 int
+---@param arg7 int
+---@param arg8 int
+---@return void
+function ErosionSeason:init(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+
+---@public
+---@return String
+function ErosionSeason:getSeasonName() end
+
+---@public
+---@return float
+function ErosionSeason:getCurDayPercent() end
+
+---@public
+---@return float
+function ErosionSeason:getSeasonDays() end
 
 ---@public
 ---@param arg0 float
@@ -113,168 +276,5 @@ function ErosionSeason:getTempMin() end
 function ErosionSeason:setRain(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11) end
 
 ---@public
----@return float
-function ErosionSeason:getSeasonDays() end
-
----@public
----@return ErosionSeason
-function ErosionSeason:clone() end
-
----@public
----@return void
-function ErosionSeason:Reset() end
-
----@public
----@return int
-function ErosionSeason:getLat() end
-
----@private
----@param arg0 double
----@param arg1 double
----@param arg2 double
----@return double
-function ErosionSeason:lerp(arg0, arg1, arg2) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 int
----@param arg5 float
----@param arg6 int
----@param arg7 int
----@param arg8 int
----@return void
-function ErosionSeason:init(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
-
----@public
----@param arg0 int
----@return boolean
-function ErosionSeason:isSeason(arg0) end
-
----@public
----@return int
-function ErosionSeason:getSeason() end
-
----@private
----@param arg0 double
----@return double
-function ErosionSeason:radian(arg0) end
-
----@public
 ---@return int
 function ErosionSeason:getSeedA() end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@return void
-function ErosionSeason:setDay(arg0, arg1, arg2) end
-
----@public
----@return int
-function ErosionSeason:getTempDiff() end
-
----@public
----@return boolean
-function ErosionSeason:isSunnyDay() end
-
----@private
----@param arg0 GregorianCalendar
----@param arg1 GregorianCalendar
----@return float
-function ErosionSeason:dayDiff(arg0, arg1) end
-
----@public
----@return float
-function ErosionSeason:getHighNoon() end
-
----@public
----@return float
-function ErosionSeason:getRainYearAverage() end
-
----@public
----@return boolean
-function ErosionSeason:isRainDay() end
-
----@private
----@param arg0 long
----@param arg1 GregorianCalendar
----@return void
-function ErosionSeason:setDaylightData(arg0, arg1) end
-
----@public
----@return float
-function ErosionSeason:getDusk() end
-
----@public
----@return float
-function ErosionSeason:getCurDayPercent() end
-
----@public
----@param arg0 int
----@return void
-function ErosionSeason:setCurSeason(arg0) end
-
----@public
----@return float
-function ErosionSeason:getDawn() end
-
----@public
----@return float
-function ErosionSeason:getSeasonProgression() end
-
----@public
----@return int
-function ErosionSeason:getSeedC() end
-
----@public
----@return int
-function ErosionSeason:getSeedB() end
-
----@private
----@param arg0 double
----@param arg1 double
----@param arg2 double
----@return double
-function ErosionSeason:clerp(arg0, arg1, arg2) end
-
----@public
----@return float
-function ErosionSeason:getDayMeanTemperature() end
-
----@public
----@return double
-function ErosionSeason:getMaxDaylightWinter() end
-
----@public
----@return float
-function ErosionSeason:getSeasonDay() end
-
----@public
----@return float
-function ErosionSeason:getRainDayStrength() end
-
----@private
----@param arg0 double
----@return double
-function ErosionSeason:degree(arg0) end
-
----@private
----@param arg0 float
----@param arg1 GregorianCalendar
----@param arg2 int
----@param arg3 int
----@return void
-function ErosionSeason:setSeasonData(arg0, arg1, arg2, arg3) end
-
----@public
----@return float
-function ErosionSeason:getDayHighNoon() end
-
----@private
----@param arg0 int
----@return void
-function ErosionSeason:setYearData(arg0) end

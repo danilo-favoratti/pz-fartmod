@@ -218,51 +218,484 @@
 IsoPlayer = {}
 
 ---@public
+---@param arg0 float
+---@return void
+function IsoPlayer:setAsleepTime(arg0) end
+
+---@public
 ---@param arg0 String
----@return boolean
-function IsoPlayer:isAccessLevel(arg0) end
-
----@protected
----@param arg0 AnimationPlayer
 ---@return void
-function IsoPlayer:onAnimPlayerCreated(arg0) end
+---@overload fun(arg0:ParameterMeleeHitSurface.Material)
+function IsoPlayer:setMeleeHitSurface(arg0) end
 
 ---@public
----@param arg0 boolean
+---@param arg0 ParameterMeleeHitSurface.Material
 ---@return void
-function IsoPlayer:setJoypadIgnoreAimUntilCentered(arg0) end
+function IsoPlayer:setMeleeHitSurface(arg0) end
 
 ---@public
----@return String
-function IsoPlayer:getDisplayName() end
-
----@public
----@return float
-function IsoPlayer:getTorchDot() end
+---@param arg0 int
+---@return void
+function IsoPlayer:setTicksSinceSeenZombie(arg0) end
 
 ---@public
 ---@param arg0 JVector2
 ---@return JVector2
-function IsoPlayer:getDeferredMovement(arg0) end
+function IsoPlayer:getAimVector(arg0) end
+
+---@private
+---@param arg0 IsoPlayer.InputState
+---@return void
+function IsoPlayer:UpdateInputState(arg0) end
+
+---@public
+---@param arg0 JVector2
+---@return JVector2
+function IsoPlayer:getControllerAimDir(arg0) end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoPlayer:setWearingNightVisionGoggles(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setAttackFromBehind(arg0) end
+function IsoPlayer:setBlockMovement(arg0) end
 
 ---@public
 ---@return boolean
-function IsoPlayer:isLocalPlayer() end
+function IsoPlayer:isOutside() end
+
+---@public
+---@return void
+function IsoPlayer:UpdateRemovedEmitters() end
+
+---@public
+---@return boolean
+function IsoPlayer:isPerformingAnAction() end
+
+---@public
+---@return boolean
+function IsoPlayer:isAimKeyDown() end
+
+---@private
+---@return boolean
+function IsoPlayer:checkActionsBlockingMovement() end
+
+---@public
+---@return float
+function IsoPlayer:getTimeSinceLastStab() end
+
+---@public
+---@return boolean
+function IsoPlayer:isAllChatMuted() end
+
+---@private
+---@return void
+function IsoPlayer:updateWhileInVehicle() end
+
+---@private
+---@param arg0 IsoPlayer.MoveVars
+---@return void
+function IsoPlayer:updateMovementFromKeyboardMouse(arg0) end
+
+---@public
+---@return String
+function IsoPlayer:getSurname() end
+
+---@public
+---@return float
+function IsoPlayer:getPathSpeed() end
+
+---@private
+---@param arg0 float
+---@return void
+function IsoPlayer:updateEndurance(arg0) end
+
+---@private
+---@return void
+function IsoPlayer:updateEnableModelsKey() end
+
+---@public
+---@return void
+function IsoPlayer:updateMovementRates() end
+
+---@private
+---@param arg0 IsoDirections
+---@param arg1 IsoObject
+---@return void
+function IsoPlayer:doContextDoorOrWindowOrWindowFrame(arg0, arg1) end
+
+---@private
+---@return void
+function IsoPlayer:checkJoypadIgnoreAimUntilCentered() end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 String
+---@return String
+function IsoPlayer:setPlayerStats(arg0, arg1) end
+
+---@public
+---@return boolean
+function IsoPlayer:isAttackFromBehind() end
+
+---@public
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@return void
+function IsoPlayer:setPosition(arg0, arg1, arg2) end
+
+---@public
+---@return void
+function IsoPlayer:Reset() end
+
+---@public
+---@return Stack|Unknown
+function IsoPlayer:getStaticTraits() end
+
+---@public
+---@return int
+function IsoPlayer:getPlayerIndex() end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoPlayer:setForname(arg0) end
+
+---@public
+---@return void
+function IsoPlayer:removeSaveFile() end
+
+---@private
+---@return void
+function IsoPlayer:updateTorchStrength() end
+
+---@public
+---@return boolean
+function IsoPlayer:IsAiming() end
+
+---@private
+---@return void
+function IsoPlayer:updateHeartSound() end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoPlayer:setDisplayName(arg0) end
+
+---@public
+---@return IsoSurvivor
+function IsoPlayer:getDragCharacter() end
+
+---@public
+---@param arg0 double
+---@return void
+function IsoPlayer:setHoursSurvived(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoPlayer:setHeartDelay(arg0) end
+
+---@public
+---@param arg0 float
+---@return boolean
+---@overload fun(arg0:float, arg1:boolean, arg2:String)
+function IsoPlayer:DoAttack(arg0) end
+
+---@public
+---@param arg0 float
+---@param arg1 boolean
+---@param arg2 String
+---@return boolean
+function IsoPlayer:DoAttack(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 IsoDirections
+---@return boolean
+function IsoPlayer:canClimbOverWall(arg0) end
+
+---@private
+---@return void
+function IsoPlayer:updateInternal1() end
+
+---@public
+---@param arg0 AnimLayer
+---@param arg1 AnimEvent
+---@return void
+function IsoPlayer:OnAnimEvent(arg0, arg1) end
+
+---@public
+---@return Integer
+function IsoPlayer:getTransactionID() end
+
+---@private
+---@return void
+function IsoPlayer:updateInteractKeyPanic() end
+
+---@private
+---@return void
+function IsoPlayer:updateWorldAmbiance() end
+
+---@public
+---@return boolean
+function IsoPlayer:isBannedAttacking() end
+
+---@private
+---@return boolean
+function IsoPlayer:updateUseKey() end
+
+---@public
+---@return boolean
+function IsoPlayer:isForceRun() end
+
+---@public
+---@param arg0 String
+---@return boolean
+function IsoPlayer:isServerPlayerIDValid(arg0) end
+
+---@public
+---@param arg0 Stack|Unknown
+---@return void
+function IsoPlayer:setLastSpotted(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoPlayer:setMaxWeightDelta(arg0) end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoPlayer:setWaiting(arg0) end
+function IsoPlayer:setAllChatMuted(arg0) end
+
+---@public
+---@return boolean
+function IsoPlayer:pressedAim() end
+
+---@private
+---@return boolean
+function IsoPlayer:DoAimAnimOnAiming() end
+
+---@public
+---@param arg0 String
+---@return Long
+function IsoPlayer:getMechanicsItem(arg0) end
+
+---@public
+---@return void
+function IsoPlayer:InitSpriteParts() end
+
+---@public
+---@return boolean
+function IsoPlayer:isbChangeCharacterDebounce() end
+
+---@public
+---@param arg0 BaseVehicle
+---@param arg1 float
+---@param arg2 boolean
+---@param arg3 float
+---@param arg4 float
+---@return float
+function IsoPlayer:Hit(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@return ArrayList|Unknown
+function IsoPlayer:getAllFileNames() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setPerformingAnAction(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return boolean
+function IsoPlayer:isInTrees2(arg0) end
+
+---@private
+---@return void
+function IsoPlayer:postupdateInternal() end
+
+---@public
+---@return int
+function IsoPlayer:getDialogMood() end
+
+---@public
+---@param arg0 BaseVehicle
+---@return void
+function IsoPlayer:setVehicle4TestCollision(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setCoopPVP(arg0) end
+
+---@public
+---@return int
+function IsoPlayer:getOffSetYUI() end
+
+---@public
+---@param arg0 ColorInfo
+---@return void
+function IsoPlayer:setTagColor(arg0) end
+
+---@public
+---@param arg0 float
+---@return float
+function IsoPlayer:getDamageFromHitByACar(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 IsoPlayer
+---@return void
+function IsoPlayer:setLocalPlayer(arg0, arg1) end
+
+---@public
+---@return boolean
+function IsoPlayer:AttemptAttack() end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoPlayer:setAccessLevel(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setCanHearAll(arg0) end
+
+---@public
+---@param arg0 IsoDirections
+---@return boolean
+function IsoPlayer:climbOverWall(arg0) end
+
+---@public
+---@param arg0 JVector2
+---@return JVector2
+function IsoPlayer:getMouseAimVector(arg0) end
+
+---@public
+---@return boolean
+function IsoPlayer:checkWalkTo() end
+
+---@public
+---@return int
+function IsoPlayer:getTicksSinceSeenZombie() end
+
+---@public
+---@return float
+function IsoPlayer:getHeartDelayMax() end
+
+---@public
+---@param arg0 String
+---@param arg1 VehiclePart
+---@param arg2 Long
+---@return void
+function IsoPlayer:addMechanicsItem(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setIgnoreInputsForDirection(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setMoodleCantSprint(arg0) end
+
+---@private
+---@return boolean
+function IsoPlayer:getAttackAnim() end
+
+---@private
+---@param arg0 IsoPlayer.MoveVars
+---@return void
+function IsoPlayer:updateMovementFromJoypad(arg0) end
+
+---@public
+---@return boolean
+function IsoPlayer:isGhostMode() end
+
+---@public
+---@return boolean
+function IsoPlayer:IsInMeleeAttack() end
+
+---@public
+---@return boolean
+function IsoPlayer:isSeeNonPvpZone() end
+
+---@public
+---@param arg0 short
+---@return IsoPlayer
+function IsoPlayer:getLocalPlayerByOnlineID(arg0) end
+
+---@private
+---@return boolean
+function IsoPlayer:updateInternal2() end
+
+---@public
+---@return String
+function IsoPlayer:getObjectName() end
+
+---@public
+---@return boolean
+function IsoPlayer:isShowTag() end
+
+---@public
+---@return Fitness
+function IsoPlayer:getFitness() end
+
+---@public
+---@return float
+function IsoPlayer:getMaxWeightDelta() end
+
+---@public
+---@return float
+function IsoPlayer:getAimingRangeMod() end
+
+---@public
+---@return boolean
+function IsoPlayer:isPlayerMoving() end
+
+---@private
+---@return void
+function IsoPlayer:updateTemperatureCheck() end
+
+---@public
+---@param arg0 IsoPlayer
+---@return boolean
+---@overload fun(arg0:UdpConnection)
+function IsoPlayer:checkCanSeeClient(arg0) end
+
+---@public
+---@param arg0 UdpConnection
+---@return boolean
+function IsoPlayer:checkCanSeeClient(arg0) end
+
+---@public
+---@return boolean
+function IsoPlayer:isShowMPInfos() end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoPlayer:setPing(arg0) end
+
+---@public
+---@return InventoryItem
+function IsoPlayer:getActiveLightItem() end
+
+---@public
+---@return void
+function IsoPlayer:becomeCorpse() end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoPlayer:setUsername(arg0) end
+
+---@public
+---@return void
+function IsoPlayer:update() end
 
 ---@public
 ---@return ItemVisuals
@@ -275,106 +708,264 @@ function IsoPlayer:getItemVisuals() end
 function IsoPlayer:getItemVisuals(arg0) end
 
 ---@public
----@return void
-function IsoPlayer:UpdateRemovedEmitters() end
-
----@public
----@return IsoMovingObject
-function IsoPlayer:getDragObject() end
-
----@public
----@param arg0 JVector2
----@return void
-function IsoPlayer:setPlayerMoveDir(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isDeaf() end
-
----@public
----@return void
-function IsoPlayer:postupdate() end
-
----@private
----@return HandWeapon
-function IsoPlayer:getWeapon() end
-
----@public
----@return boolean
-function IsoPlayer:isAttackAnimThrowTimeOut() end
-
----@private
----@return void
-function IsoPlayer:checkVehicleContainers() end
-
----@public
----@return BaseVisual
-function IsoPlayer:getVisual() end
-
----@public
----@return ArrayList|Unknown
-function IsoPlayer:getAlreadyReadBook() end
-
----@public
----@return float
-function IsoPlayer:getAimingMod() end
-
----@public
----@return boolean
-function IsoPlayer:isAllowSprint() end
-
----@private
----@return void
-function IsoPlayer:updateFootInjuries() end
-
----@public
----@return String
-function IsoPlayer:getAccessLevel() end
-
----@private
----@param arg0 IsoDirections
----@return boolean
-function IsoPlayer:doContextNSWE(arg0) end
-
----@public
----@return double
-function IsoPlayer:getLastSeenZomboidTime() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setNetworkTeleportEnabled(arg0) end
-
----@public
----@return String
-function IsoPlayer:getAttackType() end
-
----@public
----@param arg0 boolean
----@return float
-function IsoPlayer:getGlobalMovementMod(arg0) end
-
----@private
----@return void
-function IsoPlayer:initFMODParameters() end
-
----@public
----@return double
-function IsoPlayer:getHoursSurvived() end
-
----@private
----@return void
-function IsoPlayer:updateSoundListener() end
-
----@public
 ---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@param arg3 ColorInfo
+---@param arg4 boolean
+---@param arg5 boolean
+---@param arg6 Shader
 ---@return void
-function IsoPlayer:setTimeSinceLastStab(arg0) end
+function IsoPlayer:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoPlayer:setAttackType(arg0) end
+
+---@private
+---@return boolean
+function IsoPlayer:IsUsingAimHandWeapon() end
+
+---@public
+---@return JVector2
+function IsoPlayer:getLastAngle() end
+
+---@public
+---@return boolean
+function IsoPlayer:isWearingNightVisionGoggles() end
+
+---@public
+---@return boolean
+function IsoPlayer:isOnlyPlayerAsleep() end
+
+---@public
+---@return boolean
+function IsoPlayer:shouldDoInventory() end
+
+---@public
+---@return boolean
+function IsoPlayer:isAllowRun() end
+
+---@public
+---@return HumanVisual
+function IsoPlayer:getHumanVisual() end
+
+---@public
+---@return void
+function IsoPlayer:OnDeath() end
+
+---@private
+---@return void
+function IsoPlayer:updateDeathDragDown() end
+
+---@public
+---@return boolean
+function IsoPlayer:IsRunning() end
+
+---@public
+---@return boolean
+function IsoPlayer:isJustMoved() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setAllowRun(arg0) end
+
+---@private
+---@return void
+function IsoPlayer:attackWhileInVehicle() end
+
+---@public
+---@return JVector2
+function IsoPlayer:getPlayerMoveDir() end
+
+---@public
+---@return short
+function IsoPlayer:getOnlineID() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setSeeNonPvpZone(arg0) end
+
+---@public
+---@return String
+---@overload fun(arg0:Boolean)
+function IsoPlayer:getUsername() end
+
+---@public
+---@param arg0 Boolean
+---@return String
+function IsoPlayer:getUsername(arg0) end
+
+---@private
+---@return void
+function IsoPlayer:updateHeavyBreathing() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setNoClip(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setCanSeeAll(arg0) end
+
+---@protected
+---@return void
+function IsoPlayer:calculateStats() end
 
 ---@public
 ---@param arg0 IsoDirections
----@return IsoObject
-function IsoPlayer:getContextDoorOrWindowOrWindowFrame(arg0) end
+---@param arg1 boolean
+---@return boolean
+function IsoPlayer:hopFence(arg0, arg1) end
+
+---@private
+---@param arg0 String
+---@return void
+function IsoPlayer:onTrigger_ResetIsoPlayerModel(arg0) end
+
+---@private
+---@return void
+function IsoPlayer:updateSneakKey() end
+
+---@public
+---@param arg0 IsoMovingObject
+---@return void
+function IsoPlayer:setDragObject(arg0) end
+
+---@private
+---@param arg0 JVector2
+---@return JVector2
+function IsoPlayer:getJoypadAimVector(arg0) end
+
+---@public
+---@return int
+function IsoPlayer:getPlayerNum() end
+
+---@public
+---@return boolean
+function IsoPlayer:isAuthorizeMeleeAction() end
+
+---@public
+---@return ActionContext
+function IsoPlayer:getActionContext() end
+
+---@private
+---@return void
+function IsoPlayer:registerVariableCallbacks() end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoPlayer:setSurname(arg0) end
+
+---@public
+---@return IsoGameCharacter
+function IsoPlayer:getClosestZombieDist() end
+
+---@public
+---@return void
+function IsoPlayer:updateEnduranceWhileSitting() end
+
+---@public
+---@return boolean
+function IsoPlayer:isClimbOverWallSuccess() end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoPlayer:setOffSetXUI(arg0) end
+
+---@public
+---@return void
+function IsoPlayer:clearNetworkEvents() end
+
+---@public
+---@param arg0 IsoSurvivor
+---@return void
+function IsoPlayer:setDragCharacter(arg0) end
+
+---@public
+---@return boolean
+function IsoPlayer:toggleForceAim() end
+
+---@public
+---@return boolean
+function IsoPlayer:isbCouldBeSeenThisFrame() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setJustMoved(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:pressedAttack(arg0) end
+
+---@public
+---@return void
+function IsoPlayer:setFitnessSpeed() end
+
+---@public
+---@param arg0 short
+---@return void
+function IsoPlayer:setOnlineID(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setForceAim(arg0) end
+
+---@public
+---@return void
+function IsoPlayer:preupdate() end
+
+---@private
+---@param arg0 IsoPlayer.MoveVars
+---@return void
+function IsoPlayer:updateMovementFromInput(arg0) end
+
+---@public
+---@return boolean
+function IsoPlayer:isSaveFileInUse() end
+
+---@public
+---@return boolean
+function IsoPlayer:isNetworkTeleportEnabled() end
+
+---@public
+---@return boolean
+function IsoPlayer:isSaveFileIPValid() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 boolean
+---@return boolean
+function IsoPlayer:isMaskClicked(arg0, arg1, arg2) end
+
+---@public
+---@return boolean
+function IsoPlayer:canSeePlayerStats() end
+
+---@public
+---@param arg0 IsoPlayer
+---@return void
+function IsoPlayer:stopReceivingBodyDamageUpdates(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setForceSprint(arg0) end
+
+---@public
+---@return ParameterCharacterMovementSpeed
+function IsoPlayer:getParameterCharacterMovementSpeed() end
 
 ---@public
 ---@param arg0 float
@@ -382,42 +973,156 @@ function IsoPlayer:getContextDoorOrWindowOrWindowFrame(arg0) end
 function IsoPlayer:setMoveSpeed(arg0) end
 
 ---@public
----@return int
-function IsoPlayer:getSleepingPillsTaken() end
-
----@public
+---@param arg0 IsoDirections
 ---@return boolean
-function IsoPlayer:isWaiting() end
-
----@public
----@return ArrayList|Unknown
-function IsoPlayer:getAllFileNames() end
-
----@public
----@return ArrayList|Unknown
-function IsoPlayer:getPlayers() end
+function IsoPlayer:isSafeToClimbOver(arg0) end
 
 ---@private
 ---@return void
-function IsoPlayer:highlightRangedTargets() end
+function IsoPlayer:updateMechanicsItems() end
 
 ---@public
----@return boolean
-function IsoPlayer:isLBPressed() end
-
----@public
----@param arg0 ModelManager
----@param arg1 boolean
+---@param arg0 int
+---@param arg1 int
+---@param arg2 boolean
 ---@return void
-function IsoPlayer:onCullStateChanged(arg0, arg1) end
+function IsoPlayer:addWorldSoundUnlessInvisible(arg0, arg1, arg2) end
 
 ---@public
+---@param arg0 IsoMovingObject
 ---@return boolean
-function IsoPlayer:IsUsingAimWeapon() end
+function IsoPlayer:isPushedByForSeparate(arg0) end
+
+---@public
+---@param arg0 IsoZombie
+---@return IsoZombie
+function IsoPlayer:getClosestZombieToOtherZombie(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoPlayer:setOffSetYUI(arg0) end
 
 ---@public
 ---@return boolean
 function IsoPlayer:isAuthorizeShoveStomp() end
+
+---@public
+---@return boolean
+function IsoPlayer:isTargetedByZombie() end
+
+---@public
+---@return float
+function IsoPlayer:getPlayerClothingTemperature() end
+
+---@public
+---@return boolean
+function IsoPlayer:toggleForceRun() end
+
+---@public
+---@return boolean
+function IsoPlayer:isPathfindRunning() end
+
+---@protected
+---@param arg0 AnimationPlayer
+---@return void
+function IsoPlayer:onAnimPlayerCreated(arg0) end
+
+---@public
+---@return long
+function IsoPlayer:getSteamID() end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoPlayer:setTimeSinceLastStab(arg0) end
+
+---@public
+---@return boolean
+function IsoPlayer:isDeaf() end
+
+---@public
+---@return boolean
+function IsoPlayer:isDoingActionThatCanBeCancelled() end
+
+---@public
+---@return Nutrition
+function IsoPlayer:getNutrition() end
+
+---@public
+---@return boolean
+function IsoPlayer:toggleForceSprint() end
+
+---@public
+---@return float
+function IsoPlayer:getSeeNearbyCharacterDistance() end
+
+---@public
+---@param arg0 IsoZombie
+---@return float
+function IsoPlayer:getZombieRelevenceScore(arg0) end
+
+---@private
+---@return void
+function IsoPlayer:onClothingOutfitPreviewChanged() end
+
+---@public
+---@return ArrayList|Unknown
+function IsoPlayer:getAllSavedPlayers() end
+
+---@private
+---@return void
+function IsoPlayer:updateSleepingPillsTaken() end
+
+---@private
+---@param arg0 String
+---@return void
+function IsoPlayer:setWeaponType(arg0) end
+
+---@public
+---@param arg0 float
+---@return float
+function IsoPlayer:doBeatenVehicle(arg0) end
+
+---@public
+---@param arg0 String
+---@return boolean
+function IsoPlayer:isAccessLevel(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoPlayer:setClearSpottedTimer(arg0) end
+
+---@public
+---@return boolean
+function IsoPlayer:isAllowSprint() end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function IsoPlayer:Kill(arg0) end
+
+---@public
+---@return BaseVehicle
+function IsoPlayer:getUseableVehicle() end
+
+---@public
+---@param arg0 IsoPlayer
+---@return void
+function IsoPlayer:startReceivingBodyDamageUpdates(arg0) end
+
+---@private
+---@return boolean
+function IsoPlayer:updateWhileDead() end
+
+---@public
+---@return boolean
+function IsoPlayer:isIgnoreContextKey() end
+
+---@public
+---@return void
+function IsoPlayer:calculateContext() end
 
 ---@public
 ---@return void
@@ -439,16 +1144,130 @@ function IsoPlayer:save(arg0, arg1) end
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoPlayer:setBannedAttacking(arg0) end
+function IsoPlayer:setAuthorizeMeleeAction(arg0) end
+
+---@public
+---@return boolean
+function IsoPlayer:isAttackAnimThrowTimeOut() end
+
+---@public
+---@return IsoCell
+function IsoPlayer:getCell() end
+
+---@public
+---@return String
+function IsoPlayer:getAttackType() end
+
+---@private
+---@return void
+function IsoPlayer:updateEquippedBaggageContainer() end
+
+---@private
+---@return void
+function IsoPlayer:highlightRangedTargets() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setAttackFromBehind(arg0) end
+
+---@public
+---@return BaseVisual
+function IsoPlayer:getVisual() end
+
+---@public
+---@return ArrayList|Unknown
+function IsoPlayer:getAlreadyReadBook() end
+
+---@public
+---@return float
+function IsoPlayer:getAimingMod() end
+
+---@private
+---@return void
+function IsoPlayer:updateSoundListener() end
+
+---@public
+---@return boolean
+function IsoPlayer:isLookingWhileInVehicle() end
 
 ---@public
 ---@param arg0 int
 ---@return void
-function IsoPlayer:setDialogMood(arg0) end
+function IsoPlayer:setSleepingPillsTaken(arg0) end
+
+---@public
+---@return float
+function IsoPlayer:getTorchDot() end
+
+---@public
+---@return float
+function IsoPlayer:getPlayerClothingInsulation() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setJoypadIgnoreAimUntilCentered(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setClimbOverWallSuccess(arg0) end
+
+---@public
+---@return boolean
+function IsoPlayer:allPlayersAsleep() end
+
+---@public
+---@return boolean
+function IsoPlayer:isWaiting() end
+
+---@public
+---@param arg0 JVector2
+---@return JVector2
+function IsoPlayer:getDeferredMovement(arg0) end
 
 ---@public
 ---@return boolean
 function IsoPlayer:isFactionPvp() end
+
+---@public
+---@return boolean
+function IsoPlayer:IsUsingAimWeapon() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setWaiting(arg0) end
+
+---@public
+---@param arg0 ModelManager
+---@param arg1 boolean
+---@return void
+function IsoPlayer:onCullStateChanged(arg0, arg1) end
+
+---@public
+---@return String
+function IsoPlayer:getAccessLevel() end
+
+---@public
+---@param arg0 JVector2
+---@return void
+function IsoPlayer:setPlayerMoveDir(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setBannedAttacking(arg0) end
+
+---@public
+---@return IsoMovingObject
+function IsoPlayer:getDragObject() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setPathfindRunning(arg0) end
 
 ---@public
 ---@return BaseVehicle
@@ -456,69 +1275,43 @@ function IsoPlayer:getNearVehicle() end
 
 ---@public
 ---@return boolean
-function IsoPlayer:hasInstance() end
-
----@private
----@return void
-function IsoPlayer:updateMechanicsItems() end
-
----@public
----@return boolean
 function IsoPlayer:isTimedActionInstant() end
 
----@private
----@return void
-function IsoPlayer:setBeenMovingSprinting() end
-
----@private
----@param arg0 String
----@return void
-function IsoPlayer:onTrigger_ResetIsoPlayerModel(arg0) end
-
 ---@public
----@param arg0 boolean
+---@param arg0 long
 ---@return void
-function IsoPlayer:setForceRun(arg0) end
-
----@public
----@param arg0 IsoMovingObject
----@return void
-function IsoPlayer:TestZombieSpotPlayer(arg0) end
+function IsoPlayer:setSteamID(arg0) end
 
 ---@public
 ---@return boolean
 function IsoPlayer:isIgnoreInputsForDirection() end
 
 ---@public
+---@return double
+function IsoPlayer:getHoursSurvived() end
+
+---@public
+---@param arg0 boolean
+---@return float
+function IsoPlayer:getGlobalMovementMod(arg0) end
+
+---@public
+---@param arg0 IsoDirections
+---@return IsoObject
+function IsoPlayer:getContextDoorOrWindowOrWindowFrame(arg0) end
+
+---@public
+---@return int
+function IsoPlayer:getSleepingPillsTaken() end
+
+---@public
+---@return boolean
+function IsoPlayer:isLocalPlayer() end
+
+---@public
 ---@param arg0 boolean
 ---@return void
 function IsoPlayer:setbSeenThisFrame(arg0) end
-
----@public
----@param arg0 ActionContext
----@return void
-function IsoPlayer:actionStateChanged(arg0) end
-
----@public
----@param arg0 int
----@return void
-function IsoPlayer:setHeartDelayMax(arg0) end
-
----@public
----@param arg0 int
----@param arg1 IsoPlayer
----@return void
-function IsoPlayer:setLocalPlayer(arg0, arg1) end
-
----@public
----@param arg0 IsoZombie
----@return IsoZombie
-function IsoPlayer:getClosestZombieToOtherZombie(arg0) end
-
----@public
----@param arg0 Runnable
----@return void
-function IsoPlayer:invokeOnPlayerInstance(arg0) end
 
 ---@public
 ---@param arg0 float
@@ -528,328 +1321,106 @@ function IsoPlayer:invokeOnPlayerInstance(arg0) end
 function IsoPlayer:getRelevantAndDistance(arg0, arg1, arg2) end
 
 ---@public
----@return void
-function IsoPlayer:preupdate() end
-
----@public
 ---@return String
-function IsoPlayer:getForname() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setAllowSprint(arg0) end
-
----@public
----@return String
-function IsoPlayer:getTimeSurvived() end
-
----@public
----@param arg0 short
----@return IsoPlayer
-function IsoPlayer:getLocalPlayerByOnlineID(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:getCoopPVP() end
-
----@public
----@param arg0 IsoDirections
----@return boolean
-function IsoPlayer:doContext(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setFactionPvp(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setbChangeCharacterDebounce(arg0) end
+function IsoPlayer:GetAnimSetName() end
 
 ---@private
 ---@return void
-function IsoPlayer:setAngleFromAim() end
+function IsoPlayer:updateFootInjuries() end
 
----@public
----@return void
-function IsoPlayer:removeFromWorld() end
-
----@public
----@param arg0 String
----@return void
-function IsoPlayer:dressInClothingItem(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setCoopPVP(arg0) end
-
----@public
----@return float
-function IsoPlayer:getSeeNearbyCharacterDistance() end
-
----@public
+---@private
 ---@param arg0 IsoDirections
 ---@return boolean
-function IsoPlayer:isSafeToClimbOver(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function IsoPlayer:Kill(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isJustMoved() end
+function IsoPlayer:doContextNSWE(arg0) end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoPlayer:setPathfindRunning(arg0) end
+function IsoPlayer:setWearingNightVisionGoggles(arg0) end
 
----@public
----@return float
-function IsoPlayer:getTimedActionTimeModifier() end
+---@private
+---@return HandWeapon
+function IsoPlayer:getWeapon() end
+
+---@private
+---@return void
+function IsoPlayer:checkVehicleContainers() end
 
 ---@public
 ---@return void
-function IsoPlayer:OnDeath() end
-
----@public
----@return ParameterCharacterMovementSpeed
-function IsoPlayer:getParameterCharacterMovementSpeed() end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 boolean
----@return boolean
-function IsoPlayer:isMaskClicked(arg0, arg1, arg2) end
-
----@public
----@return boolean
-function IsoPlayer:isIgnoreContextKey() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setGhostMode(arg0) end
-
----@public
----@return int
-function IsoPlayer:getPing() end
-
----@public
----@return HitReactionNetworkAI
-function IsoPlayer:getHitReactionNetworkAI() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setInitiateAttack(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:pressedAttack(arg0) end
+function IsoPlayer:postupdate() end
 
 ---@public
 ---@param arg0 String
 ---@return void
-function IsoPlayer:setUsername(arg0) end
+function IsoPlayer:setTagPrefix(arg0) end
 
 ---@public
----@return boolean
-function IsoPlayer:isLookingWhileInVehicle() end
-
----@public
----@return float
-function IsoPlayer:getTurnDelta() end
-
----@public
----@param arg0 boolean
+---@param arg0 IsoMovingObject
 ---@return void
-function IsoPlayer:setAuthorizeMeleeAction(arg0) end
-
----@public
----@return void
-function IsoPlayer:setFitnessSpeed() end
+function IsoPlayer:TestZombieSpotPlayer(arg0) end
 
 ---@public
 ---@return Stack|Unknown
-function IsoPlayer:getSpottedList() end
-
----@public
----@param arg0 JVector2
----@return void
-function IsoPlayer:MoveUnmodded(arg0) end
-
----@public
----@param arg0 String
----@return boolean
-function IsoPlayer:isServerPlayerIDValid(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setShowMPInfos(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setForceOverrideAnim(arg0) end
-
----@private
----@return void
-function IsoPlayer:onClothingOutfitPreviewChanged() end
-
----@public
----@return NetworkCharacterAI
-function IsoPlayer:getNetworkCharacterAI() end
-
----@public
----@return boolean
-function IsoPlayer:isCheatPlayerSeeEveryone() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setAllowRun(arg0) end
-
----@public
----@return void
-function IsoPlayer:onWornItemsChanged() end
-
----@public
----@return boolean
-function IsoPlayer:IsRunning() end
-
----@public
----@return String
-function IsoPlayer:getUniqueFileName() end
-
----@public
----@return boolean
-function IsoPlayer:allPlayersDead() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setClimbOverWallStruggle(arg0) end
+function IsoPlayer:getLastSpotted() end
 
 ---@public
 ---@param arg0 int
 ---@return void
-function IsoPlayer:setFollowID(arg0) end
+function IsoPlayer:setDialogMood(arg0) end
+
+---@private
+---@return void
+function IsoPlayer:initFMODParameters() end
+
+---@public
+---@return float
+function IsoPlayer:getInvAimingRangeMod() end
+
+---@public
+---@return int
+function IsoPlayer:getClearSpottedTimer() end
+
+---@public
+---@return boolean
+function IsoPlayer:isForceAim() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoPlayer:setIgnoreAutoVault(arg0) end
+function IsoPlayer:setForceRun(arg0) end
+
+---@public
+---@return float
+function IsoPlayer:getMoveSpeed() end
 
 ---@public
 ---@return boolean
-function IsoPlayer:isSeeEveryone() end
+function IsoPlayer:isForceOverrideAnim() end
 
 ---@public
 ---@return boolean
-function IsoPlayer:isLocal() end
-
----@public
----@param arg0 UdpConnection
----@return boolean
----@overload fun(arg0:IsoPlayer)
-function IsoPlayer:checkCanSeeClient(arg0) end
-
----@public
----@param arg0 IsoPlayer
----@return boolean
-function IsoPlayer:checkCanSeeClient(arg0) end
-
----@private
----@return boolean
-function IsoPlayer:IsUsingAimHandWeapon() end
-
----@public
----@return IsoGameCharacter
-function IsoPlayer:getClosestZombieDist() end
+function IsoPlayer:isLBPressed() end
 
 ---@public
 ---@return boolean
-function IsoPlayer:isIgnoreAutoVault() end
-
----@public
----@param arg0 IsoDirections
----@param arg1 boolean
----@return boolean
-function IsoPlayer:hopFence(arg0, arg1) end
-
----@public
----@return boolean
-function IsoPlayer:isBannedAttacking() end
-
----@public
----@param arg0 IsoSurvivor
----@return void
-function IsoPlayer:setDragCharacter(arg0) end
-
----@public
----@param arg0 BaseVehicle
----@return boolean
-function IsoPlayer:isVehicleCollisionActive(arg0) end
-
----@public
----@return void
-function IsoPlayer:update() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setCanSeeAll(arg0) end
-
----@private
----@return void
-function IsoPlayer:updateTemperatureCheck() end
-
----@public
----@return void
-function IsoPlayer:updateEnduranceWhileSitting() end
-
----@public
----@return ColorInfo
-function IsoPlayer:getTagColor() end
-
----@public
----@return JVector2
-function IsoPlayer:getLastAngle() end
+function IsoPlayer:isAttacking() end
 
 ---@public
 ---@return boolean
 function IsoPlayer:isCanSeeAll() end
 
 ---@public
----@return float
-function IsoPlayer:getHeartDelay() end
+---@return ColorInfo
+function IsoPlayer:getTagColor() end
 
 ---@public
----@param arg0 String
----@return Long
-function IsoPlayer:getMechanicsItem(arg0) end
+---@return boolean
+function IsoPlayer:isPushableForSeparate() end
 
 ---@public
----@param arg0 boolean
 ---@return boolean
-function IsoPlayer:isInTrees2(arg0) end
-
----@private
----@return void
-function IsoPlayer:updateHeavyBreathing() end
-
----@private
----@return boolean
-function IsoPlayer:updateWhileDead() end
+function IsoPlayer:isNoClip() end
 
 ---@public
 ---@param arg0 ByteBufferWriter
@@ -858,636 +1429,25 @@ function IsoPlayer:updateWhileDead() end
 function IsoPlayer:createPlayerStats(arg0, arg1) end
 
 ---@public
----@return void
-function IsoPlayer:InitSpriteParts() end
-
----@public
----@param arg0 ParameterMeleeHitSurface.Material
----@return void
----@overload fun(arg0:String)
-function IsoPlayer:setMeleeHitSurface(arg0) end
-
----@public
----@param arg0 String
----@return void
-function IsoPlayer:setMeleeHitSurface(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setPerformingAnAction(arg0) end
-
----@private
----@param arg0 JVector2
----@return JVector2
-function IsoPlayer:getJoypadAimVector(arg0) end
-
----@private
----@return void
-function IsoPlayer:updateSneakKey() end
-
----@private
----@return void
-function IsoPlayer:updateSleepingPillsTaken() end
-
----@public
----@return boolean
-function IsoPlayer:checkWalkTo() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setAuthorizeShoveStomp(arg0) end
-
----@private
----@param arg0 String
----@return void
-function IsoPlayer:setWeaponType(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setAllChatMuted(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isPlayerMoving() end
-
----@public
----@return String
----@overload fun(arg0:Boolean)
-function IsoPlayer:getUsername() end
-
----@public
----@param arg0 Boolean
----@return String
-function IsoPlayer:getUsername(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@return int
-function IsoPlayer:calculateCritChance(arg0) end
-
----@public
----@param arg0 String
----@param arg1 VehiclePart
----@param arg2 Long
----@return void
-function IsoPlayer:addMechanicsItem(arg0, arg1, arg2) end
-
----@public
----@param arg0 IsoPlayer
----@return void
-function IsoPlayer:setInstance(arg0) end
-
----@public
----@return String
-function IsoPlayer:GetAnimSetName() end
-
----@public
----@return float
-function IsoPlayer:getLightDistance() end
-
----@public
----@return void
-function IsoPlayer:Reset() end
-
----@private
----@param arg0 IsoDirections
----@param arg1 IsoObject
----@return void
-function IsoPlayer:doContextDoorOrWindowOrWindowFrame(arg0, arg1) end
-
----@private
----@return void
-function IsoPlayer:updateDeathDragDown() end
-
----@public
----@return boolean
-function IsoPlayer:isAllChatMuted() end
-
----@public
----@param arg0 long
----@return void
-function IsoPlayer:setSteamID(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setClimbOverWallSuccess(arg0) end
-
----@public
----@return Stack|Unknown
-function IsoPlayer:getStaticTraits() end
-
----@public
----@return void
-function IsoPlayer:nullifyAiming() end
-
----@private
----@param arg0 IsoPlayer.MoveVars
----@return void
-function IsoPlayer:updateMovementFromInput(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isShowTag() end
-
----@public
----@return float
-function IsoPlayer:getTorchStrength() end
-
----@public
----@return int
-function IsoPlayer:getPlayerIndex() end
-
----@public
----@return float
-function IsoPlayer:getPathSpeed() end
-
----@private
----@return void
-function IsoPlayer:updateEquippedBaggageContainer() end
-
----@public
----@return int
-function IsoPlayer:getClearSpottedTimer() end
-
----@public
----@return float
-function IsoPlayer:getAimingRangeMod() end
-
----@public
----@param arg0 ColorInfo
----@return void
-function IsoPlayer:setTagColor(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isNoClip() end
-
----@public
----@return int
-function IsoPlayer:getFollowID() end
-
----@public
----@return Fitness
-function IsoPlayer:getFitness() end
-
----@private
----@return void
-function IsoPlayer:updateHeartSound() end
-
----@public
----@return boolean
-function IsoPlayer:isForceSprint() end
-
----@private
----@return void
-function IsoPlayer:registerVariableCallbacks() end
-
----@public
----@param arg0 JVector2
----@return JVector2
-function IsoPlayer:getMouseAimVector(arg0) end
-
----@public
----@param arg0 Integer
----@return void
-function IsoPlayer:setTransactionID(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setIgnoreInputsForDirection(arg0) end
-
----@public
----@param arg0 JVector2
----@return void
-function IsoPlayer:setLastAngle(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isBlockMovement() end
-
----@public
----@param arg0 IsoDirections
----@return boolean
-function IsoPlayer:climbOverWall(arg0) end
-
----@public
----@param arg0 Stack|Unknown
----@return void
-function IsoPlayer:setLastSpotted(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isPerformingAnAction() end
-
----@protected
----@return void
-function IsoPlayer:updateStats_Sleeping() end
-
----@public
----@param arg0 String
----@return void
-function IsoPlayer:setDisplayName(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:allPlayersAsleep() end
-
----@private
----@param arg0 float
----@return void
-function IsoPlayer:updateEndurance(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:IsAiming() end
-
----@public
----@param arg0 AnimLayer
----@param arg1 AnimEvent
----@return void
-function IsoPlayer:OnAnimEvent(arg0, arg1) end
-
----@private
----@return boolean
-function IsoPlayer:checkActionsBlockingMovement() end
-
----@private
----@param arg0 IsoPlayer.MoveVars
----@return void
-function IsoPlayer:updateMovementFromJoypad(arg0) end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 String
----@return String
-function IsoPlayer:setPlayerStats(arg0, arg1) end
-
----@private
----@return void
-function IsoPlayer:updateEnableModelsKey() end
-
----@public
----@return String
-function IsoPlayer:getSurname() end
-
----@public
----@param arg0 int
----@return void
-function IsoPlayer:setTicksSinceSeenZombie(arg0) end
-
----@private
----@return boolean
-function IsoPlayer:updateInternal2() end
-
----@public
----@param arg0 String
----@return void
-function IsoPlayer:setAccessLevel(arg0) end
-
----@public
----@param arg0 float
----@return void
-function IsoPlayer:setAsleepTime(arg0) end
-
----@public
----@param arg0 IsoDirections
----@return boolean
-function IsoPlayer:canClimbOverWall(arg0) end
-
----@public
----@param arg0 float
----@param arg1 float
----@param arg2 float
----@return void
-function IsoPlayer:setPosition(arg0, arg1, arg2) end
-
----@public
----@param arg0 JVector2
----@return JVector2
-function IsoPlayer:getAimVector(arg0) end
-
----@public
----@param arg0 IsoZombie
----@return float
-function IsoPlayer:getZombieRelevenceScore(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setBlockMovement(arg0) end
-
----@private
----@return void
-function IsoPlayer:updateInternal1() end
-
----@public
----@return boolean
-function IsoPlayer:isOutside() end
-
----@public
----@return Nutrition
-function IsoPlayer:getNutrition() end
-
----@public
----@param arg0 JVector2
----@return JVector2
-function IsoPlayer:getControllerAimDir(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setbCouldBeSeenThisFrame(arg0) end
-
----@public
 ---@param arg0 int
 ---@return void
 function IsoPlayer:setFollowDeadCount(arg0) end
 
 ---@public
----@param arg0 double
----@return void
-function IsoPlayer:setHoursSurvived(arg0) end
-
----@public
----@param arg0 float
----@return float
-function IsoPlayer:doBeatenVehicle(arg0) end
-
----@private
----@param arg0 IsoPlayer.InputState
----@return void
-function IsoPlayer:UpdateInputState(arg0) end
-
----@public
----@param arg0 float
----@return boolean
----@overload fun(arg0:float, arg1:boolean, arg2:String)
-function IsoPlayer:DoAttack(arg0) end
-
----@public
----@param arg0 float
----@param arg1 boolean
----@param arg2 String
----@return boolean
-function IsoPlayer:DoAttack(arg0, arg1, arg2) end
-
----@public
----@return IsoSurvivor
-function IsoPlayer:getDragCharacter() end
-
----@public
----@return float
-function IsoPlayer:getTimeSinceLastStab() end
-
----@private
----@return boolean
-function IsoPlayer:updateRemotePlayer() end
-
----@public
----@return boolean
-function IsoPlayer:pressedCancelAction() end
-
----@protected
----@return void
-function IsoPlayer:calculateStats() end
-
----@public
----@return boolean
-function IsoPlayer:isDoingActionThatCanBeCancelled() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setJustMoved(arg0) end
-
----@public
----@return void
-function IsoPlayer:updateMovementRates() end
-
----@private
----@return void
-function IsoPlayer:updateGodModeKey() end
-
----@public
----@return boolean
-function IsoPlayer:isAimControlActive() end
-
----@public
----@return boolean
-function IsoPlayer:toggleForceRun() end
-
----@private
----@param arg0 IsoPlayer.MoveVars
----@return void
-function IsoPlayer:updateMovementFromKeyboardMouse(arg0) end
-
----@public
----@param arg0 String
----@return void
-function IsoPlayer:setForname(arg0) end
-
----@public
----@return ActionContext
-function IsoPlayer:getActionContext() end
-
----@public
----@return void
-function IsoPlayer:updateUsername() end
-
----@private
----@return boolean
-function IsoPlayer:getAttackAnim() end
-
----@private
----@return void
-function IsoPlayer:checkJoypadIgnoreAimUntilCentered() end
-
----@public
----@return boolean
-function IsoPlayer:isTargetedByZombie() end
-
----@public
----@param arg0 long
----@return void
-function IsoPlayer:setAttackAnimThrowTimer(arg0) end
-
----@public
----@param arg0 HandWeapon
----@param arg1 IsoGameCharacter
----@param arg2 boolean
----@param arg3 float
----@param arg4 boolean
----@return void
-function IsoPlayer:hitConsequences(arg0, arg1, arg2, arg3, arg4) end
-
----@public
----@return JVector2
-function IsoPlayer:getPlayerMoveDir() end
-
----@private
----@return void
-function IsoPlayer:updateTorchStrength() end
-
----@public
----@return void
-function IsoPlayer:calculateContext() end
-
----@public
----@return boolean
-function IsoPlayer:canSeePlayerStats() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setForceAim(arg0) end
-
----@public
 ---@return int
-function IsoPlayer:getFollowDeadCount() end
-
----@public
----@param arg0 IsoPlayer
----@return void
-function IsoPlayer:stopReceivingBodyDamageUpdates(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isClimbOverWallSuccess() end
-
----@public
----@param arg0 BaseVehicle
----@return void
-function IsoPlayer:setVehicleHitLocation(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isAttackStarted() end
-
----@private
----@return boolean
-function IsoPlayer:updateUseKey() end
-
----@public
----@return boolean
-function IsoPlayer:isAimKeyDown() end
-
----@public
----@return boolean
-function IsoPlayer:zombiesSwitchOwnershipEachUpdate() end
+function IsoPlayer:getJoypadBind() end
 
 ---@public
 ---@return float
-function IsoPlayer:getInvAimingMod() end
-
----@private
----@return void
-function IsoPlayer:updateWorldAmbiance() end
-
----@public
----@return boolean
-function IsoPlayer:shouldBeTurning() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setIgnoreContextKey(arg0) end
-
----@public
----@return HumanVisual
-function IsoPlayer:getHumanVisual() end
-
----@private
----@return void
-function IsoPlayer:updateWhileInVehicle() end
-
----@private
----@return void
-function IsoPlayer:attackWhileInVehicle() end
-
----@public
----@param arg0 IsoMovingObject
----@return boolean
-function IsoPlayer:isPushedByForSeparate(arg0) end
-
----@public
----@return BaseVehicle
-function IsoPlayer:getUseableVehicle() end
-
----@public
----@return boolean
-function IsoPlayer:isSaveFileInUse() end
+function IsoPlayer:getReloadingMod() end
 
 ---@public
 ---@return void
-function IsoPlayer:becomeCorpse() end
+function IsoPlayer:updateLOS() end
 
 ---@public
----@return IsoPlayer
-function IsoPlayer:getInstance() end
-
----@public
----@param arg0 int
----@return void
-function IsoPlayer:setClearSpottedTimer(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isTorchCone() end
-
----@private
----@return void
-function IsoPlayer:updateInteractKeyPanic() end
-
----@public
----@return boolean
-function IsoPlayer:isPathfindRunning() end
-
----@public
----@param arg0 MoodleType
----@return int
-function IsoPlayer:getMoodleLevel(arg0) end
-
----@public
----@return float
-function IsoPlayer:getPlayerClothingTemperature() end
-
----@public
----@param arg0 short
----@return void
-function IsoPlayer:setOnlineID(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 boolean
----@return void
-function IsoPlayer:addWorldSoundUnlessInvisible(arg0, arg1, arg2) end
-
----@public
----@return boolean
-function IsoPlayer:isOnlyPlayerAsleep() end
-
----@public
----@return boolean
-function IsoPlayer:isSkeleton() end
-
----@public
----@return boolean
-function IsoPlayer:isAllowRun() end
-
----@public
----@param arg0 String
----@return void
-function IsoPlayer:setAttackType(arg0) end
-
----@private
----@return void
-function IsoPlayer:highlightRangedTargetsInternal() end
+---@return double
+function IsoPlayer:getLastSeenZomboidTime() end
 
 ---@public
 ---@param arg0 boolean
@@ -1495,89 +1455,16 @@ function IsoPlayer:highlightRangedTargetsInternal() end
 function IsoPlayer:setShowTag(arg0) end
 
 ---@public
----@return Boolean
-function IsoPlayer:isNearVehicle() end
-
----@public
----@param arg0 IsoPlayer
----@return void
-function IsoPlayer:startReceivingBodyDamageUpdates(arg0) end
-
----@public
----@return float
-function IsoPlayer:getMaxWeightDelta() end
-
----@public
----@return boolean
-function IsoPlayer:isCanHearAll() end
-
----@public
----@param arg0 int
----@return void
-function IsoPlayer:setPing(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isShowMPInfos() end
-
----@public
----@return void
-function IsoPlayer:updateLOS() end
-
----@private
----@return void
-function IsoPlayer:updateCursorVisibility() end
-
----@public
----@param arg0 String
----@return void
-function IsoPlayer:setSurname(arg0) end
-
----@private
----@return void
-function IsoPlayer:updateChangeCharacterKey() end
-
----@public
----@return boolean
-function IsoPlayer:toggleForceSprint() end
-
----@public
----@return boolean
-function IsoPlayer:isbSeenThisFrame() end
-
----@private
----@param arg0 JVector2
----@return JVector2
-function IsoPlayer:getJoypadMoveVector(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isGhostMode() end
-
----@public
----@param arg0 String
----@return void
-function IsoPlayer:DoFootstepSound(arg0) end
-
----@public
----@return ArrayList|Unknown
-function IsoPlayer:getAllSavedPlayers() end
-
----@public
----@return float
-function IsoPlayer:getAsleepTime() end
-
----@public
 ---@return int
-function IsoPlayer:getDialogMood() end
-
----@public
----@return short
-function IsoPlayer:getOnlineID() end
+function IsoPlayer:getOffSetXUI() end
 
 ---@public
 ---@return boolean
-function IsoPlayer:toggleForceAim() end
+function IsoPlayer:isClimbOverWallStruggle() end
+
+---@public
+---@return void
+function IsoPlayer:renderlast() end
 
 ---@public
 ---@param arg0 String
@@ -1592,206 +1479,9 @@ function IsoPlayer:load(arg0) end
 ---@return void
 function IsoPlayer:load(arg0, arg1, arg2) end
 
----@private
----@return void
-function IsoPlayer:postupdateInternal() end
-
 ---@public
----@return long
-function IsoPlayer:getSteamID() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setNoClip(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isSolidForSeparate() end
-
----@private
----@param arg0 IsoPlayer
----@return boolean
-function IsoPlayer:checkSpottedPLayerTimer(arg0) end
-
----@public
----@param arg0 boolean
----@return boolean
-function IsoPlayer:pressedMovement(arg0) end
-
----@private
----@return boolean
-function IsoPlayer:DoAimAnimOnAiming() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setSeeNonPvpZone(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setForceSprint(arg0) end
-
----@public
----@param arg0 int
----@return void
-function IsoPlayer:setOffSetYUI(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isWearingNightVisionGoggles() end
-
----@public
----@return boolean
-function IsoPlayer:isSaveFileIPValid() end
-
----@public
----@return boolean
-function IsoPlayer:isNetworkTeleportEnabled() end
-
----@public
----@return InventoryItem
-function IsoPlayer:getActiveLightItem() end
-
----@public
----@return Stack|Unknown
-function IsoPlayer:getLastSpotted() end
-
----@public
----@return boolean
-function IsoPlayer:isbChangeCharacterDebounce() end
-
----@public
----@return boolean
-function IsoPlayer:isClimbOverWallStruggle() end
-
----@public
----@return String
-function IsoPlayer:getTagPrefix() end
-
----@public
----@return void
-function IsoPlayer:clearNetworkEvents() end
-
----@public
----@return boolean
-function IsoPlayer:isBehaviourMoving() end
-
----@public
----@param arg0 String
----@return void
-function IsoPlayer:setTagPrefix(arg0) end
-
----@public
----@return int
-function IsoPlayer:getOffSetYUI() end
-
----@public
----@return boolean
-function IsoPlayer:isAttacking() end
-
----@private
----@return void
-function IsoPlayer:checkActionGroup() end
-
----@public
----@return boolean
-function IsoPlayer:isForceRun() end
-
----@public
----@param arg0 float
 ---@return float
-function IsoPlayer:getDamageFromHitByACar(arg0) end
-
----@public
----@param arg0 BaseVehicle
----@return void
-function IsoPlayer:setVehicle4TestCollision(arg0) end
-
----@private
----@return void
-function IsoPlayer:checkReloading() end
-
----@public
----@return boolean
-function IsoPlayer:isPushableForSeparate() end
-
----@public
----@param arg0 float
----@return void
-function IsoPlayer:setHeartDelay(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:AttemptAttack() end
-
----@private
----@return void
-function IsoPlayer:enterExitVehicle() end
-
----@public
----@return boolean
-function IsoPlayer:isAuthorizeMeleeAction() end
-
----@public
----@return boolean
-function IsoPlayer:isbCouldBeSeenThisFrame() end
-
----@private
----@return void
-function IsoPlayer:updateAimingStance() end
-
----@public
----@return int
-function IsoPlayer:getPlayerNum() end
-
----@public
----@param arg0 float
----@return void
-function IsoPlayer:setMaxWeightDelta(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isForceOverrideAnim() end
-
----@public
----@return String
-function IsoPlayer:getObjectName() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoPlayer:setCanHearAll(arg0) end
-
----@public
----@return boolean
-function IsoPlayer:isForceAim() end
-
----@private
----@return String
-function IsoPlayer:getWeaponType() end
-
----@private
----@return void
-function IsoPlayer:onIdlePerformFidgets() end
-
----@public
----@param arg0 int
----@return void
-function IsoPlayer:setOffSetXUI(arg0) end
-
----@public
----@return int
-function IsoPlayer:getOffSetXUI() end
-
----@public
----@return void
-function IsoPlayer:renderlast() end
-
----@public
----@return boolean
-function IsoPlayer:isAttackFromBehind() end
+function IsoPlayer:getLightDistance() end
 
 ---@public
 ---@param arg0 String
@@ -1799,108 +1489,418 @@ function IsoPlayer:isAttackFromBehind() end
 function IsoPlayer:dressInNamedOutfit(arg0) end
 
 ---@public
----@return boolean
-function IsoPlayer:IsInMeleeAttack() end
-
----@public
+---@param arg0 boolean
 ---@return void
-function IsoPlayer:removeSaveFile() end
+function IsoPlayer:setAuthorizeShoveStomp(arg0) end
 
 ---@public
 ---@return boolean
-function IsoPlayer:pressedAim() end
+function IsoPlayer:isBehaviourMoving() end
 
 ---@public
----@return float
-function IsoPlayer:getPlayerClothingInsulation() end
+---@return String
+function IsoPlayer:getTagPrefix() end
 
 ---@public
----@param arg0 BaseVehicle
----@param arg1 float
----@param arg2 boolean
----@param arg3 float
----@param arg4 float
----@return float
-function IsoPlayer:Hit(arg0, arg1, arg2, arg3, arg4) end
-
----@public
----@param arg0 IsoMovingObject
+---@param arg0 int
 ---@return void
-function IsoPlayer:setDragObject(arg0) end
+function IsoPlayer:setFollowID(arg0) end
 
 ---@public
----@return float
-function IsoPlayer:getMoveSpeed() end
+---@param arg0 Integer
+---@return void
+function IsoPlayer:setTransactionID(arg0) end
 
 ---@public
 ---@return boolean
-function IsoPlayer:shouldDoInventory() end
+function IsoPlayer:isForceSprint() end
 
 ---@public
----@return float
-function IsoPlayer:getInvAimingRangeMod() end
+---@return boolean
+function IsoPlayer:isSolidForSeparate() end
+
+---@public
+---@return Boolean
+function IsoPlayer:isNearVehicle() end
+
+---@public
+---@return boolean
+function IsoPlayer:isBlockMovement() end
 
 ---@private
 ---@return void
-function IsoPlayer:updateHitByVehicle() end
+function IsoPlayer:updateChangeCharacterKey() end
 
----@public
----@return int
-function IsoPlayer:getJoypadBind() end
+---@private
+---@return void
+function IsoPlayer:updateCursorVisibility() end
 
 ---@public
 ---@return boolean
-function IsoPlayer:isSeeNonPvpZone() end
+function IsoPlayer:isbSeenThisFrame() end
+
+---@private
+---@param arg0 JVector2
+---@return JVector2
+function IsoPlayer:getJoypadMoveVector(arg0) end
 
 ---@public
----@return Integer
-function IsoPlayer:getTransactionID() end
+---@param arg0 boolean
+---@return boolean
+function IsoPlayer:pressedMovement(arg0) end
+
+---@public
+---@return boolean
+function IsoPlayer:isIgnoreAutoVault() end
+
+---@public
+---@param arg0 JVector2
+---@return void
+function IsoPlayer:setLastAngle(arg0) end
+
+---@public
+---@return boolean
+function IsoPlayer:isSkeleton() end
+
+---@public
+---@return HitReactionNetworkAI
+function IsoPlayer:getHitReactionNetworkAI() end
+
+---@public
+---@return boolean
+function IsoPlayer:allPlayersDead() end
+
+---@private
+---@param arg0 IsoPlayer
+---@return boolean
+function IsoPlayer:checkSpottedPLayerTimer(arg0) end
+
+---@public
+---@return void
+function IsoPlayer:onWornItemsChanged() end
+
+---@public
+---@return float
+function IsoPlayer:getTorchStrength() end
+
+---@public
+---@return void
+function IsoPlayer:nullifyAiming() end
+
+---@public
+---@return boolean
+function IsoPlayer:isCheatPlayerSeeEveryone() end
+
+---@public
+---@return NetworkCharacterAI
+function IsoPlayer:getNetworkCharacterAI() end
+
+---@public
+---@return boolean
+function IsoPlayer:isCanHearAll() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setForceOverrideAnim(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoPlayer:DoFootstepSound(arg0) end
+
+---@private
+---@return void
+function IsoPlayer:highlightRangedTargetsInternal() end
+
+---@public
+---@return boolean
+function IsoPlayer:isSeeEveryone() end
+
+---@public
+---@return int
+function IsoPlayer:getFollowID() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setAllowSprint(arg0) end
+
+---@private
+---@return void
+function IsoPlayer:updateToggleToAim() end
 
 ---@private
 ---@return void
 function IsoPlayer:initializeStates() end
 
 ---@public
----@return IsoCell
-function IsoPlayer:getCell() end
-
----@public
----@param arg0 int
+---@param arg0 ActionContext
 ---@return void
-function IsoPlayer:setSleepingPillsTaken(arg0) end
+function IsoPlayer:actionStateChanged(arg0) end
 
 ---@public
 ---@return float
-function IsoPlayer:getHeartDelayMax() end
+function IsoPlayer:getHeartDelay() end
+
+---@public
+---@return int
+function IsoPlayer:getFollowDeadCount() end
+
+---@public
+---@return IsoPlayer
+function IsoPlayer:getInstance() end
+
+---@public
+---@return boolean
+function IsoPlayer:isLocal() end
+
+---@public
+---@return float
+function IsoPlayer:getAsleepTime() end
+
+---@private
+---@return void
+function IsoPlayer:setAngleFromAim() end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return int
+function IsoPlayer:calculateCritChance(arg0) end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoPlayer:setMoodleCantSprint(arg0) end
+function IsoPlayer:setClimbOverWallStruggle(arg0) end
+
+---@private
+---@return void
+function IsoPlayer:onIdlePerformFidgets() end
+
+---@public
+---@param arg0 long
+---@return void
+function IsoPlayer:setAttackAnimThrowTimer(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setGhostMode(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setFactionPvp(arg0) end
+
+---@public
+---@return String
+function IsoPlayer:getTimeSurvived() end
+
+---@private
+---@return void
+function IsoPlayer:updateHitByVehicle() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setShowMPInfos(arg0) end
+
+---@private
+---@return boolean
+function IsoPlayer:updateRemotePlayer() end
+
+---@public
+---@return boolean
+function IsoPlayer:getCoopPVP() end
+
+---@public
+---@param arg0 Runnable
+---@return void
+function IsoPlayer:invokeOnPlayerInstance(arg0) end
+
+---@public
+---@return boolean
+function IsoPlayer:pressedCancelAction() end
+
+---@public
+---@param arg0 IsoPlayer
+---@return void
+function IsoPlayer:setInstance(arg0) end
 
 ---@private
 ---@return void
 function IsoPlayer:updateExt() end
 
+---@public
+---@return float
+function IsoPlayer:getInvAimingMod() end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoPlayer:setHeartDelayMax(arg0) end
+
+---@public
+---@return void
+function IsoPlayer:updateUsername() end
+
 ---@private
 ---@return void
-function IsoPlayer:updateToggleToAim() end
+function IsoPlayer:updateGodModeKey() end
 
 ---@public
----@return int
-function IsoPlayer:getTicksSinceSeenZombie() end
-
----@public
----@param arg0 float
----@param arg1 float
----@param arg2 float
----@param arg3 ColorInfo
----@param arg4 boolean
----@param arg5 boolean
----@param arg6 Shader
----@return void
-function IsoPlayer:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+---@return boolean
+function IsoPlayer:isAimControlActive() end
 
 ---@public
 ---@return float
-function IsoPlayer:getReloadingMod() end
+function IsoPlayer:getTurnDelta() end
+
+---@private
+---@return void
+function IsoPlayer:setBeenMovingSprinting() end
+
+---@public
+---@param arg0 MoodleType
+---@return int
+function IsoPlayer:getMoodleLevel(arg0) end
+
+---@protected
+---@return void
+function IsoPlayer:updateStats_Sleeping() end
+
+---@public
+---@param arg0 BaseVehicle
+---@return boolean
+function IsoPlayer:isVehicleCollisionActive(arg0) end
+
+---@public
+---@param arg0 IsoDirections
+---@return boolean
+function IsoPlayer:doContext(arg0) end
+
+---@public
+---@return void
+function IsoPlayer:removeFromWorld() end
+
+---@public
+---@param arg0 HandWeapon
+---@param arg1 IsoGameCharacter
+---@param arg2 boolean
+---@param arg3 float
+---@param arg4 boolean
+---@return void
+function IsoPlayer:hitConsequences(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@param arg0 JVector2
+---@return void
+function IsoPlayer:MoveUnmodded(arg0) end
+
+---@public
+---@return ArrayList|Unknown
+function IsoPlayer:getPlayers() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setNetworkTeleportEnabled(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setbChangeCharacterDebounce(arg0) end
+
+---@public
+---@return Stack|Unknown
+function IsoPlayer:getSpottedList() end
+
+---@public
+---@return boolean
+function IsoPlayer:zombiesSwitchOwnershipEachUpdate() end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoPlayer:dressInClothingItem(arg0) end
+
+---@public
+---@return String
+function IsoPlayer:getUniqueFileName() end
+
+---@private
+---@return void
+function IsoPlayer:checkReloading() end
+
+---@public
+---@return boolean
+function IsoPlayer:isAttackStarted() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setbCouldBeSeenThisFrame(arg0) end
+
+---@private
+---@return void
+function IsoPlayer:updateAimingStance() end
+
+---@public
+---@return float
+function IsoPlayer:getTimedActionTimeModifier() end
+
+---@private
+---@return void
+function IsoPlayer:checkActionGroup() end
+
+---@public
+---@return boolean
+function IsoPlayer:isTorchCone() end
+
+---@public
+---@param arg0 BaseVehicle
+---@return void
+function IsoPlayer:setVehicleHitLocation(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setIgnoreContextKey(arg0) end
+
+---@private
+---@return String
+function IsoPlayer:getWeaponType() end
+
+---@public
+---@return boolean
+function IsoPlayer:hasInstance() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setIgnoreAutoVault(arg0) end
+
+---@public
+---@return String
+function IsoPlayer:getDisplayName() end
+
+---@public
+---@return int
+function IsoPlayer:getPing() end
+
+---@public
+---@return String
+function IsoPlayer:getForname() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoPlayer:setInitiateAttack(arg0) end
+
+---@private
+---@return void
+function IsoPlayer:enterExitVehicle() end
+
+---@public
+---@return boolean
+function IsoPlayer:shouldBeTurning() end

@@ -18,16 +18,15 @@ UIWorldMap = {}
 ---@return boolean
 function UIWorldMap:isInSameSafehouse(arg0, arg1) end
 
----@private
----@param arg0 IsoPlayer
----@param arg1 WorldMapRemotePlayer
----@return boolean
-function UIWorldMap:isInSameFaction(arg0, arg1) end
-
 ---@public
----@param arg0 LuaManager.Exposer
+---@param arg0 double
+---@param arg1 double
+---@return Boolean
+function UIWorldMap:onMouseMove(arg0, arg1) end
+
+---@private
 ---@return void
-function UIWorldMap:setExposed(arg0) end
+function UIWorldMap:renderRemotePlayers() end
 
 ---@private
 ---@return boolean
@@ -37,15 +36,16 @@ function UIWorldMap:isAdminSeeRemotePlayers() end
 ---@return void
 function UIWorldMap:renderBuildingsWithoutFeatures() end
 
----@public
----@param arg0 double
----@param arg1 double
----@return Boolean
-function UIWorldMap:onMouseMove(arg0, arg1) end
+---@private
+---@param arg0 float
+---@param arg1 float
+---@return void
+function UIWorldMap:renderPlayer(arg0, arg1) end
 
----@public
----@return UIWorldMapV1
-function UIWorldMap:getAPI() end
+---@private
+---@param arg0 WorldMapRemotePlayer
+---@return boolean
+function UIWorldMap:shouldShowRemotePlayer(arg0) end
 
 ---@private
 ---@param arg0 BuildingDef
@@ -63,53 +63,6 @@ function UIWorldMap:debugRenderBuilding(arg0, arg1, arg2, arg3, arg4) end
 function UIWorldMap:onMouseDown(arg0, arg1) end
 
 ---@public
----@return void
-function UIWorldMap:update() end
-
----@public
----@return void
-function UIWorldMap:render() end
-
----@public
----@param arg0 double
----@param arg1 double
----@return void
-function UIWorldMap:onMouseUpOutside(arg0, arg1) end
-
----@private
----@return void
-function UIWorldMap:renderLocalPlayers() end
-
----@private
----@param arg0 float
----@param arg1 float
----@return void
-function UIWorldMap:renderPlayer(arg0, arg1) end
-
----@private
----@param arg0 WorldMapRemotePlayer
----@return boolean
-function UIWorldMap:shouldShowRemotePlayer(arg0) end
-
----@public
----@param arg0 double
----@return Boolean
-function UIWorldMap:onMouseWheel(arg0) end
-
----@private
----@return void
-function UIWorldMap:renderRemotePlayers() end
-
----@public
----@return UIWorldMapV1
-function UIWorldMap:getAPIv1() end
-
----@protected
----@param arg0 MapItem
----@return void
-function UIWorldMap:setMapItem(arg0) end
-
----@public
 ---@param arg0 double
 ---@param arg1 double
 ---@return Boolean
@@ -121,3 +74,50 @@ function UIWorldMap:onMouseUp(arg0, arg1) end
 ---@param arg2 String
 ---@return void
 function UIWorldMap:renderPlayerName(arg0, arg1, arg2) end
+
+---@public
+---@return UIWorldMapV1
+function UIWorldMap:getAPIv1() end
+
+---@private
+---@return void
+function UIWorldMap:renderLocalPlayers() end
+
+---@public
+---@return void
+function UIWorldMap:update() end
+
+---@protected
+---@param arg0 MapItem
+---@return void
+function UIWorldMap:setMapItem(arg0) end
+
+---@public
+---@param arg0 double
+---@return Boolean
+function UIWorldMap:onMouseWheel(arg0) end
+
+---@private
+---@param arg0 IsoPlayer
+---@param arg1 WorldMapRemotePlayer
+---@return boolean
+function UIWorldMap:isInSameFaction(arg0, arg1) end
+
+---@public
+---@return void
+function UIWorldMap:render() end
+
+---@public
+---@return UIWorldMapV1
+function UIWorldMap:getAPI() end
+
+---@public
+---@param arg0 double
+---@param arg1 double
+---@return void
+function UIWorldMap:onMouseUpOutside(arg0, arg1) end
+
+---@public
+---@param arg0 LuaManager.Exposer
+---@return void
+function UIWorldMap:setExposed(arg0) end

@@ -8,17 +8,17 @@
 BeardStyle = {}
 
 ---@public
----@return String
-function BeardStyle:getName() end
-
----@public
 ---@return ArrayList|Unknown
 function BeardStyle:getTrimChoices() end
 
 ---@public
----@return boolean
-function BeardStyle:isValid() end
+---@return String
+function BeardStyle:getName() end
 
 ---@public
 ---@return int
 function BeardStyle:getLevel() end
+
+---@public
+---@return boolean
+function BeardStyle:isValid() end

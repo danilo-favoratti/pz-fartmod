@@ -3,8 +3,37 @@
 IsoClothingDryer = {}
 
 ---@public
+---@param arg0 boolean
+---@return void
+function IsoClothingDryer:setActivated(arg0) end
+
+---@public
+---@return void
+function IsoClothingDryer:removeFromWorld() end
+
+---@public
+---@param arg0 String
+---@param arg1 ByteBuffer
+---@return void
+function IsoClothingDryer:loadChange(arg0, arg1) end
+
+---@public
+---@return void
+function IsoClothingDryer:addToWorld() end
+
+---@public
+---@return boolean
+function IsoClothingDryer:isActivated() end
+
+---@public
 ---@return String
 function IsoClothingDryer:getObjectName() end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 boolean
+---@return void
+function IsoClothingDryer:save(arg0, arg1) end
 
 ---@public
 ---@param arg0 ByteBuffer
@@ -14,15 +43,8 @@ function IsoClothingDryer:getObjectName() end
 function IsoClothingDryer:load(arg0, arg1, arg2) end
 
 ---@public
----@param arg0 boolean
 ---@return void
-function IsoClothingDryer:setActivated(arg0) end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 boolean
----@return void
-function IsoClothingDryer:save(arg0, arg1) end
+function IsoClothingDryer:update() end
 
 ---@public
 ---@param arg0 ItemContainer
@@ -37,30 +59,8 @@ function IsoClothingDryer:isRemoveItemAllowedFromContainer(arg0, arg1) end
 function IsoClothingDryer:isItemAllowedInContainer(arg0, arg1) end
 
 ---@public
----@return boolean
-function IsoClothingDryer:isActivated() end
-
----@public
 ---@param arg0 String
 ---@param arg1 KahluaTable
 ---@param arg2 ByteBuffer
 ---@return void
 function IsoClothingDryer:saveChange(arg0, arg1, arg2) end
-
----@public
----@return void
-function IsoClothingDryer:update() end
-
----@public
----@param arg0 String
----@param arg1 ByteBuffer
----@return void
-function IsoClothingDryer:loadChange(arg0, arg1) end
-
----@public
----@return void
-function IsoClothingDryer:addToWorld() end
-
----@public
----@return void
-function IsoClothingDryer:removeFromWorld() end

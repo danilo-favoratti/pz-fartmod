@@ -3,9 +3,8 @@
 FakeDeadZombieState = {}
 
 ---@public
----@param arg0 IsoGameCharacter
----@return void
-function FakeDeadZombieState:execute(arg0) end
+---@return FakeDeadZombieState
+function FakeDeadZombieState:instance() end
 
 ---@public
 ---@param arg0 IsoGameCharacter
@@ -18,5 +17,6 @@ function FakeDeadZombieState:exit(arg0) end
 function FakeDeadZombieState:enter(arg0) end
 
 ---@public
----@return FakeDeadZombieState
-function FakeDeadZombieState:instance() end
+---@param arg0 IsoGameCharacter
+---@return void
+function FakeDeadZombieState:execute(arg0) end

@@ -7,26 +7,14 @@
 ---@field private isDirtyUI boolean
 IsoRegionsLogger = {}
 
+---@private
+---@return IsoRegionsLogger.IsoRegionLog
+function IsoRegionsLogger:getLog() end
+
 ---@protected
 ---@param arg0 String
 ---@return void
 function IsoRegionsLogger:warn(arg0) end
-
----@public
----@return boolean
-function IsoRegionsLogger:isDirtyUI() end
-
----@public
----@return void
-function IsoRegionsLogger:unsetDirtyUI() end
-
----@public
----@return ArrayList|Unknown
-function IsoRegionsLogger:getLogs() end
-
----@protected
----@return void
-function IsoRegionsLogger:update() end
 
 ---@protected
 ---@param arg0 String
@@ -40,6 +28,18 @@ function IsoRegionsLogger:log(arg0) end
 ---@return void
 function IsoRegionsLogger:log(arg0, arg1) end
 
----@private
----@return IsoRegionsLogger.IsoRegionLog
-function IsoRegionsLogger:getLog() end
+---@public
+---@return void
+function IsoRegionsLogger:unsetDirtyUI() end
+
+---@public
+---@return ArrayList|Unknown
+function IsoRegionsLogger:getLogs() end
+
+---@public
+---@return boolean
+function IsoRegionsLogger:isDirtyUI() end
+
+---@protected
+---@return void
+function IsoRegionsLogger:update() end

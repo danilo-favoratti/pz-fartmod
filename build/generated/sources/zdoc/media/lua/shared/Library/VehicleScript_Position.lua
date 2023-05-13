@@ -9,8 +9,9 @@ VehicleScript_Position = {}
 ---@return String
 function VehicleScript_Position:getId() end
 
----@return VehicleScript.Position
-function VehicleScript_Position:makeCopy() end
+---@public
+---@return Vector3f
+function VehicleScript_Position:getRotate() end
 
 ---@public
 ---@return String
@@ -18,8 +19,7 @@ function VehicleScript_Position:getArea() end
 
 ---@public
 ---@return Vector3f
-function VehicleScript_Position:getRotate() end
-
----@public
----@return Vector3f
 function VehicleScript_Position:getOffset() end
+
+---@return VehicleScript.Position
+function VehicleScript_Position:makeCopy() end

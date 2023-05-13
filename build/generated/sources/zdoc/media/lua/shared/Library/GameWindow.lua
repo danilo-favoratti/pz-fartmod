@@ -25,23 +25,13 @@
 ---@field public texturePackTextures FileSystem.TexturePackTextures
 GameWindow = {}
 
----@public
----@param arg0 String
----@param arg1 int
+---@private
 ---@return void
----@overload fun(arg0:String, arg1:int, arg2:String)
-function GameWindow:LoadTexturePack(arg0, arg1) end
-
----@public
----@param arg0 String
----@param arg1 int
----@param arg2 String
----@return void
-function GameWindow:LoadTexturePack(arg0, arg1, arg2) end
+function GameWindow:enter() end
 
 ---@private
 ---@return void
-function GameWindow:exit() end
+function GameWindow:mainThreadInit() end
 
 ---@public
 ---@param arg0 DataInputStream
@@ -49,37 +39,12 @@ function GameWindow:exit() end
 function GameWindow:readLong(arg0) end
 
 ---@private
----@param arg0 Thread
----@param arg1 Throwable
 ---@return void
-function GameWindow:uncaughtGlobalException(arg0, arg1) end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 String
----@return void
-function GameWindow:WriteStringUTF(arg0, arg1) end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 String
----@return void
----@overload fun(arg0:DataOutputStream, arg1:String)
-function GameWindow:WriteString(arg0, arg1) end
-
----@public
----@param arg0 DataOutputStream
----@param arg1 String
----@return void
-function GameWindow:WriteString(arg0, arg1) end
+function GameWindow:mainThread() end
 
 ---@private
 ---@return void
 function GameWindow:initFonts() end
-
----@public
----@return void
-function GameWindow:render() end
 
 ---@public
 ---@param arg0 DataInputStream
@@ -94,11 +59,37 @@ function GameWindow:ReadString(arg0) end
 
 ---@private
 ---@return void
-function GameWindow:enter() end
+function GameWindow:onGameThreadExited() end
+
+---@public
+---@return void
+function GameWindow:InitDisplay() end
 
 ---@private
 ---@return void
-function GameWindow:renameSaveFolders() end
+function GameWindow:run_ez() end
+
+---@private
+---@return void
+function GameWindow:logic() end
+
+---@public
+---@param arg0 String
+---@param arg1 int
+---@return void
+---@overload fun(arg0:String, arg1:int, arg2:String)
+function GameWindow:LoadTexturePack(arg0, arg1) end
+
+---@public
+---@param arg0 String
+---@param arg1 int
+---@param arg2 String
+---@return void
+function GameWindow:LoadTexturePack(arg0, arg1, arg2) end
+
+---@public
+---@return void
+function GameWindow:render() end
 
 ---@private
 ---@return void
@@ -110,9 +101,73 @@ function GameWindow:checkRequiredLibraries() end
 ---@return void
 function GameWindow:installRequiredLibrary(arg0, arg1) end
 
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 String
+---@return void
+---@overload fun(arg0:DataOutputStream, arg1:String)
+function GameWindow:WriteString(arg0, arg1) end
+
+---@public
+---@param arg0 DataOutputStream
+---@param arg1 String
+---@return void
+function GameWindow:WriteString(arg0, arg1) end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 String
+---@return void
+function GameWindow:WriteStringUTF(arg0, arg1) end
+
+---@public
+---@param arg0 Thread
+---@param arg1 Throwable
+---@return void
+function GameWindow:uncaughtException(arg0, arg1) end
+
 ---@private
 ---@return void
-function GameWindow:onGameThreadExited() end
+function GameWindow:frameStep() end
+
+---@private
+---@return void
+function GameWindow:initShared() end
+
+---@private
+---@param arg0 Thread
+---@param arg1 Throwable
+---@return void
+function GameWindow:uncaughtExceptionMainThread(arg0, arg1) end
+
+---@private
+---@return void
+function GameWindow:renameSaveFolders() end
+
+---@public
+---@param arg0 DataInputStream
+---@return int
+function GameWindow:readInt(arg0) end
+
+---@private
+---@param arg0 Thread
+---@param arg1 Throwable
+---@return void
+function GameWindow:uncaughtGlobalException(arg0, arg1) end
+
+---@public
+---@return void
+function GameWindow:InitGameThread() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function GameWindow:save(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function GameWindow:LoadTexturePackDDS(arg0) end
 
 ---@public
 ---@param arg0 boolean
@@ -123,63 +178,13 @@ function GameWindow:doRenderEvent(arg0) end
 ---@return void
 function GameWindow:setTexturePackLookup() end
 
----@private
----@return void
-function GameWindow:run_ez() end
-
----@private
----@return void
-function GameWindow:mainThread() end
-
----@public
----@param arg0 Thread
----@param arg1 Throwable
----@return void
-function GameWindow:uncaughtException(arg0, arg1) end
-
----@private
----@return void
-function GameWindow:mainThreadInit() end
-
----@public
----@param arg0 String
----@return void
-function GameWindow:LoadTexturePackDDS(arg0) end
-
----@public
----@return String
-function GameWindow:getCoopServerHome() end
-
----@public
----@return void
-function GameWindow:InitGameThread() end
-
----@public
----@param arg0 DataInputStream
----@return int
-function GameWindow:readInt(arg0) end
-
----@private
----@return void
-function GameWindow:logic() end
-
 ---@protected
 ---@return void
 function GameWindow:renderInternal() end
 
 ---@private
----@param arg0 Thread
----@param arg1 Throwable
----@return void
-function GameWindow:uncaughtExceptionMainThread(arg0, arg1) end
-
----@private
 ---@return void
 function GameWindow:init() end
-
----@private
----@return void
-function GameWindow:initShared() end
 
 ---@public
 ---@param arg0 ByteBuffer
@@ -187,19 +192,14 @@ function GameWindow:initShared() end
 function GameWindow:ReadStringUTF(arg0) end
 
 ---@public
----@param arg0 String
----@return void
-function GameWindow:DoLoadingText(arg0) end
-
----@public
----@return void
-function GameWindow:InitDisplay() end
+---@return String
+function GameWindow:getCoopServerHome() end
 
 ---@private
 ---@return void
-function GameWindow:frameStep() end
+function GameWindow:exit() end
 
 ---@public
----@param arg0 boolean
+---@param arg0 String
 ---@return void
-function GameWindow:save(arg0) end
+function GameWindow:DoLoadingText(arg0) end

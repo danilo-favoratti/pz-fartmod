@@ -8,48 +8,12 @@
 DBTicket = {}
 
 ---@public
----@return String
-function DBTicket:getMessage() end
-
----@public
----@param arg0 String
----@return void
-function DBTicket:setMessage(arg0) end
-
----@public
----@return DBTicket
-function DBTicket:getAnswer() end
-
----@public
----@param arg0 String
----@return void
-function DBTicket:setAuthor(arg0) end
-
----@public
----@return int
-function DBTicket:getTicketID() end
-
----@public
 ---@return boolean
 function DBTicket:isAnswer() end
 
 ---@public
----@param arg0 boolean
----@return void
-function DBTicket:setIsAnswer(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function DBTicket:setViewed(arg0) end
-
----@public
----@return boolean
-function DBTicket:isViewed() end
-
----@public
 ---@return String
-function DBTicket:getAuthor() end
+function DBTicket:getMessage() end
 
 ---@public
 ---@param arg0 DBTicket
@@ -57,6 +21,42 @@ function DBTicket:getAuthor() end
 function DBTicket:setAnswer(arg0) end
 
 ---@public
+---@param arg0 String
+---@return void
+function DBTicket:setMessage(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function DBTicket:setAuthor(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function DBTicket:setViewed(arg0) end
+
+---@public
+---@return int
+function DBTicket:getTicketID() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function DBTicket:setIsAnswer(arg0) end
+
+---@public
+---@return String
+function DBTicket:getAuthor() end
+
+---@public
 ---@param arg0 int
 ---@return void
 function DBTicket:setTicketID(arg0) end
+
+---@public
+---@return boolean
+function DBTicket:isViewed() end
+
+---@public
+---@return DBTicket
+function DBTicket:getAnswer() end

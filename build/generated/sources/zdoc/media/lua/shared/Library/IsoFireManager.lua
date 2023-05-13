@@ -28,6 +28,21 @@
 IsoFireManager = {}
 
 ---@public
+---@param arg0 IsoGridSquare
+---@return void
+function IsoFireManager:RemoveAllOn(arg0) end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function IsoFireManager:deleteCharacterOnFire(arg0) end
+
+---@public
+---@param arg0 IsoFire
+---@return void
+function IsoFireManager:Remove(arg0) end
+
+---@public
 ---@param arg0 IsoCell
 ---@param arg1 IsoGridSquare
 ---@param arg2 boolean
@@ -46,20 +61,27 @@ function IsoFireManager:StartFire(arg0, arg1, arg2, arg3) end
 function IsoFireManager:StartFire(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
----@param arg0 IsoGameCharacter
+---@param arg0 IsoGridSquare
+---@param arg1 IsoGridSquare
+---@param arg2 int
 ---@return void
-function IsoFireManager:addCharacterOnFire(arg0) end
-
----@public
----@param arg0 IsoFire
----@return void
-function IsoFireManager:updateSound(arg0) end
+function IsoFireManager:Fire_LightCalc(arg0, arg1, arg2) end
 
 ---@public
 ---@param arg0 IsoCell
 ---@param arg1 IsoGridSquare
 ---@return void
 function IsoFireManager:MolotovSmash(arg0, arg1) end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function IsoFireManager:AddBurningCharacter(arg0) end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function IsoFireManager:RemoveBurningCharacter(arg0) end
 
 ---@public
 ---@param arg0 IsoCell
@@ -69,40 +91,18 @@ function IsoFireManager:MolotovSmash(arg0, arg1) end
 function IsoFireManager:explode(arg0, arg1, arg2) end
 
 ---@public
----@param arg0 IsoGameCharacter
----@return void
-function IsoFireManager:AddBurningCharacter(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@param arg1 IsoGridSquare
----@param arg2 int
----@return void
-function IsoFireManager:Fire_LightCalc(arg0, arg1, arg2) end
-
----@public
----@param arg0 IsoFire
----@return void
-function IsoFireManager:stopSound(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@return void
-function IsoFireManager:RemoveAllOn(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function IsoFireManager:deleteCharacterOnFire(arg0) end
-
----@public
----@return void
-function IsoFireManager:Reset() end
-
----@public
 ---@param arg0 IsoFire
 ---@return void
 function IsoFireManager:Add(arg0) end
+
+---@public
+---@return void
+function IsoFireManager:Update() end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return void
+function IsoFireManager:LightTileWithFire(arg0) end
 
 ---@public
 ---@param arg0 IsoCell
@@ -114,20 +114,20 @@ function IsoFireManager:Add(arg0) end
 function IsoFireManager:StartSmoke(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
----@param arg0 IsoGameCharacter
+---@param arg0 IsoFire
 ---@return void
-function IsoFireManager:RemoveBurningCharacter(arg0) end
+function IsoFireManager:stopSound(arg0) end
 
 ---@public
----@param arg0 IsoGridSquare
+---@param arg0 IsoGameCharacter
 ---@return void
-function IsoFireManager:LightTileWithFire(arg0) end
+function IsoFireManager:addCharacterOnFire(arg0) end
+
+---@public
+---@return void
+function IsoFireManager:Reset() end
 
 ---@public
 ---@param arg0 IsoFire
 ---@return void
-function IsoFireManager:Remove(arg0) end
-
----@public
----@return void
-function IsoFireManager:Update() end
+function IsoFireManager:updateSound(arg0) end

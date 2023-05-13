@@ -8,14 +8,30 @@
 SandboxOptions_EnumSandboxOption = {}
 
 ---@public
----@param arg0 KahluaTable
----@return void
-function SandboxOptions_EnumSandboxOption:toTable(arg0) end
+---@return String
+function SandboxOptions_EnumSandboxOption:getPageName() end
 
 ---@public
----@param arg0 int
+---@return ConfigOption
+function SandboxOptions_EnumSandboxOption:asConfigOption() end
+
+---@public
 ---@return String
-function SandboxOptions_EnumSandboxOption:getValueTranslationByIndex(arg0) end
+function SandboxOptions_EnumSandboxOption:getTooltip() end
+
+---@public
+---@return String
+function SandboxOptions_EnumSandboxOption:getTableName() end
+
+---@public
+---@param arg0 KahluaTable
+---@return void
+function SandboxOptions_EnumSandboxOption:fromTable(arg0) end
+
+---@public
+---@param arg0 String
+---@return SandboxOptions.SandboxOption
+function SandboxOptions_EnumSandboxOption:setPageName(arg0) end
 
 ---@public
 ---@return void
@@ -26,12 +42,14 @@ function SandboxOptions_EnumSandboxOption:setCustom() end
 function SandboxOptions_EnumSandboxOption:getTranslatedName() end
 
 ---@public
----@return String
-function SandboxOptions_EnumSandboxOption:getValueTranslation() end
+---@param arg0 String
+---@return SandboxOptions.SandboxOption
+function SandboxOptions_EnumSandboxOption:setTranslation(arg0) end
 
 ---@public
----@return String
-function SandboxOptions_EnumSandboxOption:getShortName() end
+---@param arg0 KahluaTable
+---@return void
+function SandboxOptions_EnumSandboxOption:toTable(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -39,35 +57,8 @@ function SandboxOptions_EnumSandboxOption:getShortName() end
 function SandboxOptions_EnumSandboxOption:setValueTranslation(arg0) end
 
 ---@public
----@param arg0 String
----@return SandboxOptions.SandboxOption
-function SandboxOptions_EnumSandboxOption:setTranslation(arg0) end
-
----@public
----@return boolean
-function SandboxOptions_EnumSandboxOption:isCustom() end
-
----@public
 ---@return String
-function SandboxOptions_EnumSandboxOption:getTableName() end
-
----@public
----@return String
-function SandboxOptions_EnumSandboxOption:getPageName() end
-
----@public
----@param arg0 String
----@return SandboxOptions.SandboxOption
-function SandboxOptions_EnumSandboxOption:setPageName(arg0) end
-
----@public
----@return ConfigOption
-function SandboxOptions_EnumSandboxOption:asConfigOption() end
-
----@public
----@param arg0 KahluaTable
----@return void
-function SandboxOptions_EnumSandboxOption:fromTable(arg0) end
+function SandboxOptions_EnumSandboxOption:getValueTranslation() end
 
 ---@public
 ---@param arg0 int
@@ -75,5 +66,14 @@ function SandboxOptions_EnumSandboxOption:fromTable(arg0) end
 function SandboxOptions_EnumSandboxOption:getValueTranslationByIndexOrNull(arg0) end
 
 ---@public
+---@return boolean
+function SandboxOptions_EnumSandboxOption:isCustom() end
+
+---@public
 ---@return String
-function SandboxOptions_EnumSandboxOption:getTooltip() end
+function SandboxOptions_EnumSandboxOption:getShortName() end
+
+---@public
+---@param arg0 int
+---@return String
+function SandboxOptions_EnumSandboxOption:getValueTranslationByIndex(arg0) end

@@ -28,7 +28,7 @@ Metabolics = {}
 
 ---@public
 ---@return float
-function Metabolics:getW() end
+function Metabolics:getMet() end
 
 ---@public
 ---@param arg0 String
@@ -38,7 +38,16 @@ function Metabolics:valueOf(arg0) end
 ---@public
 ---@param arg0 float
 ---@return float
+function Metabolics:MetToW(arg0) end
+
+---@public
+---@param arg0 float
+---@return float
 function Metabolics:MetToBtuHr(arg0) end
+
+---@public
+---@return float
+function Metabolics:getBtuHr() end
 
 ---@public
 ---@return float
@@ -50,18 +59,9 @@ function Metabolics:values() end
 
 ---@public
 ---@return float
-function Metabolics:getMet() end
+function Metabolics:getW() end
 
 ---@public
 ---@param arg0 float
 ---@return float
 function Metabolics:MetToWm2(arg0) end
-
----@public
----@return float
-function Metabolics:getBtuHr() end
-
----@public
----@param arg0 float
----@return float
-function Metabolics:MetToW(arg0) end

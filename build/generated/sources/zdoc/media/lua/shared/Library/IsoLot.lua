@@ -13,9 +13,8 @@
 IsoLot = {}
 
 ---@public
----@param arg0 IsoLot
 ---@return void
-function IsoLot:put(arg0) end
+function IsoLot:Dispose() end
 
 ---@public
 ---@param arg0 Integer
@@ -23,8 +22,8 @@ function IsoLot:put(arg0) end
 ---@param arg2 Integer
 ---@param arg3 Integer
 ---@param arg4 IsoChunk
----@return IsoLot
-function IsoLot:get(arg0, arg1, arg2, arg3, arg4) end
+---@return void
+function IsoLot:load(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
 ---@param arg0 RandomAccessFile
@@ -37,13 +36,9 @@ function IsoLot:readShort(arg0) end
 function IsoLot:readInt(arg0) end
 
 ---@public
----@param arg0 Integer
----@param arg1 Integer
----@param arg2 Integer
----@param arg3 Integer
----@param arg4 IsoChunk
+---@param arg0 IsoLot
 ---@return void
-function IsoLot:load(arg0, arg1, arg2, arg3, arg4) end
+function IsoLot:put(arg0) end
 
 ---@public
 ---@param arg0 BufferedRandomAccessFile
@@ -51,5 +46,10 @@ function IsoLot:load(arg0, arg1, arg2, arg3, arg4) end
 function IsoLot:readString(arg0) end
 
 ---@public
----@return void
-function IsoLot:Dispose() end
+---@param arg0 Integer
+---@param arg1 Integer
+---@param arg2 Integer
+---@param arg3 Integer
+---@param arg4 IsoChunk
+---@return IsoLot
+function IsoLot:get(arg0, arg1, arg2, arg3, arg4) end

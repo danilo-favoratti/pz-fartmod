@@ -6,6 +6,20 @@ FishingState = {}
 
 ---@public
 ---@param arg0 IsoGameCharacter
+---@return void
+function FishingState:execute(arg0) end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function FishingState:enter(arg0) end
+
+---@public
+---@return FishingState
+function FishingState:instance() end
+
+---@public
+---@param arg0 IsoGameCharacter
 ---@param arg1 AnimEvent
 ---@return void
 function FishingState:animEvent(arg0, arg1) end
@@ -14,17 +28,3 @@ function FishingState:animEvent(arg0, arg1) end
 ---@param arg0 IsoGameCharacter
 ---@return void
 function FishingState:exit(arg0) end
-
----@public
----@return FishingState
-function FishingState:instance() end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function FishingState:execute(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function FishingState:enter(arg0) end

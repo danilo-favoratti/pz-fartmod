@@ -4,38 +4,26 @@
 IsoStackedWasherDryer = {}
 
 ---@public
----@param arg0 boolean
----@return void
-function IsoStackedWasherDryer:setWasherActivated(arg0) end
+---@return String
+function IsoStackedWasherDryer:getObjectName() end
 
 ---@public
 ---@return void
-function IsoStackedWasherDryer:update() end
+function IsoStackedWasherDryer:removeFromWorld() end
 
 ---@public
----@param arg0 ItemContainer
----@param arg1 InventoryItem
----@return boolean
-function IsoStackedWasherDryer:isRemoveItemAllowedFromContainer(arg0, arg1) end
-
----@public
----@param arg0 boolean
 ---@return void
-function IsoStackedWasherDryer:setDryerActivated(arg0) end
+function IsoStackedWasherDryer:addToWorld() end
 
 ---@public
----@param arg0 ByteBuffer
----@param arg1 boolean
+---@param arg0 String
+---@param arg1 ByteBuffer
 ---@return void
-function IsoStackedWasherDryer:save(arg0, arg1) end
+function IsoStackedWasherDryer:loadChange(arg0, arg1) end
 
 ---@public
 ---@return boolean
 function IsoStackedWasherDryer:isWasherActivated() end
-
----@public
----@return String
-function IsoStackedWasherDryer:getObjectName() end
 
 ---@public
 ---@param arg0 ByteBuffer
@@ -45,14 +33,30 @@ function IsoStackedWasherDryer:getObjectName() end
 function IsoStackedWasherDryer:load(arg0, arg1, arg2) end
 
 ---@public
----@param arg0 String
----@param arg1 ByteBuffer
+---@param arg0 ByteBuffer
+---@param arg1 boolean
 ---@return void
-function IsoStackedWasherDryer:loadChange(arg0, arg1) end
+function IsoStackedWasherDryer:save(arg0, arg1) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoStackedWasherDryer:setDryerActivated(arg0) end
 
 ---@public
 ---@return void
-function IsoStackedWasherDryer:removeFromWorld() end
+function IsoStackedWasherDryer:update() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoStackedWasherDryer:setWasherActivated(arg0) end
+
+---@public
+---@param arg0 ItemContainer
+---@param arg1 InventoryItem
+---@return boolean
+function IsoStackedWasherDryer:isItemAllowedInContainer(arg0, arg1) end
 
 ---@public
 ---@param arg0 String
@@ -73,8 +77,4 @@ function IsoStackedWasherDryer:createContainersFromSpriteProperties() end
 ---@param arg0 ItemContainer
 ---@param arg1 InventoryItem
 ---@return boolean
-function IsoStackedWasherDryer:isItemAllowedInContainer(arg0, arg1) end
-
----@public
----@return void
-function IsoStackedWasherDryer:addToWorld() end
+function IsoStackedWasherDryer:isRemoveItemAllowedFromContainer(arg0, arg1) end

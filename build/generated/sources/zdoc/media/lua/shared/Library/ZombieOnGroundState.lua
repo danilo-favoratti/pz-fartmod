@@ -6,8 +6,18 @@ ZombieOnGroundState = {}
 
 ---@public
 ---@param arg0 IsoGameCharacter
+---@param arg1 IsoGameCharacter
+---@return boolean
+function ZombieOnGroundState:isCharacterStandingOnOther(arg0, arg1) end
+
+---@public
+---@return ZombieOnGroundState
+function ZombieOnGroundState:instance() end
+
+---@public
+---@param arg0 IsoGameCharacter
 ---@return void
-function ZombieOnGroundState:enter(arg0) end
+function ZombieOnGroundState:exit(arg0) end
 
 ---@private
 ---@param arg0 IsoGameCharacter
@@ -20,19 +30,9 @@ function ZombieOnGroundState:DoCollisionBoneCheck(arg0, arg1, arg2, arg3) end
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function ZombieOnGroundState:execute(arg0) end
-
----@public
----@return ZombieOnGroundState
-function ZombieOnGroundState:instance() end
-
----@public
----@param arg0 IsoGameCharacter
----@param arg1 IsoGameCharacter
----@return boolean
-function ZombieOnGroundState:isCharacterStandingOnOther(arg0, arg1) end
+function ZombieOnGroundState:enter(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function ZombieOnGroundState:exit(arg0) end
+function ZombieOnGroundState:execute(arg0) end

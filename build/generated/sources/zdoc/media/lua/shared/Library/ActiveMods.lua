@@ -8,11 +8,24 @@ ActiveMods = {}
 
 ---@public
 ---@return void
-function ActiveMods:checkMissingMaps() end
+function ActiveMods:renderUI() end
+
+---@public
+---@return ArrayList|Unknown
+function ActiveMods:getMods() end
+
+---@public
+---@param arg0 String
+---@return void
+function ActiveMods:removeMod(arg0) end
 
 ---@public
 ---@return void
-function ActiveMods:renderUI() end
+function ActiveMods:clear() end
+
+---@public
+---@return ArrayList|Unknown
+function ActiveMods:getMapOrder() end
 
 ---@public
 ---@param arg0 String
@@ -20,19 +33,31 @@ function ActiveMods:renderUI() end
 function ActiveMods:removeMapOrder(arg0) end
 
 ---@public
----@param arg0 int
----@return ActiveMods
-function ActiveMods:getByIndex(arg0) end
-
----@public
 ---@param arg0 ActiveMods
 ---@return void
-function ActiveMods:copyFrom(arg0) end
+function ActiveMods:setLoadedMods(arg0) end
+
+---@public
+---@return void
+function ActiveMods:Reset() end
 
 ---@private
 ---@param arg0 String
 ---@return ActiveMods
 function ActiveMods:create(arg0) end
+
+---@public
+---@return void
+function ActiveMods:checkMissingMaps() end
+
+---@public
+---@param arg0 int
+---@return ActiveMods
+function ActiveMods:getByIndex(arg0) end
+
+---@public
+---@return void
+function ActiveMods:checkMissingMods() end
 
 ---@public
 ---@param arg0 String
@@ -45,30 +70,9 @@ function ActiveMods:isModActive(arg0) end
 function ActiveMods:indexOf(arg0) end
 
 ---@public
----@return void
-function ActiveMods:clear() end
-
----@public
----@return void
-function ActiveMods:Reset() end
-
----@public
----@return ArrayList|Unknown
-function ActiveMods:getMods() end
-
----@public
----@return ArrayList|Unknown
-function ActiveMods:getMapOrder() end
-
----@public
 ---@param arg0 ActiveMods
 ---@return boolean
 function ActiveMods:requiresResetLua(arg0) end
-
----@public
----@param arg0 String
----@return ActiveMods
-function ActiveMods:getById(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -76,25 +80,21 @@ function ActiveMods:getById(arg0) end
 ---@return void
 function ActiveMods:setModActive(arg0, arg1) end
 
----@public
----@param arg0 ActiveMods
----@return void
-function ActiveMods:setLoadedMods(arg0) end
-
----@public
----@param arg0 String
----@return void
-function ActiveMods:removeMod(arg0) end
+---@private
+---@return int
+function ActiveMods:count() end
 
 ---@private
 ---@param arg0 String
 ---@return void
 function ActiveMods:requireValidId(arg0) end
 
----@private
----@return int
-function ActiveMods:count() end
+---@public
+---@param arg0 String
+---@return ActiveMods
+function ActiveMods:getById(arg0) end
 
 ---@public
+---@param arg0 ActiveMods
 ---@return void
-function ActiveMods:checkMissingMods() end
+function ActiveMods:copyFrom(arg0) end

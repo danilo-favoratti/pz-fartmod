@@ -10,6 +10,57 @@
 ---@field private s_chopTreeHighlighted IsoTree
 IsoTree = {}
 
+---@public
+---@return int
+function IsoTree:getHealth() end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@param arg2 boolean
+---@return void
+function IsoTree:load(arg0, arg1, arg2) end
+
+---@public
+---@return String
+function IsoTree:getObjectName() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 boolean
+---@return boolean
+function IsoTree:isMaskClicked(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 IsoMovingObject
+---@return float
+function IsoTree:getSlowFactor(arg0) end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 boolean
+---@return void
+function IsoTree:save(arg0, arg1) end
+
+---@public
+---@return void
+function IsoTree:initTree() end
+
+---@public
+---@return int
+function IsoTree:getMaxHealth() end
+
+---@public
+---@return void
+function IsoTree:reset() end
+
+---@public
+---@param arg0 BaseVehicle
+---@param arg1 float
+---@return void
+function IsoTree:HitByVehicle(arg0, arg1) end
+
 ---@private
 ---@param arg0 float
 ---@param arg1 float
@@ -20,18 +71,22 @@ IsoTree = {}
 ---@return void
 function IsoTree:renderInner(arg0, arg1, arg2, arg3, arg4, arg5) end
 
----@protected
+---@public
+---@param arg0 IsoGameCharacter
+---@param arg1 HandWeapon
 ---@return void
-function IsoTree:checkMoveWithWind() end
+function IsoTree:WeaponHit(arg0, arg1) end
 
 ---@public
 ---@return void
-function IsoTree:reset() end
+function IsoTree:renderChopTreeIndicators() end
 
----@public
----@param arg0 IsoSprite
+---@private
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
 ---@return void
-function IsoTree:setSprite(arg0) end
+function IsoTree:checkChopTreeIndicator(arg0, arg1, arg2) end
 
 ---@public
 ---@param arg0 float
@@ -50,50 +105,12 @@ function IsoTree:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 function IsoTree:setHealth(arg0) end
 
 ---@public
----@return int
-function IsoTree:getSize() end
-
----@public
----@return void
-function IsoTree:initTree() end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 boolean
----@return void
-function IsoTree:save(arg0, arg1) end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 int
----@param arg2 boolean
----@return void
-function IsoTree:load(arg0, arg1, arg2) end
-
----@public
----@param arg0 float
----@return void
-function IsoTree:Damage(arg0) end
-
----@public
 ---@return IsoTree
 function IsoTree:getNew() end
 
----@public
----@return String
-function IsoTree:getObjectName() end
-
----@public
----@return int
-function IsoTree:getHealth() end
-
----@public
+---@protected
 ---@return void
-function IsoTree:renderChopTreeIndicators() end
-
----@public
----@return int
-function IsoTree:getMaxHealth() end
+function IsoTree:checkMoveWithWind() end
 
 ---@public
 ---@param arg0 int
@@ -104,15 +121,9 @@ function IsoTree:getMaxHealth() end
 function IsoTree:setChopTreeCursorLocation(arg0, arg1, arg2, arg3) end
 
 ---@public
----@param arg0 IsoMovingObject
----@return float
-function IsoTree:getSlowFactor(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@param arg1 HandWeapon
+---@param arg0 IsoSprite
 ---@return void
-function IsoTree:WeaponHit(arg0, arg1) end
+function IsoTree:setSprite(arg0) end
 
 ---@private
 ---@param arg0 IsoGridSquare
@@ -120,21 +131,10 @@ function IsoTree:WeaponHit(arg0, arg1) end
 function IsoTree:renderChopTreeIndicator(arg0) end
 
 ---@public
----@param arg0 BaseVehicle
----@param arg1 float
----@return void
-function IsoTree:HitByVehicle(arg0, arg1) end
-
----@private
 ---@param arg0 float
----@param arg1 float
----@param arg2 float
 ---@return void
-function IsoTree:checkChopTreeIndicator(arg0, arg1, arg2) end
+function IsoTree:Damage(arg0) end
 
 ---@public
----@param arg0 int
----@param arg1 int
----@param arg2 boolean
----@return boolean
-function IsoTree:isMaskClicked(arg0, arg1, arg2) end
+---@return int
+function IsoTree:getSize() end

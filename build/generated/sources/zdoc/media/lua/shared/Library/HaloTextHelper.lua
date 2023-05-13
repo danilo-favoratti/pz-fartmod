@@ -8,30 +8,6 @@
 HaloTextHelper = {}
 
 ---@public
----@param arg0 IsoPlayer
----@param arg1 String
----@return void
----@overload fun(arg0:IsoPlayer, arg1:String, arg2:HaloTextHelper.ColorRGB)
----@overload fun(arg0:IsoPlayer, arg1:String, arg2:int, arg3:int, arg4:int)
-function HaloTextHelper:addText(arg0, arg1) end
-
----@public
----@param arg0 IsoPlayer
----@param arg1 String
----@param arg2 HaloTextHelper.ColorRGB
----@return void
-function HaloTextHelper:addText(arg0, arg1, arg2) end
-
----@public
----@param arg0 IsoPlayer
----@param arg1 String
----@param arg2 int
----@param arg3 int
----@param arg4 int
----@return void
-function HaloTextHelper:addText(arg0, arg1, arg2, arg3, arg4) end
-
----@public
 ---@return HaloTextHelper.ColorRGB
 function HaloTextHelper:getColorRed() end
 
@@ -79,12 +55,28 @@ function HaloTextHelper:addTextWithArrow(arg0, arg1, arg2, arg3, arg4, arg5) end
 function HaloTextHelper:addTextWithArrow(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
 
 ---@public
----@return HaloTextHelper.ColorRGB
-function HaloTextHelper:getColorGreen() end
+---@param arg0 IsoPlayer
+---@param arg1 String
+---@return void
+---@overload fun(arg0:IsoPlayer, arg1:String, arg2:HaloTextHelper.ColorRGB)
+---@overload fun(arg0:IsoPlayer, arg1:String, arg2:int, arg3:int, arg4:int)
+function HaloTextHelper:addText(arg0, arg1) end
 
 ---@public
+---@param arg0 IsoPlayer
+---@param arg1 String
+---@param arg2 HaloTextHelper.ColorRGB
 ---@return void
-function HaloTextHelper:forceNextAddText() end
+function HaloTextHelper:addText(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 IsoPlayer
+---@param arg1 String
+---@param arg2 int
+---@param arg3 int
+---@param arg4 int
+---@return void
+function HaloTextHelper:addText(arg0, arg1, arg2, arg3, arg4) end
 
 ---@private
 ---@param arg0 int
@@ -93,9 +85,17 @@ function HaloTextHelper:forceNextAddText() end
 function HaloTextHelper:overheadContains(arg0, arg1) end
 
 ---@public
----@return void
-function HaloTextHelper:update() end
+---@return HaloTextHelper.ColorRGB
+function HaloTextHelper:getColorGreen() end
 
 ---@public
 ---@return HaloTextHelper.ColorRGB
 function HaloTextHelper:getColorWhite() end
+
+---@public
+---@return void
+function HaloTextHelper:update() end
+
+---@public
+---@return void
+function HaloTextHelper:forceNextAddText() end

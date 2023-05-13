@@ -22,6 +22,55 @@
 ---@field public disabled boolean
 ScriptModule = {}
 
+---@private
+---@param arg0 String
+---@return void
+function ScriptModule:CreateFromToken(arg0) end
+
+---@public
+---@param arg0 String
+---@return ModelScript
+function ScriptModule:getModelScript(arg0) end
+
+---@public
+---@return boolean
+function ScriptModule:CheckExitPoints() end
+
+---@private
+---@param arg0 String
+---@return void
+function ScriptModule:CreateFromTokenPP(arg0) end
+
+---@public
+---@param arg0 String
+---@param arg1 String
+---@return void
+function ScriptModule:Load(arg0, arg1) end
+
+---@public
+---@param arg0 String
+---@return VehicleEngineRPM
+function ScriptModule:getVehicleEngineRPM(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function ScriptModule:ParseScriptPP(arg0) end
+
+---@public
+---@return String
+function ScriptModule:getName() end
+
+---@private
+---@param arg0 String
+---@return String
+function ScriptModule:GetTokenType(arg0) end
+
+---@public
+---@param arg0 String
+---@return JRecipe
+function ScriptModule:getRecipe(arg0) end
+
 ---@public
 ---@param arg0 String
 ---@return Item
@@ -33,24 +82,13 @@ function ScriptModule:Reset() end
 
 ---@public
 ---@param arg0 String
----@return VehicleTemplate
-function ScriptModule:getVehicleTemplate(arg0) end
-
----@private
----@param arg0 String
 ---@return void
-function ScriptModule:CreateFromToken(arg0) end
+function ScriptModule:ParseScript(arg0) end
 
 ---@public
 ---@param arg0 String
----@param arg1 String
----@return void
-function ScriptModule:Load(arg0, arg1) end
-
----@private
----@param arg0 String
----@return void
-function ScriptModule:CreateFromTokenPP(arg0) end
+---@return VehicleTemplate
+function ScriptModule:getVehicleTemplate(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -61,41 +99,3 @@ function ScriptModule:getVehicle(arg0) end
 ---@param arg0 String
 ---@return Item
 function ScriptModule:getItem(arg0) end
-
----@public
----@param arg0 String
----@return JRecipe
-function ScriptModule:getRecipe(arg0) end
-
----@public
----@return boolean
-function ScriptModule:CheckExitPoints() end
-
----@private
----@param arg0 String
----@return String
-function ScriptModule:GetTokenType(arg0) end
-
----@public
----@param arg0 String
----@return ModelScript
-function ScriptModule:getModelScript(arg0) end
-
----@public
----@param arg0 String
----@return void
-function ScriptModule:ParseScriptPP(arg0) end
-
----@public
----@param arg0 String
----@return VehicleEngineRPM
-function ScriptModule:getVehicleEngineRPM(arg0) end
-
----@public
----@param arg0 String
----@return void
-function ScriptModule:ParseScript(arg0) end
-
----@public
----@return String
-function ScriptModule:getName() end

@@ -149,8 +149,86 @@ ServerOptions = {}
 
 ---@public
 ---@param arg0 String
----@return Double
-function ServerOptions:getDouble(arg0) end
+---@return boolean
+function ServerOptions:loadServerTextFile(arg0) end
+
+---@public
+---@return int
+function ServerOptions:getMaxPlayers() end
+
+---@public
+---@return String
+function ServerOptions:getRandomCard() end
+
+---@public
+---@return ArrayList|Unknown
+function ServerOptions:getPublicOptions() end
+
+---@public
+---@param arg0 String
+---@return Integer
+function ServerOptions:getInteger(arg0) end
+
+---@public
+---@param arg0 ServerOptions.ServerOption
+---@return void
+function ServerOptions:addOption(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return ArrayList|Unknown
+function ServerOptions:getClientCommandList(arg0) end
+
+---@public
+---@return ServerOptions
+function ServerOptions:getInstance() end
+
+---@public
+---@return void
+function ServerOptions:init() end
+
+---@public
+---@return ArrayList|Unknown
+function ServerOptions:getOptions() end
+
+---@public
+---@param arg0 String
+---@return Boolean
+function ServerOptions:getBoolean(arg0) end
+
+---@public
+---@param arg0 int
+---@return ServerOptions.ServerOption
+function ServerOptions:getOptionByIndex(arg0) end
+
+---@public
+---@return void
+function ServerOptions:resetRegionFile() end
+
+---@public
+---@param arg0 String
+---@return boolean
+function ServerOptions:saveServerTextFile(arg0) end
+
+---@private
+---@return void
+function ServerOptions:initOptions() end
+
+---@private
+---@param arg0 File
+---@return void
+function ServerOptions:initSpawnRegionsFile(arg0) end
+
+---@public
+---@param arg0 String
+---@return String
+function ServerOptions:getOption(arg0) end
+
+---@public
+---@param arg0 String
+---@param arg1 String
+---@return void
+function ServerOptions:putOption(arg0, arg1) end
 
 ---@public
 ---@return int
@@ -158,30 +236,22 @@ function ServerOptions:getNumOptions() end
 
 ---@public
 ---@param arg0 String
----@param arg1 String
----@return String
-function ServerOptions:changeOption(arg0, arg1) end
+---@return Double
+function ServerOptions:getDouble(arg0) end
+
+---@public
+---@param arg0 String
+---@return Float
+function ServerOptions:getFloat(arg0) end
 
 ---@public
 ---@param arg0 String
 ---@return ServerOptions.ServerOption
 function ServerOptions:getOptionByName(arg0) end
 
----@private
----@return void
-function ServerOptions:initOptions() end
-
 ---@public
 ---@return void
 function ServerOptions:initClientCommandsHelp() end
-
----@public
----@return String
-function ServerOptions:getRandomCard() end
-
----@public
----@return void
-function ServerOptions:resetRegionFile() end
 
 ---@public
 ---@param arg0 String
@@ -191,76 +261,6 @@ function ServerOptions:putSaveOption(arg0, arg1) end
 
 ---@public
 ---@param arg0 String
----@return boolean
-function ServerOptions:loadServerTextFile(arg0) end
-
----@public
----@return ServerOptions
-function ServerOptions:getInstance() end
-
----@public
----@return ArrayList|Unknown
-function ServerOptions:getPublicOptions() end
-
----@public
----@param arg0 String
----@return Float
-function ServerOptions:getFloat(arg0) end
-
----@public
----@param arg0 String
 ---@param arg1 String
----@return void
-function ServerOptions:putOption(arg0, arg1) end
-
----@public
----@param arg0 String
 ---@return String
-function ServerOptions:getOption(arg0) end
-
----@public
----@param arg0 String
----@return Boolean
-function ServerOptions:getBoolean(arg0) end
-
----@public
----@param arg0 String
----@return Integer
-function ServerOptions:getInteger(arg0) end
-
----@public
----@param arg0 int
----@return ServerOptions.ServerOption
-function ServerOptions:getOptionByIndex(arg0) end
-
----@public
----@param arg0 String
----@return boolean
-function ServerOptions:saveServerTextFile(arg0) end
-
----@public
----@param arg0 boolean
----@return ArrayList|Unknown
-function ServerOptions:getClientCommandList(arg0) end
-
----@public
----@param arg0 ServerOptions.ServerOption
----@return void
-function ServerOptions:addOption(arg0) end
-
----@private
----@param arg0 File
----@return void
-function ServerOptions:initSpawnRegionsFile(arg0) end
-
----@public
----@return int
-function ServerOptions:getMaxPlayers() end
-
----@public
----@return void
-function ServerOptions:init() end
-
----@public
----@return ArrayList|Unknown
-function ServerOptions:getOptions() end
+function ServerOptions:changeOption(arg0, arg1) end

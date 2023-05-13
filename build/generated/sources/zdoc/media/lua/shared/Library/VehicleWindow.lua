@@ -7,36 +7,17 @@
 VehicleWindow = {}
 
 ---@public
----@param arg0 int
----@return void
-function VehicleWindow:setHealth(arg0) end
-
----@public
----@param arg0 VehicleScript.Window
----@return void
-function VehicleWindow:init(arg0) end
-
----@public
----@param arg0 int
----@return void
-function VehicleWindow:damage(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function VehicleWindow:hit(arg0) end
-
----@public
----@return int
-function VehicleWindow:getHealth() end
+---@return boolean
+function VehicleWindow:isOpenable() end
 
 ---@public
 ---@return boolean
-function VehicleWindow:isDestroyed() end
+function VehicleWindow:isOpen() end
 
 ---@public
----@return boolean
-function VehicleWindow:isHittable() end
+---@param arg0 ByteBuffer
+---@return void
+function VehicleWindow:save(arg0) end
 
 ---@public
 ---@param arg0 ByteBuffer
@@ -45,28 +26,47 @@ function VehicleWindow:isHittable() end
 function VehicleWindow:load(arg0, arg1) end
 
 ---@public
----@param arg0 boolean
+---@param arg0 int
 ---@return void
-function VehicleWindow:setOpen(arg0) end
-
----@public
----@param arg0 ByteBuffer
----@return void
-function VehicleWindow:save(arg0) end
+function VehicleWindow:setHealth(arg0) end
 
 ---@public
 ---@return boolean
-function VehicleWindow:isOpen() end
+function VehicleWindow:isDestroyed() end
+
+---@public
+---@param arg0 int
+---@return void
+function VehicleWindow:damage(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function VehicleWindow:setOpenDelta(arg0) end
+
+---@public
+---@param arg0 VehicleScript.Window
+---@return void
+function VehicleWindow:init(arg0) end
 
 ---@public
 ---@return float
 function VehicleWindow:getOpenDelta() end
 
 ---@public
----@return boolean
-function VehicleWindow:isOpenable() end
+---@param arg0 boolean
+---@return void
+function VehicleWindow:setOpen(arg0) end
 
 ---@public
----@param arg0 float
+---@return int
+function VehicleWindow:getHealth() end
+
+---@public
+---@param arg0 IsoGameCharacter
 ---@return void
-function VehicleWindow:setOpenDelta(arg0) end
+function VehicleWindow:hit(arg0) end
+
+---@public
+---@return boolean
+function VehicleWindow:isHittable() end

@@ -16,57 +16,8 @@
 EvolvedRecipe = {}
 
 ---@public
----@return String
-function EvolvedRecipe:getUntranslatedName() end
-
----@public
----@param arg0 String
----@param arg1 String[]
----@return void
-function EvolvedRecipe:Load(arg0, arg1) end
-
----@public
----@return String
-function EvolvedRecipe:getName() end
-
----@public
----@return String
-function EvolvedRecipe:getFullResultItem() end
-
----@public
----@param arg0 InventoryItem
----@return boolean
-function EvolvedRecipe:isResultItem(arg0) end
-
----@public
 ---@return Map|Unknown|Unknown
 function EvolvedRecipe:getItemsList() end
-
----@public
----@return String
-function EvolvedRecipe:getResultItem() end
-
----@public
----@param arg0 boolean
----@return void
-function EvolvedRecipe:setIsHidden(arg0) end
-
----@private
----@param arg0 InventoryItem
----@return void
-function EvolvedRecipe:checkUniqueRecipe(arg0) end
-
----@public
----@param arg0 InventoryItem
----@return ItemRecipe
-function EvolvedRecipe:getItemRecipe(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@param arg1 InventoryItem
----@param arg2 ArrayList|Unknown
----@return ArrayList|Unknown
-function EvolvedRecipe:getItemsCanBeUse(arg0, arg1, arg2) end
 
 ---@private
 ---@param arg0 InventoryItem
@@ -74,31 +25,6 @@ function EvolvedRecipe:getItemsCanBeUse(arg0, arg1, arg2) end
 ---@param arg2 IsoGameCharacter
 ---@return void
 function EvolvedRecipe:addPoison(arg0, arg1, arg2) end
-
----@private
----@param arg0 Food
----@param arg1 Food
----@param arg2 float
----@param arg3 int
----@return void
-function EvolvedRecipe:useSpice(arg0, arg1, arg2, arg3) end
-
----@public
----@return String
-function EvolvedRecipe:getOriginalname() end
-
----@public
----@return boolean
-function EvolvedRecipe:isHidden() end
-
----@public
----@return String
-function EvolvedRecipe:getAddIngredientSound() end
-
----@public
----@param arg0 InventoryItem
----@return boolean
-function EvolvedRecipe:needToBeCooked(arg0) end
 
 ---@public
 ---@return boolean
@@ -113,24 +39,49 @@ function EvolvedRecipe:isAllowFrozenItem() end
 ---@return void
 function EvolvedRecipe:checkItemCanBeUse(arg0, arg1, arg2, arg3, arg4) end
 
----@public
----@param arg0 InventoryItem
----@param arg1 InventoryItem
----@param arg2 IsoGameCharacter
----@return InventoryItem
-function EvolvedRecipe:addItem(arg0, arg1, arg2) end
+---@private
+---@param arg0 Food
+---@param arg1 Food
+---@param arg2 float
+---@param arg3 int
+---@return void
+function EvolvedRecipe:useSpice(arg0, arg1, arg2, arg3) end
 
 ---@public
 ---@return ArrayList|Unknown
 function EvolvedRecipe:getPossibleItems() end
 
 ---@public
----@return String
-function EvolvedRecipe:getBaseItem() end
-
----@public
 ---@return int
 function EvolvedRecipe:getMaxItems() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function EvolvedRecipe:setIsHidden(arg0) end
+
+---@public
+---@return String
+function EvolvedRecipe:getOriginalname() end
+
+---@public
+---@param arg0 InventoryItem
+---@return boolean
+function EvolvedRecipe:needToBeCooked(arg0) end
+
+---@public
+---@param arg0 String
+---@param arg1 String[]
+---@return void
+function EvolvedRecipe:Load(arg0, arg1) end
+
+---@public
+---@return boolean
+function EvolvedRecipe:isCookable() end
+
+---@public
+---@return String
+function EvolvedRecipe:getUntranslatedName() end
 
 ---@public
 ---@param arg0 InventoryItem
@@ -139,10 +90,59 @@ function EvolvedRecipe:getMaxItems() end
 function EvolvedRecipe:isSpiceAdded(arg0, arg1) end
 
 ---@public
----@return boolean
-function EvolvedRecipe:isCookable() end
-
----@public
 ---@param arg0 boolean
 ---@return void
 function EvolvedRecipe:setAllowFrozenItem(arg0) end
+
+---@public
+---@param arg0 InventoryItem
+---@param arg1 InventoryItem
+---@param arg2 IsoGameCharacter
+---@return InventoryItem
+function EvolvedRecipe:addItem(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@param arg1 InventoryItem
+---@param arg2 ArrayList|Unknown
+---@return ArrayList|Unknown
+function EvolvedRecipe:getItemsCanBeUse(arg0, arg1, arg2) end
+
+---@public
+---@return String
+function EvolvedRecipe:getBaseItem() end
+
+---@public
+---@return String
+function EvolvedRecipe:getResultItem() end
+
+---@public
+---@return String
+function EvolvedRecipe:getAddIngredientSound() end
+
+---@public
+---@param arg0 InventoryItem
+---@return ItemRecipe
+function EvolvedRecipe:getItemRecipe(arg0) end
+
+---@public
+---@return String
+function EvolvedRecipe:getName() end
+
+---@public
+---@return String
+function EvolvedRecipe:getFullResultItem() end
+
+---@public
+---@return boolean
+function EvolvedRecipe:isHidden() end
+
+---@public
+---@param arg0 InventoryItem
+---@return boolean
+function EvolvedRecipe:isResultItem(arg0) end
+
+---@private
+---@param arg0 InventoryItem
+---@return void
+function EvolvedRecipe:checkUniqueRecipe(arg0) end

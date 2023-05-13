@@ -7,10 +7,6 @@
 IsoPushableObject = {}
 
 ---@public
----@return void
-function IsoPushableObject:DoCollideNorS() end
-
----@public
 ---@param arg0 ByteBuffer
 ---@param arg1 int
 ---@param arg2 boolean
@@ -18,16 +14,16 @@ function IsoPushableObject:DoCollideNorS() end
 function IsoPushableObject:load(arg0, arg1, arg2) end
 
 ---@public
----@return void
-function IsoPushableObject:DoCollideWorE() end
-
----@public
----@return void
-function IsoPushableObject:update() end
-
----@public
 ---@return String
 function IsoPushableObject:getObjectName() end
+
+---@public
+---@return void
+function IsoPushableObject:DoCollideNorS() end
+
+---@public
+---@return void
+function IsoPushableObject:DoCollideWorE() end
 
 ---@public
 ---@param arg0 float
@@ -36,11 +32,15 @@ function IsoPushableObject:getObjectName() end
 function IsoPushableObject:getWeight(arg0, arg1) end
 
 ---@public
+---@return boolean
+function IsoPushableObject:Serialize() end
+
+---@public
 ---@param arg0 ByteBuffer
 ---@param arg1 boolean
 ---@return void
 function IsoPushableObject:save(arg0, arg1) end
 
 ---@public
----@return boolean
-function IsoPushableObject:Serialize() end
+---@return void
+function IsoPushableObject:update() end

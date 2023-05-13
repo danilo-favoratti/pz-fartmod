@@ -4,9 +4,9 @@
 BooleanConfigOption = {}
 
 ---@public
----@param arg0 boolean
+---@param arg0 Object
 ---@return void
-function BooleanConfigOption:setValue(arg0) end
+function BooleanConfigOption:setValueFromObject(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -18,17 +18,17 @@ function BooleanConfigOption:parse(arg0) end
 function BooleanConfigOption:setDefaultToCurrentValue() end
 
 ---@public
+---@return String
+function BooleanConfigOption:getType() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function BooleanConfigOption:setValue(arg0) end
+
+---@public
 ---@return boolean
 function BooleanConfigOption:getValue() end
-
----@public
----@param arg0 String
----@return boolean
-function BooleanConfigOption:isValidString(arg0) end
-
----@public
----@return boolean
-function BooleanConfigOption:getDefaultValue() end
 
 ---@public
 ---@return void
@@ -39,18 +39,18 @@ function BooleanConfigOption:resetToDefault() end
 function BooleanConfigOption:getTooltip() end
 
 ---@public
----@return Object
-function BooleanConfigOption:getValueAsObject() end
+---@return boolean
+function BooleanConfigOption:getDefaultValue() end
+
+---@public
+---@param arg0 String
+---@return boolean
+function BooleanConfigOption:isValidString(arg0) end
 
 ---@public
 ---@return String
 function BooleanConfigOption:getValueAsString() end
 
 ---@public
----@return String
-function BooleanConfigOption:getType() end
-
----@public
----@param arg0 Object
----@return void
-function BooleanConfigOption:setValueFromObject(arg0) end
+---@return Object
+function BooleanConfigOption:getValueAsObject() end

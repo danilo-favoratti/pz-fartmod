@@ -19,25 +19,12 @@
 Mouse = {}
 
 ---@public
----@return int
-function Mouse:getX() end
-
----@public
----@return void
-function Mouse:initCustomCursor() end
-
----@public
----@return void
-function Mouse:poll() end
-
----@public
 ---@return boolean
 function Mouse:isRightReleased() end
 
 ---@public
----@param arg0 int
 ---@return boolean
-function Mouse:isButtonDownUICheck(arg0) end
+function Mouse:isMiddleDown() end
 
 ---@public
 ---@return int
@@ -45,28 +32,15 @@ function Mouse:getXA() end
 
 ---@public
 ---@return boolean
-function Mouse:isMiddleDown() end
+function Mouse:isMiddleUp() end
 
 ---@public
 ---@return boolean
 function Mouse:isMiddleReleased() end
 
 ---@public
----@param arg0 String
----@return Cursor
-function Mouse:loadCursor(arg0) end
-
----@public
----@return int
-function Mouse:getWheelState() end
-
----@public
----@return boolean
-function Mouse:isRightDown() end
-
----@public
----@return boolean
-function Mouse:isMiddlePressed() end
+---@return void
+function Mouse:initCustomCursor() end
 
 ---@public
 ---@return boolean
@@ -74,34 +48,28 @@ function Mouse:isRightPressed() end
 
 ---@public
 ---@return boolean
-function Mouse:isMiddleUp() end
+function Mouse:isMiddlePressed() end
+
+---@public
+---@return boolean
+function Mouse:isRightDown() end
 
 ---@public
 ---@return boolean
 function Mouse:isLeftDown() end
 
 ---@public
+---@param arg0 String
+---@return Cursor
+function Mouse:loadCursor(arg0) end
+
+---@public
+---@return boolean
+function Mouse:isLeftUp() end
+
+---@public
 ---@return boolean
 function Mouse:isLeftReleased() end
-
----@public
----@param arg0 boolean
----@return void
-function Mouse:setCursorVisible(arg0) end
-
----@public
----@return boolean
-function Mouse:isLeftPressed() end
-
----@public
----@param arg0 int
----@return void
-function Mouse:UIBlockButtonDown(arg0) end
-
----@public
----@param arg0 int
----@return boolean
-function Mouse:isButtonDown(arg0) end
 
 ---@public
 ---@param arg0 int
@@ -110,16 +78,36 @@ function Mouse:isButtonDown(arg0) end
 function Mouse:setXY(arg0, arg1) end
 
 ---@public
+---@return int
+function Mouse:getWheelState() end
+
+---@public
+---@param arg0 int
 ---@return boolean
-function Mouse:isLeftUp() end
+function Mouse:isButtonDownUICheck(arg0) end
+
+---@public
+---@return boolean
+function Mouse:isLeftPressed() end
 
 ---@public
 ---@return void
 function Mouse:update() end
 
 ---@public
+---@param arg0 int
+---@return void
+function Mouse:UIBlockButtonDown(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function Mouse:setCursorVisible(arg0) end
+
+---@public
+---@param arg0 int
 ---@return boolean
-function Mouse:isCursorVisible() end
+function Mouse:isButtonDown(arg0) end
 
 ---@public
 ---@return void
@@ -127,7 +115,11 @@ function Mouse:renderCursorTexture() end
 
 ---@public
 ---@return int
-function Mouse:getYA() end
+function Mouse:getX() end
+
+---@public
+---@return void
+function Mouse:poll() end
 
 ---@public
 ---@return int
@@ -136,3 +128,11 @@ function Mouse:getY() end
 ---@public
 ---@return boolean
 function Mouse:isRightUp() end
+
+---@public
+---@return int
+function Mouse:getYA() end
+
+---@public
+---@return boolean
+function Mouse:isCursorVisible() end

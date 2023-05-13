@@ -3,7 +3,13 @@ ItemVisuals = {}
 
 ---@public
 ---@return ItemVisual
-function ItemVisuals:findHat() end
+function ItemVisuals:findMask() end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@return void
+function ItemVisuals:load(arg0, arg1) end
 
 ---@public
 ---@param arg0 ByteBuffer
@@ -12,10 +18,4 @@ function ItemVisuals:save(arg0) end
 
 ---@public
 ---@return ItemVisual
-function ItemVisuals:findMask() end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 int
----@return void
-function ItemVisuals:load(arg0, arg1) end
+function ItemVisuals:findHat() end

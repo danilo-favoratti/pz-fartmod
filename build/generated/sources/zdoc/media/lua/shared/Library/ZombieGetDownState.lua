@@ -19,22 +19,22 @@ function ZombieGetDownState:enter(arg0) end
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
+function ZombieGetDownState:execute(arg0) end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
 function ZombieGetDownState:exit(arg0) end
+
+---@public
+---@return ZombieGetDownState
+function ZombieGetDownState:instance() end
 
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@param arg1 AnimEvent
 ---@return void
 function ZombieGetDownState:animEvent(arg0, arg1) end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function ZombieGetDownState:execute(arg0) end
-
----@public
----@return ZombieGetDownState
-function ZombieGetDownState:instance() end
 
 ---@public
 ---@param arg0 IsoGameCharacter

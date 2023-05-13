@@ -8,15 +8,15 @@
 ZLogger = {}
 
 ---@public
----@param arg0 String
+---@param arg0 Exception
 ---@return void
----@overload fun(arg0:Exception)
+---@overload fun(arg0:String)
 ---@overload fun(arg0:String, arg1:String)
 ---@overload fun(arg0:String, arg1:String, arg2:boolean)
 function ZLogger:write(arg0) end
 
 ---@public
----@param arg0 Exception
+---@param arg0 String
 ---@return void
 function ZLogger:write(arg0) end
 
@@ -35,7 +35,12 @@ function ZLogger:write(arg0, arg1, arg2) end
 
 ---@private
 ---@return void
-function ZLogger:checkSize() end
+function ZLogger:checkSizeUnsafe() end
+
+---@private
+---@param arg0 String
+---@return String
+function ZLogger:getLoggerName(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -46,9 +51,4 @@ function ZLogger:writeUnsafe(arg0, arg1, arg2) end
 
 ---@private
 ---@return void
-function ZLogger:checkSizeUnsafe() end
-
----@private
----@param arg0 String
----@return String
-function ZLogger:getLoggerName(arg0) end
+function ZLogger:checkSize() end

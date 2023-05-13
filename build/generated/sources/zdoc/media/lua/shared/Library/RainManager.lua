@@ -40,51 +40,18 @@
 RainManager = {}
 
 ---@public
----@return void
-function RainManager:reset() end
-
----@public
 ---@param arg0 IsoRainSplash
 ---@return void
 function RainManager:RemoveRainSplash(arg0) end
 
 ---@public
----@param arg0 IsoRaindrop
 ---@return void
-function RainManager:RemoveRaindrop(arg0) end
-
----@public
----@param arg0 IsoCell
----@param arg1 IsoGridSquare
----@param arg2 boolean
----@return void
-function RainManager:StartRainSplash(arg0, arg1, arg2) end
-
----@public
----@param arg0 IsoGridSquare
----@return void
-function RainManager:RemoveAllOn(arg0) end
-
----@private
----@return void
-function RainManager:removeAll() end
+function RainManager:reset() end
 
 ---@public
 ---@param arg0 int
 ---@return void
-function RainManager:setRandRainMin(arg0) end
-
----@public
----@param arg0 IsoCell
----@param arg1 IsoGridSquare
----@param arg2 boolean
----@return void
-function RainManager:StartRaindrop(arg0, arg1, arg2) end
-
----@public
----@param arg0 IsoGridSquare
----@return boolean
-function RainManager:inBounds(arg0) end
+function RainManager:setRandRainMax(arg0) end
 
 ---@public
 ---@param arg0 IsoRaindrop
@@ -92,16 +59,28 @@ function RainManager:inBounds(arg0) end
 function RainManager:AddRaindrop(arg0) end
 
 ---@public
----@return Boolean
-function RainManager:isRaining() end
+---@return void
+function RainManager:startRaining() end
+
+---@public
+---@param arg0 int
+---@param arg1 IsoGridSquare
+---@return void
+function RainManager:SetPlayerLocation(arg0, arg1) end
+
+---@public
+---@param arg0 IsoRaindrop
+---@return void
+function RainManager:RemoveRaindrop(arg0) end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return void
+function RainManager:RemoveAllOn(arg0) end
 
 ---@public
 ---@return void
-function RainManager:UpdateServer() end
-
----@public
----@return float
-function RainManager:getRainIntensity() end
+function RainManager:stopRaining() end
 
 ---@private
 ---@param arg0 IsoPlayer
@@ -110,25 +89,7 @@ function RainManager:interruptSleep(arg0) end
 
 ---@public
 ---@return void
-function RainManager:Update() end
-
----@public
----@return void
-function RainManager:startRaining() end
-
----@public
----@return void
-function RainManager:AddSplashes() end
-
----@public
----@return void
-function RainManager:stopRaining() end
-
----@public
----@param arg0 int
----@param arg1 IsoGridSquare
----@return void
-function RainManager:SetPlayerLocation(arg0, arg1) end
+function RainManager:UpdateServer() end
 
 ---@public
 ---@param arg0 IsoRainSplash
@@ -138,4 +99,43 @@ function RainManager:AddRainSplash(arg0) end
 ---@public
 ---@param arg0 int
 ---@return void
-function RainManager:setRandRainMax(arg0) end
+function RainManager:setRandRainMin(arg0) end
+
+---@public
+---@return float
+function RainManager:getRainIntensity() end
+
+---@private
+---@return void
+function RainManager:removeAll() end
+
+---@public
+---@param arg0 IsoCell
+---@param arg1 IsoGridSquare
+---@param arg2 boolean
+---@return void
+function RainManager:StartRainSplash(arg0, arg1, arg2) end
+
+---@public
+---@return Boolean
+function RainManager:isRaining() end
+
+---@public
+---@param arg0 IsoCell
+---@param arg1 IsoGridSquare
+---@param arg2 boolean
+---@return void
+function RainManager:StartRaindrop(arg0, arg1, arg2) end
+
+---@public
+---@return void
+function RainManager:Update() end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return boolean
+function RainManager:inBounds(arg0) end
+
+---@public
+---@return void
+function RainManager:AddSplashes() end

@@ -6,8 +6,27 @@
 ObservationFactory_Observation = {}
 
 ---@public
+---@param arg0 String
+---@return void
+function ObservationFactory_Observation:setDescription(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function ObservationFactory_Observation:setName(arg0) end
+
+---@public
 ---@return String
-function ObservationFactory_Observation:getLeftLabel() end
+function ObservationFactory_Observation:getRightLabel() end
+
+---@public
+---@return String
+function ObservationFactory_Observation:getDescription() end
+
+---@public
+---@param arg0 String
+---@return void
+function ObservationFactory_Observation:setTraitID(arg0) end
 
 ---@public
 ---@return String
@@ -18,28 +37,9 @@ function ObservationFactory_Observation:getName() end
 function ObservationFactory_Observation:getLabel() end
 
 ---@public
----@param arg0 String
----@return void
-function ObservationFactory_Observation:setTraitID(arg0) end
+---@return String
+function ObservationFactory_Observation:getLeftLabel() end
 
 ---@public
 ---@return String
 function ObservationFactory_Observation:getTraitID() end
-
----@public
----@return String
-function ObservationFactory_Observation:getDescription() end
-
----@public
----@param arg0 String
----@return void
-function ObservationFactory_Observation:setDescription(arg0) end
-
----@public
----@return String
-function ObservationFactory_Observation:getRightLabel() end
-
----@public
----@param arg0 String
----@return void
-function ObservationFactory_Observation:setName(arg0) end

@@ -11,6 +11,20 @@ IsoHeatSource = {}
 function IsoHeatSource:getY() end
 
 ---@public
+---@param arg0 int
+---@return void
+function IsoHeatSource:setRadius(arg0) end
+
+---@public
+---@return int
+function IsoHeatSource:getTemperature() end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoHeatSource:setTemperature(arg0) end
+
+---@public
 ---@return boolean
 ---@overload fun(arg0:int, arg1:int, arg2:int, arg3:int)
 function IsoHeatSource:isInBounds() end
@@ -25,26 +39,12 @@ function IsoHeatSource:isInBounds(arg0, arg1, arg2, arg3) end
 
 ---@public
 ---@return int
-function IsoHeatSource:getX() end
-
----@public
----@return int
 function IsoHeatSource:getZ() end
 
 ---@public
 ---@return int
-function IsoHeatSource:getRadius() end
+function IsoHeatSource:getX() end
 
 ---@public
 ---@return int
-function IsoHeatSource:getTemperature() end
-
----@public
----@param arg0 int
----@return void
-function IsoHeatSource:setTemperature(arg0) end
-
----@public
----@param arg0 int
----@return void
-function IsoHeatSource:setRadius(arg0) end
+function IsoHeatSource:getRadius() end

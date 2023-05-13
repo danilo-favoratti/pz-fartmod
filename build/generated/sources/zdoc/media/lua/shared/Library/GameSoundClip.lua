@@ -18,22 +18,6 @@
 GameSoundClip = {}
 
 ---@public
----@return boolean
-function GameSoundClip:hasMaxDistance() end
-
----@public
----@return float
-function GameSoundClip:getMinDistance() end
-
----@public
----@return float
-function GameSoundClip:getVolume() end
-
----@public
----@return boolean
-function GameSoundClip:hasMinDistance() end
-
----@public
 ---@return String
 function GameSoundClip:getEvent() end
 
@@ -43,29 +27,45 @@ function GameSoundClip:getEffectiveVolumeInMenu() end
 
 ---@public
 ---@return float
-function GameSoundClip:getPitch() end
+function GameSoundClip:getMaxDistance() end
 
 ---@public
 ---@return String
 function GameSoundClip:getFile() end
 
 ---@public
----@return GameSoundClip
-function GameSoundClip:checkReloaded() end
+---@return float
+function GameSoundClip:getPitch() end
+
+---@public
+---@return float
+function GameSoundClip:getVolume() end
+
+---@public
+---@return float
+function GameSoundClip:getMinDistance() end
 
 ---@public
 ---@return float
 function GameSoundClip:getEffectiveVolume() end
 
 ---@public
----@return float
-function GameSoundClip:getMaxDistance() end
+---@param arg0 FMOD_STUDIO_PARAMETER_DESCRIPTION
+---@return boolean
+function GameSoundClip:hasParameter(arg0) end
+
+---@public
+---@return boolean
+function GameSoundClip:hasMaxDistance() end
+
+---@public
+---@return boolean
+function GameSoundClip:hasMinDistance() end
+
+---@public
+---@return GameSoundClip
+function GameSoundClip:checkReloaded() end
 
 ---@public
 ---@return boolean
 function GameSoundClip:hasSustainPoints() end
-
----@public
----@param arg0 FMOD_STUDIO_PARAMETER_DESCRIPTION
----@return boolean
-function GameSoundClip:hasParameter(arg0) end

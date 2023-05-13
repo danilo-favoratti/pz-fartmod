@@ -36,19 +36,15 @@ function GameLoadingState:redirectState() end
 
 ---@public
 ---@return void
+function GameLoadingState:exit() end
+
+---@public
+---@return void
 function GameLoadingState:Done() end
 
 ---@public
 ---@return void
-function GameLoadingState:enter() end
-
----@public
----@return void
 function GameLoadingState:render() end
-
----@public
----@return GameStateMachine.StateAction
-function GameLoadingState:update() end
 
 ---@public
 ---@return void
@@ -56,4 +52,8 @@ function GameLoadingState:SendDone() end
 
 ---@public
 ---@return void
-function GameLoadingState:exit() end
+function GameLoadingState:enter() end
+
+---@public
+---@return GameStateMachine.StateAction
+function GameLoadingState:update() end

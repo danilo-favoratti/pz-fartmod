@@ -12,15 +12,6 @@
 ClimbOverWallState = {}
 
 ---@public
----@return ClimbOverWallState
-function ClimbOverWallState:instance() end
-
----@private
----@param arg0 IsoGridSquare
----@return IsoObject
-function ClimbOverWallState:getClimbableWallW(arg0) end
-
----@public
 ---@param arg0 IsoGameCharacter
 ---@param arg1 int
 ---@param arg2 int
@@ -33,25 +24,13 @@ function ClimbOverWallState:isIgnoreCollide(arg0, arg1, arg2, arg3, arg4, arg5, 
 
 ---@public
 ---@param arg0 IsoGameCharacter
----@param arg1 AnimEvent
 ---@return void
-function ClimbOverWallState:animEvent(arg0, arg1) end
-
----@public
----@param arg0 IsoGameCharacter
----@param arg1 IsoDirections
----@return void
-function ClimbOverWallState:setParams(arg0, arg1) end
-
----@private
----@param arg0 IsoObject
----@return int
-function ClimbOverWallState:getFenceType(arg0) end
+function ClimbOverWallState:execute(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function ClimbOverWallState:exit(arg0) end
+function ClimbOverWallState:enter(arg0) end
 
 ---@private
 ---@param arg0 IsoGridSquare
@@ -59,9 +38,14 @@ function ClimbOverWallState:exit(arg0) end
 function ClimbOverWallState:getClimbableWallN(arg0) end
 
 ---@public
+---@return ClimbOverWallState
+function ClimbOverWallState:instance() end
+
+---@public
 ---@param arg0 IsoGameCharacter
+---@param arg1 AnimEvent
 ---@return void
-function ClimbOverWallState:execute(arg0) end
+function ClimbOverWallState:animEvent(arg0, arg1) end
 
 ---@private
 ---@param arg0 IsoGameCharacter
@@ -71,4 +55,20 @@ function ClimbOverWallState:getFence(arg0) end
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function ClimbOverWallState:enter(arg0) end
+function ClimbOverWallState:exit(arg0) end
+
+---@private
+---@param arg0 IsoGridSquare
+---@return IsoObject
+function ClimbOverWallState:getClimbableWallW(arg0) end
+
+---@private
+---@param arg0 IsoObject
+---@return int
+function ClimbOverWallState:getFenceType(arg0) end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@param arg1 IsoDirections
+---@return void
+function ClimbOverWallState:setParams(arg0, arg1) end

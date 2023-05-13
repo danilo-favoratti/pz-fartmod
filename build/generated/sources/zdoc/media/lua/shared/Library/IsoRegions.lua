@@ -45,40 +45,8 @@
 IsoRegions = {}
 
 ---@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@return IChunkRegion
-function IsoRegions:getChunkRegion(arg0, arg1, arg2) end
-
----@public
 ---@return IsoRegionsLogger
 function IsoRegions:getLogger() end
-
----@private
----@return void
-function IsoRegions:clientResetCachedRegionReferences() end
-
----@public
----@param arg0 int
----@param arg1 int
----@return File
-function IsoRegions:getChunkFile(arg0, arg1) end
-
----@public
----@param arg0 byte
----@return byte
-function IsoRegions:GetOppositeDir(arg0) end
-
----@public
----@return File
-function IsoRegions:getDirectory() end
-
----@public
----@param arg0 int
----@param arg1 int
----@return int
-function IsoRegions:hash(arg0, arg1) end
 
 ---@public
 ---@param arg0 String
@@ -86,21 +54,21 @@ function IsoRegions:hash(arg0, arg1) end
 function IsoRegions:warn(arg0) end
 
 ---@public
----@return void
-function IsoRegions:init() end
-
----@public
----@return void
-function IsoRegions:ResetAllDataDebug() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoRegions:setDebugLoadAllChunks(arg0) end
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return IChunkRegion
+function IsoRegions:getChunkRegion(arg0, arg1, arg2) end
 
 ---@protected
----@return IsoRegionWorker
-function IsoRegions:getRegionWorker() end
+---@param arg0 IsoGridSquare
+---@return byte
+function IsoRegions:calculateSquareFlags(arg0) end
+
+---@public
+---@param arg0 byte
+---@return byte
+function IsoRegions:GetOppositeDir(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -115,14 +83,15 @@ function IsoRegions:log(arg0) end
 function IsoRegions:log(arg0, arg1) end
 
 ---@public
----@param arg0 ByteBuffer
----@param arg1 UdpConnection
----@return void
-function IsoRegions:receiveClientRequestFullDataChunks(arg0, arg1) end
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return IWorldRegion
+function IsoRegions:getIsoWorldRegion(arg0, arg1, arg2) end
 
 ---@public
----@return File
-function IsoRegions:getHeaderFile() end
+---@return void
+function IsoRegions:init() end
 
 ---@public
 ---@param arg0 IsoGridSquare
@@ -144,37 +113,66 @@ function IsoRegions:receiveServerUpdatePacket(arg0) end
 ---@public
 ---@param arg0 int
 ---@param arg1 int
----@param arg2 int
----@return byte
-function IsoRegions:getSquareFlags(arg0, arg1, arg2) end
+---@return int
+function IsoRegions:hash(arg0, arg1) end
+
+---@protected
+---@return IsoRegionWorker
+function IsoRegions:getRegionWorker() end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 UdpConnection
+---@return void
+function IsoRegions:receiveClientRequestFullDataChunks(arg0, arg1) end
 
 ---@public
 ---@return boolean
 function IsoRegions:isDebugLoadAllChunks() end
 
----@protected
----@param arg0 IsoGridSquare
----@return byte
-function IsoRegions:calculateSquareFlags(arg0) end
+---@public
+---@param arg0 boolean
+---@return void
+function IsoRegions:setDebugLoadAllChunks(arg0) end
 
 ---@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@return IWorldRegion
-function IsoRegions:getIsoWorldRegion(arg0, arg1, arg2) end
+---@return void
+function IsoRegions:update() end
+
+---@public
+---@return void
+function IsoRegions:ResetAllDataDebug() end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return void
+function IsoRegions:setPreviousFlags(arg0) end
+
+---@protected
+---@return DataRoot
+function IsoRegions:getDataRoot() end
 
 ---@public
 ---@return void
 function IsoRegions:reset() end
 
 ---@public
----@return void
-function IsoRegions:update() end
+---@param arg0 int
+---@param arg1 int
+---@return DataChunk
+function IsoRegions:getDataChunk(arg0, arg1) end
 
----@protected
----@return DataRoot
-function IsoRegions:getDataRoot() end
+---@private
+---@return void
+function IsoRegions:clientResetCachedRegionReferences() end
+
+---@public
+---@return File
+function IsoRegions:getHeaderFile() end
+
+---@public
+---@return File
+function IsoRegions:getDirectory() end
 
 ---@protected
 ---@return void
@@ -183,10 +181,12 @@ function IsoRegions:forceRecalcSurroundingChunks() end
 ---@public
 ---@param arg0 int
 ---@param arg1 int
----@return DataChunk
-function IsoRegions:getDataChunk(arg0, arg1) end
+---@param arg2 int
+---@return byte
+function IsoRegions:getSquareFlags(arg0, arg1, arg2) end
 
 ---@public
----@param arg0 IsoGridSquare
----@return void
-function IsoRegions:setPreviousFlags(arg0) end
+---@param arg0 int
+---@param arg1 int
+---@return File
+function IsoRegions:getChunkFile(arg0, arg1) end

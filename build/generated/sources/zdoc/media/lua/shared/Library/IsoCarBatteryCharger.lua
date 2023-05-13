@@ -9,6 +9,66 @@
 ---@field protected sound long
 IsoCarBatteryCharger = {}
 
+---@private
+---@return void
+function IsoCarBatteryCharger:stopChargingSound() end
+
+---@public
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@param arg3 ColorInfo
+---@return void
+function IsoCarBatteryCharger:renderObjectPicker(arg0, arg1, arg2, arg3) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoCarBatteryCharger:setActivated(arg0) end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@param arg2 boolean
+---@return void
+function IsoCarBatteryCharger:load(arg0, arg1, arg2) end
+
+---@public
+---@return String
+function IsoCarBatteryCharger:getObjectName() end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoCarBatteryCharger:setChargeRate(arg0) end
+
+---@public
+---@return void
+function IsoCarBatteryCharger:removeFromWorld() end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 boolean
+---@return void
+function IsoCarBatteryCharger:save(arg0, arg1) end
+
+---@public
+---@return void
+function IsoCarBatteryCharger:sync() end
+
+---@public
+---@param arg0 InventoryItem
+---@return void
+function IsoCarBatteryCharger:setBattery(arg0) end
+
+---@public
+---@return void
+function IsoCarBatteryCharger:update() end
+
+---@public
+---@return InventoryItem
+function IsoCarBatteryCharger:getItem() end
+
 ---@public
 ---@param arg0 float
 ---@param arg1 float
@@ -20,63 +80,15 @@ IsoCarBatteryCharger = {}
 ---@return void
 function IsoCarBatteryCharger:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 
----@public
----@return InventoryItem
-function IsoCarBatteryCharger:getItem() end
-
----@public
----@return boolean
-function IsoCarBatteryCharger:isActivated() end
-
----@public
----@return void
-function IsoCarBatteryCharger:removeFromWorld() end
-
----@public
----@return void
-function IsoCarBatteryCharger:addToWorld() end
+---@private
+---@param arg0 InventoryItem
+---@param arg1 IsoSprite
+---@return IsoSprite
+function IsoCarBatteryCharger:configureSprite(arg0, arg1) end
 
 ---@private
 ---@return void
-function IsoCarBatteryCharger:stopChargingSound() end
-
----@public
----@return InventoryItem
-function IsoCarBatteryCharger:getBattery() end
-
----@public
----@return float
-function IsoCarBatteryCharger:getChargeRate() end
-
----@public
----@param arg0 float
----@param arg1 float
----@param arg2 float
----@param arg3 ColorInfo
----@return void
-function IsoCarBatteryCharger:renderObjectPicker(arg0, arg1, arg2, arg3) end
-
----@public
----@return void
-function IsoCarBatteryCharger:update() end
-
----@public
----@return void
-function IsoCarBatteryCharger:sync() end
-
----@public
----@return String
-function IsoCarBatteryCharger:getObjectName() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoCarBatteryCharger:setActivated(arg0) end
-
----@public
----@param arg0 ByteBufferWriter
----@return void
-function IsoCarBatteryCharger:syncIsoObjectSend(arg0) end
+function IsoCarBatteryCharger:startChargingSound() end
 
 ---@public
 ---@param arg0 boolean
@@ -87,34 +99,22 @@ function IsoCarBatteryCharger:syncIsoObjectSend(arg0) end
 function IsoCarBatteryCharger:syncIsoObject(arg0, arg1, arg2, arg3) end
 
 ---@public
----@param arg0 InventoryItem
 ---@return void
-function IsoCarBatteryCharger:setBattery(arg0) end
+function IsoCarBatteryCharger:addToWorld() end
 
 ---@public
----@param arg0 ByteBuffer
----@param arg1 int
----@param arg2 boolean
+---@param arg0 ByteBufferWriter
 ---@return void
-function IsoCarBatteryCharger:load(arg0, arg1, arg2) end
+function IsoCarBatteryCharger:syncIsoObjectSend(arg0) end
 
 ---@public
----@param arg0 ByteBuffer
----@param arg1 boolean
----@return void
-function IsoCarBatteryCharger:save(arg0, arg1) end
-
----@private
----@return void
-function IsoCarBatteryCharger:startChargingSound() end
+---@return InventoryItem
+function IsoCarBatteryCharger:getBattery() end
 
 ---@public
----@param arg0 float
----@return void
-function IsoCarBatteryCharger:setChargeRate(arg0) end
+---@return boolean
+function IsoCarBatteryCharger:isActivated() end
 
----@private
----@param arg0 InventoryItem
----@param arg1 IsoSprite
----@return IsoSprite
-function IsoCarBatteryCharger:configureSprite(arg0, arg1) end
+---@public
+---@return float
+function IsoCarBatteryCharger:getChargeRate() end

@@ -20,9 +20,14 @@
 BodyPartType = {}
 
 ---@public
----@param arg0 boolean
----@return String
-function BodyPartType:getBiteWoundModel(arg0) end
+---@param arg0 BodyPartType
+---@return float
+function BodyPartType:GetDistToCore(arg0) end
+
+---@public
+---@param arg0 String
+---@return BodyPartType
+function BodyPartType:valueOf(arg0) end
 
 ---@public
 ---@param arg0 BodyPartType
@@ -30,13 +35,60 @@ function BodyPartType:getBiteWoundModel(arg0) end
 function BodyPartType:GetMaxMovementPenalty(arg0) end
 
 ---@public
----@return int
-function BodyPartType:index() end
+---@param arg0 int
+---@return BodyPartType
+function BodyPartType:FromIndex(arg0) end
+
+---@public
+---@return String
+function BodyPartType:getBandageModel() end
+
+---@public
+---@param arg0 boolean
+---@return String
+function BodyPartType:getCutWoundModel(arg0) end
+
+---@public
+---@param arg0 int
+---@return float
+function BodyPartType:getPainModifyer(arg0) end
+
+---@public
+---@return BodyPartType
+function BodyPartType:getRandom() end
+
+---@public
+---@param arg0 int
+---@return float
+function BodyPartType:getDamageModifyer(arg0) end
+
+---@public
+---@param arg0 BodyPartType
+---@return String
+function BodyPartType:getDisplayName(arg0) end
+
+---@public
+---@param arg0 BodyPartType
+---@return String
+function BodyPartType:ToString(arg0) end
 
 ---@public
 ---@param arg0 String
 ---@return BodyPartType
-function BodyPartType:valueOf(arg0) end
+function BodyPartType:FromString(arg0) end
+
+---@public
+---@return int
+function BodyPartType:index() end
+
+---@public
+---@return BodyPartType[]
+function BodyPartType:values() end
+
+---@public
+---@param arg0 boolean
+---@return String
+function BodyPartType:getBiteWoundModel(arg0) end
 
 ---@public
 ---@param arg0 boolean
@@ -45,23 +97,8 @@ function BodyPartType:getScratchWoundModel(arg0) end
 
 ---@public
 ---@param arg0 BodyPartType
----@return float
-function BodyPartType:GetDistToCore(arg0) end
-
----@public
----@param arg0 int
----@return float
-function BodyPartType:getBleedingTimeModifyer(arg0) end
-
----@public
----@param arg0 BodyPartType
----@return float
-function BodyPartType:GetUmbrellaMod(arg0) end
-
----@public
----@param arg0 int
----@return float
-function BodyPartType:getPainModifyer(arg0) end
+---@return int
+function BodyPartType:ToIndex(arg0) end
 
 ---@public
 ---@param arg0 BodyPartType
@@ -69,23 +106,9 @@ function BodyPartType:getPainModifyer(arg0) end
 function BodyPartType:GetSkinSurface(arg0) end
 
 ---@public
----@return BodyPartType[]
-function BodyPartType:values() end
-
----@public
 ---@param arg0 BodyPartType
----@return int
-function BodyPartType:ToIndex(arg0) end
-
----@public
----@param arg0 String
----@return BodyPartType
-function BodyPartType:FromString(arg0) end
-
----@public
----@param arg0 BodyPartType
----@return String
-function BodyPartType:ToString(arg0) end
+---@return float
+function BodyPartType:GetUmbrellaMod(arg0) end
 
 ---@public
 ---@param arg0 BodyPartType
@@ -93,29 +116,6 @@ function BodyPartType:ToString(arg0) end
 function BodyPartType:GetMaxActionPenalty(arg0) end
 
 ---@public
----@param arg0 boolean
----@return String
-function BodyPartType:getCutWoundModel(arg0) end
-
----@public
----@param arg0 BodyPartType
----@return String
-function BodyPartType:getDisplayName(arg0) end
-
----@public
 ---@param arg0 int
 ---@return float
-function BodyPartType:getDamageModifyer(arg0) end
-
----@public
----@param arg0 int
----@return BodyPartType
-function BodyPartType:FromIndex(arg0) end
-
----@public
----@return BodyPartType
-function BodyPartType:getRandom() end
-
----@public
----@return String
-function BodyPartType:getBandageModel() end
+function BodyPartType:getBleedingTimeModifyer(arg0) end

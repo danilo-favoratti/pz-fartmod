@@ -1,3 +1,3 @@
 <component name="DependencyValidationManager">
-<scope name="mod-lua" pattern="file[pz-zmod-2.4.0.media]:*.lua" />
+<scope name="mod-lua" pattern="file[pz-fartmod.media]:*.lua" />
 </component>

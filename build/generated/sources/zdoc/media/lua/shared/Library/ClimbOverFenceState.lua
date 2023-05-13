@@ -34,10 +34,15 @@
 ---@field public TRIP_WINDOW int
 ClimbOverFenceState = {}
 
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function ClimbOverFenceState:enter(arg0) end
+
 ---@private
----@param arg0 IsoObject
----@return int
-function ClimbOverFenceState:getFenceType(arg0) end
+---@param arg0 IsoGameCharacter
+---@return boolean
+function ClimbOverFenceState:shouldFallAfterVaultOver(arg0) end
 
 ---@private
 ---@param arg0 IsoGameCharacter
@@ -46,10 +51,13 @@ function ClimbOverFenceState:getFenceType(arg0) end
 function ClimbOverFenceState:slideX(arg0, arg1) end
 
 ---@public
+---@return ClimbOverFenceState
+function ClimbOverFenceState:instance() end
+
+---@public
 ---@param arg0 IsoGameCharacter
----@param arg1 IsoDirections
 ---@return void
-function ClimbOverFenceState:setParams(arg0, arg1) end
+function ClimbOverFenceState:exit(arg0) end
 
 ---@private
 ---@param arg0 IsoObject
@@ -63,42 +71,6 @@ function ClimbOverFenceState:countZombiesClimbingOver(arg0) end
 ---@return int
 function ClimbOverFenceState:countZombiesClimbingOver(arg0, arg1) end
 
----@private
----@param arg0 IsoObject
----@return int
-function ClimbOverFenceState:getTripType(arg0) end
-
----@private
----@param arg0 IsoGameCharacter
----@return boolean
-function ClimbOverFenceState:shouldFallAfterVaultOver(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 int
----@param arg5 int
----@param arg6 int
----@return boolean
-function ClimbOverFenceState:isIgnoreCollide(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function ClimbOverFenceState:enter(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function ClimbOverFenceState:execute(arg0) end
-
----@private
----@param arg0 IsoGameCharacter
----@return IsoObject
-function ClimbOverFenceState:getFence(arg0) end
-
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@param arg1 MoveDeltaModifiers
@@ -108,12 +80,13 @@ function ClimbOverFenceState:getDeltaModifiers(arg0, arg1) end
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function ClimbOverFenceState:exit(arg0) end
+function ClimbOverFenceState:execute(arg0) end
 
----@private
----@param arg0 IsoZombie
+---@public
+---@param arg0 IsoGameCharacter
+---@param arg1 AnimEvent
 ---@return void
-function ClimbOverFenceState:setLungeXVars(arg0) end
+function ClimbOverFenceState:animEvent(arg0, arg1) end
 
 ---@private
 ---@param arg0 IsoGameCharacter
@@ -128,10 +101,37 @@ function ClimbOverFenceState:isMetalFence(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
----@param arg1 AnimEvent
----@return void
-function ClimbOverFenceState:animEvent(arg0, arg1) end
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@param arg4 int
+---@param arg5 int
+---@param arg6 int
+---@return boolean
+function ClimbOverFenceState:isIgnoreCollide(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 
 ---@public
----@return ClimbOverFenceState
-function ClimbOverFenceState:instance() end
+---@param arg0 IsoGameCharacter
+---@param arg1 IsoDirections
+---@return void
+function ClimbOverFenceState:setParams(arg0, arg1) end
+
+---@private
+---@param arg0 IsoZombie
+---@return void
+function ClimbOverFenceState:setLungeXVars(arg0) end
+
+---@private
+---@param arg0 IsoObject
+---@return int
+function ClimbOverFenceState:getFenceType(arg0) end
+
+---@private
+---@param arg0 IsoGameCharacter
+---@return IsoObject
+function ClimbOverFenceState:getFence(arg0) end
+
+---@private
+---@param arg0 IsoObject
+---@return int
+function ClimbOverFenceState:getTripType(arg0) end

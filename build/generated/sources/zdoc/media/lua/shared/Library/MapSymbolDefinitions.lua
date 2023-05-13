@@ -6,11 +6,6 @@ MapSymbolDefinitions = {}
 
 ---@public
 ---@param arg0 String
----@return MapSymbolDefinitions.MapSymbolDefinition
-function MapSymbolDefinitions:getSymbolById(arg0) end
-
----@public
----@param arg0 String
 ---@param arg1 String
 ---@return void
 ---@overload fun(arg0:String, arg1:String, arg2:int, arg3:int)
@@ -25,6 +20,10 @@ function MapSymbolDefinitions:addTexture(arg0, arg1) end
 function MapSymbolDefinitions:addTexture(arg0, arg1, arg2, arg3) end
 
 ---@public
+---@return void
+function MapSymbolDefinitions:Reset() end
+
+---@public
 ---@return MapSymbolDefinitions
 function MapSymbolDefinitions:getInstance() end
 
@@ -34,8 +33,9 @@ function MapSymbolDefinitions:getInstance() end
 function MapSymbolDefinitions:getSymbolByIndex(arg0) end
 
 ---@public
----@return void
-function MapSymbolDefinitions:Reset() end
+---@param arg0 String
+---@return MapSymbolDefinitions.MapSymbolDefinition
+function MapSymbolDefinitions:getSymbolById(arg0) end
 
 ---@public
 ---@return int

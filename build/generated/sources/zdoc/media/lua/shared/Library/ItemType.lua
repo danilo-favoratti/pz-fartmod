@@ -14,6 +14,11 @@
 ItemType = {}
 
 ---@public
+---@param arg0 String
+---@return ItemType
+function ItemType:valueOf(arg0) end
+
+---@public
 ---@param arg0 int
 ---@return ItemType
 function ItemType:fromIndex(arg0) end
@@ -25,8 +30,3 @@ function ItemType:values() end
 ---@public
 ---@return int
 function ItemType:index() end
-
----@public
----@param arg0 String
----@return ItemType
-function ItemType:valueOf(arg0) end

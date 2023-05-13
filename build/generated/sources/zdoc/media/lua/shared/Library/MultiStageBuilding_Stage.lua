@@ -22,12 +22,36 @@
 MultiStageBuilding_Stage = {}
 
 ---@public
----@return KahluaTable
-function MultiStageBuilding_Stage:getItemsLua() end
+---@return ArrayList|Unknown
+function MultiStageBuilding_Stage:getItemsToKeep() end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@param arg1 IsoThumpable
+---@param arg2 boolean
+---@return void
+function MultiStageBuilding_Stage:doStage(arg0, arg1, arg2) end
 
 ---@public
 ---@return String
-function MultiStageBuilding_Stage:getDisplayName() end
+function MultiStageBuilding_Stage:getSprite() end
+
+---@public
+---@return String
+function MultiStageBuilding_Stage:getKnownRecipe() end
+
+---@public
+---@return KahluaTable
+function MultiStageBuilding_Stage:getPerksLua() end
+
+---@public
+---@return String
+function MultiStageBuilding_Stage:getName() end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return int
+function MultiStageBuilding_Stage:getTimeNeeded(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
@@ -37,8 +61,12 @@ function MultiStageBuilding_Stage:getDisplayName() end
 function MultiStageBuilding_Stage:canBeDone(arg0, arg1, arg2) end
 
 ---@public
+---@return KahluaTable
+function MultiStageBuilding_Stage:getItemsLua() end
+
+---@public
 ---@return String
-function MultiStageBuilding_Stage:getNorthSprite() end
+function MultiStageBuilding_Stage:getDisplayName() end
 
 ---@public
 ---@return ArrayList|Unknown
@@ -50,46 +78,18 @@ function MultiStageBuilding_Stage:getCraftingSound() end
 
 ---@public
 ---@return String
-function MultiStageBuilding_Stage:getName() end
-
----@public
----@return String
-function MultiStageBuilding_Stage:getRecipeName() end
+function MultiStageBuilding_Stage:getNorthSprite() end
 
 ---@public
 ---@return String
 function MultiStageBuilding_Stage:getThumpSound() end
 
 ---@public
----@return KahluaTable
-function MultiStageBuilding_Stage:getPerksLua() end
-
----@public
----@param arg0 IsoGameCharacter
----@param arg1 IsoThumpable
----@param arg2 boolean
----@return void
-function MultiStageBuilding_Stage:doStage(arg0, arg1, arg2) end
+---@return String
+function MultiStageBuilding_Stage:getRecipeName() end
 
 ---@public
 ---@param arg0 String
 ---@param arg1 String[]
 ---@return void
 function MultiStageBuilding_Stage:Load(arg0, arg1) end
-
----@public
----@return ArrayList|Unknown
-function MultiStageBuilding_Stage:getItemsToKeep() end
-
----@public
----@return String
-function MultiStageBuilding_Stage:getKnownRecipe() end
-
----@public
----@return String
-function MultiStageBuilding_Stage:getSprite() end
-
----@public
----@param arg0 IsoGameCharacter
----@return int
-function MultiStageBuilding_Stage:getTimeNeeded(arg0) end

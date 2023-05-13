@@ -5,28 +5,19 @@
 HairStyles = {}
 
 ---@public
+---@param arg0 String
+---@return HairStyles
+function HairStyles:Parse(arg0) end
+
+---@public
 ---@return ArrayList|Unknown
 function HairStyles:getAllFemaleStyles() end
 
 ---@public
----@param arg0 String
+---@param arg0 HairStyle
+---@param arg1 String
 ---@return HairStyle
-function HairStyles:FindMaleStyle(arg0) end
-
----@public
----@param arg0 String
----@return HairStyle
-function HairStyles:FindFemaleStyle(arg0) end
-
----@public
----@param arg0 String
----@return String
-function HairStyles:getRandomFemaleStyle(arg0) end
-
----@public
----@param arg0 String
----@return String
-function HairStyles:getRandomMaleStyle(arg0) end
+function HairStyles:getAlternateForHat(arg0, arg1) end
 
 ---@public
 ---@return void
@@ -38,8 +29,9 @@ function HairStyles:Reset() end
 function HairStyles:parse(arg0) end
 
 ---@public
----@return void
-function HairStyles:init() end
+---@param arg0 String
+---@return HairStyle
+function HairStyles:FindMaleStyle(arg0) end
 
 ---@public
 ---@return ArrayList|Unknown
@@ -47,8 +39,8 @@ function HairStyles:getAllMaleStyles() end
 
 ---@public
 ---@param arg0 String
----@return HairStyles
-function HairStyles:Parse(arg0) end
+---@return String
+function HairStyles:getRandomMaleStyle(arg0) end
 
 ---@private
 ---@param arg0 ArrayList|Unknown
@@ -57,7 +49,15 @@ function HairStyles:Parse(arg0) end
 function HairStyles:FindStyle(arg0, arg1) end
 
 ---@public
----@param arg0 HairStyle
----@param arg1 String
+---@return void
+function HairStyles:init() end
+
+---@public
+---@param arg0 String
+---@return String
+function HairStyles:getRandomFemaleStyle(arg0) end
+
+---@public
+---@param arg0 String
 ---@return HairStyle
-function HairStyles:getAlternateForHat(arg0, arg1) end
+function HairStyles:FindFemaleStyle(arg0) end

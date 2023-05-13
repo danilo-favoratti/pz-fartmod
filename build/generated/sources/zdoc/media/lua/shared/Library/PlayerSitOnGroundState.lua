@@ -13,18 +13,9 @@ PlayerSitOnGroundState = {}
 function PlayerSitOnGroundState:enter(arg0) end
 
 ---@public
----@return PlayerSitOnGroundState
-function PlayerSitOnGroundState:instance() end
-
----@private
----@param arg0 IsoGameCharacter
----@return boolean
-function PlayerSitOnGroundState:checkFire(arg0) end
-
----@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function PlayerSitOnGroundState:exit(arg0) end
+function PlayerSitOnGroundState:execute(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
@@ -35,4 +26,13 @@ function PlayerSitOnGroundState:animEvent(arg0, arg1) end
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function PlayerSitOnGroundState:execute(arg0) end
+function PlayerSitOnGroundState:exit(arg0) end
+
+---@public
+---@return PlayerSitOnGroundState
+function PlayerSitOnGroundState:instance() end
+
+---@private
+---@param arg0 IsoGameCharacter
+---@return boolean
+function PlayerSitOnGroundState:checkFire(arg0) end

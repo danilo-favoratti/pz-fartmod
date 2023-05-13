@@ -11,43 +11,8 @@
 RandomizedZoneStoryBase = {}
 
 ---@public
----@param arg0 RandomizedZoneStoryBase
----@param arg1 IsoMetaGrid.Zone
----@return IsoGridSquare
-function RandomizedZoneStoryBase:getRandomFreeSquare(arg0, arg1) end
-
----@public
----@param arg0 RandomizedZoneStoryBase
----@param arg1 IsoMetaGrid.Zone
----@return void
-function RandomizedZoneStoryBase:cleanAreaForStory(arg0, arg1) end
-
----@private
----@param arg0 IsoMetaGrid.Zone
----@return boolean
-function RandomizedZoneStoryBase:doRandomStory(arg0) end
-
----@public
----@param arg0 RandomizedZoneStoryBase
----@param arg1 IsoMetaGrid.Zone
----@return IsoGridSquare
-function RandomizedZoneStoryBase:getRandomFreeSquareFullZone(arg0, arg1) end
-
----@public
----@param arg0 IsoMetaGrid.Zone
----@param arg1 boolean
----@return boolean
-function RandomizedZoneStoryBase:isValidForStory(arg0, arg1) end
-
----@private
----@param arg0 IsoMetaGrid.Zone
----@param arg1 boolean
----@return boolean
-function RandomizedZoneStoryBase:checkCanSpawnStory(arg0, arg1) end
-
----@private
----@return RandomizedZoneStoryBase
-function RandomizedZoneStoryBase:getRandomStory() end
+---@return int
+function RandomizedZoneStoryBase:getMinimumHeight() end
 
 ---@public
 ---@return boolean
@@ -60,9 +25,43 @@ function RandomizedZoneStoryBase:isValid() end
 ---@return boolean
 function RandomizedZoneStoryBase:isValid(arg0, arg1) end
 
+---@private
+---@param arg0 IsoMetaGrid.Zone
+---@return boolean
+function RandomizedZoneStoryBase:doRandomStory(arg0) end
+
 ---@public
----@return int
-function RandomizedZoneStoryBase:getMinimumHeight() end
+---@param arg0 RandomizedZoneStoryBase
+---@param arg1 IsoMetaGrid.Zone
+---@return IsoGridSquare
+function RandomizedZoneStoryBase:getRandomFreeSquare(arg0, arg1) end
+
+---@private
+---@param arg0 IsoMetaGrid.Zone
+---@param arg1 boolean
+---@return boolean
+function RandomizedZoneStoryBase:checkCanSpawnStory(arg0, arg1) end
+
+---@public
+---@param arg0 RandomizedZoneStoryBase
+---@param arg1 IsoMetaGrid.Zone
+---@return IsoGridSquare
+function RandomizedZoneStoryBase:getRandomFreeSquareFullZone(arg0, arg1) end
+
+---@public
+---@param arg0 RandomizedZoneStoryBase
+---@param arg1 IsoMetaGrid.Zone
+---@return void
+function RandomizedZoneStoryBase:cleanAreaForStory(arg0, arg1) end
+
+---@private
+---@return RandomizedZoneStoryBase
+function RandomizedZoneStoryBase:getRandomStory() end
+
+---@public
+---@param arg0 IsoMetaGrid.Zone
+---@return void
+function RandomizedZoneStoryBase:initAllRZSMapChance(arg0) end
 
 ---@public
 ---@param arg0 IsoMetaGrid.Zone
@@ -75,5 +74,6 @@ function RandomizedZoneStoryBase:getMinimumWidth() end
 
 ---@public
 ---@param arg0 IsoMetaGrid.Zone
----@return void
-function RandomizedZoneStoryBase:initAllRZSMapChance(arg0) end
+---@param arg1 boolean
+---@return boolean
+function RandomizedZoneStoryBase:isValidForStory(arg0, arg1) end

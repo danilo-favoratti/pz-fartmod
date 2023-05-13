@@ -16,28 +16,12 @@
 RBBasic = {}
 
 ---@private
----@param arg0 BuildingDef
+---@param arg0 IsoDirections
+---@param arg1 IsoObject
+---@param arg2 IsoGridSquare
+---@param arg3 HashMap|Unknown|Unknown
 ---@return void
-function RBBasic:addRandomDeadSurvivorStory(arg0) end
-
----@private
----@param arg0 IsoGridSquare
----@return void
-function RBBasic:doKitchenStuff(arg0) end
-
----@private
----@param arg0 IsoGridSquare
----@return void
-function RBBasic:doLivingRoomStuff(arg0) end
-
----@public
----@param arg0 BuildingDef
----@return void
-function RBBasic:randomizeBuilding(arg0) end
-
----@public
----@return ArrayList|Unknown
-function RBBasic:getSurvivorStories() end
+function RBBasic:generateSinkClutter(arg0, arg1, arg2, arg3) end
 
 ---@private
 ---@param arg0 IsoDirections
@@ -48,20 +32,35 @@ function RBBasic:getSurvivorStories() end
 function RBBasic:generateCounterClutter(arg0, arg1, arg2, arg3) end
 
 ---@private
----@param arg0 IsoGridSquare
----@return void
-function RBBasic:doBedroomStuff(arg0) end
-
----@private
 ---@param arg0 BuildingDef
 ---@return void
 function RBBasic:initRDSMap(arg0) end
 
 ---@private
 ---@param arg0 IsoGridSquare
----@param arg1 IsoObject
----@return IsoObject
-function RBBasic:checkForTable(arg0, arg1) end
+---@return void
+function RBBasic:doBathroomStuff(arg0) end
+
+---@private
+---@param arg0 BuildingDef
+---@return void
+function RBBasic:addRandomDeadSurvivorStory(arg0) end
+
+---@private
+---@param arg0 IsoGridSquare
+---@return void
+function RBBasic:doBedroomStuff(arg0) end
+
+---@private
+---@param arg0 IsoGridSquare
+---@return void
+function RBBasic:doLivingRoomStuff(arg0) end
+
+---@public
+---@param arg0 BuildingDef
+---@param arg1 RandomizedDeadSurvivorBase
+---@return void
+function RBBasic:doRandomDeadSurvivorStory(arg0, arg1) end
 
 ---@private
 ---@param arg0 IsoDirections
@@ -72,21 +71,22 @@ function RBBasic:generateKitchenStoveClutter(arg0, arg1, arg2) end
 
 ---@public
 ---@return ArrayList|Unknown
-function RBBasic:getSurvivorProfession() end
+function RBBasic:getUniqueRDSSpawned() end
 
 ---@private
----@param arg0 IsoDirections
+---@param arg0 IsoGridSquare
 ---@param arg1 IsoObject
----@param arg2 IsoGridSquare
----@param arg3 HashMap|Unknown|Unknown
----@return void
-function RBBasic:generateSinkClutter(arg0, arg1, arg2, arg3) end
+---@return IsoObject
+function RBBasic:checkForTable(arg0, arg1) end
+
+---@public
+---@return ArrayList|Unknown
+function RBBasic:getSurvivorProfession() end
 
 ---@public
 ---@param arg0 BuildingDef
----@param arg1 String
 ---@return void
-function RBBasic:doProfessionStory(arg0, arg1) end
+function RBBasic:randomizeBuilding(arg0) end
 
 ---@private
 ---@param arg0 BuildingDef
@@ -94,22 +94,22 @@ function RBBasic:doProfessionStory(arg0, arg1) end
 ---@return void
 function RBBasic:checkForTableSpawn(arg0, arg1) end
 
+---@private
+---@param arg0 IsoGridSquare
+---@return void
+function RBBasic:doKitchenStuff(arg0) end
+
+---@public
+---@param arg0 BuildingDef
+---@param arg1 String
+---@return void
+function RBBasic:doProfessionStory(arg0, arg1) end
+
 ---@public
 ---@return ArrayList|Unknown
-function RBBasic:getUniqueRDSSpawned() end
+function RBBasic:getSurvivorStories() end
 
 ---@private
 ---@param arg0 IsoSprite
 ---@return IsoDirections
 function RBBasic:getFacing(arg0) end
-
----@public
----@param arg0 BuildingDef
----@param arg1 RandomizedDeadSurvivorBase
----@return void
-function RBBasic:doRandomDeadSurvivorStory(arg0, arg1) end
-
----@private
----@param arg0 IsoGridSquare
----@return void
-function RBBasic:doBathroomStuff(arg0) end

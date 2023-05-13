@@ -8,15 +8,14 @@
 ---@field private offsetY int
 ActionProgressBar = {}
 
+---@public
+---@return void
+function ActionProgressBar:render() end
+
 ---@private
 ---@param arg0 int
 ---@return void
 function ActionProgressBar:updateScreenPos(arg0) end
-
----@public
----@param arg0 int
----@return void
-function ActionProgressBar:update(arg0) end
 
 ---@public
 ---@param arg0 float
@@ -28,5 +27,6 @@ function ActionProgressBar:setValue(arg0) end
 function ActionProgressBar:getValue() end
 
 ---@public
+---@param arg0 int
 ---@return void
-function ActionProgressBar:render() end
+function ActionProgressBar:update(arg0) end

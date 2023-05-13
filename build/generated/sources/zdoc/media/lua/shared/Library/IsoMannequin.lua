@@ -27,62 +27,7 @@ IsoMannequin = {}
 
 ---@private
 ---@return void
-function IsoMannequin:validatePose() end
-
----@public
----@param arg0 Moveable
----@param arg1 int
----@return IsoDirections
-function IsoMannequin:getDirectionFromItem(arg0, arg1) end
-
----@public
----@return String
-function IsoMannequin:getObjectName() end
-
----@public
----@param arg0 ItemContainer
----@param arg1 InventoryItem
----@return boolean
-function IsoMannequin:isItemAllowedInContainer(arg0, arg1) end
-
----@public
----@return boolean
-function IsoMannequin:isFemale() end
-
----@public
----@return HumanVisual
-function IsoMannequin:getHumanVisual() end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 int
----@param arg2 boolean
----@return void
-function IsoMannequin:load(arg0, arg1, arg2) end
-
----@public
----@param arg0 InventoryItem
----@param arg1 IsoGameCharacter
----@return void
-function IsoMannequin:wearItem(arg0, arg1) end
-
----@private
----@return void
-function IsoMannequin:validateSkinTexture() end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 boolean
----@return void
-function IsoMannequin:save(arg0, arg1) end
-
----@private
----@return void
-function IsoMannequin:getPropertiesFromZone() end
-
----@public
----@return String
-function IsoMannequin:getMannequinScriptName() end
+function IsoMannequin:initOutfit() end
 
 ---@public
 ---@param arg0 float
@@ -92,46 +37,52 @@ function IsoMannequin:getMannequinScriptName() end
 ---@return void
 function IsoMannequin:renderFxMask(arg0, arg1, arg2, arg3) end
 
----@private
+---@public
+---@param arg0 InventoryItem
 ---@return void
-function IsoMannequin:syncModel() end
+function IsoMannequin:checkClothing(arg0) end
 
 ---@private
----@param arg0 float
----@param arg1 float
----@param arg2 float
 ---@return void
-function IsoMannequin:calcScreenPos(arg0, arg1, arg2) end
+function IsoMannequin:initModelScript() end
+
+---@public
+---@param arg0 Moveable
+---@param arg1 int
+---@return IsoDirections
+function IsoMannequin:getDirectionFromItem(arg0, arg1) end
+
+---@public
+---@param arg0 IsoDirections
+---@return void
+function IsoMannequin:rotate(arg0) end
+
+---@public
+---@param arg0 IsoSprite
+---@return boolean
+function IsoMannequin:isMannequinSprite(arg0) end
 
 ---@public
 ---@return boolean
-function IsoMannequin:isSkeleton() end
-
----@private
----@return void
-function IsoMannequin:resetMannequin() end
+function IsoMannequin:isFemale() end
 
 ---@public
----@param arg0 ByteBuffer
+---@param arg0 ItemVisuals
 ---@return void
-function IsoMannequin:saveState(arg0) end
+function IsoMannequin:getItemVisuals(arg0) end
 
 ---@public
----@param arg0 IsoMannequin
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 IsoDirections
+---@return HumanVisual
+function IsoMannequin:getHumanVisual() end
+
+---@public
+---@param arg0 String
 ---@return void
-function IsoMannequin:renderMoveableObject(arg0, arg1, arg2, arg3, arg4) end
+function IsoMannequin:setMannequinScriptName(arg0) end
 
 ---@public
 ---@return String
-function IsoMannequin:getAnimStateName() end
-
----@private
----@return void
-function IsoMannequin:initOutfit() end
+function IsoMannequin:getAnimSetName() end
 
 ---@public
 ---@param arg0 String
@@ -141,77 +92,30 @@ function IsoMannequin:initOutfit() end
 function IsoMannequin:saveChange(arg0, arg1, arg2) end
 
 ---@public
----@param arg0 InventoryItem
----@return void
-function IsoMannequin:setCustomSettingsToItem(arg0) end
+---@param arg0 ItemContainer
+---@param arg1 InventoryItem
+---@return boolean
+function IsoMannequin:isItemAllowedInContainer(arg0, arg1) end
 
 ---@public
----@param arg0 String
----@return void
-function IsoMannequin:setMannequinScriptName(arg0) end
-
----@public
----@param arg0 Moveable
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 IsoDirections
----@return void
-function IsoMannequin:renderMoveableItem(arg0, arg1, arg2, arg3, arg4) end
-
----@private
----@return void
-function IsoMannequin:getPropertiesFromSprite() end
-
----@public
----@param arg0 String
----@param arg1 ByteBuffer
----@return void
-function IsoMannequin:loadChange(arg0, arg1) end
+---@return String
+function IsoMannequin:getPose() end
 
 ---@public
 ---@param arg0 IsoDirections
 ---@return void
 function IsoMannequin:setRenderDirection(arg0) end
 
----@public
----@return boolean
-function IsoMannequin:isZombie() end
+---@private
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@return void
+function IsoMannequin:renderShadow(arg0, arg1, arg2) end
 
 ---@private
----@param arg0 ItemVisuals
 ---@return void
-function IsoMannequin:createInventory(arg0) end
-
----@public
----@param arg0 IsoDirections
----@return void
-function IsoMannequin:rotate(arg0) end
-
----@public
----@param arg0 ItemVisuals
----@return void
-function IsoMannequin:getItemVisuals(arg0) end
-
----@public
----@param arg0 ByteBuffer
----@return void
-function IsoMannequin:loadState(arg0) end
-
----@public
----@param arg0 InventoryItem
----@return void
-function IsoMannequin:getCustomSettingsFromItem(arg0) end
-
----@public
----@param arg0 InventoryItem
----@return void
-function IsoMannequin:checkClothing(arg0) end
-
----@public
----@param arg0 Map|Unknown|Unknown
----@return void
-function IsoMannequin:getVariables(arg0) end
+function IsoMannequin:getPropertiesFromZone() end
 
 ---@public
 ---@param arg0 float
@@ -224,34 +128,130 @@ function IsoMannequin:getVariables(arg0) end
 ---@return void
 function IsoMannequin:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 
----@public
----@return String
-function IsoMannequin:getPose() end
-
----@public
----@return String
-function IsoMannequin:getAnimSetName() end
-
----@public
+---@private
 ---@return void
-function IsoMannequin:addToWorld() end
+function IsoMannequin:initMannequinScript() end
 
 ---@public
----@param arg0 IsoSprite
----@return boolean
-function IsoMannequin:isMannequinSprite(arg0) end
+---@param arg0 Map|Unknown|Unknown
+---@return void
+function IsoMannequin:getVariables(arg0) end
+
+---@public
+---@return String
+function IsoMannequin:getMannequinScriptName() end
 
 ---@private
 ---@param arg0 float
 ---@param arg1 float
 ---@param arg2 float
 ---@return void
-function IsoMannequin:renderShadow(arg0, arg1, arg2) end
+function IsoMannequin:calcScreenPos(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 IsoMannequin
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@param arg4 IsoDirections
+---@return void
+function IsoMannequin:renderMoveableObject(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@return boolean
+function IsoMannequin:isSkeleton() end
+
+---@public
+---@return boolean
+function IsoMannequin:isZombie() end
+
+---@public
+---@return void
+function IsoMannequin:addToWorld() end
+
+---@public
+---@param arg0 InventoryItem
+---@return void
+function IsoMannequin:getCustomSettingsFromItem(arg0) end
+
+---@public
+---@param arg0 InventoryItem
+---@return void
+function IsoMannequin:setCustomSettingsToItem(arg0) end
+
+---@public
+---@return String
+function IsoMannequin:getAnimStateName() end
+
+---@public
+---@param arg0 ByteBuffer
+---@return void
+function IsoMannequin:saveState(arg0) end
+
+---@private
+---@param arg0 ItemVisuals
+---@return void
+function IsoMannequin:createInventory(arg0) end
 
 ---@private
 ---@return void
-function IsoMannequin:initMannequinScript() end
+function IsoMannequin:validateSkinTexture() end
 
 ---@private
 ---@return void
-function IsoMannequin:initModelScript() end
+function IsoMannequin:syncModel() end
+
+---@public
+---@return String
+function IsoMannequin:getObjectName() end
+
+---@private
+---@return void
+function IsoMannequin:resetMannequin() end
+
+---@public
+---@param arg0 String
+---@param arg1 ByteBuffer
+---@return void
+function IsoMannequin:loadChange(arg0, arg1) end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@param arg2 boolean
+---@return void
+function IsoMannequin:load(arg0, arg1, arg2) end
+
+---@private
+---@return void
+function IsoMannequin:getPropertiesFromSprite() end
+
+---@public
+---@param arg0 ByteBuffer
+---@return void
+function IsoMannequin:loadState(arg0) end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 boolean
+---@return void
+function IsoMannequin:save(arg0, arg1) end
+
+---@public
+---@param arg0 InventoryItem
+---@param arg1 IsoGameCharacter
+---@return void
+function IsoMannequin:wearItem(arg0, arg1) end
+
+---@public
+---@param arg0 Moveable
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@param arg4 IsoDirections
+---@return void
+function IsoMannequin:renderMoveableItem(arg0, arg1, arg2, arg3, arg4) end
+
+---@private
+---@return void
+function IsoMannequin:validatePose() end

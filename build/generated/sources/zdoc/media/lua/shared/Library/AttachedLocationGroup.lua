@@ -9,18 +9,9 @@ AttachedLocationGroup = {}
 function AttachedLocationGroup:getOrCreateLocation(arg0) end
 
 ---@public
----@param arg0 int
----@return AttachedLocation
-function AttachedLocationGroup:getLocationByIndex(arg0) end
-
----@public
 ---@param arg0 String
----@return int
-function AttachedLocationGroup:indexOf(arg0) end
-
----@public
----@return int
-function AttachedLocationGroup:size() end
+---@return void
+function AttachedLocationGroup:checkValid(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -28,6 +19,15 @@ function AttachedLocationGroup:size() end
 function AttachedLocationGroup:getLocation(arg0) end
 
 ---@public
+---@return int
+function AttachedLocationGroup:size() end
+
+---@public
 ---@param arg0 String
----@return void
-function AttachedLocationGroup:checkValid(arg0) end
+---@return int
+function AttachedLocationGroup:indexOf(arg0) end
+
+---@public
+---@param arg0 int
+---@return AttachedLocation
+function AttachedLocationGroup:getLocationByIndex(arg0) end

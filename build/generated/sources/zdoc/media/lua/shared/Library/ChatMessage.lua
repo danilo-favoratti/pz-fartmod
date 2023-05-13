@@ -18,8 +18,47 @@
 ChatMessage = {}
 
 ---@public
----@return ChatMessage
-function ChatMessage:clone() end
+---@return boolean
+function ChatMessage:isScramble() end
+
+---@public
+---@return int
+function ChatMessage:getChatID() end
+
+---@public
+---@param arg0 int
+---@return void
+function ChatMessage:setRadioChannel(arg0) end
+
+---@public
+---@return boolean
+function ChatMessage:isShouldAttractZombies() end
+
+---@public
+---@return boolean
+function ChatMessage:isServerAuthor() end
+
+---@public
+---@return String
+function ChatMessage:getTextWithPrefix() end
+
+---@public
+---@return String
+function ChatMessage:getDatetimeStr() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function ChatMessage:setLocal(arg0) end
+
+---@public
+---@return int
+function ChatMessage:getRadioChannel() end
+
+---@public
+---@param arg0 LocalDateTime
+---@return void
+function ChatMessage:setDatetime(arg0) end
 
 ---@public
 ---@return boolean
@@ -27,16 +66,16 @@ function ChatMessage:isShowInChat() end
 
 ---@public
 ---@return boolean
-function ChatMessage:isServerAlert() end
+function ChatMessage:isCustomColor() end
 
 ---@public
----@return boolean
-function ChatMessage:isShowAuthor() end
+---@return ChatMessage
+function ChatMessage:clone() end
 
 ---@public
----@param arg0 boolean
+---@param arg0 String
 ---@return void
-function ChatMessage:setServerAlert(arg0) end
+function ChatMessage:setScrambledText(arg0) end
 
 ---@public
 ---@param arg0 boolean
@@ -45,7 +84,63 @@ function ChatMessage:setServerAuthor(arg0) end
 
 ---@public
 ---@return boolean
-function ChatMessage:isServerAuthor() end
+function ChatMessage:isFromDiscord() end
+
+---@public
+---@return String
+function ChatMessage:getAuthor() end
+
+---@public
+---@return boolean
+function ChatMessage:isOverHeadSpeech() end
+
+---@public
+---@return ChatBase
+function ChatMessage:getChat() end
+
+---@public
+---@return String
+function ChatMessage:getText() end
+
+---@public
+---@param arg0 ByteBufferWriter
+---@return void
+function ChatMessage:pack(arg0) end
+
+---@public
+---@return boolean
+function ChatMessage:isLocal() end
+
+---@public
+---@return String
+function ChatMessage:getTextWithReplacedParentheses() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function ChatMessage:setServerAlert(arg0) end
+
+---@public
+---@return void
+function ChatMessage:makeFromDiscord() end
+
+---@public
+---@param arg0 Color
+---@return void
+function ChatMessage:setTextColor(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function ChatMessage:setAuthor(arg0) end
+
+---@public
+---@return Color
+function ChatMessage:getTextColor() end
+
+---@public
+---@return boolean
+function ChatMessage:isShowAuthor() end
 
 ---@public
 ---@return LocalDateTime
@@ -54,87 +149,20 @@ function ChatMessage:getDatetime() end
 ---@public
 ---@param arg0 boolean
 ---@return void
-function ChatMessage:setShouldAttractZombies(arg0) end
-
----@public
----@return boolean
-function ChatMessage:isScramble() end
-
----@public
----@return String
-function ChatMessage:toString() end
-
----@public
----@return boolean
-function ChatMessage:isLocal() end
-
----@public
----@return boolean
-function ChatMessage:isOverHeadSpeech() end
-
----@public
----@param arg0 boolean
----@return void
 function ChatMessage:setShowInChat(arg0) end
 
 ---@public
----@return String
-function ChatMessage:getDatetimeStr() end
-
----@public
----@return int
-function ChatMessage:getChatID() end
-
----@public
----@return Color
-function ChatMessage:getTextColor() end
-
----@public
----@param arg0 String
----@return void
-function ChatMessage:setAuthor(arg0) end
-
----@public
----@param arg0 LocalDateTime
----@return void
-function ChatMessage:setDatetime(arg0) end
-
----@public
----@param arg0 Color
----@return void
-function ChatMessage:setTextColor(arg0) end
-
----@public
----@return int
-function ChatMessage:getRadioChannel() end
-
----@public
 ---@param arg0 boolean
 ---@return void
-function ChatMessage:setLocal(arg0) end
-
----@public
----@param arg0 ByteBufferWriter
----@return void
-function ChatMessage:pack(arg0) end
-
----@public
----@param arg0 String
----@return void
-function ChatMessage:setCustomTag(arg0) end
-
----@public
----@return String
-function ChatMessage:getAuthor() end
-
----@public
----@param arg0 boolean
----@return void
-function ChatMessage:setOverHeadSpeech(arg0) end
+function ChatMessage:setShouldAttractZombies(arg0) end
 
 ---@public
 ---@return String
 function ChatMessage:getCustomTag() end
+
+---@public
+---@return boolean
+function ChatMessage:isServerAlert() end
 
 ---@public
 ---@param arg0 String
@@ -142,43 +170,15 @@ function ChatMessage:getCustomTag() end
 function ChatMessage:setText(arg0) end
 
 ---@public
----@return boolean
-function ChatMessage:isShouldAttractZombies() end
-
----@public
----@return void
-function ChatMessage:makeFromDiscord() end
-
----@public
 ---@return String
-function ChatMessage:getText() end
-
----@public
----@return boolean
-function ChatMessage:isFromDiscord() end
-
----@public
----@return String
-function ChatMessage:getTextWithReplacedParentheses() end
-
----@public
----@param arg0 int
----@return void
-function ChatMessage:setRadioChannel(arg0) end
-
----@public
----@return String
-function ChatMessage:getTextWithPrefix() end
+function ChatMessage:toString() end
 
 ---@public
 ---@param arg0 String
 ---@return void
-function ChatMessage:setScrambledText(arg0) end
+function ChatMessage:setCustomTag(arg0) end
 
 ---@public
----@return ChatBase
-function ChatMessage:getChat() end
-
----@public
----@return boolean
-function ChatMessage:isCustomColor() end
+---@param arg0 boolean
+---@return void
+function ChatMessage:setOverHeadSpeech(arg0) end

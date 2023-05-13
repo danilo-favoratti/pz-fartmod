@@ -60,18 +60,8 @@
 GameTime = {}
 
 ---@public
----@param arg0 int
----@return void
-function GameTime:setNightsSurvived(arg0) end
-
----@public
----@param arg0 GameTime
----@return void
-function GameTime:setInstance(arg0) end
-
----@public
----@return int
-function GameTime:getYear() end
+---@return KahluaTable
+function GameTime:getModData() end
 
 ---@public
 ---@param arg0 ByteBuffer
@@ -80,8 +70,69 @@ function GameTime:getYear() end
 function GameTime:receiveTimeSync(arg0, arg1) end
 
 ---@public
+---@return int
+function GameTime:getStartMonth() end
+
+---@public
+---@param arg0 float
+---@return void
+function GameTime:setAmbientMin(arg0) end
+
+---@public
+---@param arg0 GameTime
+---@return void
+function GameTime:setInstance(arg0) end
+
+---@public
+---@return int
+function GameTime:getDawn() end
+
+---@public
+---@param arg0 int
+---@return void
+function GameTime:setHelicopterDay(arg0) end
+
+---@public
 ---@return float
-function GameTime:getViewDistMin() end
+function GameTime:getInvMultiplier() end
+
+---@public
+---@return float
+function GameTime:getGameWorldSecondsSinceLastUpdate() end
+
+---@public
+---@param arg0 ByteBuffer
+---@return void
+function GameTime:saveToPacket(arg0) end
+
+---@public
+---@return long
+function GameTime:getServerTimeMills() end
+
+---@public
+---@return int
+function GameTime:getDusk() end
+
+---@public
+---@return float
+function GameTime:getRealworldSecondsSinceLastUpdate() end
+
+---@public
+---@return boolean
+function GameTime:getThunderStorm() end
+
+---@public
+---@return boolean
+function GameTime:isRainingToday() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function GameTime:setThunderDay(arg0) end
+
+---@public
+---@return boolean
+function GameTime:isThunderDay() end
 
 ---@public
 ---@param arg0 float
@@ -89,12 +140,16 @@ function GameTime:getViewDistMin() end
 function GameTime:setViewDistMin(arg0) end
 
 ---@public
----@return int
-function GameTime:getHour() end
+---@return float
+function GameTime:getMinZombieCount() end
 
 ---@public
----@return float
-function GameTime:getAnimSpeedFix() end
+---@return int
+function GameTime:getHelicopterStartHour() end
+
+---@public
+---@return int
+function GameTime:getYear() end
 
 ---@public
 ---@param arg0 boolean
@@ -102,39 +157,34 @@ function GameTime:getAnimSpeedFix() end
 function GameTime:update(arg0) end
 
 ---@public
----@return float
-function GameTime:getNightMax() end
+---@param arg0 IsoPlayer
+---@return String
+function GameTime:getTimeSurvived(arg0) end
+
+---@public
+---@return void
+---@overload fun(arg0:DataInputStream)
+---@overload fun(arg0:ByteBuffer)
+function GameTime:load() end
+
+---@public
+---@param arg0 DataInputStream
+---@return void
+function GameTime:load(arg0) end
+
+---@public
+---@param arg0 ByteBuffer
+---@return void
+function GameTime:load(arg0) end
 
 ---@public
 ---@param arg0 float
 ---@return void
-function GameTime:setMinutesPerDay(arg0) end
-
----@public
----@return long
-function GameTime:getServerTimeMills() end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 int
----@return void
-function GameTime:updateCalendar(arg0, arg1, arg2, arg3, arg4) end
+function GameTime:setMultiplier(arg0) end
 
 ---@public
 ---@return float
-function GameTime:getTrueMultiplier() end
-
----@public
----@param arg0 float
----@return void
-function GameTime:setNightMax(arg0) end
-
----@public
----@return int
-function GameTime:getStartDay() end
+function GameTime:getAnimSpeedFix() end
 
 ---@public
 ---@param arg0 int
@@ -144,36 +194,7 @@ function GameTime:setStartDay(arg0) end
 ---@public
 ---@param arg0 float
 ---@return void
-function GameTime:setViewDistMax(arg0) end
-
----@public
----@param arg0 IsoPlayer
----@return String
-function GameTime:getZombieKilledText(arg0) end
-
----@public
----@return void
----@overload fun(arg0:ByteBuffer)
----@overload fun(arg0:DataInputStream)
-function GameTime:load() end
-
----@public
----@param arg0 ByteBuffer
----@return void
-function GameTime:load(arg0) end
-
----@public
----@param arg0 DataInputStream
----@return void
-function GameTime:load(arg0) end
-
----@public
----@return GameTime
-function GameTime:getInstance() end
-
----@private
----@return void
-function GameTime:setMinutesStamp() end
+function GameTime:setNightMax(arg0) end
 
 ---@public
 ---@param arg0 float
@@ -181,38 +202,57 @@ function GameTime:setMinutesStamp() end
 function GameTime:setNightMin(arg0) end
 
 ---@public
----@return int
-function GameTime:getDawn() end
+---@param arg0 float
+---@return void
+function GameTime:setViewDistMax(arg0) end
 
 ---@public
 ---@return int
-function GameTime:getDay() end
-
----@public
----@param arg0 IsoPlayer
----@return String
-function GameTime:getDeathString(arg0) end
+function GameTime:getDayPlusOne() end
 
 ---@public
 ---@param arg0 int
 ---@return void
-function GameTime:setTargetZombies(arg0) end
+function GameTime:setHelicopterStartHour(arg0) end
 
 ---@public
 ---@return PZCalendar
 function GameTime:getCalender() end
 
 ---@public
----@return int
-function GameTime:getHelicopterStartHour() end
+---@param arg0 long
+---@param arg1 long
+---@param arg2 long
+---@return void
+function GameTime:syncServerTime(arg0, arg1, arg2) end
 
 ---@public
----@return long
-function GameTime:getMinutesStamp() end
+---@param arg0 int
+---@return void
+function GameTime:RemoveZombiesIndiscriminate(arg0) end
+
+---@private
+---@return void
+function GameTime:setMinutesStamp() end
 
 ---@public
 ---@return float
-function GameTime:getInvMultiplier() end
+function GameTime:getViewDist() end
+
+---@public
+---@param arg0 int
+---@return void
+function GameTime:setDusk(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function GameTime:setTimeOfDay(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function GameTime:setMonth(arg0) end
 
 ---@public
 ---@return float
@@ -220,24 +260,170 @@ function GameTime:getTimeOfDay() end
 
 ---@public
 ---@return int
-function GameTime:getDusk() end
+function GameTime:getStartYear() end
 
 ---@public
----@param arg0 boolean
----@return void
-function GameTime:setThunderDay(arg0) end
+---@return int
+function GameTime:getDay() end
 
 ---@public
 ---@return float
-function GameTime:getMinZombieCount() end
+function GameTime:getMaxZombieCount() end
 
 ---@public
----@return KahluaTable
-function GameTime:getModData() end
+---@param arg0 PZCalendar
+---@return void
+function GameTime:setCalender(arg0) end
+
+---@public
+---@return float
+function GameTime:getMinutesPerDay() end
+
+---@public
+---@return float
+function GameTime:getTrueMultiplier() end
+
+---@public
+---@param arg0 double
+---@return void
+function GameTime:setHoursSurvived(arg0) end
+
+---@private
+---@return void
+function GameTime:updateRoomLight() end
+
+---@public
+---@return int
+function GameTime:getStartDay() end
 
 ---@private
 ---@return void
 function GameTime:doMetaEvents() end
+
+---@public
+---@return double
+function GameTime:getHoursSurvived() end
+
+---@public
+---@param arg0 float
+---@return void
+function GameTime:setMaxZombieCount(arg0) end
+
+---@public
+---@return float
+function GameTime:getTimeDelta() end
+
+---@public
+---@param arg0 int
+---@return void
+function GameTime:setNightsSurvived(arg0) end
+
+---@public
+---@return float
+function GameTime:getMultipliedSecondsSinceLastUpdate() end
+
+---@public
+---@return int
+function GameTime:getDaysSurvived() end
+
+---@public
+---@return float
+function GameTime:getMinZombieCountStart() end
+
+---@public
+---@return float
+function GameTime:getNight() end
+
+---@public
+---@param arg0 float
+---@return void
+function GameTime:setStartTimeOfDay(arg0) end
+
+---@public
+---@return int
+function GameTime:getHelicopterEndHour() end
+
+---@public
+---@param arg0 float
+---@return void
+function GameTime:setNightTint(arg0) end
+
+---@public
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@return float
+function GameTime:Lerp(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 float
+---@return void
+function GameTime:setMinutesPerDay(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function GameTime:setDawn(arg0) end
+
+---@public
+---@return int
+function GameTime:getHour() end
+
+---@public
+---@param arg0 float
+---@return void
+function GameTime:setMinZombieCount(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function GameTime:setStartMonth(arg0) end
+
+---@public
+---@return float
+function GameTime:getServerMultiplier() end
+
+---@public
+---@return boolean
+function GameTime:isGamePaused() end
+
+---@public
+---@return float
+function GameTime:getAmbientMin() end
+
+---@public
+---@param arg0 float
+---@return void
+function GameTime:setLastTimeOfDay(arg0) end
+
+---@public
+---@return float
+function GameTime:getMaxZombieCountStart() end
+
+---@public
+---@return float
+function GameTime:getStartTimeOfDay() end
+
+---@public
+---@return String
+function GameTime:getGameModeText() end
+
+---@public
+---@return int
+function GameTime:getHelicopterDay1() end
+
+---@public
+---@return int
+function GameTime:getMonth() end
+
+---@public
+---@param arg0 float
+---@return void
+function GameTime:setNight(arg0) end
+
+---@public
+---@return int
+function GameTime:getNightsSurvived() end
 
 ---@public
 ---@return void
@@ -256,13 +442,84 @@ function GameTime:save(arg0) end
 function GameTime:save(arg0) end
 
 ---@public
+---@return float
+function GameTime:getMultiplier() end
+
+---@public
+---@return float
+function GameTime:getNightTint() end
+
+---@public
+---@param arg0 int
+---@return void
+function GameTime:setDay(arg0) end
+
+---@public
+---@param arg0 IsoPlayer
+---@return String
+function GameTime:getDeathString(arg0) end
+
+---@public
 ---@param arg0 float
 ---@return void
-function GameTime:setMultiplier(arg0) end
+function GameTime:setMoon(arg0) end
+
+---@public
+---@return float
+function GameTime:getDeltaMinutesPerDay() end
+
+---@public
+---@return void
+function GameTime:init() end
+
+---@public
+---@return float
+function GameTime:getUnmoddedMultiplier() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return int
+function GameTime:daysInMonth(arg0, arg1) end
+
+---@public
+---@return float
+function GameTime:getAmbient() end
+
+---@public
+---@param arg0 long
+---@return void
+function GameTime:setServerTimeShift(arg0) end
 
 ---@public
 ---@return int
-function GameTime:getNightsSurvived() end
+function GameTime:getHelicopterDay() end
+
+---@private
+---@return void
+function GameTime:sendTimeSync() end
+
+---@public
+---@return float
+function GameTime:getLastTimeOfDay() end
+
+---@public
+---@param arg0 float
+---@return void
+function GameTime:setAmbientMax(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function GameTime:setAmbient(arg0) end
+
+---@public
+---@return long
+function GameTime:getMinutesStamp() end
+
+---@public
+---@return int
+function GameTime:getMinutes() end
 
 ---@public
 ---@return float
@@ -275,26 +532,22 @@ function GameTime:setStartYear(arg0) end
 
 ---@public
 ---@param arg0 int
----@param arg1 int
----@return int
-function GameTime:daysInMonth(arg0, arg1) end
-
----@public
----@return int
-function GameTime:getMinutes() end
-
----@public
----@return float
-function GameTime:getMultiplier() end
+---@return void
+function GameTime:setTargetZombies(arg0) end
 
 ---@public
 ---@param arg0 float
 ---@return void
-function GameTime:setAmbient(arg0) end
+function GameTime:setMinZombieCountStart(arg0) end
 
 ---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@param arg4 int
 ---@return void
-function GameTime:init() end
+function GameTime:updateCalendar(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
 ---@param arg0 float
@@ -302,42 +555,38 @@ function GameTime:init() end
 function GameTime:setMaxZombieCountStart(arg0) end
 
 ---@public
+---@return boolean
+function GameTime:getServerTimeShiftIsSet() end
+
+---@public
+---@return long
+function GameTime:getServerTime() end
+
+---@public
 ---@param arg0 int
 ---@return void
 function GameTime:setYear(arg0) end
 
 ---@public
----@return int
-function GameTime:getDayPlusOne() end
+---@return float
+function GameTime:getViewDistMin() end
 
 ---@public
----@param arg0 float
----@return void
-function GameTime:setMoon(arg0) end
+---@return GameTime
+function GameTime:getInstance() end
 
 ---@public
 ---@return double
 function GameTime:getWorldAgeHours() end
 
 ---@public
----@param arg0 int
----@return void
-function GameTime:setHelicopterEndHour(arg0) end
+---@param arg0 IsoPlayer
+---@return String
+function GameTime:getZombieKilledText(arg0) end
 
 ---@public
 ---@return float
-function GameTime:getNightMin() end
-
----@public
----@return float
-function GameTime:getUnmoddedMultiplier() end
-
----@public
----@param arg0 long
----@param arg1 long
----@param arg2 long
----@return void
-function GameTime:syncServerTime(arg0, arg1, arg2) end
+function GameTime:getNightMax() end
 
 ---@public
 ---@param arg0 float
@@ -348,263 +597,14 @@ function GameTime:syncServerTime(arg0, arg1, arg2) end
 function GameTime:TimeLerp(arg0, arg1, arg2, arg3) end
 
 ---@public
----@param arg0 ByteBuffer
----@return void
-function GameTime:saveToPacket(arg0) end
+---@return float
+function GameTime:getNightMin() end
 
 ---@public
 ---@return float
 function GameTime:getViewDistMax() end
 
 ---@public
----@return float
-function GameTime:getAmbientMin() end
-
----@public
----@return int
-function GameTime:getHelicopterDay() end
-
----@public
----@return float
-function GameTime:getDeltaMinutesPerDay() end
-
----@public
 ---@param arg0 int
 ---@return void
-function GameTime:setHelicopterDay(arg0) end
-
----@public
----@param arg0 float
----@return void
-function GameTime:setMinZombieCountStart(arg0) end
-
----@public
----@param arg0 float
----@return void
-function GameTime:setAmbientMin(arg0) end
-
----@public
----@return int
-function GameTime:getStartMonth() end
-
----@public
----@param arg0 int
----@return void
-function GameTime:setStartMonth(arg0) end
-
----@public
----@return float
-function GameTime:getAmbient() end
-
----@public
----@param arg0 float
----@return void
-function GameTime:setAmbientMax(arg0) end
-
----@public
----@return int
-function GameTime:getDaysSurvived() end
-
----@public
----@return float
-function GameTime:getMaxZombieCountStart() end
-
----@public
----@return boolean
-function GameTime:isGamePaused() end
-
----@private
----@return void
-function GameTime:sendTimeSync() end
-
----@public
----@return double
-function GameTime:getHoursSurvived() end
-
----@public
----@param arg0 int
----@return void
-function GameTime:setDay(arg0) end
-
----@public
----@param arg0 float
----@return void
-function GameTime:setNight(arg0) end
-
----@public
----@param arg0 float
----@return void
-function GameTime:setLastTimeOfDay(arg0) end
-
----@public
----@return float
-function GameTime:getLastTimeOfDay() end
-
----@public
----@return float
-function GameTime:getStartTimeOfDay() end
-
----@public
----@return float
-function GameTime:getNightTint() end
-
----@public
----@return int
-function GameTime:getHelicopterDay1() end
-
----@public
----@return float
-function GameTime:getServerMultiplier() end
-
----@private
----@return void
-function GameTime:updateRoomLight() end
-
----@public
----@return float
-function GameTime:getViewDist() end
-
----@public
----@param arg0 IsoPlayer
----@return String
-function GameTime:getTimeSurvived(arg0) end
-
----@public
----@return int
-function GameTime:getStartYear() end
-
----@public
----@param arg0 float
----@param arg1 float
----@param arg2 float
----@return float
-function GameTime:Lerp(arg0, arg1, arg2) end
-
----@public
----@param arg0 int
----@return void
-function GameTime:setDawn(arg0) end
-
----@public
----@param arg0 int
----@return void
-function GameTime:setMonth(arg0) end
-
----@public
----@return float
-function GameTime:getMinZombieCountStart() end
-
----@public
----@return boolean
-function GameTime:isThunderDay() end
-
----@public
----@param arg0 int
----@return void
-function GameTime:RemoveZombiesIndiscriminate(arg0) end
-
----@public
----@param arg0 int
----@return void
-function GameTime:setHelicopterStartHour(arg0) end
-
----@public
----@return float
-function GameTime:getMaxZombieCount() end
-
----@public
----@return boolean
-function GameTime:isRainingToday() end
-
----@public
----@return boolean
-function GameTime:getThunderStorm() end
-
----@public
----@param arg0 long
----@return void
-function GameTime:setServerTimeShift(arg0) end
-
----@public
----@return int
-function GameTime:getMonth() end
-
----@public
----@param arg0 double
----@return void
-function GameTime:setHoursSurvived(arg0) end
-
----@public
----@return long
-function GameTime:getServerTime() end
-
----@public
----@param arg0 int
----@return void
-function GameTime:setDusk(arg0) end
-
----@public
----@return boolean
-function GameTime:getServerTimeShiftIsSet() end
-
----@public
----@param arg0 float
----@return void
-function GameTime:setStartTimeOfDay(arg0) end
-
----@public
----@return float
-function GameTime:getGameWorldSecondsSinceLastUpdate() end
-
----@public
----@param arg0 float
----@return void
-function GameTime:setMinZombieCount(arg0) end
-
----@public
----@return int
-function GameTime:getHelicopterEndHour() end
-
----@public
----@param arg0 float
----@return void
-function GameTime:setNightTint(arg0) end
-
----@public
----@return String
-function GameTime:getGameModeText() end
-
----@public
----@return float
-function GameTime:getMinutesPerDay() end
-
----@public
----@return float
-function GameTime:getNight() end
-
----@public
----@return float
-function GameTime:getMultipliedSecondsSinceLastUpdate() end
-
----@public
----@return float
-function GameTime:getRealworldSecondsSinceLastUpdate() end
-
----@public
----@param arg0 float
----@return void
-function GameTime:setMaxZombieCount(arg0) end
-
----@public
----@param arg0 float
----@return void
-function GameTime:setTimeOfDay(arg0) end
-
----@public
----@return float
-function GameTime:getTimeDelta() end
-
----@public
----@param arg0 PZCalendar
----@return void
-function GameTime:setCalender(arg0) end
+function GameTime:setHelicopterEndHour(arg0) end

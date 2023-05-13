@@ -6,31 +6,8 @@
 IntegerConfigOption = {}
 
 ---@public
----@param arg0 Object
----@return void
-function IntegerConfigOption:setValueFromObject(arg0) end
-
----@public
----@param arg0 String
----@return void
-function IntegerConfigOption:parse(arg0) end
-
----@public
----@return double
-function IntegerConfigOption:getMax() end
-
----@public
----@param arg0 String
----@return boolean
-function IntegerConfigOption:isValidString(arg0) end
-
----@public
----@return int
-function IntegerConfigOption:getDefaultValue() end
-
----@public
 ---@return String
-function IntegerConfigOption:getValueAsString() end
+function IntegerConfigOption:getType() end
 
 ---@public
 ---@return void
@@ -45,10 +22,6 @@ function IntegerConfigOption:getMin() end
 function IntegerConfigOption:resetToDefault() end
 
 ---@public
----@return int
-function IntegerConfigOption:getValue() end
-
----@public
 ---@return String
 function IntegerConfigOption:getTooltip() end
 
@@ -57,10 +30,37 @@ function IntegerConfigOption:getTooltip() end
 function IntegerConfigOption:getValueAsObject() end
 
 ---@public
+---@param arg0 String
+---@return void
+function IntegerConfigOption:parse(arg0) end
+
+---@public
+---@param arg0 Object
+---@return void
+function IntegerConfigOption:setValueFromObject(arg0) end
+
+---@public
+---@param arg0 String
+---@return boolean
+function IntegerConfigOption:isValidString(arg0) end
+
+---@public
 ---@param arg0 int
 ---@return void
 function IntegerConfigOption:setValue(arg0) end
 
 ---@public
+---@return int
+function IntegerConfigOption:getDefaultValue() end
+
+---@public
+---@return int
+function IntegerConfigOption:getValue() end
+
+---@public
 ---@return String
-function IntegerConfigOption:getType() end
+function IntegerConfigOption:getValueAsString() end
+
+---@public
+---@return double
+function IntegerConfigOption:getMax() end

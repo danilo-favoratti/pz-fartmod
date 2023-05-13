@@ -61,56 +61,36 @@
 IsoMovingObject = {}
 
 ---@public
----@return void
-function IsoMovingObject:separate() end
-
----@public
----@return boolean
-function IsoMovingObject:isZombiesDontAttack() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoMovingObject:setCollidedN(arg0) end
-
----@private
----@return void
-function IsoMovingObject:doTreeNoises() end
-
----@public
 ---@return float
-function IsoMovingObject:getZ() end
+function IsoMovingObject:getLx() end
 
 ---@public
 ---@return boolean
 function IsoMovingObject:isCollidedS() end
 
 ---@public
----@param arg0 Vector3
----@return Vector3
-function IsoMovingObject:getPosition(arg0) end
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@param arg2 boolean
+---@return void
+function IsoMovingObject:load(arg0, arg1, arg2) end
 
 ---@public
----@return float
-function IsoMovingObject:getLz() end
+---@return void
+function IsoMovingObject:DoCollideNorS() end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoMovingObject:setWeight(arg0) end
 
 ---@public
 ---@return boolean
-function IsoMovingObject:isCollidedWithDoor() end
+function IsoMovingObject:isCollidedWithVehicle() end
 
----@private
+---@public
 ---@return boolean
-function IsoMovingObject:checkVaultOver() end
-
----@public
----@param arg0 JVector2
----@return void
-function IsoMovingObject:MoveUnmodded(arg0) end
-
----@public
----@param arg0 String
----@return void
-function IsoMovingObject:setCollideType(arg0) end
+function IsoMovingObject:isCharacter() end
 
 ---@public
 ---@param arg0 float
@@ -118,12 +98,35 @@ function IsoMovingObject:setCollideType(arg0) end
 function IsoMovingObject:setNx(arg0) end
 
 ---@public
----@return void
-function IsoMovingObject:postupdate() end
+---@return boolean
+function IsoMovingObject:isDestroyed() end
 
 ---@public
 ---@return float
-function IsoMovingObject:getScreenX() end
+function IsoMovingObject:getZ() end
+
+---@public
+---@param arg0 IsoZombie
+---@return void
+function IsoMovingObject:setLastTargettedBy(arg0) end
+
+---@public
+---@return float
+function IsoMovingObject:getImpulsey() end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoMovingObject:setIDCount(arg0) end
+
+---@public
+---@return void
+function IsoMovingObject:removeFromWorld() end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return void
+function IsoMovingObject:setLast(arg0) end
 
 ---@public
 ---@return float
@@ -136,23 +139,33 @@ function IsoMovingObject:getGlobalMovementMod() end
 function IsoMovingObject:getGlobalMovementMod(arg0) end
 
 ---@public
----@param arg0 float
+---@param arg0 boolean
 ---@return void
-function IsoMovingObject:setScriptny(arg0) end
+function IsoMovingObject:setCollidedW(arg0) end
 
 ---@public
 ---@return IsoMetaGrid.Zone
 function IsoMovingObject:getCurrentZone() end
 
 ---@public
----@param arg0 float
----@return void
-function IsoMovingObject:setLz(arg0) end
+---@return float
+function IsoMovingObject:getScreenX() end
 
 ---@public
----@param arg0 int
----@return void
-function IsoMovingObject:setIDCount(arg0) end
+---@return float
+function IsoMovingObject:getLz() end
+
+---@public
+---@return boolean
+function IsoMovingObject:isZombiesDontAttack() end
+
+---@public
+---@return IsoGridSquare
+function IsoMovingObject:getSquare() end
+
+---@public
+---@return IWorldRegion
+function IsoMovingObject:getMasterRegion() end
 
 ---@public
 ---@param arg0 boolean
@@ -162,157 +175,24 @@ function IsoMovingObject:setCollidedE(arg0) end
 ---@public
 ---@param arg0 float
 ---@return void
-function IsoMovingObject:setImpulsex(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoMovingObject:setCollidable(arg0) end
-
----@public
----@param arg0 IsoMovingObject
----@return boolean
-function IsoMovingObject:isPushedByForSeparate(arg0) end
-
----@public
----@return boolean
-function IsoMovingObject:isCollidable() end
-
----@public
----@return boolean
-function IsoMovingObject:isCharacter() end
-
----@public
----@return float
-function IsoMovingObject:getFeelersize() end
-
----@public
----@param arg0 float
----@return void
-function IsoMovingObject:setWeight(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoMovingObject:setCollidedW(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@return void
-function IsoMovingObject:setLast(arg0) end
-
----@private
----@param arg0 int
----@return boolean
-function IsoMovingObject:DoCollide(arg0) end
-
----@public
----@return IsoBuilding
-function IsoMovingObject:getBuilding() end
-
----@public
----@param arg0 int
----@return void
-function IsoMovingObject:setID(arg0) end
-
----@public
----@param arg0 float
----@return void
-function IsoMovingObject:setLy(arg0) end
-
----@public
----@param arg0 float
----@return IsoGridSquare
-function IsoMovingObject:getFeelerTile(arg0) end
-
----@public
----@param arg0 float
----@return void
-function IsoMovingObject:setImpulsey(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoMovingObject:setCollidedS(arg0) end
-
----@public
----@return float
-function IsoMovingObject:getScriptnx() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoMovingObject:setNoDamage(arg0) end
-
----@public
----@param arg0 float
----@return void
-function IsoMovingObject:setLimpulsex(arg0) end
-
----@public
----@return float
-function IsoMovingObject:getLimpulsex() end
-
----@public
----@param arg0 IsoObject
----@return void
-function IsoMovingObject:setCollidedObject(arg0) end
-
----@public
----@return void
-function IsoMovingObject:renderlast() end
-
----@public
----@param arg0 float
----@return void
-function IsoMovingObject:setFeelersize(arg0) end
-
----@private
----@return void
-function IsoMovingObject:checkBreakHoppable() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoMovingObject:setFirstUpdate(arg0) end
-
----@public
----@param arg0 Thumpable
----@return void
-function IsoMovingObject:setThumpTarget(arg0) end
-
----@public
----@return Thumpable
-function IsoMovingObject:getThumpTarget() end
-
----@public
----@return boolean
-function IsoMovingObject:isbAltCollide() end
-
----@public
----@param arg0 IsoMovingObject
----@return float
----@overload fun(arg0:float, arg1:float)
-function IsoMovingObject:DistToSquared(arg0) end
-
----@public
----@param arg0 float
----@param arg1 float
----@return float
-function IsoMovingObject:DistToSquared(arg0, arg1) end
+function IsoMovingObject:setLz(arg0) end
 
 ---@public
 ---@return String
 function IsoMovingObject:getScriptModule() end
 
 ---@public
----@return int
-function IsoMovingObject:getPathFindIndex() end
+---@return float
+function IsoMovingObject:getNx() end
+
+---@public
+---@return boolean
+function IsoMovingObject:isCollidable() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoMovingObject:setCollidedWithDoor(arg0) end
+function IsoMovingObject:setCollidedN(arg0) end
 
 ---@public
 ---@param arg0 JVector2
@@ -328,242 +208,36 @@ function IsoMovingObject:getVectorFromDirection(arg0, arg1) end
 
 ---@public
 ---@param arg0 float
+---@return IsoGridSquare
+function IsoMovingObject:getFeelerTile(arg0) end
+
+---@public
 ---@return void
-function IsoMovingObject:setX(arg0) end
+function IsoMovingObject:separate() end
 
 ---@public
----@return String
-function IsoMovingObject:getCollideType() end
+---@return ArrayList|Unknown
+function IsoMovingObject:getEatingZombies() end
 
 ---@public
----@return boolean
-function IsoMovingObject:isDestroyed() end
-
----@public
----@param arg0 int
+---@param arg0 float
 ---@return void
-function IsoMovingObject:setTimeSinceZombieAttack(arg0) end
-
----@private
----@return void
-function IsoMovingObject:checkHitHoppable() end
-
----@public
----@param arg0 IsoZombie
----@return void
-function IsoMovingObject:setLastTargettedBy(arg0) end
-
----@public
----@return float
-function IsoMovingObject:getNx() end
+function IsoMovingObject:setLimpulsex(arg0) end
 
 ---@public
 ---@param arg0 IsoMovingObject
----@return int
-function IsoMovingObject:compareToY(arg0) end
-
----@public
----@return float
-function IsoMovingObject:distToNearestCamCharacter() end
-
----@public
----@return void
-function IsoMovingObject:ensureOnTile() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoMovingObject:setShootable(arg0) end
-
----@public
----@param arg0 String
----@return void
-function IsoMovingObject:setScriptModule(arg0) end
-
----@public
----@return float
-function IsoMovingObject:getX() end
-
----@public
----@param arg0 float
----@return void
-function IsoMovingObject:setHitFromAngle(arg0) end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 int
----@param arg2 boolean
----@return void
-function IsoMovingObject:load(arg0, arg1, arg2) end
-
----@public
----@param arg0 float
----@return void
-function IsoMovingObject:setWidth(arg0) end
-
----@public
----@return String
-function IsoMovingObject:getObjectName() end
-
----@public
----@return float
-function IsoMovingObject:getHitFromAngle() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoMovingObject:setSolid(arg0) end
-
----@public
----@return byte
-function IsoMovingObject:canHaveMultipleHits() end
-
----@public
----@return int
-function IsoMovingObject:getID() end
-
----@public
----@param arg0 float
----@return void
-function IsoMovingObject:setZ(arg0) end
-
----@public
----@return float
-function IsoMovingObject:getLy() end
-
----@public
----@return float
-function IsoMovingObject:getImpulsex() end
-
----@public
----@return IsoObject
-function IsoMovingObject:getCollidedObject() end
-
----@public
----@param arg0 ArrayList|Unknown
----@return void
-function IsoMovingObject:setEatingZombies(arg0) end
-
----@public
----@return void
-function IsoMovingObject:removeFromSquare() end
-
----@public
----@param arg0 JVector2
----@return JVector2
-function IsoMovingObject:getFacingPosition(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@return String
-function IsoMovingObject:getBumpedType(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoMovingObject:setbAltCollide(arg0) end
-
----@public
----@return float
-function IsoMovingObject:getHitForce() end
-
----@public
----@return void
-function IsoMovingObject:update() end
-
----@public
----@param arg0 float
----@return void
-function IsoMovingObject:setNy(arg0) end
-
----@public
----@return IsoZombie
-function IsoMovingObject:getLastTargettedBy() end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 boolean
----@return void
-function IsoMovingObject:save(arg0, arg1) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoMovingObject:setCollidedThisFrame(arg0) end
-
----@private
----@return void
-function IsoMovingObject:slideAwayFromWalls() end
-
----@public
----@param arg0 int
----@return void
-function IsoMovingObject:setPathFindIndex(arg0) end
-
----@public
 ---@return boolean
-function IsoMovingObject:isSolidForSeparate() end
-
----@public
----@return float
-function IsoMovingObject:getScreenY() end
-
----@public
----@return boolean
-function IsoMovingObject:isCollided() end
-
----@public
----@return float
-function IsoMovingObject:getLastCollideTime() end
-
----@public
----@param arg0 float
----@return void
-function IsoMovingObject:setScriptnx(arg0) end
-
----@public
----@return void
-function IsoMovingObject:Despawn() end
-
----@public
----@param arg0 float
----@return void
-function IsoMovingObject:setStateEventDelayTimer(arg0) end
-
----@public
----@return int
-function IsoMovingObject:getTimeSinceZombieAttack() end
-
----@private
----@param arg0 int
----@param arg1 int
----@return boolean
-function IsoMovingObject:isInLoadedArea(arg0, arg1) end
-
----@public
----@return float
-function IsoMovingObject:getWidth() end
+function IsoMovingObject:isEatingOther(arg0) end
 
 ---@public
 ---@param arg0 JVector2
 ---@return void
-function IsoMovingObject:setMovementLastFrame(arg0) end
+function IsoMovingObject:MoveUnmodded(arg0) end
 
 ---@public
----@return JVector2
-function IsoMovingObject:getMovementLastFrame() end
-
----@public
----@param arg0 IsoMovingObject
----@return float
----@overload fun(arg0:int, arg1:int)
-function IsoMovingObject:DistTo(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@return float
-function IsoMovingObject:DistTo(arg0, arg1) end
+---@param arg0 Thumpable
+---@return void
+function IsoMovingObject:setThumpTarget(arg0) end
 
 ---@public
 ---@return float
@@ -577,47 +251,61 @@ function IsoMovingObject:getWeight() end
 function IsoMovingObject:getWeight(arg0, arg1) end
 
 ---@public
----@return IsoGridSquare
-function IsoMovingObject:getFuturWalkedSquare() end
-
----@public
----@param arg0 boolean
+---@param arg0 float
 ---@return void
-function IsoMovingObject:setDestroyed(arg0) end
-
----@public
----@param arg0 IsoObject
----@return float
-function IsoMovingObject:DistToProper(arg0) end
-
----@public
----@return boolean
-function IsoMovingObject:isFirstUpdate() end
-
----@public
----@return boolean
-function IsoMovingObject:isSolid() end
-
----@public
----@return boolean
-function IsoMovingObject:isShootable() end
+function IsoMovingObject:setFeelersize(arg0) end
 
 ---@public
 ---@param arg0 float
 ---@return void
-function IsoMovingObject:setLimpulsey(arg0) end
+function IsoMovingObject:setY(arg0) end
+
+---@public
+---@param arg0 IsoObject
+---@return void
+function IsoMovingObject:collideWith(arg0) end
 
 ---@public
 ---@return boolean
-function IsoMovingObject:isPushableForSeparate() end
+function IsoMovingObject:isCollidedW() end
 
 ---@public
----@return ArrayList|Unknown
-function IsoMovingObject:getEatingZombies() end
+---@param arg0 float
+---@return void
+function IsoMovingObject:setLx(arg0) end
+
+---@public
+---@return float
+function IsoMovingObject:getFeelersize() end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoMovingObject:setStateEventDelayTimer(arg0) end
 
 ---@public
 ---@return void
-function IsoMovingObject:onMouseRightReleased() end
+function IsoMovingObject:preupdate() end
+
+---@public
+---@param arg0 IsoMovingObject
+---@param arg1 boolean
+---@return void
+function IsoMovingObject:spotted(arg0, arg1) end
+
+---@public
+---@return IsoGridSquare
+function IsoMovingObject:getCurrentSquare() end
+
+---@public
+---@return boolean
+function IsoMovingObject:isCloseKilled() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return void
+function IsoMovingObject:onMouseRightClick(arg0, arg1) end
 
 ---@public
 ---@param arg0 boolean
@@ -625,8 +313,84 @@ function IsoMovingObject:onMouseRightReleased() end
 function IsoMovingObject:setOnFloor(arg0) end
 
 ---@public
+---@return boolean
+function IsoMovingObject:isCollidedE() end
+
+---@public
+---@return boolean
+function IsoMovingObject:isOnFloor() end
+
+---@private
 ---@return void
-function IsoMovingObject:DoCollideWorE() end
+function IsoMovingObject:checkBreakHoppable() end
+
+---@public
+---@return void
+function IsoMovingObject:onMouseRightReleased() end
+
+---@public
+---@return float
+function IsoMovingObject:getStateEventDelayTimer() end
+
+---@public
+---@return boolean
+function IsoMovingObject:isCollidedN() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoMovingObject:setCollidable(arg0) end
+
+---@public
+---@return IsoGridSquare
+function IsoMovingObject:getLastSquare() end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoMovingObject:setImpulsex(arg0) end
+
+---@public
+---@param arg0 JVector2
+---@return void
+function IsoMovingObject:setHitDir(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoMovingObject:setCollideType(arg0) end
+
+---@public
+---@return IsoGridSquare
+function IsoMovingObject:getFuturWalkedSquare() end
+
+---@public
+---@param arg0 JVector2
+---@return void
+function IsoMovingObject:Move(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoMovingObject:setLastCollideTime(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoMovingObject:setHitForce(arg0) end
+
+---@public
+---@return float
+function IsoMovingObject:getScriptny() end
+
+---@public
+---@return float
+function IsoMovingObject:getLimpulsey() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoMovingObject:setZombiesDontAttack(arg0) end
 
 ---@public
 ---@param arg0 IsoGridSquare
@@ -634,14 +398,232 @@ function IsoMovingObject:DoCollideWorE() end
 function IsoMovingObject:setCurrent(arg0) end
 
 ---@public
+---@param arg0 IsoMovingObject
+---@return float
+---@overload fun(arg0:int, arg1:int)
+function IsoMovingObject:DistTo(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return float
+function IsoMovingObject:DistTo(arg0, arg1) end
+
+---@private
+---@return boolean
+function IsoMovingObject:checkVaultOver() end
+
+---@public
+---@return boolean
+function IsoMovingObject:isCollidedThisFrame() end
+
+---@public
+---@param arg0 JVector2
+---@return JVector2
+function IsoMovingObject:getFacingPosition(arg0) end
+
+---@private
+---@param arg0 int
+---@return boolean
+function IsoMovingObject:DoCollide(arg0) end
+
+---@public
+---@return JVector2
+function IsoMovingObject:getHitDir() end
+
+---@public
+---@return IsoZombie
+function IsoMovingObject:getLastTargettedBy() end
+
+---@public
+---@return void
+function IsoMovingObject:DoCollideWorE() end
+
+---@public
+---@param arg0 IsoObject
+---@return float
+function IsoMovingObject:DistToProper(arg0) end
+
+---@public
+---@return JVector2
+function IsoMovingObject:getMovementLastFrame() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoMovingObject:setCollidedThisFrame(arg0) end
+
+---@public
+---@return float
+function IsoMovingObject:getScreenY() end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 boolean
+---@return void
+function IsoMovingObject:save(arg0, arg1) end
+
+---@public
+---@return void
+function IsoMovingObject:update() end
+
+---@public
+---@return boolean
+function IsoMovingObject:isSolid() end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoMovingObject:setScriptModule(arg0) end
+
+---@public
+---@return boolean
+function IsoMovingObject:isCollided() end
+
+---@public
+---@return float
+function IsoMovingObject:getLy() end
+
+---@private
+---@param arg0 int
+---@param arg1 int
+---@return boolean
+function IsoMovingObject:isInLoadedArea(arg0, arg1) end
+
+---@public
+---@return float
+function IsoMovingObject:getY() end
+
+---@public
+---@return int
+function IsoMovingObject:getID() end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoMovingObject:setNy(arg0) end
+
+---@public
+---@return void
+function IsoMovingObject:removeFromSquare() end
+
+---@public
+---@return void
+function IsoMovingObject:Despawn() end
+
+---@public
+---@return int
+function IsoMovingObject:getTimeSinceZombieAttack() end
+
+---@public
+---@return IsoObject
+function IsoMovingObject:getCollidedObject() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoMovingObject:setCloseKilled(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoMovingObject:setTimeSinceZombieAttack(arg0) end
+
+---@public
+---@return float
+function IsoMovingObject:getHitForce() end
+
+---@public
+---@return float
+function IsoMovingObject:distToNearestCamCharacter() end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return String
+function IsoMovingObject:getBumpedType(arg0) end
+
+---@public
+---@return int
+function IsoMovingObject:getIDCount() end
+
+---@private
+---@return void
+function IsoMovingObject:checkHitHoppable() end
+
+---@public
+---@return boolean
+function IsoMovingObject:getNoDamage() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoMovingObject:setbAltCollide(arg0) end
+
+---@public
+---@return void
+function IsoMovingObject:setMovingSquareNow() end
+
+---@public
+---@return boolean
+function IsoMovingObject:isPushableForSeparate() end
+
+---@public
+---@return void
+function IsoMovingObject:doStairs() end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoMovingObject:setLimpulsey(arg0) end
+
+---@public
+---@return float
+function IsoMovingObject:getWidth() end
+
+---@public
+---@return boolean
+function IsoMovingObject:isShootable() end
+
+---@public
+---@return boolean
+function IsoMovingObject:isFirstUpdate() end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoMovingObject:setScriptnx(arg0) end
+
+---@public
+---@param arg0 ArrayList|Unknown
+---@return void
+function IsoMovingObject:setEatingZombies(arg0) end
+
+---@public
+---@param arg0 IsoMovingObject
+---@return float
+function IsoMovingObject:getDistanceSq(arg0) end
+
+---@private
+---@return void
+function IsoMovingObject:slideAwayFromWalls() end
+
+---@public
 ---@return IsoBuilding
 function IsoMovingObject:getCurrentBuilding() end
 
 ---@public
----@param arg0 IsoMovingObject
----@param arg1 boolean
+---@param arg0 int
 ---@return void
-function IsoMovingObject:spotted(arg0, arg1) end
+function IsoMovingObject:setID(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoMovingObject:setLy(arg0) end
+
+---@public
+---@return float
+function IsoMovingObject:getNy() end
 
 ---@public
 ---@param arg0 HandWeapon
@@ -653,174 +635,192 @@ function IsoMovingObject:spotted(arg0, arg1) end
 function IsoMovingObject:Hit(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
+---@param arg0 boolean
 ---@return void
-function IsoMovingObject:doStairs() end
+function IsoMovingObject:setDestroyed(arg0) end
+
+---@public
+---@param arg0 JVector2
+---@return void
+function IsoMovingObject:setMovementLastFrame(arg0) end
 
 ---@public
 ---@param arg0 float
 ---@return void
-function IsoMovingObject:setHitForce(arg0) end
-
----@public
----@param arg0 IsoMovingObject
----@return boolean
-function IsoMovingObject:isEatingOther(arg0) end
-
----@public
----@return float
-function IsoMovingObject:getScriptny() end
-
----@public
----@return boolean
-function IsoMovingObject:isCloseKilled() end
-
----@public
----@return float
-function IsoMovingObject:getNy() end
+function IsoMovingObject:setScriptny(arg0) end
 
 ---@public
 ---@param arg0 float
 ---@return void
-function IsoMovingObject:setLx(arg0) end
+function IsoMovingObject:setImpulsey(arg0) end
 
 ---@public
----@param arg0 IsoObject
+---@param arg0 boolean
 ---@return void
-function IsoMovingObject:collideWith(arg0) end
+function IsoMovingObject:setCollidedWithDoor(arg0) end
 
 ---@public
----@return IWorldRegion
-function IsoMovingObject:getMasterRegion() end
-
----@public
----@param arg0 IsoMovingObject
----@return float
-function IsoMovingObject:getDistanceSq(arg0) end
-
----@public
----@return int
-function IsoMovingObject:getIDCount() end
+---@param arg0 float
+---@return void
+function IsoMovingObject:setZ(arg0) end
 
 ---@public
 ---@return boolean
-function IsoMovingObject:isCollidedThisFrame() end
-
----@public
----@return IsoGridSquare
-function IsoMovingObject:getCurrentSquare() end
-
----@public
----@return JVector2
-function IsoMovingObject:getHitDir() end
-
----@public
----@return IsoGridSquare
-function IsoMovingObject:getLastSquare() end
+function IsoMovingObject:isbAltCollide() end
 
 ---@private
 ---@return void
 function IsoMovingObject:Collided() end
 
 ---@public
+---@param arg0 IsoMovingObject
 ---@return boolean
-function IsoMovingObject:getNoDamage() end
+function IsoMovingObject:isPushedByForSeparate(arg0) end
 
 ---@public
----@param arg0 JVector2
----@return void
-function IsoMovingObject:setHitDir(arg0) end
-
----@public
----@return void
-function IsoMovingObject:removeFromWorld() end
-
----@public
+---@param arg0 IsoMovingObject
 ---@return float
-function IsoMovingObject:getImpulsey() end
-
----@public
----@return float
-function IsoMovingObject:getLx() end
-
----@public
----@return boolean
-function IsoMovingObject:isCollidedW() end
+---@overload fun(arg0:float, arg1:float)
+function IsoMovingObject:DistToSquared(arg0) end
 
 ---@public
 ---@param arg0 float
----@return void
-function IsoMovingObject:setY(arg0) end
-
----@public
----@param arg0 JVector2
----@return void
-function IsoMovingObject:Move(arg0) end
-
----@public
----@return IsoGridSquare
-function IsoMovingObject:getSquare() end
-
----@public
----@return void
-function IsoMovingObject:setMovingSquareNow() end
-
----@public
+---@param arg1 float
 ---@return float
-function IsoMovingObject:getLimpulsey() end
+function IsoMovingObject:DistToSquared(arg0, arg1) end
 
 ---@public
----@return float
-function IsoMovingObject:getStateEventDelayTimer() end
+---@return String
+function IsoMovingObject:getCollideType() end
 
 ---@public
----@return float
-function IsoMovingObject:getY() end
+---@param arg0 IsoMovingObject
+---@return int
+function IsoMovingObject:compareToY(arg0) end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoMovingObject:setCloseKilled(arg0) end
+function IsoMovingObject:setNoDamage(arg0) end
 
 ---@public
----@return boolean
-function IsoMovingObject:isCollidedN() end
-
----@public
----@param arg0 float
+---@param arg0 boolean
 ---@return void
-function IsoMovingObject:setLastCollideTime(arg0) end
+function IsoMovingObject:setSolid(arg0) end
+
+---@public
+---@return String
+function IsoMovingObject:getObjectName() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoMovingObject:setCollidedS(arg0) end
+
+---@public
+---@return void
+function IsoMovingObject:renderlast() end
 
 ---@private
 ---@return void
 function IsoMovingObject:checkHitWall() end
 
 ---@public
+---@return IsoBuilding
+function IsoMovingObject:getBuilding() end
+
+---@public
+---@return float
+function IsoMovingObject:getImpulsex() end
+
+---@public
+---@param arg0 float
 ---@return void
-function IsoMovingObject:DoCollideNorS() end
+function IsoMovingObject:setWidth(arg0) end
+
+---@public
+---@return void
+function IsoMovingObject:postupdate() end
+
+---@private
+---@return void
+function IsoMovingObject:doTreeNoises() end
+
+---@public
+---@return float
+function IsoMovingObject:getScriptnx() end
+
+---@public
+---@return byte
+function IsoMovingObject:canHaveMultipleHits() end
+
+---@public
+---@return float
+function IsoMovingObject:getLastCollideTime() end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoMovingObject:setX(arg0) end
+
+---@public
+---@param arg0 IsoObject
+---@return void
+function IsoMovingObject:setCollidedObject(arg0) end
+
+---@public
+---@return float
+function IsoMovingObject:getLimpulsex() end
 
 ---@public
 ---@param arg0 int
----@param arg1 int
 ---@return void
-function IsoMovingObject:onMouseRightClick(arg0, arg1) end
+function IsoMovingObject:setPathFindIndex(arg0) end
 
 ---@public
+---@return boolean
+function IsoMovingObject:isSolidForSeparate() end
+
+---@public
+---@return float
+function IsoMovingObject:getX() end
+
+---@public
+---@param arg0 float
 ---@return void
-function IsoMovingObject:preupdate() end
+function IsoMovingObject:setHitFromAngle(arg0) end
+
+---@public
+---@param arg0 Vector3
+---@return Vector3
+function IsoMovingObject:getPosition(arg0) end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function IsoMovingObject:setZombiesDontAttack(arg0) end
+function IsoMovingObject:setShootable(arg0) end
+
+---@public
+---@return int
+function IsoMovingObject:getPathFindIndex() end
+
+---@public
+---@return float
+function IsoMovingObject:getHitFromAngle() end
 
 ---@public
 ---@return boolean
-function IsoMovingObject:isCollidedWithVehicle() end
+function IsoMovingObject:isCollidedWithDoor() end
 
 ---@public
----@return boolean
-function IsoMovingObject:isOnFloor() end
+---@return Thumpable
+function IsoMovingObject:getThumpTarget() end
 
 ---@public
----@return boolean
-function IsoMovingObject:isCollidedE() end
+---@return void
+function IsoMovingObject:ensureOnTile() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoMovingObject:setFirstUpdate(arg0) end

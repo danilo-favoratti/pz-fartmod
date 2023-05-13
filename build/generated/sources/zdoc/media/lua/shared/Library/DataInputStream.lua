@@ -19,10 +19,6 @@ function DataInputStream:read(arg0) end
 function DataInputStream:read(arg0, arg1, arg2) end
 
 ---@public
----@return String
-function DataInputStream:readLine() end
-
----@public
 ---@return double
 function DataInputStream:readDouble() end
 
@@ -37,12 +33,20 @@ function DataInputStream:readUTF() end
 function DataInputStream:readUTF(arg0) end
 
 ---@public
+---@return int
+function DataInputStream:readUnsignedByte() end
+
+---@public
 ---@return long
 function DataInputStream:readLong() end
 
 ---@public
----@return boolean
-function DataInputStream:readBoolean() end
+---@return String
+function DataInputStream:readLine() end
+
+---@public
+---@return int
+function DataInputStream:readUnsignedShort() end
 
 ---@public
 ---@param arg0 int
@@ -67,25 +71,21 @@ function DataInputStream:readFully(arg0) end
 function DataInputStream:readFully(arg0, arg1, arg2) end
 
 ---@public
----@return char
-function DataInputStream:readChar() end
-
----@public
 ---@return byte
 function DataInputStream:readByte() end
 
 ---@public
----@return int
-function DataInputStream:readUnsignedShort() end
+---@return char
+function DataInputStream:readChar() end
 
 ---@public
 ---@return int
 function DataInputStream:readInt() end
 
 ---@public
----@return float
-function DataInputStream:readFloat() end
+---@return boolean
+function DataInputStream:readBoolean() end
 
 ---@public
----@return int
-function DataInputStream:readUnsignedByte() end
+---@return float
+function DataInputStream:readFloat() end

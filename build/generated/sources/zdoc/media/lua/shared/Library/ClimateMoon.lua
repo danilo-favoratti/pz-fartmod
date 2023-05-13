@@ -10,26 +10,14 @@
 ---@field private instance ClimateMoon
 ClimateMoon = {}
 
----@public
----@return int
-function ClimateMoon:getCurrentMoonPhase() end
-
 ---@private
 ---@param arg0 int
----@param arg1 int
----@param arg2 int
----@return int
-function ClimateMoon:getMoonPhase(arg0, arg1, arg2) end
+---@return boolean
+function ClimateMoon:isLeapYearP(arg0) end
 
 ---@public
 ---@return float
 function ClimateMoon:getMoonFloat() end
-
----@private
----@param arg0 int
----@param arg1 int
----@return int
-function ClimateMoon:daysInMonth(arg0, arg1) end
 
 ---@public
 ---@param arg0 int
@@ -38,15 +26,27 @@ function ClimateMoon:daysInMonth(arg0, arg1) end
 ---@return void
 function ClimateMoon:updatePhase(arg0, arg1, arg2) end
 
----@private
----@param arg0 int
----@return boolean
-function ClimateMoon:isLeapYearP(arg0) end
-
 ---@public
----@return String
-function ClimateMoon:getPhaseName() end
+---@return int
+function ClimateMoon:getCurrentMoonPhase() end
 
 ---@public
 ---@return ClimateMoon
 function ClimateMoon:getInstance() end
+
+---@private
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return int
+function ClimateMoon:getMoonPhase(arg0, arg1, arg2) end
+
+---@private
+---@param arg0 int
+---@param arg1 int
+---@return int
+function ClimateMoon:daysInMonth(arg0, arg1) end
+
+---@public
+---@return String
+function ClimateMoon:getPhaseName() end

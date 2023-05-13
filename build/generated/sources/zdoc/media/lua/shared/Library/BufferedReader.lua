@@ -14,49 +14,6 @@
 BufferedReader = {}
 
 ---@public
----@param arg0 int
----@return void
-function BufferedReader:mark(arg0) end
-
----@private
----@param arg0 char[]
----@param arg1 int
----@param arg2 int
----@return int
-function BufferedReader:read1(arg0, arg1, arg2) end
-
----@private
----@return void
-function BufferedReader:ensureOpen() end
-
----@public
----@param arg0 long
----@return long
-function BufferedReader:skip(arg0) end
-
----@public
----@return void
-function BufferedReader:close() end
-
----@public
----@return boolean
-function BufferedReader:markSupported() end
-
----@private
----@return void
-function BufferedReader:fill() end
-
----@public
----@return String
----@overload fun(arg0:boolean, arg1:boolean[])
-function BufferedReader:readLine() end
-
----@param arg0 boolean
----@param arg1 boolean[]
----@return String
-function BufferedReader:readLine(arg0, arg1) end
-
----@public
 ---@return void
 function BufferedReader:reset() end
 
@@ -74,8 +31,51 @@ function BufferedReader:read(arg0, arg1, arg2) end
 
 ---@public
 ---@return boolean
+function BufferedReader:markSupported() end
+
+---@public
+---@return boolean
 function BufferedReader:ready() end
+
+---@private
+---@return void
+function BufferedReader:fill() end
+
+---@public
+---@param arg0 int
+---@return void
+function BufferedReader:mark(arg0) end
+
+---@public
+---@return String
+---@overload fun(arg0:boolean, arg1:boolean[])
+function BufferedReader:readLine() end
+
+---@param arg0 boolean
+---@param arg1 boolean[]
+---@return String
+function BufferedReader:readLine(arg0, arg1) end
+
+---@public
+---@param arg0 long
+---@return long
+function BufferedReader:skip(arg0) end
+
+---@private
+---@param arg0 char[]
+---@param arg1 int
+---@param arg2 int
+---@return int
+function BufferedReader:read1(arg0, arg1, arg2) end
 
 ---@public
 ---@return Stream|Unknown
 function BufferedReader:lines() end
+
+---@public
+---@return void
+function BufferedReader:close() end
+
+---@private
+---@return void
+function BufferedReader:ensureOpen() end

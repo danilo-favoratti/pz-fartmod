@@ -33,10 +33,10 @@ function NewHealthPanel:render() end
 function NewHealthPanel:update() end
 
 ---@public
+---@return String
+function NewHealthPanel:getDamageStatusString() end
+
+---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
 function NewHealthPanel:SetCharacter(arg0) end
-
----@public
----@return String
-function NewHealthPanel:getDamageStatusString() end

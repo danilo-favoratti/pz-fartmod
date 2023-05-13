@@ -12,9 +12,19 @@
 ---@field m_blink boolean
 WorldMapGridSquareMarker = {}
 
+---@public
+---@param arg0 boolean
+---@return void
+function WorldMapGridSquareMarker:setBlink(arg0) end
+
 ---@param arg0 UIWorldMap
 ---@return void
 function WorldMapGridSquareMarker:render(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function WorldMapGridSquareMarker:setMinScreenRadius(arg0) end
 
 ---@param arg0 int
 ---@param arg1 int
@@ -25,13 +35,3 @@ function WorldMapGridSquareMarker:render(arg0) end
 ---@param arg6 float
 ---@return WorldMapGridSquareMarker
 function WorldMapGridSquareMarker:init(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
-
----@public
----@param arg0 int
----@return void
-function WorldMapGridSquareMarker:setMinScreenRadius(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function WorldMapGridSquareMarker:setBlink(arg0) end

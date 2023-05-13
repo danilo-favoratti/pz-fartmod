@@ -8,6 +8,23 @@
 ---@field private m_readVersion int
 WorldMapSettings = {}
 
+---@public
+---@return void
+function WorldMapSettings:load() end
+
+---@public
+---@param arg0 String
+---@return boolean
+function WorldMapSettings:getBoolean(arg0) end
+
+---@public
+---@return int
+function WorldMapSettings:getOptionCount() end
+
+---@public
+---@return int
+function WorldMapSettings:getFileVersion() end
+
 ---@private
 ---@param arg0 String
 ---@param arg1 boolean
@@ -24,10 +41,8 @@ function WorldMapSettings:newOption(arg0, arg1) end
 function WorldMapSettings:newOption(arg0, arg1, arg2, arg3) end
 
 ---@public
----@param arg0 String
----@param arg1 boolean
 ---@return void
-function WorldMapSettings:setBoolean(arg0, arg1) end
+function WorldMapSettings:save() end
 
 ---@public
 ---@param arg0 int
@@ -36,33 +51,15 @@ function WorldMapSettings:getOptionByIndex(arg0) end
 
 ---@public
 ---@param arg0 String
----@return ConfigOption
-function WorldMapSettings:getOptionByName(arg0) end
-
----@public
----@return WorldMapSettings
-function WorldMapSettings:getInstance() end
-
----@public
+---@param arg1 boolean
 ---@return void
-function WorldMapSettings:load() end
-
----@public
----@return void
-function WorldMapSettings:Reset() end
+function WorldMapSettings:setBoolean(arg0, arg1) end
 
 ---@public
 ---@param arg0 String
----@return boolean
-function WorldMapSettings:getBoolean(arg0) end
-
----@public
+---@param arg1 double
 ---@return void
-function WorldMapSettings:save() end
-
----@public
----@return int
-function WorldMapSettings:getOptionCount() end
+function WorldMapSettings:setDouble(arg0, arg1) end
 
 ---@public
 ---@param arg0 String
@@ -71,11 +68,14 @@ function WorldMapSettings:getOptionCount() end
 function WorldMapSettings:getDouble(arg0, arg1) end
 
 ---@public
----@return int
-function WorldMapSettings:getFileVersion() end
+---@return WorldMapSettings
+function WorldMapSettings:getInstance() end
 
 ---@public
 ---@param arg0 String
----@param arg1 double
+---@return ConfigOption
+function WorldMapSettings:getOptionByName(arg0) end
+
+---@public
 ---@return void
-function WorldMapSettings:setDouble(arg0, arg1) end
+function WorldMapSettings:Reset() end

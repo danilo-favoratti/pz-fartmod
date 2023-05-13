@@ -28,9 +28,21 @@
 NetworkAIParams = {}
 
 ---@public
+---@return boolean
+function NetworkAIParams:isShowConnectionInfo() end
+
+---@public
 ---@param arg0 boolean
 ---@return void
 function NetworkAIParams:setShowConnectionInfo(arg0) end
+
+---@public
+---@return boolean
+function NetworkAIParams:isShowPingInfo() end
+
+---@public
+---@return void
+function NetworkAIParams:Init() end
 
 ---@public
 ---@param arg0 boolean
@@ -38,22 +50,10 @@ function NetworkAIParams:setShowConnectionInfo(arg0) end
 function NetworkAIParams:setShowServerInfo(arg0) end
 
 ---@public
----@param arg0 boolean
----@return void
-function NetworkAIParams:setShowPingInfo(arg0) end
-
----@public
----@return boolean
-function NetworkAIParams:isShowPingInfo() end
-
----@public
----@return boolean
-function NetworkAIParams:isShowConnectionInfo() end
-
----@public
 ---@return boolean
 function NetworkAIParams:isShowServerInfo() end
 
 ---@public
+---@param arg0 boolean
 ---@return void
-function NetworkAIParams:Init() end
+function NetworkAIParams:setShowPingInfo(arg0) end

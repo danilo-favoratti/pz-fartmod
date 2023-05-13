@@ -13,7 +13,11 @@ function Userlog:getText() end
 
 ---@public
 ---@return String
-function Userlog:getUsername() end
+function Userlog:getLastUpdate() end
+
+---@public
+---@return int
+function Userlog:getAmount() end
 
 ---@public
 ---@param arg0 int
@@ -22,16 +26,12 @@ function Userlog:setAmount(arg0) end
 
 ---@public
 ---@return String
-function Userlog:getType() end
-
----@public
----@return int
-function Userlog:getAmount() end
-
----@public
----@return String
-function Userlog:getLastUpdate() end
+function Userlog:getUsername() end
 
 ---@public
 ---@return String
 function Userlog:getIssuedBy() end
+
+---@public
+---@return String
+function Userlog:getType() end

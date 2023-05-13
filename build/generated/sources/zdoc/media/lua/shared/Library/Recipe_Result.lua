@@ -6,25 +6,13 @@
 Recipe_Result = {}
 
 ---@public
----@return String
-function Recipe_Result:getFullType() end
-
----@public
----@return int
-function Recipe_Result:getDrainableCount() end
-
----@public
----@return int
-function Recipe_Result:getCount() end
+---@param arg0 int
+---@return void
+function Recipe_Result:setDrainableCount(arg0) end
 
 ---@public
 ---@return String
 function Recipe_Result:getType() end
-
----@public
----@param arg0 int
----@return void
-function Recipe_Result:setDrainableCount(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -32,8 +20,13 @@ function Recipe_Result:setDrainableCount(arg0) end
 function Recipe_Result:setModule(arg0) end
 
 ---@public
+---@param arg0 int
+---@return void
+function Recipe_Result:setCount(arg0) end
+
+---@public
 ---@return String
-function Recipe_Result:getModule() end
+function Recipe_Result:getFullType() end
 
 ---@public
 ---@param arg0 String
@@ -41,6 +34,13 @@ function Recipe_Result:getModule() end
 function Recipe_Result:setType(arg0) end
 
 ---@public
----@param arg0 int
----@return void
-function Recipe_Result:setCount(arg0) end
+---@return int
+function Recipe_Result:getCount() end
+
+---@public
+---@return String
+function Recipe_Result:getModule() end
+
+---@public
+---@return int
+function Recipe_Result:getDrainableCount() end

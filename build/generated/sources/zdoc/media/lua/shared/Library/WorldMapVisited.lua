@@ -40,40 +40,20 @@ WorldMapVisited = {}
 ---@param arg2 int
 ---@param arg3 int
 ---@return void
-function WorldMapVisited:setVisitedInCells(arg0, arg1, arg2, arg3) end
+function WorldMapVisited:setVisitedInSquares(arg0, arg1, arg2, arg3) end
 
 ---@public
 ---@return void
 function WorldMapVisited:update() end
 
 ---@private
----@return int
-function WorldMapVisited:getHeightInCells() end
-
----@public
----@return WorldMapVisited
-function WorldMapVisited:getInstance() end
-
----@public
 ---@param arg0 int
 ---@param arg1 int
 ---@param arg2 int
 ---@param arg3 int
+---@param arg4 int
 ---@return void
-function WorldMapVisited:clearKnownInCells(arg0, arg1, arg2, arg3) end
-
----@private
----@return void
-function WorldMapVisited:initShader() end
-
----@public
----@return void
-function WorldMapVisited:Reset() end
-
----@param arg0 int
----@param arg1 int
----@return boolean
-function WorldMapVisited:isCellVisible(arg0, arg1) end
+function WorldMapVisited:setFlags(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
 ---@param arg0 int
@@ -94,18 +74,13 @@ function WorldMapVisited:load() end
 ---@return void
 function WorldMapVisited:load(arg0, arg1) end
 
----@private
----@param arg0 ByteBuffer
----@param arg1 int
----@return boolean
-function WorldMapVisited:updateTextureData(arg0, arg1) end
+---@public
+---@return WorldMapVisited
+function WorldMapVisited:getInstance() end
 
----@param arg0 float
----@param arg1 float
----@param arg2 float
----@param arg3 float
----@return void
-function WorldMapVisited:setUnvisitedRGBA(arg0, arg1, arg2, arg3) end
+---@private
+---@return int
+function WorldMapVisited:calcTextureHeight() end
 
 ---@private
 ---@param arg0 int
@@ -114,31 +89,23 @@ function WorldMapVisited:setUnvisitedRGBA(arg0, arg1, arg2, arg3) end
 ---@param arg3 int
 ---@param arg4 int
 ---@return void
-function WorldMapVisited:setFlags(arg0, arg1, arg2, arg3, arg4) end
+function WorldMapVisited:clearFlags(arg0, arg1, arg2, arg3, arg4) end
+
+---@private
+---@return void
+function WorldMapVisited:updateVisitedTexture() end
 
 ---@private
 ---@return int
-function WorldMapVisited:calcTextureWidth() end
-
----@public
----@param arg0 float
----@param arg1 float
----@param arg2 int
----@param arg3 int
----@param arg4 int
----@param arg5 int
----@param arg6 float
----@param arg7 float
----@return void
-function WorldMapVisited:renderGrid(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
-
----@public
----@return void
-function WorldMapVisited:forget() end
+function WorldMapVisited:getWidthInCells() end
 
 ---@private
 ---@return void
 function WorldMapVisited:destroy() end
+
+---@public
+---@return void
+function WorldMapVisited:forget() end
 
 ---@public
 ---@return int
@@ -150,71 +117,7 @@ function WorldMapVisited:getMinY() end
 ---@param arg2 int
 ---@param arg3 int
 ---@return void
-function WorldMapVisited:clearVisitedInSquares(arg0, arg1, arg2, arg3) end
-
----@private
----@return int
-function WorldMapVisited:getWidthInCells() end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@return void
-function WorldMapVisited:setBounds(arg0, arg1, arg2, arg3) end
-
----@public
----@return void
-function WorldMapVisited:SaveAll() end
-
----@private
----@return int
-function WorldMapVisited:calcTextureHeight() end
-
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 int
----@param arg5 boolean
----@return boolean
-function WorldMapVisited:hasFlags(arg0, arg1, arg2, arg3, arg4, arg5) end
-
----@private
----@return void
-function WorldMapVisited:updateVisitedTexture() end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@return void
-function WorldMapVisited:setVisitedInSquares(arg0, arg1, arg2, arg3) end
-
----@public
----@return void
-function WorldMapVisited:renderMain() end
-
----@param arg0 float
----@param arg1 float
----@param arg2 float
----@param arg3 float
----@return void
-function WorldMapVisited:setUnvisitedGridRGBA(arg0, arg1, arg2, arg3) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@return void
-function WorldMapVisited:clearKnownInSquares(arg0, arg1, arg2, arg3) end
-
----@public
----@return int
-function WorldMapVisited:getMinX() end
+function WorldMapVisited:setKnownInCells(arg0, arg1, arg2, arg3) end
 
 ---@public
 ---@return void
@@ -225,6 +128,13 @@ function WorldMapVisited:save() end
 ---@param arg0 ByteBuffer
 ---@return void
 function WorldMapVisited:save(arg0) end
+
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@param arg3 float
+---@return void
+function WorldMapVisited:setUnvisitedGridRGBA(arg0, arg1, arg2, arg3) end
 
 ---@public
 ---@param arg0 float
@@ -244,7 +154,7 @@ function WorldMapVisited:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) 
 ---@param arg2 int
 ---@param arg3 int
 ---@return void
-function WorldMapVisited:setKnownInSquares(arg0, arg1, arg2, arg3) end
+function WorldMapVisited:setVisitedInCells(arg0, arg1, arg2, arg3) end
 
 ---@public
 ---@param arg0 int
@@ -252,13 +162,103 @@ function WorldMapVisited:setKnownInSquares(arg0, arg1, arg2, arg3) end
 ---@param arg2 int
 ---@param arg3 int
 ---@return void
-function WorldMapVisited:setKnownInCells(arg0, arg1, arg2, arg3) end
+function WorldMapVisited:clearKnownInSquares(arg0, arg1, arg2, arg3) end
 
----@private
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@return void
+function WorldMapVisited:setBounds(arg0, arg1, arg2, arg3) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@return void
+function WorldMapVisited:clearVisitedInSquares(arg0, arg1, arg2, arg3) end
+
 ---@param arg0 int
 ---@param arg1 int
 ---@param arg2 int
 ---@param arg3 int
 ---@param arg4 int
+---@param arg5 boolean
+---@return boolean
+function WorldMapVisited:hasFlags(arg0, arg1, arg2, arg3, arg4, arg5) end
+
+---@public
 ---@return void
-function WorldMapVisited:clearFlags(arg0, arg1, arg2, arg3, arg4) end
+function WorldMapVisited:renderMain() end
+
+---@public
+---@return void
+function WorldMapVisited:SaveAll() end
+
+---@private
+---@return int
+function WorldMapVisited:getHeightInCells() end
+
+---@public
+---@return int
+function WorldMapVisited:getMinX() end
+
+---@public
+---@param arg0 float
+---@param arg1 float
+---@param arg2 int
+---@param arg3 int
+---@param arg4 int
+---@param arg5 int
+---@param arg6 float
+---@param arg7 float
+---@return void
+function WorldMapVisited:renderGrid(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@param arg3 float
+---@return void
+function WorldMapVisited:setUnvisitedRGBA(arg0, arg1, arg2, arg3) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@return void
+function WorldMapVisited:setKnownInSquares(arg0, arg1, arg2, arg3) end
+
+---@public
+---@return void
+function WorldMapVisited:Reset() end
+
+---@private
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@return boolean
+function WorldMapVisited:updateTextureData(arg0, arg1) end
+
+---@param arg0 int
+---@param arg1 int
+---@return boolean
+function WorldMapVisited:isCellVisible(arg0, arg1) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@return void
+function WorldMapVisited:clearKnownInCells(arg0, arg1, arg2, arg3) end
+
+---@private
+---@return int
+function WorldMapVisited:calcTextureWidth() end
+
+---@private
+---@return void
+function WorldMapVisited:initShader() end

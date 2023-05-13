@@ -14,49 +14,9 @@ SpriteRenderer = {}
 
 ---@public
 ---@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 int
+---@param arg1 float
 ---@return void
-function SpriteRenderer:glViewport(arg0, arg1, arg2, arg3) end
-
----@public
----@param arg0 int
----@return void
-function SpriteRenderer:glGenerateMipMaps(arg0) end
-
----@public
----@return boolean
-function SpriteRenderer:isMinZoomLevel() end
-
----@public
----@param arg0 int
----@return PlayerCamera
-function SpriteRenderer:getRenderingPlayerCamera(arg0) end
-
----@public
----@param arg0 AbstractStyle
----@return void
-function SpriteRenderer:setDefaultStyle(arg0) end
-
----@public
----@return SpriteRenderState
-function SpriteRenderer:getPopulatingState() end
-
----@public
----@param arg0 int
----@return void
-function SpriteRenderer:glStencilMask(arg0) end
-
----@private
----@param arg0 BooleanSupplier
----@return boolean
-function SpriteRenderer:waitForReadyStateInternal(arg0) end
-
----@public
----@param arg0 int
----@return void
-function SpriteRenderer:glDoEndFrameFx(arg0) end
+function SpriteRenderer:glAlphaFunc(arg0, arg1) end
 
 ---@public
 ---@param arg0 float
@@ -121,12 +81,56 @@ function SpriteRenderer:renderPoly(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg
 ---@public
 ---@param arg0 int
 ---@return void
-function SpriteRenderer:initFromIsoCamera(arg0) end
+function SpriteRenderer:glBlendEquation(arg0) end
 
----@protected
----@param arg0 SpriteRenderState
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 float
 ---@return void
-function SpriteRenderer:buildStateUIDrawBuffer(arg0) end
+function SpriteRenderer:ShaderUpdate1f(arg0, arg1, arg2) end
+
+---@public
+---@return boolean
+function SpriteRenderer:isWaitingForRenderState() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@return void
+function SpriteRenderer:glBlendFuncSeparate(arg0, arg1, arg2, arg3) end
+
+---@private
+---@param arg0 TextureDraw[]
+---@param arg1 Style[]
+---@param arg2 int
+---@param arg3 SpriteRenderer.RingBuffer
+---@return void
+function SpriteRenderer:buildDrawBuffer(arg0, arg1, arg2, arg3) end
+
+---@public
+---@return void
+function SpriteRenderer:clearUseVertColorsArray() end
+
+---@public
+---@return void
+function SpriteRenderer:clearCutawayTexture() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return void
+function SpriteRenderer:glStencilFunc(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return void
+function SpriteRenderer:glTexParameteri(arg0, arg1, arg2) end
 
 ---@public
 ---@param arg0 Texture
@@ -141,89 +145,6 @@ function SpriteRenderer:buildStateUIDrawBuffer(arg0) end
 ---@param arg9 Consumer|Unknown
 ---@return void
 function SpriteRenderer:renderflipped(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@return void
-function SpriteRenderer:ShaderUpdate1i(arg0, arg1, arg2) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@return void
-function SpriteRenderer:glBlendFuncSeparate(arg0, arg1, arg2, arg3) end
-
----@public
----@return void
-function SpriteRenderer:clearCutawayTexture() end
-
----@protected
----@param arg0 SpriteRenderState
----@return void
-function SpriteRenderer:buildStateDrawBuffer(arg0) end
-
----@public
----@param arg0 int
----@return void
-function SpriteRenderer:glBlendEquation(arg0) end
-
----@public
----@return void
-function SpriteRenderer:clearUseVertColorsArray() end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 float
----@return void
-function SpriteRenderer:ShaderUpdate1f(arg0, arg1, arg2) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@return void
-function SpriteRenderer:drawParticles(arg0, arg1, arg2) end
-
----@public
----@return float
-function SpriteRenderer:getPlayerZoomLevel() end
-
----@public
----@param arg0 SpriteRenderer.WallShaderTexRender
----@return void
-function SpriteRenderer:setExtraWallShaderParams(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 float
----@param arg3 int
----@return void
----@overload fun(arg0:int, arg1:int, arg2:float, arg3:int, arg4:boolean)
-function SpriteRenderer:glDoStartFrame(arg0, arg1, arg2, arg3) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 float
----@param arg3 int
----@param arg4 boolean
----@return void
-function SpriteRenderer:glDoStartFrame(arg0, arg1, arg2, arg3, arg4) end
-
----@public
----@return void
-function SpriteRenderer:pushFrameDown() end
-
----@public
----@param arg0 int
----@return void
-function SpriteRenderer:glDisable(arg0) end
 
 ---@public
 ---@param arg0 Texture
@@ -353,8 +274,13 @@ function SpriteRenderer:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, a
 function SpriteRenderer:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25) end
 
 ---@public
+---@return int
+function SpriteRenderer:getMainStateIndex() end
+
+---@public
+---@param arg0 boolean
 ---@return void
-function SpriteRenderer:glDoEndFrame() end
+function SpriteRenderer:setDoAdditive(arg0) end
 
 ---@public
 ---@param arg0 Texture
@@ -371,229 +297,16 @@ function SpriteRenderer:glDoEndFrame() end
 function SpriteRenderer:renderi(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
 
 ---@public
----@param arg0 Texture
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 int
----@param arg5 float
----@param arg6 float
----@param arg7 float
----@param arg8 float
----@return void
----@overload fun(arg0:Texture, arg1:int, arg2:int, arg3:int, arg4:int, arg5:float, arg6:float, arg7:float, arg8:float, arg9:int)
-function SpriteRenderer:renderline(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
-
----@public
----@param arg0 Texture
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 int
----@param arg5 float
----@param arg6 float
----@param arg7 float
----@param arg8 float
----@param arg9 int
----@return void
-function SpriteRenderer:renderline(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
-
----@public
 ---@param arg0 int
----@param arg1 int
----@param arg2 int
----@return void
-function SpriteRenderer:glDoStartFrameFx(arg0, arg1, arg2) end
-
----@private
----@param arg0 TextureDraw[]
----@param arg1 Style[]
----@param arg2 int
----@param arg3 SpriteRenderer.RingBuffer
----@return void
-function SpriteRenderer:buildDrawBuffer(arg0, arg1, arg2, arg3) end
-
----@public
----@param arg0 Shader
 ---@param arg1 int
 ---@param arg2 int
 ---@param arg3 int
 ---@return void
-function SpriteRenderer:drawPuddles(arg0, arg1, arg2, arg3) end
-
----@public
----@param arg0 int
----@return void
-function SpriteRenderer:glBind(arg0) end
-
----@public
----@return float
-function SpriteRenderer:getPlayerMaxZoom() end
-
----@public
----@param arg0 BooleanSupplier
----@return SpriteRenderState
-function SpriteRenderer:acquireStateForRendering(arg0) end
-
----@public
----@param arg0 Texture
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 int
----@return void
-function SpriteRenderer:setCutawayTexture(arg0, arg1, arg2, arg3, arg4) end
-
----@public
----@param arg0 int
----@param arg1 float
----@return void
-function SpriteRenderer:glAlphaFunc(arg0, arg1) end
-
----@public
----@param arg0 Shader
----@param arg1 int
----@param arg2 int
----@param arg3 boolean
----@return void
-function SpriteRenderer:drawWater(arg0, arg1, arg2, arg3) end
-
----@public
----@param arg0 int
----@return void
-function SpriteRenderer:glClear(arg0) end
-
----@public
----@param arg0 int
----@param arg1 float
----@return void
-function SpriteRenderer:doCoreIntParam(arg0, arg1) end
-
----@private
----@return void
-function SpriteRenderer:waitForReadySlotToOpen() end
-
----@public
----@return boolean
-function SpriteRenderer:isWaitingForRenderState() end
-
----@public
----@return void
-function SpriteRenderer:create() end
+function SpriteRenderer:glViewport(arg0, arg1, arg2, arg3) end
 
 ---@public
 ---@return void
 function SpriteRenderer:EndShader() end
-
----@public
----@return void
-function SpriteRenderer:postRender() end
-
----@public
----@return float
-function SpriteRenderer:getPlayerMinZoom() end
-
----@public
----@return void
-function SpriteRenderer:glLoadIdentity() end
-
----@public
----@return int
-function SpriteRenderer:getRenderStateIndex() end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@return void
-function SpriteRenderer:glStencilOp(arg0, arg1, arg2) end
-
----@private
----@param arg0 BooleanSupplier
----@return boolean
-function SpriteRenderer:waitForReadyState(arg0) end
-
----@public
----@return int
-function SpriteRenderer:getRenderingPlayerIndex() end
-
----@public
----@param arg0 int
----@return void
-function SpriteRenderer:glEnable(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 float
----@param arg5 float
----@param arg6 float
----@param arg7 float
----@return void
-function SpriteRenderer:renderRect(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
-
----@public
----@return SpriteRenderState
-function SpriteRenderer:getRenderingState() end
-
----@public
----@param arg0 Shader
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@return void
-function SpriteRenderer:drawSkyBox(arg0, arg1, arg2, arg3) end
-
----@public
----@return void
-function SpriteRenderer:clearSprites() end
-
----@public
----@param arg0 Texture
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 int
----@param arg5 int
----@param arg6 int
----@param arg7 int
----@param arg8 int
----@param arg9 float
----@param arg10 float
----@param arg11 float
----@param arg12 float
----@param arg13 Consumer|Unknown
----@return void
-function SpriteRenderer:renderClamped(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13) end
-
----@public
----@param arg0 boolean
----@return void
-function SpriteRenderer:glDepthMask(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@return void
-function SpriteRenderer:glClearColor(arg0, arg1, arg2, arg3) end
-
----@public
----@param arg0 boolean
----@return void
-function SpriteRenderer:setDoAdditive(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 float
----@param arg3 float
----@param arg4 float
----@return void
-function SpriteRenderer:ShaderUpdate3f(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
 ---@param arg0 byte
@@ -606,70 +319,12 @@ function SpriteRenderer:setUseVertColorsArray(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
 ---@param arg0 int
----@param arg1 int
----@param arg2 float
----@param arg3 float
----@param arg4 float
----@param arg5 float
 ---@return void
-function SpriteRenderer:ShaderUpdate4f(arg0, arg1, arg2, arg3, arg4, arg5) end
-
----@public
----@return boolean
-function SpriteRenderer:isMaxZoomLevel() end
-
----@public
----@param arg0 int
----@param arg1 int
----@return void
-function SpriteRenderer:StartShader(arg0, arg1) end
+function SpriteRenderer:glStencilMask(arg0) end
 
 ---@public
 ---@return void
-function SpriteRenderer:prePopulating() end
-
----@public
----@return boolean
-function SpriteRenderer:getDoAdditive() end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 float
----@param arg3 float
----@return void
-function SpriteRenderer:ShaderUpdate2f(arg0, arg1, arg2, arg3) end
-
----@public
----@param arg0 boolean
----@return void
-function SpriteRenderer:glIgnoreStyles(arg0) end
-
----@public
----@return void
-function SpriteRenderer:startOffscreenUI() end
-
----@public
----@param arg0 int
----@param arg1 int
----@return void
-function SpriteRenderer:glBuffer(arg0, arg1) end
-
----@public
----@param arg0 TextureDraw.GenericDrawer
----@return void
-function SpriteRenderer:drawGeneric(arg0) end
-
----@public
----@return void
-function SpriteRenderer:stopOffscreenUI() end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@return void
-function SpriteRenderer:glTexParameteri(arg0, arg1, arg2) end
+function SpriteRenderer:notifyRenderStateQueue() end
 
 ---@public
 ---@param arg0 Texture
@@ -701,23 +356,213 @@ function SpriteRenderer:glTexParameteri(arg0, arg1, arg2) end
 ---@return void
 function SpriteRenderer:renderdebug(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20, arg21, arg22, arg23, arg24, arg25) end
 
----@private
+---@public
+---@param arg0 Texture
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@param arg4 int
+---@param arg5 float
+---@param arg6 float
+---@param arg7 float
+---@param arg8 float
 ---@return void
-function SpriteRenderer:waitForReadySlotToOpenInternal() end
+---@overload fun(arg0:Texture, arg1:int, arg2:int, arg3:int, arg4:int, arg5:float, arg6:float, arg7:float, arg8:float, arg9:int)
+function SpriteRenderer:renderline(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+
+---@public
+---@param arg0 Texture
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@param arg4 int
+---@param arg5 float
+---@param arg6 float
+---@param arg7 float
+---@param arg8 float
+---@param arg9 int
+---@return void
+function SpriteRenderer:renderline(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+
+---@public
+---@param arg0 int
+---@param arg1 float
+---@return void
+function SpriteRenderer:doCoreIntParam(arg0, arg1) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return void
+function SpriteRenderer:ShaderUpdate1i(arg0, arg1, arg2) end
+
+---@public
+---@return float
+function SpriteRenderer:getPlayerMinZoom() end
+
+---@public
+---@return boolean
+function SpriteRenderer:getDoAdditive() end
 
 ---@public
 ---@return void
-function SpriteRenderer:notifyRenderStateQueue() end
+function SpriteRenderer:postRender() end
+
+---@public
+---@param arg0 Shader
+---@param arg1 int
+---@param arg2 int
+---@param arg3 boolean
+---@return void
+function SpriteRenderer:drawWater(arg0, arg1, arg2, arg3) end
+
+---@public
+---@return void
+function SpriteRenderer:create() end
+
+---@public
+---@return float
+function SpriteRenderer:getPlayerZoomLevel() end
+
+---@public
+---@return void
+function SpriteRenderer:glDoEndFrame() end
+
+---@public
+---@return float
+function SpriteRenderer:getPlayerMaxZoom() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 float
+---@param arg3 int
+---@return void
+---@overload fun(arg0:int, arg1:int, arg2:float, arg3:int, arg4:boolean)
+function SpriteRenderer:glDoStartFrame(arg0, arg1, arg2, arg3) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 float
+---@param arg3 int
+---@param arg4 boolean
+---@return void
+function SpriteRenderer:glDoStartFrame(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@param arg0 SpriteRenderer.WallShaderTexRender
+---@return void
+function SpriteRenderer:setExtraWallShaderParams(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function SpriteRenderer:glBind(arg0) end
 
 ---@public
 ---@return int
-function SpriteRenderer:getMainStateIndex() end
+function SpriteRenderer:getRenderingPlayerIndex() end
+
+---@protected
+---@param arg0 SpriteRenderState
+---@return void
+function SpriteRenderer:buildStateDrawBuffer(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function SpriteRenderer:glGenerateMipMaps(arg0) end
+
+---@public
+---@param arg0 BooleanSupplier
+---@return SpriteRenderState
+function SpriteRenderer:acquireStateForRendering(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function SpriteRenderer:glDisable(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@param arg4 float
+---@param arg5 float
+---@param arg6 float
+---@param arg7 float
+---@return void
+function SpriteRenderer:renderRect(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+
+---@public
+---@param arg0 int
+---@return void
+function SpriteRenderer:glDoEndFrameFx(arg0) end
+
+---@public
+---@param arg0 Shader
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@return void
+function SpriteRenderer:drawSkyBox(arg0, arg1, arg2, arg3) end
+
+---@public
+---@return void
+function SpriteRenderer:stopOffscreenUI() end
+
+---@public
+---@param arg0 int
+---@return void
+function SpriteRenderer:glClear(arg0) end
+
+---@public
+---@param arg0 TextureDraw.GenericDrawer
+---@return void
+function SpriteRenderer:drawGeneric(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return void
+function SpriteRenderer:glStencilOp(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@return void
+function SpriteRenderer:glClearColor(arg0, arg1, arg2, arg3) end
+
+---@public
+---@param arg0 int
+---@return void
+function SpriteRenderer:setRenderingPlayerIndex(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function SpriteRenderer:glIgnoreStyles(arg0) end
 
 ---@public
 ---@param arg0 int
 ---@param arg1 int
 ---@return void
-function SpriteRenderer:glBlendFunc(arg0, arg1) end
+function SpriteRenderer:StartShader(arg0, arg1) end
+
+---@protected
+---@param arg0 SpriteRenderState
+---@return void
+function SpriteRenderer:buildStateUIDrawBuffer(arg0) end
+
+---@public
+---@return boolean
+function SpriteRenderer:isMaxZoomLevel() end
 
 ---@public
 ---@param arg0 int
@@ -730,16 +575,171 @@ function SpriteRenderer:glColorMask(arg0, arg1, arg2, arg3) end
 ---@public
 ---@param arg0 int
 ---@param arg1 int
+---@param arg2 float
+---@param arg3 float
+---@param arg4 float
+---@return void
+function SpriteRenderer:ShaderUpdate3f(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
 ---@param arg2 int
 ---@return void
-function SpriteRenderer:glStencilFunc(arg0, arg1, arg2) end
+function SpriteRenderer:drawParticles(arg0, arg1, arg2) end
+
+---@private
+---@return void
+function SpriteRenderer:waitForReadySlotToOpenInternal() end
+
+---@public
+---@return void
+function SpriteRenderer:pushFrameDown() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return void
+function SpriteRenderer:glBlendFunc(arg0, arg1) end
+
+---@public
+---@param arg0 int
+---@return void
+function SpriteRenderer:glEnable(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return void
+function SpriteRenderer:glDoStartFrameFx(arg0, arg1, arg2) end
+
+---@public
+---@return void
+function SpriteRenderer:glLoadIdentity() end
+
+---@public
+---@return int
+function SpriteRenderer:getRenderStateIndex() end
+
+---@public
+---@param arg0 Shader
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@return void
+function SpriteRenderer:drawPuddles(arg0, arg1, arg2, arg3) end
+
+---@public
+---@param arg0 Texture
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@param arg4 int
+---@return void
+function SpriteRenderer:setCutawayTexture(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function SpriteRenderer:glDepthMask(arg0) end
 
 ---@public
 ---@param arg0 ModelManager.ModelSlot
 ---@return void
 function SpriteRenderer:drawModel(arg0) end
 
+---@private
+---@return void
+function SpriteRenderer:waitForReadySlotToOpen() end
+
+---@private
+---@param arg0 BooleanSupplier
+---@return boolean
+function SpriteRenderer:waitForReadyStateInternal(arg0) end
+
+---@public
+---@return boolean
+function SpriteRenderer:isMinZoomLevel() end
+
+---@public
+---@param arg0 Texture
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@param arg4 int
+---@param arg5 int
+---@param arg6 int
+---@param arg7 int
+---@param arg8 int
+---@param arg9 float
+---@param arg10 float
+---@param arg11 float
+---@param arg12 float
+---@param arg13 Consumer|Unknown
+---@return void
+function SpriteRenderer:renderClamped(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 float
+---@param arg3 float
+---@param arg4 float
+---@param arg5 float
+---@return void
+function SpriteRenderer:ShaderUpdate4f(arg0, arg1, arg2, arg3, arg4, arg5) end
+
+---@private
+---@param arg0 BooleanSupplier
+---@return boolean
+function SpriteRenderer:waitForReadyState(arg0) end
+
+---@public
+---@return SpriteRenderState
+function SpriteRenderer:getPopulatingState() end
+
+---@public
+---@return void
+function SpriteRenderer:clearSprites() end
+
+---@public
+---@return SpriteRenderState
+function SpriteRenderer:getRenderingState() end
+
+---@public
+---@return void
+function SpriteRenderer:startOffscreenUI() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 float
+---@param arg3 float
+---@return void
+function SpriteRenderer:ShaderUpdate2f(arg0, arg1, arg2, arg3) end
+
+---@public
+---@return void
+function SpriteRenderer:prePopulating() end
+
 ---@public
 ---@param arg0 int
 ---@return void
-function SpriteRenderer:setRenderingPlayerIndex(arg0) end
+function SpriteRenderer:initFromIsoCamera(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return void
+function SpriteRenderer:glBuffer(arg0, arg1) end
+
+---@public
+---@param arg0 AbstractStyle
+---@return void
+function SpriteRenderer:setDefaultStyle(arg0) end
+
+---@public
+---@param arg0 int
+---@return PlayerCamera
+function SpriteRenderer:getRenderingPlayerCamera(arg0) end

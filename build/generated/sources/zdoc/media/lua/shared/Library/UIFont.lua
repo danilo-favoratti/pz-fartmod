@@ -23,10 +23,6 @@
 UIFont = {}
 
 ---@public
----@return UIFont[]
-function UIFont:values() end
-
----@public
 ---@param arg0 String
 ---@return UIFont
 function UIFont:valueOf(arg0) end
@@ -35,3 +31,7 @@ function UIFont:valueOf(arg0) end
 ---@param arg0 String
 ---@return UIFont
 function UIFont:FromString(arg0) end
+
+---@public
+---@return UIFont[]
+function UIFont:values() end

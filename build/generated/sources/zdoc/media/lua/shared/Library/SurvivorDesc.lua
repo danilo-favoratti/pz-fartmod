@@ -31,6 +31,47 @@
 SurvivorDesc = {}
 
 ---@public
+---@param arg0 String
+---@return InventoryItem
+function SurvivorDesc:getWornItem(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function SurvivorDesc:setFemale(arg0) end
+
+---@public
+---@return boolean
+function SurvivorDesc:isLeader() end
+
+---@public
+---@param arg0 ItemVisuals
+---@return void
+function SurvivorDesc:getItemVisuals(arg0) end
+
+---@public
+---@return String
+function SurvivorDesc:getSurname() end
+
+---@public
+---@return ArrayList|Unknown
+function SurvivorDesc:getObservations() end
+
+---@public
+---@param arg0 ByteBuffer
+---@return void
+function SurvivorDesc:saveCompact(arg0) end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function SurvivorDesc:setInstance(arg0) end
+
+---@public
+---@return Color
+function SurvivorDesc:getRandomSkinColor() end
+
+---@public
 ---@return HashMap|Unknown|Unknown
 ---@overload fun(arg0:SurvivorDesc)
 function SurvivorDesc:getMetCount() end
@@ -41,29 +82,21 @@ function SurvivorDesc:getMetCount() end
 function SurvivorDesc:getMetCount(arg0) end
 
 ---@public
----@param arg0 ByteBuffer
----@return void
-function SurvivorDesc:saveCompact(arg0) end
-
----@public
----@return Color
-function SurvivorDesc:getRandomSkinColor() end
-
----@public
 ---@param arg0 String
 ---@return void
-function SurvivorDesc:dressInNamedOutfit(arg0) end
+function SurvivorDesc:setProfession(arg0) end
 
----@public
----@param arg0 ByteBuffer
----@param arg1 int
----@param arg2 IsoGameCharacter
+---@private
 ---@return void
-function SurvivorDesc:load(arg0, arg1, arg2) end
+function SurvivorDesc:doStats() end
 
 ---@public
----@return WornItems
-function SurvivorDesc:getWornItems() end
+---@return boolean
+function SurvivorDesc:isZombie() end
+
+---@public
+---@return SurvivorFactory.SurvivorType
+function SurvivorDesc:getType() end
 
 ---@public
 ---@param arg0 String
@@ -71,113 +104,21 @@ function SurvivorDesc:getWornItems() end
 function SurvivorDesc:setSurname(arg0) end
 
 ---@public
----@return IsoGameCharacter
-function SurvivorDesc:getInstance() end
-
----@public
----@param arg0 boolean
+---@param arg0 ColorInfo
 ---@return void
-function SurvivorDesc:setFemale(arg0) end
-
----@public
----@param arg0 String
----@return void
-function SurvivorDesc:addObservation(arg0) end
-
----@public
----@return boolean
-function SurvivorDesc:isLeader() end
-
----@public
----@return float
-function SurvivorDesc:getBravery() end
-
----@public
----@param arg0 String
----@return void
-function SurvivorDesc:setTorso(arg0) end
-
----@public
----@return ArrayList|Unknown
-function SurvivorDesc:getObservations() end
+function SurvivorDesc:addHairColor(arg0) end
 
 ---@public
 ---@return String
-function SurvivorDesc:getTorso() end
-
----@public
----@param arg0 SurvivorDesc
----@return void
-function SurvivorDesc:meet(arg0) end
-
----@public
----@param arg0 int
----@return void
-function SurvivorDesc:setID(arg0) end
-
----@public
----@param arg0 float
----@return void
-function SurvivorDesc:setBravery(arg0) end
-
----@public
----@param arg0 float
----@return void
-function SurvivorDesc:setFavourindoors(arg0) end
-
----@public
----@param arg0 float
----@return void
-function SurvivorDesc:setAggressiveness(arg0) end
-
----@public
----@return float
-function SurvivorDesc:getFavourindoors() end
-
----@public
----@param arg0 float
----@return void
-function SurvivorDesc:setTemper(arg0) end
-
----@public
----@param arg0 String
----@return void
-function SurvivorDesc:setInventoryScript(arg0) end
-
----@public
----@return float
-function SurvivorDesc:getTemper() end
+function SurvivorDesc:getProfession() end
 
 ---@public
 ---@return boolean
 function SurvivorDesc:isSkeleton() end
 
 ---@public
----@param arg0 int
----@return void
-function SurvivorDesc:setIDCount(arg0) end
-
----@public
----@param arg0 String
----@return InventoryItem
-function SurvivorDesc:getWornItem(arg0) end
-
----@public
----@return boolean
-function SurvivorDesc:isFriendly() end
-
----@public
----@return SurvivorFactory.SurvivorType
-function SurvivorDesc:getType() end
-
----@public
----@return HumanVisual
-function SurvivorDesc:getHumanVisual() end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function SurvivorDesc:setInstance(arg0) end
+---@return HashMap|Unknown|Unknown
+function SurvivorDesc:getXPBoostMap() end
 
 ---@private
 ---@param arg0 ByteBuffer
@@ -186,68 +127,35 @@ function SurvivorDesc:setInstance(arg0) end
 function SurvivorDesc:savePerk(arg0, arg1) end
 
 ---@public
----@param arg0 ByteBuffer
----@return void
-function SurvivorDesc:loadCompact(arg0) end
-
----@public
----@return int
-function SurvivorDesc:getIDCount() end
-
----@public
----@return KahluaTable
-function SurvivorDesc:getMeta() end
-
----@public
----@param arg0 float
----@return void
-function SurvivorDesc:setLoner(arg0) end
-
----@public
----@param arg0 String
----@param arg1 InventoryItem
----@return void
-function SurvivorDesc:setWornItem(arg0, arg1) end
-
----@public
----@param arg0 float
----@return void
-function SurvivorDesc:setFriendliness(arg0) end
-
----@public
----@return SurvivorGroup
-function SurvivorDesc:getGroup() end
-
----@public
----@param arg0 String
----@return boolean
-function SurvivorDesc:hasObservation(arg0) end
-
----@public
----@return ArrayList|Unknown
-function SurvivorDesc:getCommonHairColor() end
+---@return float
+function SurvivorDesc:getLoyalty() end
 
 ---@public
 ---@return String
 function SurvivorDesc:getForename() end
 
 ---@public
----@param arg0 float
----@return void
-function SurvivorDesc:setCompassion(arg0) end
-
----@public
----@return float
-function SurvivorDesc:getLoyalty() end
+---@return boolean
+function SurvivorDesc:isFriendly() end
 
 ---@public
 ---@param arg0 String
 ---@return void
-function SurvivorDesc:setForename(arg0) end
+function SurvivorDesc:setTorso(arg0) end
 
 ---@public
----@return String
-function SurvivorDesc:getInventoryScript() end
+---@param arg0 SurvivorDesc
+---@return void
+function SurvivorDesc:meet(arg0) end
+
+---@public
+---@return HumanVisual
+function SurvivorDesc:getHumanVisual() end
+
+---@public
+---@param arg0 int
+---@return void
+function SurvivorDesc:setID(arg0) end
 
 ---@public
 ---@return float
@@ -257,6 +165,44 @@ function SurvivorDesc:getCompassion() end
 ---@return float
 function SurvivorDesc:getAggressiveness() end
 
+---@public
+---@param arg0 float
+---@return void
+function SurvivorDesc:setLoner(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function SurvivorDesc:dressInNamedOutfit(arg0) end
+
+---@public
+---@return float
+function SurvivorDesc:getTemper() end
+
+---@public
+---@return float
+function SurvivorDesc:getFavourindoors() end
+
+---@public
+---@param arg0 float
+---@return void
+function SurvivorDesc:setFavourindoors(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function SurvivorDesc:addObservation(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function SurvivorDesc:setBravery(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function SurvivorDesc:setFriendliness(arg0) end
+
 ---@private
 ---@param arg0 ByteBuffer
 ---@param arg1 int
@@ -264,78 +210,27 @@ function SurvivorDesc:getAggressiveness() end
 function SurvivorDesc:loadPerk(arg0, arg1) end
 
 ---@public
----@return int
-function SurvivorDesc:getCalculatedToughness() end
-
----@public
 ---@param arg0 String
----@return void
-function SurvivorDesc:setProfession(arg0) end
+---@return boolean
+function SurvivorDesc:hasObservation(arg0) end
 
 ---@public
----@return float
-function SurvivorDesc:getFriendliness() end
+---@return int
+function SurvivorDesc:getIDCount() end
 
 ---@public
 ---@param arg0 float
 ---@return void
-function SurvivorDesc:setLoyalty(arg0) end
-
----@public
----@param arg0 ProfessionFactory.Profession
----@return void
-function SurvivorDesc:setProfessionSkills(arg0) end
-
----@public
----@param arg0 ColorInfo
----@return void
-function SurvivorDesc:addHairColor(arg0) end
-
----@public
----@return boolean
-function SurvivorDesc:isDead() end
-
----@public
----@param arg0 ColorInfo
----@return void
-function SurvivorDesc:addTrouserColor(arg0) end
-
----@public
----@return boolean
-function SurvivorDesc:isFemale() end
-
----@public
----@return ArrayList|Unknown
-function SurvivorDesc:getExtras() end
-
----@public
----@return float
-function SurvivorDesc:getLoner() end
-
----@public
----@return HashMap|Unknown|Unknown
-function SurvivorDesc:getXPBoostMap() end
-
----@private
----@return void
-function SurvivorDesc:doStats() end
+function SurvivorDesc:setCompassion(arg0) end
 
 ---@public
 ---@return String
-function SurvivorDesc:getProfession() end
+function SurvivorDesc:getInventoryScript() end
 
 ---@public
----@return boolean
-function SurvivorDesc:isAggressive() end
-
----@public
----@return int
-function SurvivorDesc:getID() end
-
----@public
----@param arg0 ItemVisuals
+---@param arg0 ByteBuffer
 ---@return void
-function SurvivorDesc:getItemVisuals(arg0) end
+function SurvivorDesc:loadCompact(arg0) end
 
 ---@public
 ---@param arg0 SurvivorFactory.SurvivorType
@@ -348,9 +243,114 @@ function SurvivorDesc:setType(arg0) end
 function SurvivorDesc:save(arg0) end
 
 ---@public
----@return String
-function SurvivorDesc:getSurname() end
+---@param arg0 String
+---@return void
+function SurvivorDesc:setForename(arg0) end
 
 ---@public
 ---@return boolean
-function SurvivorDesc:isZombie() end
+function SurvivorDesc:isAggressive() end
+
+---@public
+---@return ArrayList|Unknown
+function SurvivorDesc:getCommonHairColor() end
+
+---@public
+---@param arg0 ProfessionFactory.Profession
+---@return void
+function SurvivorDesc:setProfessionSkills(arg0) end
+
+---@public
+---@return float
+function SurvivorDesc:getFriendliness() end
+
+---@public
+---@param arg0 String
+---@return void
+function SurvivorDesc:setInventoryScript(arg0) end
+
+---@public
+---@param arg0 ColorInfo
+---@return void
+function SurvivorDesc:addTrouserColor(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function SurvivorDesc:setAggressiveness(arg0) end
+
+---@public
+---@return boolean
+function SurvivorDesc:isFemale() end
+
+---@public
+---@return SurvivorGroup
+function SurvivorDesc:getGroup() end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@param arg2 IsoGameCharacter
+---@return void
+function SurvivorDesc:load(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 String
+---@param arg1 InventoryItem
+---@return void
+function SurvivorDesc:setWornItem(arg0, arg1) end
+
+---@public
+---@return float
+function SurvivorDesc:getLoner() end
+
+---@public
+---@return int
+function SurvivorDesc:getID() end
+
+---@public
+---@param arg0 float
+---@return void
+function SurvivorDesc:setTemper(arg0) end
+
+---@public
+---@return ArrayList|Unknown
+function SurvivorDesc:getExtras() end
+
+---@public
+---@return float
+function SurvivorDesc:getBravery() end
+
+---@public
+---@return String
+function SurvivorDesc:getTorso() end
+
+---@public
+---@param arg0 int
+---@return void
+function SurvivorDesc:setIDCount(arg0) end
+
+---@public
+---@return int
+function SurvivorDesc:getCalculatedToughness() end
+
+---@public
+---@return WornItems
+function SurvivorDesc:getWornItems() end
+
+---@public
+---@return KahluaTable
+function SurvivorDesc:getMeta() end
+
+---@public
+---@param arg0 float
+---@return void
+function SurvivorDesc:setLoyalty(arg0) end
+
+---@public
+---@return boolean
+function SurvivorDesc:isDead() end
+
+---@public
+---@return IsoGameCharacter
+function SurvivorDesc:getInstance() end

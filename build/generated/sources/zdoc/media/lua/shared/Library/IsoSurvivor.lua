@@ -13,13 +13,13 @@
 IsoSurvivor = {}
 
 ---@public
----@return String
-function IsoSurvivor:getObjectName() end
+---@return void
+function IsoSurvivor:Despawn() end
 
 ---@public
 ---@return void
 function IsoSurvivor:reloadSpritePart() end
 
 ---@public
----@return void
-function IsoSurvivor:Despawn() end
+---@return String
+function IsoSurvivor:getObjectName() end

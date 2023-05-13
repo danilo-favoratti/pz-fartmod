@@ -8,6 +8,10 @@
 ObjectTooltip_Layout = {}
 
 ---@public
+---@return ObjectTooltip.LayoutItem
+function ObjectTooltip_Layout:addItem() end
+
+---@public
 ---@param arg0 int
 ---@return void
 function ObjectTooltip_Layout:setMinValueWidth(arg0) end
@@ -16,10 +20,6 @@ function ObjectTooltip_Layout:setMinValueWidth(arg0) end
 ---@param arg0 int
 ---@return void
 function ObjectTooltip_Layout:setMinLabelWidth(arg0) end
-
----@public
----@return ObjectTooltip.LayoutItem
-function ObjectTooltip_Layout:addItem() end
 
 ---@public
 ---@return void

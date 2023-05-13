@@ -6,10 +6,6 @@ SteamFriend = {}
 
 ---@public
 ---@return String
-function SteamFriend:getName() end
-
----@public
----@return String
 function SteamFriend:getSteamID() end
 
 ---@public
@@ -19,3 +15,7 @@ function SteamFriend:getAvatar() end
 ---@public
 ---@return String
 function SteamFriend:getState() end
+
+---@public
+---@return String
+function SteamFriend:getName() end

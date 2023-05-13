@@ -7,15 +7,11 @@ DoubleConfigOption = {}
 
 ---@public
 ---@return double
-function DoubleConfigOption:getMax() end
+function DoubleConfigOption:getMin() end
 
 ---@public
----@return double
-function DoubleConfigOption:getValue() end
-
----@public
----@return String
-function DoubleConfigOption:getValueAsString() end
+---@return void
+function DoubleConfigOption:setDefaultToCurrentValue() end
 
 ---@public
 ---@param arg0 Object
@@ -23,9 +19,21 @@ function DoubleConfigOption:getValueAsString() end
 function DoubleConfigOption:setValueFromObject(arg0) end
 
 ---@public
----@param arg0 String
----@return boolean
-function DoubleConfigOption:isValidString(arg0) end
+---@return double
+function DoubleConfigOption:getDefaultValue() end
+
+---@public
+---@return String
+function DoubleConfigOption:getValueAsString() end
+
+---@public
+---@return double
+function DoubleConfigOption:getMax() end
+
+---@public
+---@param arg0 double
+---@return void
+function DoubleConfigOption:setValue(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -33,17 +41,17 @@ function DoubleConfigOption:isValidString(arg0) end
 function DoubleConfigOption:parse(arg0) end
 
 ---@public
----@return Object
-function DoubleConfigOption:getValueAsObject() end
+---@param arg0 String
+---@return boolean
+function DoubleConfigOption:isValidString(arg0) end
+
+---@public
+---@return double
+function DoubleConfigOption:getValue() end
 
 ---@public
 ---@return void
-function DoubleConfigOption:setDefaultToCurrentValue() end
-
----@public
----@param arg0 double
----@return void
-function DoubleConfigOption:setValue(arg0) end
+function DoubleConfigOption:resetToDefault() end
 
 ---@public
 ---@return String
@@ -54,13 +62,5 @@ function DoubleConfigOption:getType() end
 function DoubleConfigOption:getTooltip() end
 
 ---@public
----@return void
-function DoubleConfigOption:resetToDefault() end
-
----@public
----@return double
-function DoubleConfigOption:getDefaultValue() end
-
----@public
----@return double
-function DoubleConfigOption:getMin() end
+---@return Object
+function DoubleConfigOption:getValueAsObject() end

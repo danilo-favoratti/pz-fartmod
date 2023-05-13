@@ -10,13 +10,9 @@ LungeState = {}
 function LungeState:execute(arg0) end
 
 ---@public
----@return LungeState
-function LungeState:instance() end
-
----@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function LungeState:enter(arg0) end
+function LungeState:exit(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
@@ -24,6 +20,10 @@ function LungeState:enter(arg0) end
 function LungeState:isMoving(arg0) end
 
 ---@public
+---@return LungeState
+function LungeState:instance() end
+
+---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function LungeState:exit(arg0) end
+function LungeState:enter(arg0) end

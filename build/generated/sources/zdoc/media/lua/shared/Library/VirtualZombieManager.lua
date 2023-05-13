@@ -19,10 +19,72 @@
 ---@field private NO_SQUARE_E int
 VirtualZombieManager = {}
 
----@private
+---@public
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@param arg3 float
+---@param arg4 int
+---@return void
+function VirtualZombieManager:createHordeFromTo(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@param arg0 int
+---@param arg1 boolean
+---@return IsoZombie
+---@overload fun(arg0:int, arg1:int, arg2:boolean)
+---@overload fun(arg0:int, arg1:boolean, arg2:int)
+function VirtualZombieManager:createRealZombieAlways(arg0, arg1) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 boolean
+---@return IsoZombie
+function VirtualZombieManager:createRealZombieAlways(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 int
+---@param arg1 boolean
+---@param arg2 int
+---@return IsoZombie
+function VirtualZombieManager:createRealZombieAlways(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return boolean
+function VirtualZombieManager:canSpawnAt(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 IsoRoom
+---@return void
+function VirtualZombieManager:roomSpotted(arg0) end
+
+---@public
 ---@param arg0 IsoZombie
 ---@return void
-function VirtualZombieManager:reuseZombie(arg0) end
+function VirtualZombieManager:RemoveZombie(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 RoomDef
+---@return ArrayList|Unknown
+---@overload fun(arg0:int, arg1:RoomDef, arg2:boolean)
+function VirtualZombieManager:addZombiesToMap(arg0, arg1) end
+
+---@public
+---@param arg0 int
+---@param arg1 RoomDef
+---@param arg2 boolean
+---@return ArrayList|Unknown
+function VirtualZombieManager:addZombiesToMap(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 IsoZombie
+---@return boolean
+function VirtualZombieManager:removeZombieFromWorld(arg0) end
 
 ---@public
 ---@param arg0 IsoChunk
@@ -40,11 +102,6 @@ function VirtualZombieManager:addIndoorZombiesToChunk(arg0, arg1) end
 function VirtualZombieManager:addIndoorZombiesToChunk(arg0, arg1, arg2, arg3) end
 
 ---@private
----@param arg0 IsoGridSquare
----@return boolean
-function VirtualZombieManager:canPathOnlyN(arg0) end
-
----@private
 ---@param arg0 int
 ---@param arg1 boolean
 ---@return IsoZombie
@@ -59,114 +116,19 @@ function VirtualZombieManager:createRealZombie(arg0, arg1) end
 function VirtualZombieManager:createRealZombie(arg0, arg1, arg2) end
 
 ---@private
----@param arg0 IsoGridSquare
----@return boolean
-function VirtualZombieManager:canPathOnlyS(arg0) end
-
----@public
 ---@param arg0 int
 ---@param arg1 RoomDef
+---@param arg2 boolean
 ---@return void
-function VirtualZombieManager:addDeadZombiesToMap(arg0, arg1) end
+function VirtualZombieManager:addIndoorZombies(arg0, arg1, arg2) end
 
----@private
----@param arg0 IsoGridSquare
----@return boolean
-function VirtualZombieManager:canPathOnlyE(arg0) end
-
----@private
----@param arg0 IsoRoom
+---@public
 ---@return int
-function VirtualZombieManager:getZombieCountForRoom(arg0) end
-
----@public
----@param arg0 int
----@param arg1 boolean
----@return IsoZombie
----@overload fun(arg0:int, arg1:boolean, arg2:int)
----@overload fun(arg0:int, arg1:int, arg2:boolean)
-function VirtualZombieManager:createRealZombieAlways(arg0, arg1) end
-
----@public
----@param arg0 int
----@param arg1 boolean
----@param arg2 int
----@return IsoZombie
-function VirtualZombieManager:createRealZombieAlways(arg0, arg1, arg2) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 boolean
----@return IsoZombie
-function VirtualZombieManager:createRealZombieAlways(arg0, arg1, arg2) end
+function VirtualZombieManager:reusableZombiesSize() end
 
 ---@public
 ---@return void
-function VirtualZombieManager:update() end
-
----@public
----@param arg0 int
----@param arg1 RoomDef
----@return ArrayList|Unknown
----@overload fun(arg0:int, arg1:RoomDef, arg2:boolean)
-function VirtualZombieManager:addZombiesToMap(arg0, arg1) end
-
----@public
----@param arg0 int
----@param arg1 RoomDef
----@param arg2 boolean
----@return ArrayList|Unknown
-function VirtualZombieManager:addZombiesToMap(arg0, arg1, arg2) end
-
----@private
----@param arg0 IsoGridSquare
----@return boolean
-function VirtualZombieManager:canPathOnlyW(arg0) end
-
----@public
----@param arg0 float
----@param arg1 float
----@param arg2 float
----@return IsoZombie
-function VirtualZombieManager:createRealZombieNow(arg0, arg1, arg2) end
-
----@private
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@return boolean
-function VirtualZombieManager:isBlockedInAllDirections(arg0, arg1, arg2) end
-
----@public
----@param arg0 IsoZombie
----@return void
-function VirtualZombieManager:addToReusable(arg0) end
-
----@public
----@param arg0 float
----@param arg1 float
----@param arg2 float
----@param arg3 float
----@param arg4 int
----@return void
-function VirtualZombieManager:createHordeFromTo(arg0, arg1, arg2, arg3, arg4) end
-
----@private
----@param arg0 float
----@param arg1 float
----@param arg2 float
----@param arg3 float
----@param arg4 int
----@return IsoGridSquare
-function VirtualZombieManager:pickEatingZombieSquare(arg0, arg1, arg2, arg3, arg4) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@return boolean
-function VirtualZombieManager:canSpawnAt(arg0, arg1, arg2) end
+function VirtualZombieManager:init() end
 
 ---@public
 ---@param arg0 IsoDeadBody
@@ -176,17 +138,8 @@ function VirtualZombieManager:createEatingZombies(arg0, arg1) end
 
 ---@private
 ---@param arg0 IsoGridSquare
----@return int
-function VirtualZombieManager:getBlockedBits(arg0) end
-
----@public
----@return int
-function VirtualZombieManager:reusableZombiesSize() end
-
----@public
----@param arg0 IsoZombie
 ---@return boolean
-function VirtualZombieManager:removeZombieFromWorld(arg0) end
+function VirtualZombieManager:canPathOnlyN(arg0) end
 
 ---@public
 ---@param arg0 int
@@ -197,25 +150,7 @@ function VirtualZombieManager:AddBloodToMap(arg0, arg1) end
 ---@public
 ---@param arg0 IsoZombie
 ---@return void
-function VirtualZombieManager:RemoveZombie(arg0) end
-
----@public
----@param arg0 IsoZombie
----@return boolean
-function VirtualZombieManager:isReused(arg0) end
-
----@public
----@return void
-function VirtualZombieManager:Reset() end
-
----@public
----@param arg0 IsoRoom
----@return void
-function VirtualZombieManager:roomSpotted(arg0) end
-
----@public
----@return void
-function VirtualZombieManager:init() end
+function VirtualZombieManager:addToReusable(arg0) end
 
 ---@public
 ---@param arg0 RoomDef
@@ -223,9 +158,74 @@ function VirtualZombieManager:init() end
 ---@return void
 function VirtualZombieManager:tryAddIndoorZombies(arg0, arg1) end
 
+---@public
+---@param arg0 IsoZombie
+---@return boolean
+function VirtualZombieManager:isReused(arg0) end
+
 ---@private
+---@param arg0 IsoGridSquare
+---@return boolean
+function VirtualZombieManager:canPathOnlyE(arg0) end
+
+---@public
+---@return void
+function VirtualZombieManager:update() end
+
+---@private
+---@param arg0 IsoZombie
+---@return void
+function VirtualZombieManager:reuseZombie(arg0) end
+
+---@public
+---@return void
+function VirtualZombieManager:Reset() end
+
+---@private
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@param arg3 float
+---@param arg4 int
+---@return IsoGridSquare
+function VirtualZombieManager:pickEatingZombieSquare(arg0, arg1, arg2, arg3, arg4) end
+
+---@private
+---@param arg0 IsoRoom
+---@return int
+function VirtualZombieManager:getZombieCountForRoom(arg0) end
+
+---@public
 ---@param arg0 int
 ---@param arg1 RoomDef
----@param arg2 boolean
 ---@return void
-function VirtualZombieManager:addIndoorZombies(arg0, arg1, arg2) end
+function VirtualZombieManager:addDeadZombiesToMap(arg0, arg1) end
+
+---@private
+---@param arg0 IsoGridSquare
+---@return boolean
+function VirtualZombieManager:canPathOnlyW(arg0) end
+
+---@private
+---@param arg0 IsoGridSquare
+---@return int
+function VirtualZombieManager:getBlockedBits(arg0) end
+
+---@private
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return boolean
+function VirtualZombieManager:isBlockedInAllDirections(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@return IsoZombie
+function VirtualZombieManager:createRealZombieNow(arg0, arg1, arg2) end
+
+---@private
+---@param arg0 IsoGridSquare
+---@return boolean
+function VirtualZombieManager:canPathOnlyS(arg0) end

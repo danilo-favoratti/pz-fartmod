@@ -4,8 +4,8 @@
 StorySoundEvent = {}
 
 ---@public
----@return String
-function StorySoundEvent:getName() end
+---@return ArrayList|Unknown
+function StorySoundEvent:getEventSounds() end
 
 ---@public
 ---@param arg0 ArrayList|Unknown
@@ -13,8 +13,8 @@ function StorySoundEvent:getName() end
 function StorySoundEvent:setEventSounds(arg0) end
 
 ---@public
----@return ArrayList|Unknown
-function StorySoundEvent:getEventSounds() end
+---@return String
+function StorySoundEvent:getName() end
 
 ---@public
 ---@param arg0 String

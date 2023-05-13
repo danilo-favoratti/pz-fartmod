@@ -115,7 +115,7 @@
 ---@field public ZombieRenderMemory BooleanDebugOption
 ---@field public ZombieOutfitRandom BooleanDebugOption
 ---@field public Checks DebugOptions.Checks
----@field public IsoSprite IsoSprite
+---@field public IsoSprite options_IsoSprite
 ---@field public Network Network
 ---@field public OffscreenBuffer OffscreenBuffer
 ---@field public Terrain Terrain
@@ -127,12 +127,47 @@ DebugOptions = {}
 
 ---@public
 ---@param arg0 String
----@return boolean
-function DebugOptions:getBoolean(arg0) end
+---@param arg1 boolean
+---@return void
+function DebugOptions:setBoolean(arg0, arg1) end
 
 ---@public
+---@param arg0 int
+---@return BooleanDebugOption
+function DebugOptions:getOptionByIndex(arg0) end
+
+---@private
+---@param arg0 IDebugOption
 ---@return void
-function DebugOptions:save() end
+function DebugOptions:addOption(arg0) end
+
+---@public
+---@param arg0 IDebugOption
+---@return void
+function DebugOptions:onChildAdded(arg0) end
+
+---@private
+---@param arg0 int
+---@return void
+function DebugOptions:testThreadCrashInternal(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function DebugOptions:testThreadCrash(arg0) end
+
+---@public
+---@return String
+function DebugOptions:getName() end
+
+---@public
+---@return Iterable|Unknown
+function DebugOptions:getChildren() end
+
+---@public
+---@param arg0 IDebugOption
+---@return void
+function DebugOptions:addChild(arg0) end
 
 ---@private
 ---@param arg0 String
@@ -141,51 +176,9 @@ function DebugOptions:save() end
 function DebugOptions:newOption(arg0, arg1) end
 
 ---@public
----@return void
-function DebugOptions:load() end
-
----@public
----@return int
-function DebugOptions:getOptionCount() end
-
----@private
----@param arg0 String
----@return void
-function DebugOptions:onTrigger_SetDebugOptions(arg0) end
-
----@private
----@param arg0 IDebugOptionGroup
----@return IDebugOptionGroup
-function DebugOptions:newOptionGroup(arg0) end
-
----@public
----@param arg0 IDebugOptionGroup
----@return void
-function DebugOptions:setParent(arg0) end
-
----@public
----@param arg0 int
----@return void
-function DebugOptions:testThreadCrash(arg0) end
-
----@public
----@param arg0 String
----@param arg1 boolean
----@return void
-function DebugOptions:setBoolean(arg0, arg1) end
-
----@public
----@return String
-function DebugOptions:getName() end
-
----@public
 ---@param arg0 IDebugOption
 ---@return void
-function DebugOptions:onChildAdded(arg0) end
-
----@public
----@return IDebugOptionGroup
-function DebugOptions:getParent() end
+function DebugOptions:onDescendantAdded(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -193,23 +186,18 @@ function DebugOptions:getParent() end
 function DebugOptions:getOptionByName(arg0) end
 
 ---@public
----@param arg0 int
----@return BooleanDebugOption
-function DebugOptions:getOptionByIndex(arg0) end
+---@return void
+function DebugOptions:init() end
+
+---@public
+---@param arg0 String
+---@return boolean
+function DebugOptions:getBoolean(arg0) end
 
 ---@private
 ---@param arg0 IDebugOptionGroup
----@return void
-function DebugOptions:addDescendantOptions(arg0) end
-
----@private
----@param arg0 int
----@return void
-function DebugOptions:testThreadCrashInternal(arg0) end
-
----@public
----@return Iterable|Unknown
-function DebugOptions:getChildren() end
+---@return IDebugOptionGroup
+function DebugOptions:newOptionGroup(arg0) end
 
 ---@private
 ---@param arg0 String
@@ -219,23 +207,35 @@ function DebugOptions:newDebugOnlyOption(arg0, arg1) end
 
 ---@public
 ---@return void
-function DebugOptions:init() end
-
----@public
----@param arg0 IDebugOption
----@return void
-function DebugOptions:addChild(arg0) end
-
----@public
----@param arg0 IDebugOption
----@return void
-function DebugOptions:onDescendantAdded(arg0) end
-
----@private
----@param arg0 IDebugOption
----@return void
-function DebugOptions:addOption(arg0) end
+function DebugOptions:save() end
 
 ---@private
 ---@return void
 function DebugOptions:initMessaging() end
+
+---@public
+---@param arg0 IDebugOptionGroup
+---@return void
+function DebugOptions:setParent(arg0) end
+
+---@private
+---@param arg0 IDebugOptionGroup
+---@return void
+function DebugOptions:addDescendantOptions(arg0) end
+
+---@public
+---@return void
+function DebugOptions:load() end
+
+---@private
+---@param arg0 String
+---@return void
+function DebugOptions:onTrigger_SetDebugOptions(arg0) end
+
+---@public
+---@return int
+function DebugOptions:getOptionCount() end
+
+---@public
+---@return IDebugOptionGroup
+function DebugOptions:getParent() end

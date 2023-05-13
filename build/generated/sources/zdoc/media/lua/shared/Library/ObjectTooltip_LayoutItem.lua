@@ -29,33 +29,25 @@ ObjectTooltip_LayoutItem = {}
 function ObjectTooltip_LayoutItem:setValue(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 ObjectTooltip
 ---@return void
-function ObjectTooltip_LayoutItem:render(arg0, arg1, arg2, arg3, arg4) end
-
----@public
----@param arg0 int
----@return void
----@overload fun(arg0:float)
-function ObjectTooltip_LayoutItem:setValueRightNoPlus(arg0) end
+function ObjectTooltip_LayoutItem:calcSizes() end
 
 ---@public
 ---@param arg0 float
 ---@return void
+---@overload fun(arg0:int)
 function ObjectTooltip_LayoutItem:setValueRightNoPlus(arg0) end
 
 ---@public
----@param arg0 float
----@param arg1 float
----@param arg2 float
----@param arg3 float
----@param arg4 float
+---@param arg0 int
 ---@return void
-function ObjectTooltip_LayoutItem:setProgress(arg0, arg1, arg2, arg3, arg4) end
+function ObjectTooltip_LayoutItem:setValueRightNoPlus(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 boolean
+---@return void
+function ObjectTooltip_LayoutItem:setValueRight(arg0, arg1) end
 
 ---@public
 ---@param arg0 String
@@ -67,15 +59,23 @@ function ObjectTooltip_LayoutItem:setProgress(arg0, arg1, arg2, arg3, arg4) end
 function ObjectTooltip_LayoutItem:setLabel(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@param arg3 float
+---@param arg4 float
 ---@return void
-function ObjectTooltip_LayoutItem:reset() end
+function ObjectTooltip_LayoutItem:setProgress(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
 ---@param arg0 int
----@param arg1 boolean
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@param arg4 ObjectTooltip
 ---@return void
-function ObjectTooltip_LayoutItem:setValueRight(arg0, arg1) end
+function ObjectTooltip_LayoutItem:render(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
 ---@return void
-function ObjectTooltip_LayoutItem:calcSizes() end
+function ObjectTooltip_LayoutItem:reset() end

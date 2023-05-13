@@ -109,15 +109,15 @@ function LuaEventManager:triggerEvent(arg0, arg1, arg2, arg3, arg4, arg5, arg6, 
 ---@return void
 function LuaEventManager:triggerEvent(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
 
----@public
----@return void
-function LuaEventManager:Reset() end
-
----@public
+---@private
 ---@param arg0 LuaCallFrame
 ---@param arg1 int
 ---@return int
-function LuaEventManager:call(arg0, arg1) end
+function LuaEventManager:OnTick(arg0, arg1) end
+
+---@public
+---@return void
+function LuaEventManager:Reset() end
 
 ---@public
 ---@param arg0 String
@@ -153,6 +153,16 @@ function LuaEventManager:triggerEventGarbage(arg0, arg1, arg2, arg3) end
 function LuaEventManager:triggerEventGarbage(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
+---@param arg0 Prototype
+---@param arg1 LuaClosure
+---@return void
+function LuaEventManager:reroute(arg0, arg1) end
+
+---@public
+---@return void
+function LuaEventManager:ResetCallbacks() end
+
+---@public
 ---@param arg0 String
 ---@param arg1 Object
 ---@return void
@@ -160,7 +170,22 @@ function LuaEventManager:triggerEventUnique(arg0, arg1) end
 
 ---@public
 ---@return void
-function LuaEventManager:ResetCallbacks() end
+function LuaEventManager:clear() end
+
+---@private
+---@return void
+function LuaEventManager:AddEvents() end
+
+---@public
+---@param arg0 LuaCallFrame
+---@param arg1 int
+---@return int
+function LuaEventManager:call(arg0, arg1) end
+
+---@private
+---@param arg0 String
+---@return Event
+function LuaEventManager:checkEvent(arg0) end
 
 ---@public
 ---@param arg0 Platform
@@ -169,31 +194,6 @@ function LuaEventManager:ResetCallbacks() end
 function LuaEventManager:register(arg0, arg1) end
 
 ---@public
----@return void
-function LuaEventManager:clear() end
-
----@private
----@param arg0 String
----@return Event
-function LuaEventManager:checkEvent(arg0) end
-
----@private
----@return void
-function LuaEventManager:AddEvents() end
-
----@private
----@param arg0 LuaCallFrame
----@param arg1 int
----@return int
-function LuaEventManager:OnTick(arg0, arg1) end
-
----@public
 ---@param arg0 String
 ---@return Event
 function LuaEventManager:AddEvent(arg0) end
-
----@public
----@param arg0 Prototype
----@param arg1 LuaClosure
----@return void
-function LuaEventManager:reroute(arg0, arg1) end

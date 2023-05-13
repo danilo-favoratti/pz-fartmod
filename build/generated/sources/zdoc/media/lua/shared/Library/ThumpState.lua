@@ -2,24 +2,14 @@
 ---@field private _instance ThumpState
 ThumpState = {}
 
----@public
----@return ThumpState
-function ThumpState:instance() end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function ThumpState:enter(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function ThumpState:exit(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function ThumpState:execute(arg0) end
+---@private
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@param arg3 int
+---@param arg4 int
+---@return IsoPlayer
+function ThumpState:findPlayer(arg0, arg1, arg2, arg3, arg4) end
 
 ---@private
 ---@param arg0 IsoZombie
@@ -27,6 +17,15 @@ function ThumpState:execute(arg0) end
 ---@param arg2 IsoGridSquare
 ---@return boolean
 function ThumpState:lungeThroughDoor(arg0, arg1, arg2) end
+
+---@public
+---@return int
+function ThumpState:getFastForwardDamageMultiplier() end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function ThumpState:enter(arg0) end
 
 ---@private
 ---@param arg0 IsoGameCharacter
@@ -41,14 +40,15 @@ function ThumpState:isThumpTargetValid(arg0, arg1) end
 function ThumpState:animEvent(arg0, arg1) end
 
 ---@public
----@return int
-function ThumpState:getFastForwardDamageMultiplier() end
+---@return ThumpState
+function ThumpState:instance() end
 
----@private
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@param arg4 int
----@return IsoPlayer
-function ThumpState:findPlayer(arg0, arg1, arg2, arg3, arg4) end
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function ThumpState:execute(arg0) end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function ThumpState:exit(arg0) end

@@ -2,39 +2,21 @@
 Field = {}
 
 ---@private
----@return Map|Unknown|Unknown
-function Field:declaredAnnotations() end
+---@return byte[]
+function Field:getTypeAnnotationBytes0() end
 
 ---@public
----@return String
-function Field:toString() end
-
----@private
----@param arg0 Class|Unknown
----@param arg1 Object
----@return void
-function Field:checkAccess(arg0, arg1) end
+---@return int
+function Field:getModifiers() end
 
 ---@public
 ---@param arg0 Object
 ---@return char
 function Field:getChar(arg0) end
 
----@return boolean
-function Field:isTrustedFinal() end
-
 ---@public
 ---@return boolean
 function Field:isSynthetic() end
-
----@public
----@param arg0 Object
----@return boolean
-function Field:equals(arg0) end
-
----@public
----@return Type
-function Field:getGenericType() end
 
 ---@public
 ---@param arg0 Object
@@ -43,9 +25,13 @@ function Field:getGenericType() end
 function Field:setChar(arg0, arg1) end
 
 ---@public
----@param arg0 Object
----@return short
-function Field:getShort(arg0) end
+---@return Class|Unknown
+function Field:getType() end
+
+---@public
+---@param arg0 Class|Unknown
+---@return Annotation
+function Field:getAnnotation(arg0) end
 
 ---@public
 ---@param arg0 Object
@@ -54,35 +40,19 @@ function Field:getShort(arg0) end
 function Field:setDouble(arg0, arg1) end
 
 ---@public
----@param arg0 Class|Unknown
----@return Annotation[]
-function Field:getAnnotationsByType(arg0) end
-
----@public
 ---@param arg0 Object
----@param arg1 int
----@return void
-function Field:setInt(arg0, arg1) end
-
----@public
 ---@return boolean
-function Field:isEnumConstant() end
+function Field:equals(arg0) end
 
 ---@private
----@return byte[]
-function Field:getTypeAnnotationBytes0() end
-
----@private
----@param arg0 FieldAccessor
----@param arg1 boolean
+---@param arg0 Class|Unknown
+---@param arg1 Object
 ---@return void
-function Field:setFieldAccessor(arg0, arg1) end
+function Field:checkAccess(arg0, arg1) end
 
 ---@public
----@param arg0 Object
----@param arg1 short
----@return void
-function Field:setShort(arg0, arg1) end
+---@return Annotation[]
+function Field:getDeclaredAnnotations() end
 
 ---@private
 ---@param arg0 Object
@@ -96,9 +66,42 @@ function Field:getFieldAccessor(arg0) end
 function Field:getFieldAccessor(arg0) end
 
 ---@public
----@param arg0 Class|Unknown
----@return Annotation
-function Field:getAnnotation(arg0) end
+---@param arg0 Object
+---@param arg1 float
+---@return void
+function Field:setFloat(arg0, arg1) end
+
+---@public
+---@return AnnotatedType
+function Field:getAnnotatedType() end
+
+---@public
+---@return boolean
+function Field:isEnumConstant() end
+
+---@public
+---@param arg0 Object
+---@param arg1 int
+---@return void
+function Field:setInt(arg0, arg1) end
+
+---@public
+---@param arg0 Object
+---@return long
+function Field:getLong(arg0) end
+
+---@public
+---@param arg0 Object
+---@return short
+function Field:getShort(arg0) end
+
+---@private
+---@param arg0 boolean
+---@return FieldAccessor
+function Field:acquireFieldAccessor(arg0) end
+
+---@return boolean
+function Field:isTrustedFinal() end
 
 ---@public
 ---@param arg0 Object
@@ -107,18 +110,25 @@ function Field:getAnnotation(arg0) end
 function Field:setLong(arg0, arg1) end
 
 ---@public
----@param arg0 Object
----@return long
-function Field:getLong(arg0) end
-
----@private
----@param arg0 boolean
----@return FieldAccessor
-function Field:acquireFieldAccessor(arg0) end
+---@return int
+function Field:hashCode() end
 
 ---@public
----@return String
-function Field:getName() end
+---@param arg0 Object
+---@param arg1 short
+---@return void
+function Field:setShort(arg0, arg1) end
+
+---@private
+---@return FieldRepository
+function Field:getGenericInfo() end
+
+---@return Field
+function Field:copy() end
+
+---@private
+---@return GenericsFactory
+function Field:getFactory() end
 
 ---@public
 ---@param arg0 Object
@@ -128,55 +138,7 @@ function Field:setByte(arg0, arg1) end
 
 ---@public
 ---@return String
-function Field:toGenericString() end
-
----@public
----@return Class|Unknown
-function Field:getDeclaringClass() end
-
----@param arg0 Class|Unknown
----@return void
-function Field:checkCanSetAccessible(arg0) end
-
----@private
----@return String
-function Field:getGenericSignature() end
-
----@public
----@return AnnotatedType
-function Field:getAnnotatedType() end
-
----@public
----@param arg0 Object
----@return Object
-function Field:get(arg0) end
-
----@private
----@return GenericsFactory
-function Field:getFactory() end
-
----@public
----@return Annotation[]
-function Field:getDeclaredAnnotations() end
-
----@public
----@param arg0 boolean
----@return void
-function Field:setAccessible(arg0) end
-
----@public
----@param arg0 Object
----@return double
-function Field:getDouble(arg0) end
-
----@public
----@param arg0 Object
----@param arg1 Object
----@return void
-function Field:set(arg0, arg1) end
-
----@return Field
-function Field:getRoot() end
+function Field:getName() end
 
 ---@public
 ---@param arg0 Object
@@ -185,37 +147,11 @@ function Field:getInt(arg0) end
 
 ---@public
 ---@return Class|Unknown
-function Field:getType() end
+function Field:getDeclaringClass() end
 
 ---@public
----@param arg0 Object
----@return boolean
-function Field:getBoolean(arg0) end
-
----@public
----@param arg0 Object
----@return float
-function Field:getFloat(arg0) end
-
----@private
----@return FieldRepository
-function Field:getGenericInfo() end
-
----@return String
-function Field:toShortString() end
-
----@public
----@return int
-function Field:getModifiers() end
-
----@public
----@param arg0 Object
----@return byte
-function Field:getByte(arg0) end
-
----@public
----@return int
-function Field:hashCode() end
+---@return Type
+function Field:getGenericType() end
 
 ---@public
 ---@param arg0 Object
@@ -223,11 +159,75 @@ function Field:hashCode() end
 ---@return void
 function Field:setBoolean(arg0, arg1) end
 
----@return Field
-function Field:copy() end
+---@private
+---@return Map|Unknown|Unknown
+function Field:declaredAnnotations() end
 
 ---@public
 ---@param arg0 Object
----@param arg1 float
+---@return byte
+function Field:getByte(arg0) end
+
+---@private
+---@return String
+function Field:getGenericSignature() end
+
+---@public
+---@param arg0 Object
+---@return float
+function Field:getFloat(arg0) end
+
+---@public
+---@param arg0 Object
+---@param arg1 Object
 ---@return void
-function Field:setFloat(arg0, arg1) end
+function Field:set(arg0, arg1) end
+
+---@public
+---@param arg0 Class|Unknown
+---@return Annotation[]
+function Field:getAnnotationsByType(arg0) end
+
+---@return String
+function Field:toShortString() end
+
+---@public
+---@param arg0 Object
+---@return Object
+function Field:get(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function Field:setAccessible(arg0) end
+
+---@public
+---@return String
+function Field:toString() end
+
+---@public
+---@param arg0 Object
+---@return double
+function Field:getDouble(arg0) end
+
+---@private
+---@param arg0 FieldAccessor
+---@param arg1 boolean
+---@return void
+function Field:setFieldAccessor(arg0, arg1) end
+
+---@return Field
+function Field:getRoot() end
+
+---@public
+---@param arg0 Object
+---@return boolean
+function Field:getBoolean(arg0) end
+
+---@param arg0 Class|Unknown
+---@return void
+function Field:checkCanSetAccessible(arg0) end
+
+---@public
+---@return String
+function Field:toGenericString() end

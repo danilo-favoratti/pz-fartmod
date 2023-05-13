@@ -8,16 +8,6 @@
 IsoJukebox = {}
 
 ---@public
----@param arg0 int
----@param arg1 int
----@return boolean
-function IsoJukebox:onMouseLeftClick(arg0, arg1) end
-
----@public
----@return void
-function IsoJukebox:addToWorld() end
-
----@public
 ---@return void
 function IsoJukebox:update() end
 
@@ -29,3 +19,13 @@ function IsoJukebox:SetPlaying(arg0) end
 ---@public
 ---@return String
 function IsoJukebox:getObjectName() end
+
+---@public
+---@return void
+function IsoJukebox:addToWorld() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return boolean
+function IsoJukebox:onMouseLeftClick(arg0, arg1) end

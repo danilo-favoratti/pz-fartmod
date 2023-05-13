@@ -18,13 +18,12 @@
 Stash = {}
 
 ---@public
----@param arg0 KahluaTableImpl
----@return void
-function Stash:load(arg0) end
-
----@public
 ---@return int
 function Stash:getBuildingX() end
+
+---@public
+---@return String
+function Stash:getItem() end
 
 ---@public
 ---@return int
@@ -32,8 +31,9 @@ function Stash:getBuildingY() end
 
 ---@public
 ---@return String
-function Stash:getItem() end
+function Stash:getName() end
 
 ---@public
----@return String
-function Stash:getName() end
+---@param arg0 KahluaTableImpl
+---@return void
+function Stash:load(arg0) end

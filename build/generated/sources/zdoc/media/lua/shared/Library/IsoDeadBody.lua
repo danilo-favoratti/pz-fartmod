@@ -41,6 +41,103 @@
 ---@field public sayLine String
 IsoDeadBody = {}
 
+---@public
+---@return short
+function IsoDeadBody:getOnlineID() end
+
+---@public
+---@return InventoryItem
+function IsoDeadBody:getItem() end
+
+---@public
+---@return void
+function IsoDeadBody:removeFromWorld() end
+
+---@private
+---@return void
+function IsoDeadBody:updateContainerWithHandItems() end
+
+---@public
+---@param arg0 String
+---@param arg1 KahluaTable
+---@param arg2 ByteBuffer
+---@return void
+function IsoDeadBody:saveChange(arg0, arg1, arg2) end
+
+---@public
+---@return void
+function IsoDeadBody:Reset() end
+
+---@public
+---@return void
+function IsoDeadBody:renderlast() end
+
+---@public
+---@return HumanVisual
+function IsoDeadBody:getHumanVisual() end
+
+---@private
+---@return boolean
+function IsoDeadBody:updateFakeDead() end
+
+---@public
+---@return AttachedItems
+function IsoDeadBody:getAttachedItems() end
+
+---@public
+---@return boolean
+function IsoDeadBody:isFakeDead() end
+
+---@private
+---@return String
+function IsoDeadBody:getDescription() end
+
+---@public
+---@param arg0 float
+---@param arg1 float
+---@return boolean
+function IsoDeadBody:isMouseOver(arg0, arg1) end
+
+---@public
+---@return short
+function IsoDeadBody:getObjectID() end
+
+---@private
+---@param arg0 ByteBuffer
+---@return IsoSprite
+function IsoDeadBody:loadSprite(arg0) end
+
+---@public
+---@return float
+function IsoDeadBody:getReanimateTime() end
+
+---@public
+---@return void
+function IsoDeadBody:Burn() end
+
+---@public
+---@param arg0 short
+---@return IsoDeadBody
+function IsoDeadBody:getDeadBody(arg0) end
+
+---@public
+---@return void
+function IsoDeadBody:reanimateNow() end
+
+---@public
+---@param arg0 InventoryItem
+---@return void
+function IsoDeadBody:setSecondaryHandItem(arg0) end
+
+---@public
+---@return boolean
+function IsoDeadBody:IsSpeaking() end
+
+---@public
+---@param arg0 short
+---@return void
+function IsoDeadBody:setObjectID(arg0) end
+
 ---@private
 ---@param arg0 float
 ---@param arg1 float
@@ -49,38 +146,24 @@ IsoDeadBody = {}
 function IsoDeadBody:updateRotting(arg0, arg1, arg2) end
 
 ---@public
----@return HumanVisual
-function IsoDeadBody:getHumanVisual() end
-
----@private
----@param arg0 ByteBuffer
----@return IsoSprite
-function IsoDeadBody:loadSprite(arg0) end
-
----@public
----@return short
-function IsoDeadBody:getObjectID() end
-
----@public
----@return float
-function IsoDeadBody:getAngle() end
-
----@public
----@param arg0 boolean
+---@param arg0 short
 ---@return void
-function IsoDeadBody:setFallOnFront(arg0) end
-
----@private
----@return String
-function IsoDeadBody:getDescription() end
+function IsoDeadBody:setOnlineID(arg0) end
 
 ---@public
----@return boolean
-function IsoDeadBody:isFakeDead() end
+---@return void
+function IsoDeadBody:updateBodies() end
 
 ---@public
----@return short
-function IsoDeadBody:getOnlineID() end
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@param arg3 ColorInfo
+---@param arg4 boolean
+---@param arg5 boolean
+---@param arg6 Shader
+---@return void
+function IsoDeadBody:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 
 ---@public
 ---@return void
@@ -101,89 +184,9 @@ function IsoDeadBody:renderShadow() end
 function IsoDeadBody:renderShadow(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
 
 ---@public
----@return void
-function IsoDeadBody:Reset() end
-
----@public
----@return void
-function IsoDeadBody:reanimateLater() end
-
----@public
----@param arg0 short
----@return IsoDeadBody
-function IsoDeadBody:getDeadBody(arg0) end
-
----@public
 ---@param arg0 boolean
 ---@return void
 function IsoDeadBody:setFakeDead(arg0) end
-
----@public
----@return BaseVisual
-function IsoDeadBody:getVisual() end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 boolean
----@return void
-function IsoDeadBody:save(arg0, arg1) end
-
----@public
----@param arg0 short
----@return void
-function IsoDeadBody:removeDeadBody(arg0) end
-
----@public
----@return void
-function IsoDeadBody:removeFromWorld() end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 int
----@param arg2 boolean
----@return void
-function IsoDeadBody:load(arg0, arg1, arg2) end
-
----@public
----@return InventoryItem
-function IsoDeadBody:getItem() end
-
----@public
----@return void
-function IsoDeadBody:addToWorld() end
-
----@public
----@return boolean
-function IsoDeadBody:isSkeleton() end
-
----@public
----@return String
-function IsoDeadBody:getSayLine() end
-
----@public
----@param arg0 float
----@param arg1 float
----@return boolean
-function IsoDeadBody:isMouseOver(arg0, arg1) end
-
----@public
----@return InventoryItem
-function IsoDeadBody:getSecondaryHandItem() end
-
----@public
----@param arg0 JVector2
----@param arg1 IsoObject
----@return void
-function IsoDeadBody:Collision(arg0, arg1) end
-
----@public
----@param arg0 boolean
----@return void
-function IsoDeadBody:setCrawling(arg0) end
-
----@public
----@return void
-function IsoDeadBody:Burn() end
 
 ---@private
 ---@return boolean
@@ -198,56 +201,154 @@ function IsoDeadBody:isPlayerNearby(arg0, arg1) end
 
 ---@public
 ---@param arg0 String
----@param arg1 KahluaTable
----@param arg2 ByteBuffer
+---@param arg1 ByteBuffer
 ---@return void
-function IsoDeadBody:saveChange(arg0, arg1, arg2) end
+function IsoDeadBody:loadChange(arg0, arg1) end
 
 ---@public
----@return boolean
-function IsoDeadBody:isFallOnFront() end
-
----@private
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@param arg2 boolean
 ---@return void
-function IsoDeadBody:updateContainerWithHandItems() end
+function IsoDeadBody:load(arg0, arg1, arg2) end
 
 ---@public
----@param arg0 float
----@param arg1 float
----@param arg2 float
----@param arg3 ColorInfo
----@param arg4 boolean
----@param arg5 boolean
----@param arg6 Shader
 ---@return void
-function IsoDeadBody:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
-
----@private
----@return boolean
-function IsoDeadBody:updateFakeDead() end
-
----@public
----@param arg0 short
----@return boolean
-function IsoDeadBody:isDead(arg0) end
-
----@public
----@param arg0 ItemContainer
----@return void
-function IsoDeadBody:setContainer(arg0) end
+function IsoDeadBody:addToWorld() end
 
 ---@public
 ---@return String
 function IsoDeadBody:getObjectName() end
 
 ---@public
+---@return float
+function IsoDeadBody:getAngle() end
+
+---@public
+---@return void
+function IsoDeadBody:reanimate() end
+
+---@public
+---@param arg0 short
+---@param arg1 IsoDeadBody
+---@return void
+function IsoDeadBody:addDeadBodyID(arg0, arg1) end
+
+---@public
+---@return void
+function IsoDeadBody:reanimateLater() end
+
+---@public
+---@return String
+function IsoDeadBody:getOutfitName() end
+
+---@public
+---@return InventoryItem
+function IsoDeadBody:getSecondaryHandItem() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoDeadBody:setCrawling(arg0) end
+
+---@public
 ---@return boolean
-function IsoDeadBody:isPlayer() end
+function IsoDeadBody:isFallOnFront() end
+
+---@public
+---@return boolean
+function IsoDeadBody:isCrawling() end
+
+---@private
+---@return float
+function IsoDeadBody:getReanimateDelay() end
+
+---@public
+---@param arg0 InventoryItem
+---@return void
+function IsoDeadBody:checkClothing(arg0) end
+
+---@public
+---@return WornItems
+function IsoDeadBody:getWornItems() end
 
 ---@public
 ---@param arg0 WornItems
 ---@return void
 function IsoDeadBody:setWornItems(arg0) end
+
+---@public
+---@return boolean
+function IsoDeadBody:isPlayer() end
+
+---@public
+---@param arg0 ByteBuffer
+---@return String
+function IsoDeadBody:readInventory(arg0) end
+
+---@public
+---@return InventoryItem
+function IsoDeadBody:getPrimaryHandItem() end
+
+---@public
+---@param arg0 JVector2
+---@param arg1 IsoObject
+---@return void
+function IsoDeadBody:Collision(arg0, arg1) end
+
+---@public
+---@return boolean
+function IsoDeadBody:isSkeleton() end
+
+---@private
+---@return float
+function IsoDeadBody:getFakeDeadWakeupHours() end
+
+---@public
+---@return boolean
+function IsoDeadBody:isZombie() end
+
+---@public
+---@param arg0 AttachedItems
+---@return void
+function IsoDeadBody:setAttachedItems(arg0) end
+
+---@public
+---@param arg0 InventoryItem
+---@return void
+function IsoDeadBody:setPrimaryHandItem(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function IsoDeadBody:Say(arg0) end
+
+---@public
+---@param arg0 ItemVisuals
+---@return void
+function IsoDeadBody:getItemVisuals(arg0) end
+
+---@public
+---@return String
+function IsoDeadBody:getSayLine() end
+
+---@public
+---@param arg0 short
+---@return void
+function IsoDeadBody:removeDeadBody(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoDeadBody:setReanimateTime(arg0) end
+
+---@public
+---@return boolean
+function IsoDeadBody:isFemale() end
+
+---@public
+---@return void
+function IsoDeadBody:update() end
 
 ---@public
 ---@param arg0 float
@@ -258,72 +359,8 @@ function IsoDeadBody:setWornItems(arg0) end
 function IsoDeadBody:renderObjectPicker(arg0, arg1, arg2, arg3) end
 
 ---@public
----@return String
-function IsoDeadBody:getOutfitName() end
-
----@public
----@return WornItems
-function IsoDeadBody:getWornItems() end
-
----@public
----@param arg0 String
----@return void
-function IsoDeadBody:Say(arg0) end
-
----@public
----@param arg0 short
----@return void
-function IsoDeadBody:setOnlineID(arg0) end
-
----@public
----@param arg0 InventoryItem
----@return void
-function IsoDeadBody:setSecondaryHandItem(arg0) end
-
----@public
----@return InventoryItem
-function IsoDeadBody:getPrimaryHandItem() end
-
----@public
----@return void
-function IsoDeadBody:reanimate() end
-
----@public
----@param arg0 ByteBuffer
----@return String
-function IsoDeadBody:readInventory(arg0) end
-
----@public
----@param arg0 String
----@param arg1 ByteBuffer
----@return void
-function IsoDeadBody:loadChange(arg0, arg1) end
-
----@public
----@return void
-function IsoDeadBody:renderlast() end
-
----@public
----@param arg0 ItemVisuals
----@return void
-function IsoDeadBody:getItemVisuals(arg0) end
-
----@public
----@return boolean
-function IsoDeadBody:isZombie() end
-
----@public
----@return void
-function IsoDeadBody:reanimateNow() end
-
----@public
----@return boolean
-function IsoDeadBody:IsSpeaking() end
-
----@public
----@param arg0 short
----@return void
-function IsoDeadBody:setObjectID(arg0) end
+---@return BaseVisual
+function IsoDeadBody:getVisual() end
 
 ---@public
 ---@return void
@@ -334,59 +371,22 @@ function IsoDeadBody:softReset() end
 function IsoDeadBody:getTalkerType() end
 
 ---@public
----@return float
-function IsoDeadBody:getReanimateTime() end
-
----@public
----@param arg0 float
+---@param arg0 ItemContainer
 ---@return void
-function IsoDeadBody:setReanimateTime(arg0) end
-
----@public
----@param arg0 InventoryItem
----@return void
-function IsoDeadBody:setPrimaryHandItem(arg0) end
-
----@public
----@return boolean
-function IsoDeadBody:isFemale() end
-
----@public
----@param arg0 InventoryItem
----@return void
-function IsoDeadBody:checkClothing(arg0) end
-
----@public
----@return void
-function IsoDeadBody:update() end
-
----@public
----@param arg0 AttachedItems
----@return void
-function IsoDeadBody:setAttachedItems(arg0) end
-
----@public
----@return AttachedItems
-function IsoDeadBody:getAttachedItems() end
-
----@private
----@return float
-function IsoDeadBody:getReanimateDelay() end
+function IsoDeadBody:setContainer(arg0) end
 
 ---@public
 ---@param arg0 short
----@param arg1 IsoDeadBody
----@return void
-function IsoDeadBody:addDeadBodyID(arg0, arg1) end
-
----@private
----@return float
-function IsoDeadBody:getFakeDeadWakeupHours() end
-
----@public
 ---@return boolean
-function IsoDeadBody:isCrawling() end
+function IsoDeadBody:isDead(arg0) end
 
 ---@public
+---@param arg0 ByteBuffer
+---@param arg1 boolean
 ---@return void
-function IsoDeadBody:updateBodies() end
+function IsoDeadBody:save(arg0, arg1) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoDeadBody:setFallOnFront(arg0) end

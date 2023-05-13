@@ -9,12 +9,12 @@ Clipboard = {}
 function Clipboard:updateMainThread() end
 
 ---@public
----@return void
-function Clipboard:initMainThread() end
-
----@public
 ---@return String
 function Clipboard:getClipboard() end
+
+---@public
+---@return void
+function Clipboard:rememberCurrentValue() end
 
 ---@public
 ---@param arg0 String
@@ -23,4 +23,4 @@ function Clipboard:setClipboard(arg0) end
 
 ---@public
 ---@return void
-function Clipboard:rememberCurrentValue() end
+function Clipboard:initMainThread() end

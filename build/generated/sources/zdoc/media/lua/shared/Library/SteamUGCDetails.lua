@@ -9,27 +9,27 @@ SteamUGCDetails = {}
 
 ---@public
 ---@return int
-function SteamUGCDetails:getNumChildren() end
+function SteamUGCDetails:getFileSize() end
 
 ---@public
 ---@return long
-function SteamUGCDetails:getID() end
+function SteamUGCDetails:getTimeCreated() end
 
 ---@public
 ---@return String
 function SteamUGCDetails:getIDString() end
 
 ---@public
----@return String
-function SteamUGCDetails:getState() end
+---@return int
+function SteamUGCDetails:getNumChildren() end
 
 ---@public
 ---@return String
 function SteamUGCDetails:getTitle() end
 
 ---@public
----@return long[]
-function SteamUGCDetails:getChildren() end
+---@return long
+function SteamUGCDetails:getTimeUpdated() end
 
 ---@public
 ---@param arg0 int
@@ -38,12 +38,12 @@ function SteamUGCDetails:getChildID(arg0) end
 
 ---@public
 ---@return long
-function SteamUGCDetails:getTimeUpdated() end
+function SteamUGCDetails:getID() end
 
 ---@public
----@return long
-function SteamUGCDetails:getTimeCreated() end
+---@return long[]
+function SteamUGCDetails:getChildren() end
 
 ---@public
----@return int
-function SteamUGCDetails:getFileSize() end
+---@return String
+function SteamUGCDetails:getState() end

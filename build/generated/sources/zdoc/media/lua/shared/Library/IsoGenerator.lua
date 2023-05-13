@@ -13,17 +13,17 @@
 IsoGenerator = {}
 
 ---@public
----@return boolean
-function IsoGenerator:isActivated() end
-
----@private
----@param arg0 IsoChunk
----@return boolean
-function IsoGenerator:touchesChunk(arg0) end
+---@param arg0 float
+---@param arg1 int
+---@param arg2 boolean
+---@param arg3 boolean
+---@return void
+function IsoGenerator:sync(arg0, arg1, arg2, arg3) end
 
 ---@public
+---@param arg0 boolean
 ---@return void
-function IsoGenerator:addToWorld() end
+function IsoGenerator:setConnected(arg0) end
 
 ---@public
 ---@param arg0 float
@@ -31,27 +31,45 @@ function IsoGenerator:addToWorld() end
 function IsoGenerator:setTotalPowerUsing(arg0) end
 
 ---@public
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@param arg2 boolean
 ---@return void
-function IsoGenerator:failToStart() end
+function IsoGenerator:load(arg0, arg1, arg2) end
 
 ---@public
----@param arg0 IsoChunk
+---@return String
+function IsoGenerator:getObjectName() end
+
+---@private
+---@param arg0 IsoObject
+---@param arg1 float
 ---@return void
-function IsoGenerator:chunkLoaded(arg0) end
+function IsoGenerator:addPoweredItem(arg0, arg1) end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 boolean
+---@return void
+function IsoGenerator:save(arg0, arg1) end
+
+---@public
+---@return void
+function IsoGenerator:update() end
 
 ---@private
 ---@return void
----@overload fun(arg0:IsoGridSquare)
 ---@overload fun(arg0:IsoObject)
+---@overload fun(arg0:IsoGridSquare)
 function IsoGenerator:updateFridgeFreezerItems() end
 
 ---@private
----@param arg0 IsoGridSquare
+---@param arg0 IsoObject
 ---@return void
 function IsoGenerator:updateFridgeFreezerItems(arg0) end
 
 ---@private
----@param arg0 IsoObject
+---@param arg0 IsoGridSquare
 ---@return void
 function IsoGenerator:updateFridgeFreezerItems(arg0) end
 
@@ -66,71 +84,26 @@ function IsoGenerator:updateFridgeFreezerItems(arg0) end
 function IsoGenerator:isPoweringSquare(arg0, arg1, arg2, arg3, arg4, arg5) end
 
 ---@public
----@param arg0 ByteBufferWriter
+---@return boolean
+function IsoGenerator:isConnected() end
+
+---@public
+---@param arg0 IsoChunk
 ---@return void
-function IsoGenerator:syncIsoObjectSend(arg0) end
+function IsoGenerator:chunkLoaded(arg0) end
 
 ---@public
----@return float
-function IsoGenerator:getTotalPowerUsing() end
-
----@public
----@return String
-function IsoGenerator:getObjectName() end
-
----@public
----@param arg0 boolean
 ---@return void
-function IsoGenerator:setActivated(arg0) end
+function IsoGenerator:updateSurroundingNow() end
 
 ---@public
----@param arg0 boolean
----@param arg1 byte
----@param arg2 UdpConnection
----@param arg3 ByteBuffer
 ---@return void
-function IsoGenerator:syncIsoObject(arg0, arg1, arg2, arg3) end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 int
----@param arg2 boolean
----@return void
-function IsoGenerator:load(arg0, arg1, arg2) end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 boolean
----@return void
-function IsoGenerator:save(arg0, arg1) end
-
----@public
----@return ArrayList|Unknown
-function IsoGenerator:getItemsPowered() end
+function IsoGenerator:failToStart() end
 
 ---@private
----@param arg0 IsoObject
----@param arg1 float
----@return void
-function IsoGenerator:addPoweredItem(arg0, arg1) end
-
----@public
----@return float
-function IsoGenerator:getFuel() end
-
----@public
----@return void
-function IsoGenerator:removeFromWorld() end
-
----@public
----@param arg0 InventoryItem
----@return void
-function IsoGenerator:setInfoFromItem(arg0) end
-
----@public
----@param arg0 float
----@return void
-function IsoGenerator:setFuel(arg0) end
+---@param arg0 IsoChunk
+---@return boolean
+function IsoGenerator:touchesChunk(arg0) end
 
 ---@public
 ---@return void
@@ -141,8 +114,35 @@ function IsoGenerator:Reset() end
 function IsoGenerator:remove() end
 
 ---@public
+---@param arg0 int
 ---@return void
-function IsoGenerator:updateSurroundingNow() end
+function IsoGenerator:setCondition(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoGenerator:setActivated(arg0) end
+
+---@public
+---@return int
+function IsoGenerator:getCondition() end
+
+---@public
+---@return void
+function IsoGenerator:removeFromWorld() end
+
+---@public
+---@return float
+function IsoGenerator:getFuel() end
+
+---@public
+---@param arg0 InventoryItem
+---@return void
+function IsoGenerator:setInfoFromItem(arg0) end
+
+---@public
+---@return ArrayList|Unknown
+function IsoGenerator:getItemsPowered() end
 
 ---@public
 ---@return void
@@ -150,28 +150,16 @@ function IsoGenerator:setSurroundingElectricity() end
 
 ---@public
 ---@param arg0 boolean
+---@param arg1 byte
+---@param arg2 UdpConnection
+---@param arg3 ByteBuffer
 ---@return void
-function IsoGenerator:setConnected(arg0) end
-
----@public
----@return void
-function IsoGenerator:update() end
+function IsoGenerator:syncIsoObject(arg0, arg1, arg2, arg3) end
 
 ---@public
 ---@param arg0 float
----@param arg1 int
----@param arg2 boolean
----@param arg3 boolean
 ---@return void
-function IsoGenerator:sync(arg0, arg1, arg2, arg3) end
-
----@public
----@return boolean
-function IsoGenerator:isConnected() end
-
----@public
----@return int
-function IsoGenerator:getCondition() end
+function IsoGenerator:setFuel(arg0) end
 
 ---@public
 ---@param arg0 IsoGridSquare
@@ -179,6 +167,18 @@ function IsoGenerator:getCondition() end
 function IsoGenerator:updateGenerator(arg0) end
 
 ---@public
----@param arg0 int
+---@return float
+function IsoGenerator:getTotalPowerUsing() end
+
+---@public
 ---@return void
-function IsoGenerator:setCondition(arg0) end
+function IsoGenerator:addToWorld() end
+
+---@public
+---@param arg0 ByteBufferWriter
+---@return void
+function IsoGenerator:syncIsoObjectSend(arg0) end
+
+---@public
+---@return boolean
+function IsoGenerator:isActivated() end

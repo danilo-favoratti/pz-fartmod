@@ -43,6 +43,9 @@ HUDButton = {}
 ---@class FMODVoice : fmod.fmod.FMODVoice
 FMODVoice = {}
 
+---@class BodyDamage_Thermoregulator.ThermalNode : zombie.characters.BodyDamage.Thermoregulator.ThermalNode
+BodyDamage_Thermoregulator_ThermalNode = {}
+
 ---@class LogSeverity : zombie.debug.LogSeverity
 LogSeverity = {}
 
@@ -81,9 +84,6 @@ AbstractList = {}
 
 ---@class IChunkRegion : zombie.iso.areas.isoregion.regions.IChunkRegion
 IChunkRegion = {}
-
----@class fonts_AngelCodeFont : zombie.core.fonts.AngelCodeFont
-fonts_AngelCodeFont = {}
 
 ---@class ParameterMusicActionStyle : zombie.audio.parameters.ParameterMusicActionStyle
 ParameterMusicActionStyle = {}
@@ -190,6 +190,9 @@ Vector3i = {}
 ---@class ThunderStorm.ThunderEvent : zombie.iso.weather.ThunderStorm.ThunderEvent
 ThunderStorm_ThunderEvent = {}
 
+---@class weather_ClimateManager.ClimateBool : zombie.iso.weather.ClimateManager.ClimateBool
+weather_ClimateManager_ClimateBool = {}
+
 ---@class ITexture : zombie.interfaces.ITexture
 ITexture = {}
 
@@ -210,6 +213,9 @@ IsoAnim = {}
 
 ---@class ObjectInputStream : java.io.ObjectInputStream
 ObjectInputStream = {}
+
+---@class vector_Vector3f : org.lwjgl.util.vector.Vector3f
+vector_Vector3f = {}
 
 ---@class WorldMapStyleLayer : zombie.worldMap.styles.WorldMapStyleLayer
 WorldMapStyleLayer = {}
@@ -270,6 +276,9 @@ Vector3dc = {}
 
 ---@class Enum : java.lang.Enum
 Enum = {}
+
+---@class characters_IsoZombie : zombie.characters.IsoZombie
+characters_IsoZombie = {}
 
 ---@class BaseVehicle.WheelInfo : zombie.vehicles.BaseVehicle.WheelInfo
 BaseVehicle_WheelInfo = {}
@@ -484,6 +493,9 @@ objects_Item_Type = {}
 ---@class IsoPlayer.MoveVars : zombie.characters.IsoPlayer.MoveVars
 IsoPlayer_MoveVars = {}
 
+---@class debug_BooleanDebugOption : zombie.debug.BooleanDebugOption
+debug_BooleanDebugOption = {}
+
 ---@class GLFWImage : org.lwjgl.glfw.GLFWImage
 GLFWImage = {}
 
@@ -504,6 +516,9 @@ BentFences_Entry = {}
 
 ---@class Pattern : java.util.regex.Pattern
 Pattern = {}
+
+---@class iso_IsoMetaChunk : zombie.iso.IsoMetaChunk
+iso_IsoMetaChunk = {}
 
 ---@class HitInfo : zombie.network.packets.hit.HitInfo
 HitInfo = {}
@@ -585,6 +600,9 @@ short = {}
 
 ---@class AnimationVariableHandle : zombie.core.skinnedmodel.advancedanimation.AnimationVariableHandle
 AnimationVariableHandle = {}
+
+---@class lang_Integer : java.lang.Integer
+lang_Integer = {}
 
 ---@class ParameterFootstepMaterial : zombie.audio.parameters.ParameterFootstepMaterial
 ParameterFootstepMaterial = {}
@@ -783,9 +801,6 @@ Stance = {}
 
 ---@class AnimationVariableSlotCallbackInt.CallbackSetStrongTyped : zombie.core.skinnedmodel.advancedanimation.AnimationVariableSlotCallbackInt.CallbackSetStrongTyped
 AnimationVariableSlotCallbackInt_CallbackSetStrongTyped = {}
-
----@class vehicles_BaseVehicle : zombie.vehicles.BaseVehicle
-vehicles_BaseVehicle = {}
 
 ---@class Enumeration : java.util.Enumeration
 Enumeration = {}
@@ -991,6 +1006,9 @@ ClipperOffset = {}
 ---@class ParameterVehicleGear : zombie.audio.parameters.ParameterVehicleGear
 ParameterVehicleGear = {}
 
+---@class iso_IsoDirections : zombie.iso.IsoDirections
+iso_IsoDirections = {}
+
 ---@class ParameterLocalPlayer : zombie.audio.parameters.ParameterLocalPlayer
 ParameterLocalPlayer = {}
 
@@ -1065,6 +1083,9 @@ AnimationsMesh = {}
 
 ---@class UI_BodyPart : zombie.ui.UI_BodyPart
 UI_BodyPart = {}
+
+---@class iso_RoomDef : zombie.iso.RoomDef
+iso_RoomDef = {}
 
 ---@class PredicatedFileWatcher : zombie.PredicatedFileWatcher
 PredicatedFileWatcher = {}
@@ -1237,6 +1258,9 @@ GameSounds_FilePreviewSound = {}
 ---@class ErosionWorld : zombie.erosion.ErosionWorld
 ErosionWorld = {}
 
+---@class characters_IsoGameCharacter.Location : zombie.characters.IsoGameCharacter.Location
+characters_IsoGameCharacter_Location = {}
+
 ---@class UI3DScene.SceneObject : zombie.vehicles.UI3DScene.SceneObject
 UI3DScene_SceneObject = {}
 
@@ -1245,9 +1269,6 @@ AnimationPlayer = {}
 
 ---@class CharsetDecoder : java.nio.charset.CharsetDecoder
 CharsetDecoder = {}
-
----@class inventory_InventoryItem : zombie.inventory.InventoryItem
-inventory_InventoryItem = {}
 
 ---@class PolygonalMap2.Path : zombie.vehicles.PolygonalMap2.Path
 PolygonalMap2_Path = {}
@@ -1314,6 +1335,9 @@ UI3DScene_RotateGizmo = {}
 
 ---@class DateFormat.Field : java.text.DateFormat.Field
 DateFormat_Field = {}
+
+---@class textures_Texture : zombie.core.textures.Texture
+textures_Texture = {}
 
 ---@class WorldMarkers.Line : zombie.iso.WorldMarkers.Line
 WorldMarkers_Line = {}
@@ -1417,9 +1441,6 @@ StoryEmitter = {}
 ---@class IsoGridStack : zombie.iso.IsoGridStack
 IsoGridStack = {}
 
----@class ui_MoodlesUI : zombie.ui.MoodlesUI
-ui_MoodlesUI = {}
-
 ---@class WorldMapStyleLayer.RGBAf : zombie.worldMap.styles.WorldMapStyleLayer.RGBAf
 WorldMapStyleLayer_RGBAf = {}
 
@@ -1485,6 +1506,9 @@ ClothingItemReference = {}
 
 ---@class FMODParameter : zombie.audio.FMODParameter
 FMODParameter = {}
+
+---@class options_IsoSprite : zombie.debug.options.IsoSprite
+options_IsoSprite = {}
 
 ---@class AnnotatedType : java.lang.reflect.AnnotatedType
 AnnotatedType = {}
@@ -1555,6 +1579,9 @@ NetworkVariables_ZombieState = {}
 ---@class ModelManager.ModelSlot : zombie.core.skinnedmodel.ModelManager.ModelSlot
 ModelManager_ModelSlot = {}
 
+---@class skills_PerkFactory.Perk : zombie.characters.skills.PerkFactory.Perk
+skills_PerkFactory_Perk = {}
+
 ---@class Mover : zombie.ai.astar.Mover
 Mover = {}
 
@@ -1602,9 +1629,6 @@ MethodAccessor = {}
 
 ---@class SandboxOptions.Map : zombie.SandboxOptions.Map
 SandboxOptions_Map = {}
-
----@class weather_ClimateForecaster.DayForecast : zombie.iso.weather.ClimateForecaster.DayForecast
-weather_ClimateForecaster_DayForecast = {}
 
 ---@class Audio : fmod.fmod.Audio
 Audio = {}

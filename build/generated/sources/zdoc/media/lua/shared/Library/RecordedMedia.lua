@@ -21,30 +21,42 @@ RecordedMedia = {}
 
 ---@public
 ---@param arg0 IsoPlayer
----@param arg1 String
----@return boolean
-function RecordedMedia:hasListenedToLine(arg0, arg1) end
+---@return void
+function RecordedMedia:handleLegacyListenedLines(arg0) end
+
+---@public
+---@param arg0 short
+---@return MediaData
+function RecordedMedia:getMediaDataFromIndex(arg0) end
 
 ---@public
 ---@param arg0 String
 ---@return MediaData
-function RecordedMedia:getMediaData(arg0) end
+function RecordedMedia:getRandomFromCategory(arg0) end
+
+---@public
+---@param arg0 ByteBuffer
+---@return void
+function RecordedMedia:sendRequestData(arg0) end
 
 ---@public
 ---@param arg0 String
----@param arg1 String
----@param arg2 String
----@param arg3 int
----@return MediaData
-function RecordedMedia:register(arg0, arg1, arg2, arg3) end
+---@return byte
+function RecordedMedia:getMediaTypeForCategory(arg0) end
 
 ---@public
 ---@return ArrayList|Unknown
 function RecordedMedia:getCategories() end
 
 ---@public
+---@param arg0 ByteBuffer
 ---@return void
-function RecordedMedia:load() end
+function RecordedMedia:receiveRequestData(arg0) end
+
+---@public
+---@param arg0 String
+---@return String
+function RecordedMedia:toAscii(arg0) end
 
 ---@public
 ---@return void
@@ -55,39 +67,20 @@ function RecordedMedia:save() end
 function RecordedMedia:init() end
 
 ---@public
----@param arg0 byte
----@return ArrayList|Unknown
-function RecordedMedia:getAllMediaForType(arg0) end
+---@param arg0 IsoPlayer
+---@param arg1 MediaData
+---@return boolean
+function RecordedMedia:hasListenedToAll(arg0, arg1) end
 
 ---@public
 ---@param arg0 IsoPlayer
+---@param arg1 String
+---@return boolean
+function RecordedMedia:hasListenedToLine(arg0, arg1) end
+
+---@public
 ---@return void
-function RecordedMedia:handleLegacyListenedLines(arg0) end
-
----@public
----@param arg0 String
----@return MediaData
-function RecordedMedia:getRandomFromCategory(arg0) end
-
----@public
----@param arg0 short
----@return MediaData
-function RecordedMedia:getMediaDataFromIndex(arg0) end
-
----@public
----@param arg0 ByteBuffer
----@return void
-function RecordedMedia:sendRequestData(arg0) end
-
----@public
----@param arg0 String
----@return ArrayList|Unknown
-function RecordedMedia:getAllMediaForCategory(arg0) end
-
----@public
----@param arg0 ByteBuffer
----@return void
-function RecordedMedia:receiveRequestData(arg0) end
+function RecordedMedia:load() end
 
 ---@public
 ---@param arg0 MediaData
@@ -95,17 +88,24 @@ function RecordedMedia:receiveRequestData(arg0) end
 function RecordedMedia:getIndexForMediaData(arg0) end
 
 ---@public
----@param arg0 String
----@return byte
-function RecordedMedia:getMediaTypeForCategory(arg0) end
+---@param arg0 byte
+---@return ArrayList|Unknown
+function RecordedMedia:getAllMediaForType(arg0) end
 
 ---@public
 ---@param arg0 String
----@return String
-function RecordedMedia:toAscii(arg0) end
+---@param arg1 String
+---@param arg2 String
+---@param arg3 int
+---@return MediaData
+function RecordedMedia:register(arg0, arg1, arg2, arg3) end
 
 ---@public
----@param arg0 IsoPlayer
----@param arg1 MediaData
----@return boolean
-function RecordedMedia:hasListenedToAll(arg0, arg1) end
+---@param arg0 String
+---@return ArrayList|Unknown
+function RecordedMedia:getAllMediaForCategory(arg0) end
+
+---@public
+---@param arg0 String
+---@return MediaData
+function RecordedMedia:getMediaData(arg0) end

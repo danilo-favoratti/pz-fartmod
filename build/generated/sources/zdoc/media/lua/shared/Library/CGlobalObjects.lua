@@ -4,8 +4,9 @@
 CGlobalObjects = {}
 
 ---@public
----@return void
-function CGlobalObjects:Reset() end
+---@param arg0 String
+---@return JCGlobalObjectSystem
+function CGlobalObjects:registerSystem(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -13,32 +14,19 @@ function CGlobalObjects:Reset() end
 function CGlobalObjects:getSystemByName(arg0) end
 
 ---@public
----@param arg0 String
----@return JCGlobalObjectSystem
-function CGlobalObjects:registerSystem(arg0) end
-
----@public
+---@param arg0 ByteBuffer
 ---@return void
-function CGlobalObjects:initSystems() end
-
----@public
----@param arg0 int
----@return JCGlobalObjectSystem
-function CGlobalObjects:getSystemByIndex(arg0) end
-
----@public
----@param arg0 String
----@return void
-function CGlobalObjects:noise(arg0) end
-
----@public
----@return int
-function CGlobalObjects:getSystemCount() end
+function CGlobalObjects:loadInitialState(arg0) end
 
 ---@public
 ---@param arg0 String
 ---@return JCGlobalObjectSystem
 function CGlobalObjects:newSystem(arg0) end
+
+---@public
+---@param arg0 int
+---@return JCGlobalObjectSystem
+function CGlobalObjects:getSystemByIndex(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -48,6 +36,18 @@ function CGlobalObjects:newSystem(arg0) end
 function CGlobalObjects:receiveServerCommand(arg0, arg1, arg2) end
 
 ---@public
----@param arg0 ByteBuffer
 ---@return void
-function CGlobalObjects:loadInitialState(arg0) end
+function CGlobalObjects:initSystems() end
+
+---@public
+---@return void
+function CGlobalObjects:Reset() end
+
+---@public
+---@param arg0 String
+---@return void
+function CGlobalObjects:noise(arg0) end
+
+---@public
+---@return int
+function CGlobalObjects:getSystemCount() end

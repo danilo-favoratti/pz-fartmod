@@ -53,158 +53,13 @@
 DeviceData = {}
 
 ---@public
----@param arg0 float
----@return void
-function DeviceData:doReceiveMPSignal(arg0) end
-
----@public
----@return int
-function DeviceData:getLastRecordedDistance() end
-
----@protected
----@return void
-function DeviceData:updateEmitter() end
-
----@public
----@return void
-function DeviceData:transmitBattryChange() end
-
----@public
----@return boolean
-function DeviceData:getHasBattery() end
-
----@public
----@param arg0 int
----@return void
-function DeviceData:setHeadphoneType(arg0) end
-
----@public
----@param arg0 boolean
----@param arg1 boolean
----@return void
-function DeviceData:update(arg0, arg1) end
-
----@public
----@return DevicePresets
-function DeviceData:getDevicePresets() end
-
----@public
----@return int
-function DeviceData:getChannel() end
-
----@public
----@param arg0 short
----@return void
-function DeviceData:setMediaIndex(arg0) end
-
----@public
----@return float
-function DeviceData:getBaseVolumeRange() end
-
----@public
----@return boolean
-function DeviceData:isInventoryDevice() end
-
----@public
----@param arg0 DrainableComboItem
----@return void
-function DeviceData:addBattery(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function DeviceData:setNoTransmit(arg0) end
-
----@public
----@return boolean
-function DeviceData:getIsHighTier() end
-
----@public
----@return boolean
-function DeviceData:getMicIsMuted() end
-
----@public
----@return DeviceData
-function DeviceData:getClone() end
-
----@public
----@return void
-function DeviceData:setRandomChannel() end
-
----@public
 ---@param arg0 String
 ---@return void
 function DeviceData:setDeviceName(arg0) end
 
 ---@public
 ---@return boolean
-function DeviceData:isIsoDevice() end
-
----@public
----@return int
-function DeviceData:getMicRange() end
-
----@private
----@return void
-function DeviceData:setNextStaticSound() end
-
----@public
----@return boolean
-function DeviceData:isVehicleDevice() end
-
----@public
----@param arg0 float
----@return void
-function DeviceData:setDeviceVolumeRaw(arg0) end
-
----@public
----@return boolean
-function DeviceData:isPlayingMedia() end
-
----@public
----@return float
-function DeviceData:getUseDelta() end
-
----@public
----@return byte
-function DeviceData:getMediaType() end
-
----@public
----@param arg0 byte
----@return void
-function DeviceData:setMediaType(arg0) end
-
----@public
----@return float
-function DeviceData:getDeviceVolume() end
-
----@public
----@param arg0 DevicePresets
----@return void
-function DeviceData:setDevicePresets(arg0) end
-
----@public
----@return int
-function DeviceData:getHeadphoneType() end
-
----@public
----@return void
-function DeviceData:transmitPresets() end
-
----@public
----@param arg0 int
----@return void
-function DeviceData:setChannelRaw(arg0) end
-
----@public
----@param arg0 int
----@return void
-function DeviceData:doReceiveSignal(arg0) end
-
----@public
----@param arg0 int
----@return void
-function DeviceData:setMinChannelRange(arg0) end
+function DeviceData:getIsTurnedOn() end
 
 ---@private
 ---@param arg0 short
@@ -212,9 +67,51 @@ function DeviceData:setMinChannelRange(arg0) end
 function DeviceData:transmitDeviceDataState(arg0) end
 
 ---@public
+---@return int
+function DeviceData:getMicRange() end
+
+---@public
+---@return MediaData
+function DeviceData:getMediaData() end
+
+---@public
+---@return void
+function DeviceData:StartPlayMedia() end
+
+---@public
+---@param arg0 short
+---@return void
+function DeviceData:setMediaIndex(arg0) end
+
+---@public
+---@return void
+function DeviceData:transmitBattryChange() end
+
+---@public
 ---@param arg0 float
 ---@return void
-function DeviceData:setUseDelta(arg0) end
+function DeviceData:doReceiveMPSignal(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function DeviceData:setHeadphoneType(arg0) end
+
+---@public
+---@return DevicePresets
+function DeviceData:getDevicePresets() end
+
+---@public
+---@return boolean
+function DeviceData:hasMedia() end
+
+---@protected
+---@return void
+function DeviceData:setEmitterAndPos() end
+
+---@public
+---@return boolean
+function DeviceData:isInventoryDevice() end
 
 ---@public
 ---@param arg0 ByteBuffer
@@ -223,22 +120,73 @@ function DeviceData:setUseDelta(arg0) end
 function DeviceData:save(arg0, arg1) end
 
 ---@public
+---@param arg0 boolean
+---@param arg1 boolean
 ---@return void
-function DeviceData:updateSimple() end
+function DeviceData:update(arg0, arg1) end
 
 ---@public
----@param arg0 float
----@return void
-function DeviceData:setDeviceVolume(arg0) end
+---@return int
+function DeviceData:getLastRecordedDistance() end
 
 ---@public
----@param arg0 WaveSignalDevice
----@return void
-function DeviceData:setParent(arg0) end
+---@return boolean
+function DeviceData:isIsoDevice() end
 
 ---@public
+---@return int
+function DeviceData:getChannel() end
+
+---@public
+---@return boolean
+function DeviceData:getIsTelevision() end
+
+---@public
+---@return float
+function DeviceData:getDeviceVolume() end
+
+---@public
+---@param arg0 boolean
 ---@return void
-function DeviceData:updateMediaPlaying() end
+function DeviceData:setIsPortable(arg0) end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 UdpConnection
+---@return void
+function DeviceData:receiveDeviceDataStatePacket(arg0, arg1) end
+
+---@public
+---@return int
+function DeviceData:getTransmitRange() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function DeviceData:setNoTransmit(arg0) end
+
+---@public
+---@return BaseSoundEmitter
+function DeviceData:getEmitter() end
+
+---@public
+---@return DeviceData
+function DeviceData:getClone() end
+
+---@private
+---@return void
+function DeviceData:postPlayingMedia() end
+
+---@private
+---@param arg0 short
+---@param arg1 UdpConnection
+---@return void
+function DeviceData:transmitDeviceDataStateServer(arg0, arg1) end
+
+---@public
+---@param arg0 int
+---@return void
+function DeviceData:doReceiveSignal(arg0) end
 
 ---@private
 ---@param arg0 UdpConnection
@@ -246,124 +194,49 @@ function DeviceData:updateMediaPlaying() end
 ---@return void
 function DeviceData:sendDeviceDataStatePacket(arg0, arg1) end
 
----@private
----@return void
-function DeviceData:postPlayingMedia() end
-
 ---@public
----@param arg0 int
 ---@return void
-function DeviceData:setMaxChannelRange(arg0) end
-
----@public
----@return boolean
-function DeviceData:getIsTurnedOn() end
+function DeviceData:transmitPresets() end
 
 ---@public
 ---@param arg0 float
 ---@return void
-function DeviceData:setBaseVolumeRange(arg0) end
-
----@public
----@param arg0 int
----@return void
-function DeviceData:setMicRange(arg0) end
+function DeviceData:setPower(arg0) end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function DeviceData:setIsTwoWay(arg0) end
-
----@protected
----@return void
-function DeviceData:setEmitterAndPos() end
+function DeviceData:setIsTelevision(arg0) end
 
 ---@public
----@param arg0 String
----@param arg1 boolean
+---@param arg0 float
 ---@return void
-function DeviceData:playSoundSend(arg0, arg1) end
+function DeviceData:setDeviceVolumeRaw(arg0) end
 
----@protected
----@return Object
-function DeviceData:clone() end
+---@public
+---@return boolean
+function DeviceData:isVehicleDevice() end
+
+---@public
+---@return float
+function DeviceData:getPower() end
 
 ---@public
 ---@param arg0 ItemContainer
 ---@return InventoryItem
-function DeviceData:removeMediaItem(arg0) end
-
----@public
----@return void
-function DeviceData:generatePresets() end
-
----@public
----@param arg0 InventoryItem
----@return void
-function DeviceData:addMediaItem(arg0) end
-
----@public
----@param arg0 DevicePresets
----@return void
-function DeviceData:cloneDevicePresets(arg0) end
-
----@public
----@param arg0 int
----@return void
-function DeviceData:setTransmitRange(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function DeviceData:setIsTurnedOn(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function DeviceData:setIsBatteryPowered(arg0) end
-
----@public
----@return WaveSignalDevice
-function DeviceData:getParent() end
-
----@public
----@return int
-function DeviceData:getDeviceVolumeRange() end
-
----@public
----@param arg0 boolean
----@return void
-function DeviceData:setHasBattery(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function DeviceData:TriggerPlayerListening(arg0) end
-
----@public
----@return boolean
-function DeviceData:getIsPortable() end
-
----@public
----@return void
-function DeviceData:cleanSoundsAndEmitter() end
-
----@public
----@param arg0 ItemContainer
----@return InventoryItem
-function DeviceData:getBattery(arg0) end
-
----@public
----@return boolean
-function DeviceData:canBePoweredHere() end
+function DeviceData:getHeadphones(arg0) end
 
 ---@private
 ---@return void
-function DeviceData:updateStaticSounds() end
+function DeviceData:prePlayingMedia() end
 
 ---@public
----@return boolean
-function DeviceData:getIsBatteryPowered() end
+---@return int
+function DeviceData:getDeviceSoundVolumeRange() end
+
+---@public
+---@return float
+function DeviceData:getBaseVolumeRange() end
 
 ---@public
 ---@param arg0 int
@@ -378,34 +251,60 @@ function DeviceData:setChannel(arg0) end
 function DeviceData:setChannel(arg0, arg1) end
 
 ---@public
+---@param arg0 boolean
+---@return void
+function DeviceData:setIsBatteryPowered(arg0) end
+
+---@public
+---@return short
+function DeviceData:getMediaIndex() end
+
+---@public
+---@param arg0 InventoryItem
+---@return void
+function DeviceData:addHeadphones(arg0) end
+
+---@public
+---@return boolean
+function DeviceData:isReceivingSignal() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function DeviceData:setTurnedOnRaw(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function DeviceData:setIsTurnedOn(arg0) end
+
+---@public
+---@param arg0 DevicePresets
+---@return void
+function DeviceData:cloneDevicePresets(arg0) end
+
+---@public
+---@param arg0 ItemContainer
+---@return InventoryItem
+function DeviceData:getBattery(arg0) end
+
+---@public
+---@param arg0 ItemContainer
+---@return InventoryItem
+function DeviceData:removeMediaItem(arg0) end
+
+---@public
 ---@return int
 function DeviceData:getMaxChannelRange() end
+
+---@public
+---@return String
+function DeviceData:getDeviceName() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
 function DeviceData:setMicIsMuted(arg0) end
-
----@public
----@return int
-function DeviceData:getMinChannelRange() end
-
----@public
----@param arg0 String
----@param arg1 boolean
----@return void
-function DeviceData:playSoundLocal(arg0, arg1) end
-
----@public
----@param arg0 String
----@param arg1 float
----@param arg2 boolean
----@return void
-function DeviceData:playSound(arg0, arg1, arg2) end
-
----@public
----@return boolean
-function DeviceData:isNoTransmit() end
 
 ---@public
 ---@param arg0 ByteBuffer
@@ -416,11 +315,91 @@ function DeviceData:load(arg0, arg1, arg2) end
 
 ---@public
 ---@return int
-function DeviceData:getDeviceSoundVolumeRange() end
+function DeviceData:getDeviceVolumeRange() end
+
+---@public
+---@return boolean
+function DeviceData:getIsPortable() end
+
+---@public
+---@return boolean
+function DeviceData:getIsTwoWay() end
+
+---@public
+---@param arg0 float
+---@return void
+function DeviceData:setDeviceVolume(arg0) end
+
+---@public
+---@return void
+function DeviceData:setInitialPower() end
+
+---@public
+---@return boolean
+function DeviceData:getIsBatteryPowered() end
+
+---@public
+---@param arg0 int
+---@return void
+function DeviceData:setTransmitRange(arg0) end
+
+---@public
+---@param arg0 InventoryItem
+---@return void
+function DeviceData:addMediaItem(arg0) end
 
 ---@public
 ---@return void
 function DeviceData:StopPlayMedia() end
+
+---@public
+---@param arg0 float
+---@return void
+function DeviceData:setUseDelta(arg0) end
+
+---@public
+---@param arg0 String
+---@param arg1 boolean
+---@return void
+function DeviceData:playSoundLocal(arg0, arg1) end
+
+---@public
+---@param arg0 byte
+---@return void
+function DeviceData:setMediaType(arg0) end
+
+---@public
+---@return int
+function DeviceData:getMinChannelRange() end
+
+---@public
+---@return void
+function DeviceData:generatePresets() end
+
+---@public
+---@return boolean
+function DeviceData:isNoTransmit() end
+
+---@private
+---@return void
+function DeviceData:updateStaticSounds() end
+
+---@public
+---@param arg0 String
+---@param arg1 float
+---@param arg2 boolean
+---@return void
+function DeviceData:playSound(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function DeviceData:setIsHighTier(arg0) end
+
+---@public
+---@param arg0 WaveSignalDevice
+---@return void
+function DeviceData:setParent(arg0) end
 
 ---@private
 ---@return void
@@ -429,98 +408,119 @@ function DeviceData:televisionMediaSwitch() end
 ---@public
 ---@param arg0 boolean
 ---@return void
-function DeviceData:setIsHighTier(arg0) end
+function DeviceData:setIsTwoWay(arg0) end
+
+---@public
+---@return boolean
+function DeviceData:isPlayingMedia() end
+
+---@public
+---@param arg0 DrainableComboItem
+---@return void
+function DeviceData:addBattery(arg0) end
+
+---@private
+---@return void
+function DeviceData:setNextStaticSound() end
+
+---@public
+---@return void
+function DeviceData:updateSimple() end
+
+---@protected
+---@return Object
+function DeviceData:clone() end
+
+---@public
+---@return void
+function DeviceData:setRandomChannel() end
+
+---@public
+---@return float
+function DeviceData:getUseDelta() end
+
+---@public
+---@return int
+function DeviceData:getHeadphoneType() end
+
+---@public
+---@param arg0 DevicePresets
+---@return void
+function DeviceData:setDevicePresets(arg0) end
+
+---@public
+---@return boolean
+function DeviceData:getIsHighTier() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function DeviceData:setTurnedOnRaw(arg0) end
+function DeviceData:setHasBattery(arg0) end
 
 ---@public
----@return boolean
-function DeviceData:getIsTwoWay() end
-
----@public
+---@param arg0 int
 ---@return void
-function DeviceData:setInitialPower() end
-
----@public
----@return String
-function DeviceData:getDeviceName() end
-
----@private
----@param arg0 short
----@param arg1 UdpConnection
----@return void
-function DeviceData:transmitDeviceDataStateServer(arg0, arg1) end
-
----@public
----@return int
-function DeviceData:getTransmitRange() end
-
----@private
----@return void
-function DeviceData:prePlayingMedia() end
+function DeviceData:setChannelRaw(arg0) end
 
 ---@public
 ---@param arg0 float
 ---@return void
-function DeviceData:setPower(arg0) end
+function DeviceData:setBaseVolumeRange(arg0) end
 
 ---@public
----@param arg0 ByteBuffer
----@param arg1 UdpConnection
+---@param arg0 int
 ---@return void
-function DeviceData:receiveDeviceDataStatePacket(arg0, arg1) end
+function DeviceData:setMaxChannelRange(arg0) end
 
 ---@public
----@return float
-function DeviceData:getPower() end
-
----@public
----@return BaseSoundEmitter
-function DeviceData:getEmitter() end
-
----@public
----@param arg0 InventoryItem
+---@param arg0 int
 ---@return void
-function DeviceData:addHeadphones(arg0) end
+function DeviceData:setMinChannelRange(arg0) end
+
+---@public
+---@return boolean
+function DeviceData:getMicIsMuted() end
+
+---@public
+---@param arg0 String
+---@param arg1 boolean
+---@return void
+function DeviceData:playSoundSend(arg0, arg1) end
+
+---@public
+---@return boolean
+function DeviceData:getHasBattery() end
+
+---@public
+---@param arg0 int
+---@return void
+function DeviceData:setMicRange(arg0) end
+
+---@protected
+---@return void
+function DeviceData:updateEmitter() end
+
+---@public
+---@return boolean
+function DeviceData:canBePoweredHere() end
+
+---@public
+---@return void
+function DeviceData:cleanSoundsAndEmitter() end
+
+---@public
+---@return byte
+function DeviceData:getMediaType() end
+
+---@public
+---@return WaveSignalDevice
+function DeviceData:getParent() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function DeviceData:setIsPortable(arg0) end
-
----@public
----@return boolean
-function DeviceData:getIsTelevision() end
-
----@public
----@return short
-function DeviceData:getMediaIndex() end
-
----@public
----@param arg0 boolean
----@return void
-function DeviceData:setIsTelevision(arg0) end
-
----@public
----@param arg0 ItemContainer
----@return InventoryItem
-function DeviceData:getHeadphones(arg0) end
-
----@public
----@return boolean
-function DeviceData:isReceivingSignal() end
+function DeviceData:TriggerPlayerListening(arg0) end
 
 ---@public
 ---@return void
-function DeviceData:StartPlayMedia() end
-
----@public
----@return boolean
-function DeviceData:hasMedia() end
-
----@public
----@return MediaData
-function DeviceData:getMediaData() end
+function DeviceData:updateMediaPlaying() end

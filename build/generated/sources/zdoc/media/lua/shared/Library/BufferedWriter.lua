@@ -6,9 +6,6 @@
 ---@field private defaultCharBufferSize int
 BufferedWriter = {}
 
----@return void
-function BufferedWriter:flushBuffer() end
-
 ---@public
 ---@param arg0 int
 ---@return void
@@ -30,11 +27,12 @@ function BufferedWriter:write(arg0, arg1, arg2) end
 ---@return void
 function BufferedWriter:write(arg0, arg1, arg2) end
 
----@private
----@param arg0 int
----@param arg1 int
----@return int
-function BufferedWriter:min(arg0, arg1) end
+---@return void
+function BufferedWriter:flushBuffer() end
+
+---@public
+---@return void
+function BufferedWriter:flush() end
 
 ---@public
 ---@return void
@@ -48,6 +46,8 @@ function BufferedWriter:close() end
 ---@return void
 function BufferedWriter:ensureOpen() end
 
----@public
----@return void
-function BufferedWriter:flush() end
+---@private
+---@param arg0 int
+---@param arg1 int
+---@return int
+function BufferedWriter:min(arg0, arg1) end

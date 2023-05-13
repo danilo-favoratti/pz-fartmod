@@ -5,12 +5,12 @@
 IsoRegionsLogger_IsoRegionLog = {}
 
 ---@public
----@return Color
-function IsoRegionsLogger_IsoRegionLog:getColor() end
-
----@public
 ---@return String
 function IsoRegionsLogger_IsoRegionLog:getStr() end
+
+---@public
+---@return Color
+function IsoRegionsLogger_IsoRegionLog:getColor() end
 
 ---@public
 ---@return IsoRegionLogType

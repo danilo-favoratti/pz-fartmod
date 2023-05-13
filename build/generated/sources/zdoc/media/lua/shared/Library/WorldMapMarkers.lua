@@ -4,14 +4,18 @@
 WorldMapMarkers = {}
 
 ---@public
+---@param arg0 WorldMapMarker
+---@return void
+function WorldMapMarkers:removeMarker(arg0) end
+
+---@public
 ---@param arg0 UIWorldMap
 ---@return void
 function WorldMapMarkers:render(arg0) end
 
 ---@public
----@param arg0 WorldMapMarker
 ---@return void
-function WorldMapMarkers:removeMarker(arg0) end
+function WorldMapMarkers:clear() end
 
 ---@public
 ---@param arg0 int
@@ -23,7 +27,3 @@ function WorldMapMarkers:removeMarker(arg0) end
 ---@param arg6 float
 ---@return WorldMapGridSquareMarker
 function WorldMapMarkers:addGridSquareMarker(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
-
----@public
----@return void
-function WorldMapMarkers:clear() end

@@ -3,24 +3,10 @@
 ---@field private PARAM_TICK_COUNT Integer
 ZombieIdleState = {}
 
----@private
----@return float
-function ZombieIdleState:pickRandomWanderInterval() end
-
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
 function ZombieIdleState:execute(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function ZombieIdleState:enter(arg0) end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function ZombieIdleState:exit(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
@@ -29,5 +15,19 @@ function ZombieIdleState:exit(arg0) end
 function ZombieIdleState:animEvent(arg0, arg1) end
 
 ---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function ZombieIdleState:enter(arg0) end
+
+---@public
 ---@return ZombieIdleState
 function ZombieIdleState:instance() end
+
+---@private
+---@return float
+function ZombieIdleState:pickRandomWanderInterval() end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function ZombieIdleState:exit(arg0) end

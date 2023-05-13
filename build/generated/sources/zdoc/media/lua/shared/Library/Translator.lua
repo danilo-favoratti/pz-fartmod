@@ -74,29 +74,83 @@ function Translator:getText(arg0, arg1, arg2, arg3) end
 ---@return String
 function Translator:getText(arg0, arg1, arg2, arg3, arg4) end
 
----@private
----@param arg0 File
----@param arg1 HashMap|Unknown|Unknown
----@param arg2 Language
+---@public
 ---@return void
-function Translator:doNews(arg0, arg1, arg2) end
+function Translator:loadFiles() end
+
+---@public
+---@return void
+function Translator:debugMultiStageBuildNames() end
+
+---@public
+---@param arg0 String
+---@return String
+function Translator:getItemEvolvedRecipeName(arg0) end
+
+---@public
+---@return Language
+function Translator:getLanguage() end
 
 ---@private
 ---@param arg0 String
----@param arg1 HashMap|Unknown|Unknown
+---@return int
+function Translator:countSubstitutions(arg0) end
+
+---@public
+---@param arg0 String
+---@param arg1 String
 ---@return void
-function Translator:fillMapFromFile(arg0, arg1) end
+function Translator:setDefaultItemEvolvedRecipeName(arg0, arg1) end
+
+---@public
+---@param arg0 String
+---@return String
+function Translator:getMultiStageBuild(arg0) end
+
+---@public
+---@param arg0 String
+---@return String
+function Translator:getTextMediaEN(arg0) end
+
+---@public
+---@param arg0 String
+---@return String
+function Translator:getItemNameFromFullType(arg0) end
+
+---@public
+---@param arg0 String
+---@return String
+function Translator:getMoveableDisplayName(arg0) end
 
 ---@private
 ---@param arg0 String
----@param arg1 HashMap|Unknown|Unknown
----@param arg2 Language
+---@param arg1 ArrayList|Unknown
 ---@return void
-function Translator:tryFillMapFromMods(arg0, arg1, arg2) end
+function Translator:addNewsLine(arg0, arg1) end
+
+---@public
+---@return void
+function Translator:debugRecipeNames() end
+
+---@public
+---@param arg0 Language
+---@param arg1 ArrayList|Unknown
+---@return void
+function Translator:addLanguageToList(arg0, arg1) end
+
+---@private
+---@param arg0 String
+---@return void
+function Translator:debugwrite(arg0) end
 
 ---@public
 ---@return ArrayList|Unknown
-function Translator:getNewsVersions() end
+function Translator:getAzertyMap() end
+
+---@public
+---@param arg0 String
+---@return String
+function Translator:getDisplayItemName(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -138,22 +192,54 @@ function Translator:getTextOrNull(arg0, arg1, arg2, arg3) end
 function Translator:getTextOrNull(arg0, arg1, arg2, arg3, arg4) end
 
 ---@public
----@return String
-function Translator:getCharset() end
+---@return void
+function Translator:debugItemEvolvedRecipeNames() end
+
+---@private
+---@param arg0 File
+---@param arg1 HashMap|Unknown|Unknown
+---@param arg2 Language
+---@return void
+function Translator:doNews(arg0, arg1, arg2) end
+
+---@private
+---@param arg0 String
+---@param arg1 HashMap|Unknown|Unknown
+---@return void
+function Translator:fillMapFromFile(arg0, arg1) end
+
+---@private
+---@param arg0 String
+---@param arg1 HashMap|Unknown|Unknown
+---@param arg2 Language
+---@return void
+function Translator:tryFillMapFromMods(arg0, arg1, arg2) end
+
+---@public
+---@return void
+function Translator:debugItemNames() end
 
 ---@public
 ---@param arg0 String
 ---@return String
-function Translator:getMultiStageBuild(arg0) end
+function Translator:getRecipeName(arg0) end
 
 ---@private
 ---@param arg0 HashMap|Unknown|Unknown
 ---@return void
 function Translator:fillNewsFromFile(arg0) end
 
----@public
+---@private
+---@param arg0 String
+---@param arg1 String
+---@param arg2 HashMap|Unknown|Unknown
+---@param arg3 Language
 ---@return void
-function Translator:debugRecipeNames() end
+function Translator:tryFillMapFromFile(arg0, arg1, arg2, arg3) end
+
+---@public
+---@return ArrayList|Unknown
+function Translator:getAvailableLanguage() end
 
 ---@private
 ---@param arg0 String
@@ -161,70 +247,27 @@ function Translator:debugRecipeNames() end
 function Translator:getDefaultText(arg0) end
 
 ---@private
----@param arg0 String
----@param arg1 ArrayList|Unknown
+---@param arg0 File
+---@param arg1 HashMap|Unknown|Unknown
+---@param arg2 Language
 ---@return void
-function Translator:addNewsLine(arg0, arg1) end
+function Translator:parseFile(arg0, arg1, arg2) end
 
 ---@public
 ---@return ArrayList|Unknown
-function Translator:getAzertyMap() end
-
----@public
----@param arg0 Language
----@param arg1 ArrayList|Unknown
----@return void
-function Translator:addLanguageToList(arg0, arg1) end
-
----@public
----@param arg0 String
----@return String
-function Translator:getDisplayItemName(arg0) end
-
----@public
----@param arg0 String
----@return String
-function Translator:getItemEvolvedRecipeName(arg0) end
-
----@public
----@param arg0 String
----@return String
-function Translator:getItemNameFromFullType(arg0) end
+function Translator:getNewsVersions() end
 
 ---@private
 ---@param arg0 String
+---@param arg1 HashMap|Unknown|Unknown
+---@param arg2 HashMap|Unknown|Unknown
+---@param arg3 Language
 ---@return void
-function Translator:debugwrite(arg0) end
-
----@private
----@param arg0 String
----@return int
-function Translator:countSubstitutions(arg0) end
+function Translator:tryFillNewsFromFile(arg0, arg1, arg2, arg3) end
 
 ---@public
----@param arg0 String
----@return String
-function Translator:getMoveableDisplayName(arg0) end
-
----@private
----@param arg0 String
----@param arg1 boolean
----@return String
-function Translator:getTextInternal(arg0, arg1) end
-
----@public
----@return void
-function Translator:debugItemEvolvedRecipeNames() end
-
----@public
----@param arg0 String
----@return String
-function Translator:getRecipeName(arg0) end
-
----@public
----@param arg0 String
----@return String
-function Translator:getTextMediaEN(arg0) end
+---@return Language
+function Translator:getDefaultLanguage() end
 
 ---@public
 ---@param arg0 Language
@@ -237,22 +280,25 @@ function Translator:setLanguage(arg0) end
 ---@return void
 function Translator:setLanguage(arg0) end
 
+---@private
+---@param arg0 String
+---@param arg1 boolean
+---@return String
+function Translator:getTextInternal(arg0, arg1) end
+
+---@private
+---@param arg0 String
+---@return String
+function Translator:changeSomeStuff(arg0) end
+
 ---@public
----@return Language
-function Translator:getDefaultLanguage() end
+---@return String
+function Translator:getCharset() end
 
 ---@public
 ---@param arg0 String
 ---@return String
-function Translator:getMoveableDisplayNameOrNull(arg0) end
-
----@private
----@param arg0 String
----@param arg1 HashMap|Unknown|Unknown
----@param arg2 HashMap|Unknown|Unknown
----@param arg3 Language
----@return void
-function Translator:tryFillNewsFromFile(arg0, arg1, arg2, arg3) end
+function Translator:getRadioText(arg0) end
 
 ---@private
 ---@param arg0 String
@@ -263,51 +309,5 @@ function Translator:subst(arg0, arg1, arg2) end
 
 ---@public
 ---@param arg0 String
----@param arg1 String
----@return void
-function Translator:setDefaultItemEvolvedRecipeName(arg0, arg1) end
-
----@private
----@param arg0 String
----@param arg1 String
----@param arg2 HashMap|Unknown|Unknown
----@param arg3 Language
----@return void
-function Translator:tryFillMapFromFile(arg0, arg1, arg2, arg3) end
-
----@private
----@param arg0 File
----@param arg1 HashMap|Unknown|Unknown
----@param arg2 Language
----@return void
-function Translator:parseFile(arg0, arg1, arg2) end
-
----@public
----@param arg0 String
 ---@return String
-function Translator:getRadioText(arg0) end
-
----@public
----@return ArrayList|Unknown
-function Translator:getAvailableLanguage() end
-
----@public
----@return void
-function Translator:debugItemNames() end
-
----@public
----@return Language
-function Translator:getLanguage() end
-
----@private
----@param arg0 String
----@return String
-function Translator:changeSomeStuff(arg0) end
-
----@public
----@return void
-function Translator:debugMultiStageBuildNames() end
-
----@public
----@return void
-function Translator:loadFiles() end
+function Translator:getMoveableDisplayNameOrNull(arg0) end

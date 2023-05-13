@@ -18,25 +18,45 @@ IsoChunkRegion = {}
 ---@protected
 ---@param arg0 IsoChunkRegion
 ---@return void
-function IsoChunkRegion:removeNeighbor(arg0) end
+function IsoChunkRegion:removeConnectedNeighbor(arg0) end
+
+---@protected
+---@return ArrayList|Unknown
+function IsoChunkRegion:getAllNeighbors() end
+
+---@protected
+---@return void
+function IsoChunkRegion:resetChunkBorderSquaresCnt() end
+
+---@public
+---@return int
+function IsoChunkRegion:getID() end
 
 ---@public
 ---@return void
 function IsoChunkRegion:addRoof() end
 
 ---@protected
----@return boolean
-function IsoChunkRegion:isInPool() end
-
----@public
----@param arg0 int
----@return boolean
-function IsoChunkRegion:containsConnectedNeighborID(arg0) end
+---@return void
+function IsoChunkRegion:setDirtyEnclosed() end
 
 ---@public
 ---@param arg0 IsoChunkRegion
 ---@return void
-function IsoChunkRegion:addConnectedNeighbor(arg0) end
+function IsoChunkRegion:addNeighbor(arg0) end
+
+---@protected
+---@param arg0 IsoChunkRegion
+---@return void
+function IsoChunkRegion:removeNeighbor(arg0) end
+
+---@protected
+---@return IsoChunkRegion
+function IsoChunkRegion:reset() end
+
+---@protected
+---@return void
+function IsoChunkRegion:unlinkNeighbors() end
 
 ---@protected
 ---@param arg0 int
@@ -45,70 +65,24 @@ function IsoChunkRegion:addConnectedNeighbor(arg0) end
 function IsoChunkRegion:init(arg0, arg1) end
 
 ---@public
----@return int
-function IsoChunkRegion:getSquareSize() end
-
----@protected
----@return void
-function IsoChunkRegion:setDirtyEnclosed() end
-
----@public
----@return boolean
-function IsoChunkRegion:getIsEnclosed() end
+---@return IsoWorldRegion
+function IsoChunkRegion:unlinkFromIsoWorldRegion() end
 
 ---@public
 ---@return IsoChunkRegion
 function IsoChunkRegion:getConnectedNeighborWithLargestIsoWorldRegion() end
 
----@public
----@return void
-function IsoChunkRegion:addSquareCount() end
-
----@public
----@return void
-function IsoChunkRegion:addChunkBorderSquaresCnt() end
-
----@protected
----@return void
-function IsoChunkRegion:resetChunkBorderSquaresCnt() end
-
----@public
----@return Color
-function IsoChunkRegion:getColor() end
-
----@public
----@return ArrayList|Unknown
-function IsoChunkRegion:getConnectedNeighbors() end
-
----@public
----@return void
-function IsoChunkRegion:resetRoofCnt() end
-
----@public
----@param arg0 byte
----@param arg1 boolean
----@return void
-function IsoChunkRegion:setEnclosed(arg0, arg1) end
-
 ---@protected
 ---@return IsoChunkRegion
 function IsoChunkRegion:getFirstNeighborWithIsoWorldRegion() end
-
----@private
----@return void
-function IsoChunkRegion:resetEnclosed() end
 
 ---@public
 ---@return int
 function IsoChunkRegion:getNeighborCount() end
 
 ---@public
----@return int
-function IsoChunkRegion:getID() end
-
----@protected
 ---@return void
-function IsoChunkRegion:removeChunkBorderSquaresCnt() end
+function IsoChunkRegion:addChunkBorderSquaresCnt() end
 
 ---@public
 ---@param arg0 IsoChunkRegion
@@ -116,52 +90,78 @@ function IsoChunkRegion:removeChunkBorderSquaresCnt() end
 function IsoChunkRegion:containsConnectedNeighbor(arg0) end
 
 ---@public
----@param arg0 IsoWorldRegion
+---@param arg0 byte
+---@param arg1 boolean
 ---@return void
-function IsoChunkRegion:setIsoWorldRegion(arg0) end
-
----@public
----@return IsoWorldRegion
-function IsoChunkRegion:getIsoWorldRegion() end
+function IsoChunkRegion:setEnclosed(arg0, arg1) end
 
 ---@public
 ---@return int
-function IsoChunkRegion:getRoofCnt() end
-
----@public
----@return IsoWorldRegion
-function IsoChunkRegion:unlinkFromIsoWorldRegion() end
-
----@protected
----@return ArrayList|Unknown
-function IsoChunkRegion:getAllNeighbors() end
+function IsoChunkRegion:getChunkBorderSquaresCnt() end
 
 ---@public
 ---@return ArrayList|Unknown
-function IsoChunkRegion:getDebugConnectedNeighborCopy() end
-
----@protected
----@param arg0 IsoChunkRegion
----@return void
-function IsoChunkRegion:removeConnectedNeighbor(arg0) end
-
----@protected
----@return IsoChunkRegion
-function IsoChunkRegion:reset() end
+function IsoChunkRegion:getConnectedNeighbors() end
 
 ---@public
 ---@return int
 function IsoChunkRegion:getzLayer() end
 
 ---@public
----@return int
-function IsoChunkRegion:getChunkBorderSquaresCnt() end
+---@return Color
+function IsoChunkRegion:getColor() end
+
+---@public
+---@param arg0 int
+---@return boolean
+function IsoChunkRegion:containsConnectedNeighborID(arg0) end
+
+---@public
+---@return IsoWorldRegion
+function IsoChunkRegion:getIsoWorldRegion() end
 
 ---@protected
 ---@return void
-function IsoChunkRegion:unlinkNeighbors() end
+function IsoChunkRegion:removeChunkBorderSquaresCnt() end
+
+---@public
+---@param arg0 IsoWorldRegion
+---@return void
+function IsoChunkRegion:setIsoWorldRegion(arg0) end
+
+---@protected
+---@return boolean
+function IsoChunkRegion:isInPool() end
+
+---@public
+---@return void
+function IsoChunkRegion:addSquareCount() end
+
+---@public
+---@return int
+function IsoChunkRegion:getRoofCnt() end
+
+---@public
+---@return int
+function IsoChunkRegion:getSquareSize() end
+
+---@public
+---@return boolean
+function IsoChunkRegion:getIsEnclosed() end
+
+---@public
+---@return ArrayList|Unknown
+function IsoChunkRegion:getDebugConnectedNeighborCopy() end
 
 ---@public
 ---@param arg0 IsoChunkRegion
 ---@return void
-function IsoChunkRegion:addNeighbor(arg0) end
+function IsoChunkRegion:addConnectedNeighbor(arg0) end
+
+---@public
+---@return void
+function IsoChunkRegion:resetRoofCnt() end
+
+---@private
+---@return void
+function IsoChunkRegion:resetEnclosed() end

@@ -14,23 +14,41 @@
 AlarmClockClothing = {}
 
 ---@public
----@param arg0 BaseSoundEmitter
+---@return int
+function AlarmClockClothing:getSoundRadius() end
+
+---@public
+---@param arg0 int
 ---@return void
-function AlarmClockClothing:updateSound(arg0) end
+function AlarmClockClothing:setSoundRadius(arg0) end
 
 ---@public
 ---@return boolean
-function AlarmClockClothing:isDigital() end
+function AlarmClockClothing:shouldUpdateInWorld() end
 
 ---@public
 ---@param arg0 ByteBuffer
----@param arg1 boolean
+---@param arg1 int
 ---@return void
-function AlarmClockClothing:save(arg0, arg1) end
+function AlarmClockClothing:load(arg0, arg1) end
+
+---@private
+---@param arg0 IsoPlayer
+---@return void
+function AlarmClockClothing:wakeUp(arg0) end
 
 ---@public
----@return String
-function AlarmClockClothing:getAlarmSound() end
+---@return void
+function AlarmClockClothing:syncStopRinging() end
+
+---@private
+---@param arg0 ItemContainer
+---@return IsoPlayer
+function AlarmClockClothing:getOwnerPlayer(arg0) end
+
+---@public
+---@return boolean
+function AlarmClockClothing:finishupdate() end
 
 ---@public
 ---@return void
@@ -42,54 +60,55 @@ function AlarmClockClothing:syncAlarmClock_World() end
 function AlarmClockClothing:setHour(arg0) end
 
 ---@public
+---@param arg0 BaseSoundEmitter
+---@return void
+function AlarmClockClothing:updateSound(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function AlarmClockClothing:setAlarmSound(arg0) end
+
+---@public
+---@return void
+function AlarmClockClothing:update() end
+
+---@public
 ---@return int
 function AlarmClockClothing:getHour() end
 
 ---@public
----@return boolean
-function AlarmClockClothing:isRinging() end
+---@return String
+function AlarmClockClothing:getAlarmSound() end
 
 ---@public
----@param arg0 int
----@return void
-function AlarmClockClothing:setSoundRadius(arg0) end
-
----@public
----@return boolean
-function AlarmClockClothing:shouldUpdateInWorld() end
-
----@private
 ---@param arg0 IsoPlayer
 ---@return void
-function AlarmClockClothing:wakeUp(arg0) end
-
----@private
----@param arg0 IsoGridSquare
----@return void
-function AlarmClockClothing:wakeUpPlayers(arg0) end
-
----@public
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
----@return void
-function AlarmClockClothing:DoTooltip(arg0, arg1) end
-
----@public
----@param arg0 boolean
----@return void
-function AlarmClockClothing:setAlarmSet(arg0) end
+function AlarmClockClothing:syncAlarmClock_Player(arg0) end
 
 ---@public
 ---@return int
-function AlarmClockClothing:getSoundRadius() end
+function AlarmClockClothing:getSaveType() end
+
+---@public
+---@return boolean
+function AlarmClockClothing:isAlarmSet() end
+
+---@public
+---@return void
+function AlarmClockClothing:syncAlarmClock() end
 
 ---@public
 ---@return void
 function AlarmClockClothing:stopRinging() end
 
 ---@public
+---@return int
+function AlarmClockClothing:getMinute() end
+
+---@public
 ---@return boolean
-function AlarmClockClothing:isAlarmSet() end
+function AlarmClockClothing:isDigital() end
 
 ---@public
 ---@param arg0 int
@@ -101,54 +120,35 @@ function AlarmClockClothing:setMinute(arg0) end
 function AlarmClockClothing:randomizeAlarm() end
 
 ---@public
+---@return boolean
+function AlarmClockClothing:isRinging() end
+
+---@public
+---@param arg0 ObjectTooltip
+---@param arg1 ObjectTooltip.Layout
+---@return void
+function AlarmClockClothing:DoTooltip(arg0, arg1) end
+
+---@public
 ---@return String
 function AlarmClockClothing:getCategory() end
 
----@private
----@param arg0 ItemContainer
----@return IsoPlayer
-function AlarmClockClothing:getOwnerPlayer(arg0) end
-
 ---@public
----@param arg0 ByteBuffer
----@param arg1 int
+---@param arg0 boolean
 ---@return void
-function AlarmClockClothing:load(arg0, arg1) end
+function AlarmClockClothing:setAlarmSet(arg0) end
 
 ---@public
 ---@return IsoGridSquare
 function AlarmClockClothing:getAlarmSquare() end
 
----@public
+---@private
+---@param arg0 IsoGridSquare
 ---@return void
-function AlarmClockClothing:syncAlarmClock() end
+function AlarmClockClothing:wakeUpPlayers(arg0) end
 
 ---@public
----@return int
-function AlarmClockClothing:getSaveType() end
-
----@public
----@param arg0 IsoPlayer
+---@param arg0 ByteBuffer
+---@param arg1 boolean
 ---@return void
-function AlarmClockClothing:syncAlarmClock_Player(arg0) end
-
----@public
----@return boolean
-function AlarmClockClothing:finishupdate() end
-
----@public
----@return void
-function AlarmClockClothing:update() end
-
----@public
----@return void
-function AlarmClockClothing:syncStopRinging() end
-
----@public
----@param arg0 String
----@return void
-function AlarmClockClothing:setAlarmSound(arg0) end
-
----@public
----@return int
-function AlarmClockClothing:getMinute() end
+function AlarmClockClothing:save(arg0, arg1) end

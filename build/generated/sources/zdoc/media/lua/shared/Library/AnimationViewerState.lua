@@ -16,48 +16,16 @@ AnimationViewerState = {}
 
 ---@public
 ---@param arg0 String
----@return ConfigOption
-function AnimationViewerState:getOptionByName(arg0) end
-
----@private
----@return void
-function AnimationViewerState:renderScene() end
-
----@public
----@param arg0 String
----@param arg1 Object
 ---@return Object
-function AnimationViewerState:fromLua1(arg0, arg1) end
+function AnimationViewerState:fromLua0(arg0) end
 
 ---@public
 ---@return void
-function AnimationViewerState:render() end
-
----@public
----@param arg0 String
----@return boolean
-function AnimationViewerState:getBoolean(arg0) end
-
----@public
----@return GameStateMachine.StateAction
-function AnimationViewerState:update() end
-
----@public
----@return void
-function AnimationViewerState:save() end
+function AnimationViewerState:enter() end
 
 ---@private
 ---@return void
 function AnimationViewerState:saveGameUI() end
-
----@public
----@return void
-function AnimationViewerState:exit() end
-
----@public
----@param arg0 int
----@return ConfigOption
-function AnimationViewerState:getOptionByIndex(arg0) end
 
 ---@public
 ---@param arg0 KahluaTable
@@ -65,29 +33,20 @@ function AnimationViewerState:getOptionByIndex(arg0) end
 function AnimationViewerState:setTable(arg0) end
 
 ---@public
----@param arg0 String
----@return Object
-function AnimationViewerState:fromLua0(arg0) end
-
----@public
 ---@return int
 function AnimationViewerState:getOptionCount() end
 
 ---@public
----@return AnimationViewerState
-function AnimationViewerState:checkInstance() end
-
----@public
 ---@return void
-function AnimationViewerState:enter() end
-
----@public
----@return void
-function AnimationViewerState:reenter() end
+function AnimationViewerState:load() end
 
 ---@private
 ---@return void
-function AnimationViewerState:renderUI() end
+function AnimationViewerState:renderScene() end
+
+---@public
+---@return void
+function AnimationViewerState:render() end
 
 ---@public
 ---@param arg0 String
@@ -97,16 +56,57 @@ function AnimationViewerState:setBoolean(arg0, arg1) end
 
 ---@private
 ---@return void
-function AnimationViewerState:updateScene() end
+function AnimationViewerState:renderUI() end
+
+---@public
+---@return AnimationViewerState
+function AnimationViewerState:checkInstance() end
 
 ---@public
 ---@return void
-function AnimationViewerState:load() end
+function AnimationViewerState:yield() end
+
+---@public
+---@param arg0 String
+---@return ConfigOption
+function AnimationViewerState:getOptionByName(arg0) end
+
+---@private
+---@return void
+function AnimationViewerState:updateScene() end
 
 ---@private
 ---@return void
 function AnimationViewerState:restoreGameUI() end
 
 ---@public
+---@param arg0 int
+---@return ConfigOption
+function AnimationViewerState:getOptionByIndex(arg0) end
+
+---@public
 ---@return void
-function AnimationViewerState:yield() end
+function AnimationViewerState:exit() end
+
+---@public
+---@return void
+function AnimationViewerState:save() end
+
+---@public
+---@return void
+function AnimationViewerState:reenter() end
+
+---@public
+---@param arg0 String
+---@param arg1 Object
+---@return Object
+function AnimationViewerState:fromLua1(arg0, arg1) end
+
+---@public
+---@return GameStateMachine.StateAction
+function AnimationViewerState:update() end
+
+---@public
+---@param arg0 String
+---@return boolean
+function AnimationViewerState:getBoolean(arg0) end

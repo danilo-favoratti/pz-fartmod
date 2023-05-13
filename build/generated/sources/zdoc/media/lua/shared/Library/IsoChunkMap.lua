@@ -35,27 +35,29 @@
 IsoChunkMap = {}
 
 ---@public
----@param arg0 IsoGridSquare
+---@param arg0 int
 ---@param arg1 int
----@param arg2 int
----@param arg3 int
----@return void
-function IsoChunkMap:setGridSquare(arg0, arg1, arg2, arg3) end
+---@return IsoChunk
+function IsoChunkMap:getChunkCurrent(arg0, arg1) end
 
----@public
----@param arg0 IsoChunk
----@param arg1 boolean
+---@private
+---@param arg0 int
 ---@return boolean
-function IsoChunkMap:setChunkDirect(arg0, arg1) end
+function IsoChunkMap:isTileOutOfrange(arg0) end
 
----@public
+---@private
 ---@return void
-function IsoChunkMap:Dispose() end
+function IsoChunkMap:LoadUp() end
+
+---@private
+---@param arg0 int
+---@return boolean
+function IsoChunkMap:isGridSquareOutOfRangeZ(arg0) end
 
 ---@public
 ---@param arg0 int
----@return void
-function IsoChunkMap:renderBloodForChunks(arg0) end
+---@return IsoRoom
+function IsoChunkMap:getRoom(arg0) end
 
 ---@private
 ---@param arg0 int
@@ -72,15 +74,10 @@ function IsoChunkMap:setChunk(arg0, arg1) end
 function IsoChunkMap:setChunk(arg0, arg1, arg2) end
 
 ---@public
----@param arg0 int
----@param arg1 int
----@return IsoChunk
-function IsoChunkMap:getChunkCurrent(arg0, arg1) end
-
----@public
----@param arg0 int
----@return IsoRoom
-function IsoChunkMap:getRoom(arg0) end
+---@param arg0 IsoChunk
+---@param arg1 boolean
+---@return boolean
+function IsoChunkMap:setChunkDirect(arg0, arg1) end
 
 ---@private
 ---@param arg0 int
@@ -88,78 +85,8 @@ function IsoChunkMap:getRoom(arg0) end
 function IsoChunkMap:tileToChunk(arg0) end
 
 ---@public
----@return int
-function IsoChunkMap:getWorldXMinTiles() end
-
----@public
----@return int
-function IsoChunkMap:getWorldYMinTiles() end
-
----@public
----@return int
-function IsoChunkMap:getWidthInTiles() end
-
----@public
 ---@return void
 function IsoChunkMap:drawDebugChunkMap() end
-
----@public
----@return void
-function IsoChunkMap:SwapChunkBuffers() end
-
----@public
----@return int
-function IsoChunkMap:getWorldXMin() end
-
----@private
----@return void
-function IsoChunkMap:LoadUp() end
-
----@public
----@param arg0 IsoGameCharacter
----@return void
-function IsoChunkMap:ProcessChunkPos(arg0) end
-
----@public
----@return void
-function IsoChunkMap:checkIntegrityThread() end
-
----@public
----@return void
-function IsoChunkMap:processAllLoadGridSquare() end
-
----@private
----@param arg0 int
----@return boolean
-function IsoChunkMap:isTileOutOfrange(arg0) end
-
----@private
----@return void
-function IsoChunkMap:Left() end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@return void
-function IsoChunkMap:LoadChunk(arg0, arg1, arg2, arg3) end
-
----@private
----@return void
-function IsoChunkMap:Right() end
-
----@private
----@return void
-function IsoChunkMap:LoadLeft() end
-
----@private
----@return void
-function IsoChunkMap:LoadRight() end
-
----@private
----@return void
-function IsoChunkMap:checkVehicles() end
 
 ---@private
 ---@param arg0 int
@@ -174,58 +101,120 @@ function IsoChunkMap:getChunk(arg0) end
 function IsoChunkMap:getChunk(arg0, arg1) end
 
 ---@public
----@param arg0 int
----@param arg1 int
----@return void
-function IsoChunkMap:setInitialPos(arg0, arg1) end
-
----@public
----@return void
-function IsoChunkMap:CalcChunkWidth() end
-
----@public
----@return void
-function IsoChunkMap:Unload() end
-
----@public
----@return void
-function IsoChunkMap:Save() end
-
----@private
----@return void
-function IsoChunkMap:UpdateCellCache() end
-
----@public
----@return void
-function IsoChunkMap:update() end
-
----@public
----@param arg0 int
+---@param arg0 IsoGridSquare
 ---@param arg1 int
 ---@param arg2 int
----@return IsoGridSquare
-function IsoChunkMap:getGridSquare(arg0, arg1, arg2) end
+---@param arg3 int
+---@return void
+function IsoChunkMap:setGridSquare(arg0, arg1, arg2, arg3) end
+
+---@public
+---@return void
+function IsoChunkMap:processAllLoadGridSquare() end
 
 ---@private
 ---@param arg0 int
 ---@return int
 function IsoChunkMap:tileToGridSquare(arg0) end
 
+---@public
+---@return void
+function IsoChunkMap:SwapChunkBuffers() end
+
 ---@private
+---@return void
+function IsoChunkMap:Up() end
+
+---@private
+---@return void
+function IsoChunkMap:UpdateCellCache() end
+
+---@public
+---@return int
+function IsoChunkMap:getWidthInTiles() end
+
+---@public
+---@return int
+function IsoChunkMap:getWorldXMinTiles() end
+
+---@public
 ---@param arg0 int
----@return boolean
-function IsoChunkMap:isGridSquareOutOfRangeZ(arg0) end
+---@param arg1 int
+---@return void
+function IsoChunkMap:setWorldStartPos(arg0, arg1) end
+
+---@public
+---@return int
+function IsoChunkMap:getWorldYMinTiles() end
+
+---@public
+---@return void
+function IsoChunkMap:update() end
+
+---@public
+---@return void
+function IsoChunkMap:checkIntegrityThread() end
+
+---@public
+---@return void
+function IsoChunkMap:CalcChunkWidth() end
+
+---@private
+---@return void
+function IsoChunkMap:LoadLeft() end
+
+---@private
+---@return void
+function IsoChunkMap:LoadDown() end
 
 ---@private
 ---@param arg0 int
 ---@return int
 function IsoChunkMap:gridSquareToTileY(arg0) end
 
+---@private
+---@param arg0 int
+---@return int
+function IsoChunkMap:gridSquareToTileX(arg0) end
+
+---@public
+---@return int
+function IsoChunkMap:getWorldYMin() end
+
+---@public
+---@return int
+function IsoChunkMap:getWorldXMin() end
+
 ---@public
 ---@param arg0 int
 ---@param arg1 int
----@return IsoChunk
-function IsoChunkMap:getChunkForGridSquare(arg0, arg1) end
+---@param arg2 int
+---@param arg3 int
+---@return void
+function IsoChunkMap:LoadChunk(arg0, arg1, arg2, arg3) end
+
+---@public
+---@param arg0 IsoGameCharacter
+---@return void
+function IsoChunkMap:ProcessChunkPos(arg0) end
+
+---@public
+---@return int
+function IsoChunkMap:getWorldXMaxTiles() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return void
+function IsoChunkMap:setInitialPos(arg0, arg1) end
+
+---@private
+---@return void
+function IsoChunkMap:Left() end
+
+---@private
+---@return void
+function IsoChunkMap:Down() end
 
 ---@public
 ---@param arg0 IsoChunkMap
@@ -234,11 +223,7 @@ function IsoChunkMap:copy(arg0) end
 
 ---@public
 ---@return int
-function IsoChunkMap:getWorldYMin() end
-
----@private
----@return void
-function IsoChunkMap:Up() end
+function IsoChunkMap:getWorldYMaxTiles() end
 
 ---@public
 ---@param arg0 int
@@ -250,30 +235,26 @@ function IsoChunkMap:LoadChunkForLater(arg0, arg1, arg2, arg3) end
 
 ---@private
 ---@return void
-function IsoChunkMap:Down() end
-
----@public
----@return int
-function IsoChunkMap:getWorldYMaxTiles() end
-
----@public
----@return int
-function IsoChunkMap:getWorldXMaxTiles() end
+function IsoChunkMap:checkVehicles() end
 
 ---@public
 ---@param arg0 int
 ---@param arg1 int
+---@param arg2 int
+---@return IsoGridSquare
+function IsoChunkMap:getGridSquare(arg0, arg1, arg2) end
+
+---@private
 ---@return void
-function IsoChunkMap:setWorldStartPos(arg0, arg1) end
+function IsoChunkMap:LoadRight() end
 
 ---@public
 ---@return void
-function IsoChunkMap:checkIntegrity() end
+function IsoChunkMap:Save() end
 
 ---@private
----@param arg0 int
----@return int
-function IsoChunkMap:gridSquareToTileX(arg0) end
+---@return void
+function IsoChunkMap:Right() end
 
 ---@public
 ---@param arg0 int
@@ -282,6 +263,25 @@ function IsoChunkMap:gridSquareToTileX(arg0) end
 ---@return IsoGridSquare
 function IsoChunkMap:getGridSquareDirect(arg0, arg1, arg2) end
 
----@private
+---@public
+---@param arg0 int
 ---@return void
-function IsoChunkMap:LoadDown() end
+function IsoChunkMap:renderBloodForChunks(arg0) end
+
+---@public
+---@return void
+function IsoChunkMap:checkIntegrity() end
+
+---@public
+---@return void
+function IsoChunkMap:Unload() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return IsoChunk
+function IsoChunkMap:getChunkForGridSquare(arg0, arg1) end
+
+---@public
+---@return void
+function IsoChunkMap:Dispose() end

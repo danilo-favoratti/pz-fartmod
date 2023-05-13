@@ -22,8 +22,8 @@ WorldSoundManager_WorldSound = {}
 ---@param arg5 int
 ---@return WorldSoundManager.WorldSound
 ---@overload fun(arg0:Object, arg1:int, arg2:int, arg3:int, arg4:int, arg5:int, arg6:boolean)
----@overload fun(arg0:Object, arg1:int, arg2:int, arg3:int, arg4:int, arg5:int, arg6:boolean, arg7:float, arg8:float)
 ---@overload fun(arg0:boolean, arg1:int, arg2:int, arg3:int, arg4:int, arg5:int, arg6:boolean, arg7:float, arg8:float)
+---@overload fun(arg0:Object, arg1:int, arg2:int, arg3:int, arg4:int, arg5:int, arg6:boolean, arg7:float, arg8:float)
 function WorldSoundManager_WorldSound:init(arg0, arg1, arg2, arg3, arg4, arg5) end
 
 ---@public
@@ -38,7 +38,7 @@ function WorldSoundManager_WorldSound:init(arg0, arg1, arg2, arg3, arg4, arg5) e
 function WorldSoundManager_WorldSound:init(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 
 ---@public
----@param arg0 Object
+---@param arg0 boolean
 ---@param arg1 int
 ---@param arg2 int
 ---@param arg3 int
@@ -51,7 +51,7 @@ function WorldSoundManager_WorldSound:init(arg0, arg1, arg2, arg3, arg4, arg5, a
 function WorldSoundManager_WorldSound:init(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
 
 ---@public
----@param arg0 boolean
+---@param arg0 Object
 ---@param arg1 int
 ---@param arg2 int
 ---@param arg3 int

@@ -13,6 +13,10 @@ function ModData:remove(arg0) end
 function ModData:exists(arg0) end
 
 ---@public
+---@return ArrayList|Unknown
+function ModData:getTableNames() end
+
+---@public
 ---@param arg0 String
 ---@return KahluaTable
 function ModData:getOrCreate(arg0) end
@@ -29,17 +33,9 @@ function ModData:create(arg0) end
 
 ---@public
 ---@param arg0 String
+---@param arg1 KahluaTable
 ---@return void
-function ModData:request(arg0) end
-
----@public
----@param arg0 String
----@return KahluaTable
-function ModData:get(arg0) end
-
----@public
----@return ArrayList|Unknown
-function ModData:getTableNames() end
+function ModData:add(arg0, arg1) end
 
 ---@public
 ---@param arg0 String
@@ -48,6 +44,10 @@ function ModData:transmit(arg0) end
 
 ---@public
 ---@param arg0 String
----@param arg1 KahluaTable
 ---@return void
-function ModData:add(arg0, arg1) end
+function ModData:request(arg0) end
+
+---@public
+---@param arg0 String
+---@return KahluaTable
+function ModData:get(arg0) end

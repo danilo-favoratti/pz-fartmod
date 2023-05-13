@@ -5,10 +5,10 @@
 SurvivorFactory_SurvivorType = {}
 
 ---@public
----@return SurvivorFactory.SurvivorType[]
-function SurvivorFactory_SurvivorType:values() end
-
----@public
 ---@param arg0 String
 ---@return SurvivorFactory.SurvivorType
 function SurvivorFactory_SurvivorType:valueOf(arg0) end
+
+---@public
+---@return SurvivorFactory.SurvivorType[]
+function SurvivorFactory_SurvivorType:values() end

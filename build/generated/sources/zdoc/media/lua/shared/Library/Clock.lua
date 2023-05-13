@@ -42,40 +42,10 @@
 Clock = {}
 
 ---@public
----@return boolean
-function Clock:isDateVisible() end
-
----@private
----@return int[]
-function Clock:dateDigits() end
-
----@private
----@return void
-function Clock:assignLargeOffsets() end
-
----@public
 ---@param arg0 double
 ---@param arg1 double
 ---@return Boolean
 function Clock:onMouseDown(arg0, arg1) end
-
----@private
----@return void
-function Clock:assignSmallOffsets() end
-
----@public
----@return void
-function Clock:render() end
-
----@private
----@param arg0 boolean
----@param arg1 Color
----@return void
-function Clock:renderDisplay(arg0, arg1) end
-
----@public
----@return void
-function Clock:resize() end
 
 ---@private
 ---@return int[]
@@ -85,7 +55,37 @@ function Clock:tempDigits() end
 ---@return int[]
 function Clock:timeDigits() end
 
+---@public
+---@return void
+function Clock:resize() end
+
 ---@private
 ---@param arg0 boolean
 ---@return void
 function Clock:assignTextures(arg0) end
+
+---@private
+---@return void
+function Clock:assignSmallOffsets() end
+
+---@private
+---@return void
+function Clock:assignLargeOffsets() end
+
+---@public
+---@return void
+function Clock:render() end
+
+---@private
+---@return int[]
+function Clock:dateDigits() end
+
+---@private
+---@param arg0 boolean
+---@param arg1 Color
+---@return void
+function Clock:renderDisplay(arg0, arg1) end
+
+---@public
+---@return boolean
+function Clock:isDateVisible() end

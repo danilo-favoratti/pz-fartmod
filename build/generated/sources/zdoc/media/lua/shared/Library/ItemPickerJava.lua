@@ -22,18 +22,50 @@
 ItemPickerJava = {}
 
 ---@public
+---@param arg0 String
+---@return float
+function ItemPickerJava:getLootModifier(arg0) end
+
+---@private
+---@param arg0 ArrayList|Unknown
+---@param arg1 ItemContainer
+---@param arg2 float
+---@param arg3 IsoGameCharacter
+---@param arg4 ItemPickerJava.ItemPickerRoom
+---@return void
+function ItemPickerJava:rollProceduralItem(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
 ---@return void
 function ItemPickerJava:InitSandboxLootSettings() end
+
+---@private
+---@param arg0 InventoryItem
+---@param arg1 ItemPickerJava.ItemPickerContainer
+---@return void
+function ItemPickerJava:checkStashItem(arg0, arg1) end
 
 ---@private
 ---@param arg0 KahluaTableImpl
 ---@return ArrayList|Unknown
 function ItemPickerJava:ExtractProcList(arg0) end
 
+---@public
+---@param arg0 ItemContainer
+---@param arg1 String
+---@param arg2 ItemPickerJava.ItemPickerContainer
+---@return InventoryItem
+function ItemPickerJava:tryAddItemToContainer(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 ItemContainer
+---@param arg1 IsoPlayer
+---@return void
+function ItemPickerJava:fillContainer(arg0, arg1) end
+
 ---@private
----@param arg0 HashMap|Unknown|Unknown
----@return String
-function ItemPickerJava:getDistribInHashMap(arg0) end
+---@return void
+function ItemPickerJava:ParseProceduralDistributions() end
 
 ---@public
 ---@param arg0 IsoObject
@@ -41,10 +73,22 @@ function ItemPickerJava:getDistribInHashMap(arg0) end
 function ItemPickerJava:updateOverlaySprite(arg0) end
 
 ---@public
----@param arg0 ItemContainer
----@param arg1 IsoPlayer
+---@param arg0 String
+---@param arg1 String
+---@param arg2 String
+---@param arg3 boolean
+---@return ItemPickerJava.ItemPickerContainer
+function ItemPickerJava:getItemContainer(arg0, arg1, arg2, arg3) end
+
+---@private
+---@param arg0 HashMap|Unknown|Unknown
+---@return String
+function ItemPickerJava:getDistribInHashMap(arg0) end
+
+---@public
+---@param arg0 IsoGridSquare
 ---@return void
-function ItemPickerJava:fillContainer(arg0, arg1) end
+function ItemPickerJava:doOverlaySprite(arg0) end
 
 ---@private
 ---@return void
@@ -56,13 +100,20 @@ function ItemPickerJava:ParseVehicleDistributions() end
 function ItemPickerJava:DoWeaponUpgrade(arg0) end
 
 ---@private
----@return void
-function ItemPickerJava:ParseProceduralDistributions() end
-
----@private
 ---@param arg0 KahluaTableImpl
 ---@return ItemPickerJava.ItemPickerContainer
 function ItemPickerJava:ExtractContainersFromLua(arg0) end
+
+---@public
+---@param arg0 ItemPickerJava.ItemPickerContainer
+---@param arg1 ItemContainer
+---@param arg2 float
+---@param arg3 IsoGameCharacter
+---@param arg4 boolean
+---@param arg5 boolean
+---@param arg6 ItemPickerJava.ItemPickerRoom
+---@return void
+function ItemPickerJava:doRollItem(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 
 ---@public
 ---@return void
@@ -75,14 +126,9 @@ function ItemPickerJava:Parse() end
 ---@return void
 function ItemPickerJava:rollContainerItem(arg0, arg1, arg2) end
 
----@public
----@param arg0 ItemPickerJava.ItemPickerContainer
----@param arg1 ItemContainer
----@param arg2 boolean
----@param arg3 IsoGameCharacter
----@param arg4 ItemPickerJava.ItemPickerRoom
+---@private
 ---@return void
-function ItemPickerJava:rollItem(arg0, arg1, arg2, arg3, arg4) end
+function ItemPickerJava:ParseSuburbsDistributions() end
 
 ---@public
 ---@param arg0 ItemPickerJava.ItemPickerRoom
@@ -100,54 +146,8 @@ function ItemPickerJava:doSandboxSettings(arg0) end
 ---@public
 ---@param arg0 ItemPickerJava.ItemPickerContainer
 ---@param arg1 ItemContainer
----@param arg2 float
----@param arg3 IsoGameCharacter
----@param arg4 boolean
----@param arg5 boolean
----@param arg6 ItemPickerJava.ItemPickerRoom
----@return void
-function ItemPickerJava:doRollItem(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
-
----@private
----@param arg0 ArrayList|Unknown
----@param arg1 ItemContainer
----@param arg2 float
+---@param arg2 boolean
 ---@param arg3 IsoGameCharacter
 ---@param arg4 ItemPickerJava.ItemPickerRoom
 ---@return void
-function ItemPickerJava:rollProceduralItem(arg0, arg1, arg2, arg3, arg4) end
-
----@public
----@param arg0 IsoGridSquare
----@return void
-function ItemPickerJava:doOverlaySprite(arg0) end
-
----@public
----@param arg0 String
----@param arg1 String
----@param arg2 String
----@param arg3 boolean
----@return ItemPickerJava.ItemPickerContainer
-function ItemPickerJava:getItemContainer(arg0, arg1, arg2, arg3) end
-
----@public
----@param arg0 String
----@return float
-function ItemPickerJava:getLootModifier(arg0) end
-
----@private
----@param arg0 InventoryItem
----@param arg1 ItemPickerJava.ItemPickerContainer
----@return void
-function ItemPickerJava:checkStashItem(arg0, arg1) end
-
----@private
----@return void
-function ItemPickerJava:ParseSuburbsDistributions() end
-
----@public
----@param arg0 ItemContainer
----@param arg1 String
----@param arg2 ItemPickerJava.ItemPickerContainer
----@return InventoryItem
-function ItemPickerJava:tryAddItemToContainer(arg0, arg1, arg2) end
+function ItemPickerJava:rollItem(arg0, arg1, arg2, arg3, arg4) end

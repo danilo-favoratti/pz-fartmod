@@ -2,16 +2,16 @@
 RVSBanditRoad = {}
 
 ---@public
----@param arg0 IsoMetaGrid.Zone
----@param arg1 IsoChunk
----@return void
-function RVSBanditRoad:randomizeVehicleStory(arg0, arg1) end
-
----@public
 ---@param arg0 VehicleStorySpawner
 ---@param arg1 VehicleStorySpawner.Element
 ---@return void
 function RVSBanditRoad:spawnElement(arg0, arg1) end
+
+---@public
+---@param arg0 IsoMetaGrid.Zone
+---@param arg1 IsoChunk
+---@return void
+function RVSBanditRoad:randomizeVehicleStory(arg0, arg1) end
 
 ---@public
 ---@param arg0 IsoMetaGrid.Zone

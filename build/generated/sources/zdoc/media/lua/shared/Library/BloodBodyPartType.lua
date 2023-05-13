@@ -34,7 +34,7 @@ function BloodBodyPartType:getDisplayName(arg0) end
 ---@public
 ---@param arg0 String
 ---@return BloodBodyPartType
-function BloodBodyPartType:valueOf(arg0) end
+function BloodBodyPartType:FromString(arg0) end
 
 ---@public
 ---@return BloodBodyPartType[]
@@ -43,7 +43,16 @@ function BloodBodyPartType:values() end
 ---@public
 ---@param arg0 String
 ---@return BloodBodyPartType
-function BloodBodyPartType:FromString(arg0) end
+function BloodBodyPartType:valueOf(arg0) end
+
+---@public
+---@param arg0 int
+---@return BloodBodyPartType
+function BloodBodyPartType:FromIndex(arg0) end
+
+---@public
+---@return CharacterMask.Part[]
+function BloodBodyPartType:getCharacterMaskParts() end
 
 ---@public
 ---@param arg0 BloodBodyPartType
@@ -53,12 +62,3 @@ function BloodBodyPartType:ToIndex(arg0) end
 ---@public
 ---@return int
 function BloodBodyPartType:index() end
-
----@public
----@return CharacterMask.Part[]
-function BloodBodyPartType:getCharacterMaskParts() end
-
----@public
----@param arg0 int
----@return BloodBodyPartType
-function BloodBodyPartType:FromIndex(arg0) end

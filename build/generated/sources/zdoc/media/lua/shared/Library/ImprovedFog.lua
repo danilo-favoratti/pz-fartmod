@@ -54,13 +54,61 @@
 ImprovedFog = {}
 
 ---@public
+---@return boolean
+function ImprovedFog:isRenderEndOnly() end
+
+---@public
+---@param arg0 int
+---@return void
+function ImprovedFog:setRenderXRowsFromCenter(arg0) end
+
+---@public
+---@return float
+function ImprovedFog:getSecondLayerAlpha() end
+
+---@public
+---@param arg0 int
+---@return void
+function ImprovedFog:setMaxYOffset(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function ImprovedFog:setRenderEndOnly(arg0) end
+
+---@public
+---@return void
+function ImprovedFog:init() end
+
+---@public
 ---@param arg0 boolean
 ---@return void
 function ImprovedFog:setRenderCurrentLayerOnly(arg0) end
 
 ---@public
 ---@return float
-function ImprovedFog:getColorR() end
+function ImprovedFog:getTopAlphaHeight() end
+
+---@public
+---@return float
+function ImprovedFog:getColorG() end
+
+---@public
+---@return float
+function ImprovedFog:getOctaves() end
+
+---@public
+---@param arg0 float
+---@return void
+function ImprovedFog:setBottomAlphaHeight(arg0) end
+
+---@public
+---@return int
+function ImprovedFog:getRenderXRowsFromCenter() end
+
+---@public
+---@return boolean
+function ImprovedFog:isHighQuality() end
 
 ---@private
 ---@return void
@@ -68,11 +116,168 @@ function ImprovedFog:renderFogSegment() end
 
 ---@public
 ---@return boolean
-function ImprovedFog:isHighQuality() end
+function ImprovedFog:isDrawDebugColors() end
 
 ---@public
 ---@return int
-function ImprovedFog:getRenderXRowsFromCenter() end
+function ImprovedFog:getMinXOffset() end
+
+---@public
+---@param arg0 float
+---@return void
+function ImprovedFog:setSecondLayerAlpha(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function ImprovedFog:setOctaves(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function ImprovedFog:setRenderOnlyOneRow(arg0) end
+
+---@public
+---@return float
+function ImprovedFog:getAlphaCircleRad() end
+
+---@public
+---@return float
+function ImprovedFog:getAlphaCircleAlpha() end
+
+---@public
+---@return boolean
+function ImprovedFog:isRenderCurrentLayerOnly() end
+
+---@public
+---@param arg0 float
+---@return void
+function ImprovedFog:setTopAlphaHeight(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function ImprovedFog:setMaxXOffset(arg0) end
+
+---@public
+---@return void
+function ImprovedFog:updateKeys() end
+
+---@public
+---@return void
+function ImprovedFog:endRender() end
+
+---@public
+---@param arg0 float
+---@return void
+function ImprovedFog:setColorG(arg0) end
+
+---@public
+---@return float
+function ImprovedFog:getColorB() end
+
+---@public
+---@param arg0 int
+---@return void
+function ImprovedFog:setMinXOffset(arg0) end
+
+---@public
+---@return void
+function ImprovedFog:update() end
+
+---@private
+---@param arg0 int
+---@param arg1 int
+---@param arg2 int
+---@return void
+function ImprovedFog:startFogRectangle(arg0, arg1, arg2) end
+
+---@public
+---@return float
+function ImprovedFog:getScalingY() end
+
+---@public
+---@return boolean
+function ImprovedFog:isRenderOnlyOneRow() end
+
+---@public
+---@return float
+function ImprovedFog:getColorR() end
+
+---@public
+---@return boolean
+function ImprovedFog:isEnableEditing() end
+
+---@public
+---@param arg0 float
+---@return void
+function ImprovedFog:setAlphaCircleAlpha(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function ImprovedFog:setHighQuality(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return void
+function ImprovedFog:startRender(arg0, arg1) end
+
+---@public
+---@return float
+function ImprovedFog:getBaseAlpha() end
+
+---@public
+---@return float
+function ImprovedFog:getScalingX() end
+
+---@public
+---@return float
+function ImprovedFog:getBottomAlphaHeight() end
+
+---@public
+---@return int
+function ImprovedFog:getRenderEveryXRow() end
+
+---@public
+---@param arg0 float
+---@return void
+function ImprovedFog:setBaseAlpha(arg0) end
+
+---@public
+---@return int
+function ImprovedFog:getMaxXOffset() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function ImprovedFog:setDrawDebugColors(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function ImprovedFog:setColorR(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function ImprovedFog:setRenderEveryXRow(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function ImprovedFog:setScalingY(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function ImprovedFog:setAlphaCircleRad(arg0) end
+
+---@public
+---@param arg0 IsoGridSquare
+---@return void
+function ImprovedFog:renderRowsBehind(arg0) end
 
 ---@private
 ---@param arg0 int
@@ -84,7 +289,16 @@ function ImprovedFog:endFogRectangle(arg0, arg1, arg2) end
 ---@public
 ---@param arg0 float
 ---@return void
-function ImprovedFog:setBottomAlphaHeight(arg0) end
+function ImprovedFog:setColorB(arg0) end
+
+---@public
+---@return int
+function ImprovedFog:getMaxYOffset() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function ImprovedFog:setEnableEditing(arg0) end
 
 ---@public
 ---@param arg0 Texture
@@ -104,220 +318,6 @@ function ImprovedFog:setBottomAlphaHeight(arg0) end
 function ImprovedFog:DrawSubTextureRGBA(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12) end
 
 ---@public
----@return float
-function ImprovedFog:getOctaves() end
-
----@public
----@return void
-function ImprovedFog:endRender() end
-
----@public
----@return float
-function ImprovedFog:getSecondLayerAlpha() end
-
----@public
----@return boolean
-function ImprovedFog:isRenderEndOnly() end
-
----@public
----@param arg0 int
----@return void
-function ImprovedFog:setRenderXRowsFromCenter(arg0) end
-
----@public
----@return float
-function ImprovedFog:getColorG() end
-
----@public
----@param arg0 float
----@return void
-function ImprovedFog:setScalingY(arg0) end
-
----@public
----@param arg0 float
----@return void
-function ImprovedFog:setAlphaCircleRad(arg0) end
-
----@public
----@param arg0 IsoGridSquare
----@return void
-function ImprovedFog:renderRowsBehind(arg0) end
-
----@public
 ---@param arg0 float
 ---@return void
 function ImprovedFog:setScalingX(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function ImprovedFog:setEnableEditing(arg0) end
-
----@public
----@return float
-function ImprovedFog:getBottomAlphaHeight() end
-
----@public
----@return int
-function ImprovedFog:getMaxYOffset() end
-
----@public
----@param arg0 boolean
----@return void
-function ImprovedFog:setRenderEndOnly(arg0) end
-
----@public
----@param arg0 float
----@return void
-function ImprovedFog:setColorB(arg0) end
-
----@public
----@param arg0 int
----@return void
-function ImprovedFog:setMaxYOffset(arg0) end
-
----@private
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@return void
-function ImprovedFog:startFogRectangle(arg0, arg1, arg2) end
-
----@public
----@param arg0 boolean
----@return void
-function ImprovedFog:setHighQuality(arg0) end
-
----@public
----@return float
-function ImprovedFog:getScalingY() end
-
----@public
----@return boolean
-function ImprovedFog:isEnableEditing() end
-
----@public
----@param arg0 boolean
----@return void
-function ImprovedFog:setDrawDebugColors(arg0) end
-
----@public
----@param arg0 float
----@return void
-function ImprovedFog:setColorR(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@return void
-function ImprovedFog:startRender(arg0, arg1) end
-
----@public
----@param arg0 float
----@return void
-function ImprovedFog:setAlphaCircleAlpha(arg0) end
-
----@public
----@return float
-function ImprovedFog:getColorB() end
-
----@public
----@return float
-function ImprovedFog:getBaseAlpha() end
-
----@public
----@param arg0 float
----@return void
-function ImprovedFog:setBaseAlpha(arg0) end
-
----@public
----@param arg0 int
----@return void
-function ImprovedFog:setMaxXOffset(arg0) end
-
----@public
----@param arg0 int
----@return void
-function ImprovedFog:setRenderEveryXRow(arg0) end
-
----@public
----@return float
-function ImprovedFog:getAlphaCircleAlpha() end
-
----@public
----@return int
-function ImprovedFog:getMaxXOffset() end
-
----@public
----@param arg0 float
----@return void
-function ImprovedFog:setTopAlphaHeight(arg0) end
-
----@public
----@param arg0 float
----@return void
-function ImprovedFog:setOctaves(arg0) end
-
----@public
----@return int
-function ImprovedFog:getMinXOffset() end
-
----@public
----@param arg0 boolean
----@return void
-function ImprovedFog:setRenderOnlyOneRow(arg0) end
-
----@public
----@return float
-function ImprovedFog:getAlphaCircleRad() end
-
----@public
----@return boolean
-function ImprovedFog:isDrawDebugColors() end
-
----@public
----@param arg0 int
----@return void
-function ImprovedFog:setMinXOffset(arg0) end
-
----@public
----@return void
-function ImprovedFog:update() end
-
----@public
----@return void
-function ImprovedFog:updateKeys() end
-
----@public
----@param arg0 float
----@return void
-function ImprovedFog:setSecondLayerAlpha(arg0) end
-
----@public
----@return float
-function ImprovedFog:getTopAlphaHeight() end
-
----@public
----@return void
-function ImprovedFog:init() end
-
----@public
----@return boolean
-function ImprovedFog:isRenderOnlyOneRow() end
-
----@public
----@return float
-function ImprovedFog:getScalingX() end
-
----@public
----@return int
-function ImprovedFog:getRenderEveryXRow() end
-
----@public
----@param arg0 float
----@return void
-function ImprovedFog:setColorG(arg0) end
-
----@public
----@return boolean
-function ImprovedFog:isRenderCurrentLayerOnly() end

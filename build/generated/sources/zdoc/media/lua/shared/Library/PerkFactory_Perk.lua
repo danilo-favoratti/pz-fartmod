@@ -19,6 +19,54 @@
 PerkFactory_Perk = {}
 
 ---@public
+---@return int
+function PerkFactory_Perk:getXp3() end
+
+---@public
+---@return int
+function PerkFactory_Perk:getXp8() end
+
+---@public
+---@return String
+function PerkFactory_Perk:toString() end
+
+---@public
+---@return void
+function PerkFactory_Perk:setCustom() end
+
+---@public
+---@return boolean
+function PerkFactory_Perk:isCustom() end
+
+---@public
+---@return int
+function PerkFactory_Perk:getXp1() end
+
+---@public
+---@return boolean
+function PerkFactory_Perk:isPassiv() end
+
+---@public
+---@return String
+function PerkFactory_Perk:getName() end
+
+---@public
+---@return int
+function PerkFactory_Perk:getXp7() end
+
+---@public
+---@return int
+function PerkFactory_Perk:index() end
+
+---@public
+---@return int
+function PerkFactory_Perk:getXp5() end
+
+---@public
+---@return PerkFactory.Perk
+function PerkFactory_Perk:getType() end
+
+---@public
 ---@param arg0 int
 ---@return float
 function PerkFactory_Perk:getTotalXpForLevel(arg0) end
@@ -29,31 +77,11 @@ function PerkFactory_Perk:getXp9() end
 
 ---@public
 ---@return int
-function PerkFactory_Perk:getXp4() end
-
----@public
----@return String
-function PerkFactory_Perk:getId() end
-
----@public
----@return int
-function PerkFactory_Perk:getXp7() end
-
----@public
----@return PerkFactory.Perk
-function PerkFactory_Perk:getParent() end
+function PerkFactory_Perk:getXp10() end
 
 ---@public
 ---@return int
 function PerkFactory_Perk:getXp6() end
-
----@public
----@return boolean
-function PerkFactory_Perk:isCustom() end
-
----@public
----@return int
-function PerkFactory_Perk:getXp2() end
 
 ---@public
 ---@param arg0 int
@@ -61,45 +89,17 @@ function PerkFactory_Perk:getXp2() end
 function PerkFactory_Perk:getXpForLevel(arg0) end
 
 ---@public
+---@return int
+function PerkFactory_Perk:getXp2() end
+
+---@public
 ---@return String
-function PerkFactory_Perk:toString() end
+function PerkFactory_Perk:getId() end
 
 ---@public
 ---@return int
-function PerkFactory_Perk:getXp3() end
-
----@public
----@return int
-function PerkFactory_Perk:getXp5() end
-
----@public
----@return int
-function PerkFactory_Perk:index() end
-
----@public
----@return void
-function PerkFactory_Perk:setCustom() end
-
----@public
----@return int
-function PerkFactory_Perk:getXp8() end
+function PerkFactory_Perk:getXp4() end
 
 ---@public
 ---@return PerkFactory.Perk
-function PerkFactory_Perk:getType() end
-
----@public
----@return int
-function PerkFactory_Perk:getXp1() end
-
----@public
----@return String
-function PerkFactory_Perk:getName() end
-
----@public
----@return boolean
-function PerkFactory_Perk:isPassiv() end
-
----@public
----@return int
-function PerkFactory_Perk:getXp10() end
+function PerkFactory_Perk:getParent() end

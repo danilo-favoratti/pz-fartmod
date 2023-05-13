@@ -13,20 +13,35 @@
 ---@field private name String
 ClimateManager_ClimateColor = {}
 
----@private
----@param arg0 DataOutputStream
+---@public
+---@param arg0 boolean
 ---@return void
-function ClimateManager_ClimateColor:saveAdmin(arg0) end
+function ClimateManager_ClimateColor:setEnableAdmin(arg0) end
 
 ---@public
 ---@return boolean
 function ClimateManager_ClimateColor:isEnableOverride() end
 
----@private
----@param arg0 DataInputStream
----@param arg1 int
+---@public
+---@param arg0 boolean
 ---@return void
-function ClimateManager_ClimateColor:loadAdmin(arg0, arg1) end
+function ClimateManager_ClimateColor:setEnableOverride(arg0) end
+
+---@public
+---@return int
+function ClimateManager_ClimateColor:getID() end
+
+---@public
+---@return float
+function ClimateManager_ClimateColor:getOverrideInterpolate() end
+
+---@public
+---@return boolean
+function ClimateManager_ClimateColor:isEnableAdmin() end
+
+---@public
+---@return ClimateColorInfo
+function ClimateManager_ClimateColor:getAdminValue() end
 
 ---@public
 ---@param arg0 ClimateColorInfo
@@ -47,37 +62,10 @@ function ClimateManager_ClimateColor:setAdminValue(arg0) end
 function ClimateManager_ClimateColor:setAdminValue(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
 
 ---@public
----@param arg0 boolean
----@return void
-function ClimateManager_ClimateColor:setEnableAdmin(arg0) end
-
----@public
----@param arg0 float
----@return void
-function ClimateManager_ClimateColor:setModdedInterpolate(arg0) end
-
----@public
----@return ClimateColorInfo
-function ClimateManager_ClimateColor:getInternalValue() end
-
----@public
----@return float
-function ClimateManager_ClimateColor:getOverrideInterpolate() end
-
----@private
----@param arg0 ByteBuffer
----@return void
-function ClimateManager_ClimateColor:writeAdmin(arg0) end
-
----@public
 ---@param arg0 int
 ---@param arg1 String
 ---@return ClimateManager.ClimateColor
 function ClimateManager_ClimateColor:init(arg0, arg1) end
-
----@public
----@return int
-function ClimateManager_ClimateColor:getID() end
 
 ---@public
 ---@param arg0 float
@@ -88,17 +76,12 @@ function ClimateManager_ClimateColor:getID() end
 function ClimateManager_ClimateColor:setAdminValueExterior(arg0, arg1, arg2, arg3) end
 
 ---@private
----@param arg0 ByteBuffer
----@return void
-function ClimateManager_ClimateColor:readAdmin(arg0) end
-
----@public
----@return String
-function ClimateManager_ClimateColor:getName() end
-
----@private
 ---@return void
 function ClimateManager_ClimateColor:calculate() end
+
+---@public
+---@return ClimateColorInfo
+function ClimateManager_ClimateColor:getModdedValue() end
 
 ---@public
 ---@param arg0 ClimateColorInfo
@@ -106,29 +89,13 @@ function ClimateManager_ClimateColor:calculate() end
 function ClimateManager_ClimateColor:setFinalValue(arg0) end
 
 ---@public
----@param arg0 float
----@param arg1 float
----@param arg2 float
----@param arg3 float
+---@param arg0 ClimateColorInfo
 ---@return void
-function ClimateManager_ClimateColor:setAdminValueInterior(arg0, arg1, arg2, arg3) end
-
----@public
----@return boolean
-function ClimateManager_ClimateColor:isEnableAdmin() end
-
----@public
----@return ClimateColorInfo
-function ClimateManager_ClimateColor:getOverride() end
+function ClimateManager_ClimateColor:setModdedValue(arg0) end
 
 ---@public
 ---@return ClimateColorInfo
 function ClimateManager_ClimateColor:getFinalValue() end
-
----@public
----@param arg0 boolean
----@return void
-function ClimateManager_ClimateColor:setEnableOverride(arg0) end
 
 ---@public
 ---@param arg0 ByteBuffer
@@ -144,19 +111,52 @@ function ClimateManager_ClimateColor:setOverride(arg0, arg1) end
 function ClimateManager_ClimateColor:setOverride(arg0, arg1) end
 
 ---@public
----@return ClimateColorInfo
-function ClimateManager_ClimateColor:getAdminValue() end
+---@param arg0 float
+---@return void
+function ClimateManager_ClimateColor:setModdedInterpolate(arg0) end
 
----@public
----@return ClimateColorInfo
-function ClimateManager_ClimateColor:getModdedValue() end
+---@private
+---@param arg0 DataInputStream
+---@param arg1 int
+---@return void
+function ClimateManager_ClimateColor:loadAdmin(arg0, arg1) end
+
+---@private
+---@param arg0 ByteBuffer
+---@return void
+function ClimateManager_ClimateColor:writeAdmin(arg0) end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
 function ClimateManager_ClimateColor:setEnableModded(arg0) end
 
----@public
----@param arg0 ClimateColorInfo
+---@private
+---@param arg0 DataOutputStream
 ---@return void
-function ClimateManager_ClimateColor:setModdedValue(arg0) end
+function ClimateManager_ClimateColor:saveAdmin(arg0) end
+
+---@public
+---@return ClimateColorInfo
+function ClimateManager_ClimateColor:getInternalValue() end
+
+---@public
+---@return String
+function ClimateManager_ClimateColor:getName() end
+
+---@private
+---@param arg0 ByteBuffer
+---@return void
+function ClimateManager_ClimateColor:readAdmin(arg0) end
+
+---@public
+---@param arg0 float
+---@param arg1 float
+---@param arg2 float
+---@param arg3 float
+---@return void
+function ClimateManager_ClimateColor:setAdminValueInterior(arg0, arg1, arg2, arg3) end
+
+---@public
+---@return ClimateColorInfo
+function ClimateManager_ClimateColor:getOverride() end

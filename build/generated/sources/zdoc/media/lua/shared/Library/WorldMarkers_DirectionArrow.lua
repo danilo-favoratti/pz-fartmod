@@ -29,23 +29,16 @@
 WorldMarkers_DirectionArrow = {}
 
 ---@public
----@param arg0 int
----@return void
-function WorldMarkers_DirectionArrow:setZ(arg0) end
-
----@public
----@param arg0 String
----@return void
-function WorldMarkers_DirectionArrow:setTexDown(arg0) end
-
----@public
----@param arg0 String
----@return void
-function WorldMarkers_DirectionArrow:setTexStairsUp(arg0) end
-
----@public
 ---@return int
-function WorldMarkers_DirectionArrow:getY() end
+function WorldMarkers_DirectionArrow:getX() end
+
+---@public
+---@return float
+function WorldMarkers_DirectionArrow:getR() end
+
+---@public
+---@return float
+function WorldMarkers_DirectionArrow:getRenderHeight() end
 
 ---@public
 ---@param arg0 float
@@ -56,43 +49,8 @@ function WorldMarkers_DirectionArrow:getY() end
 function WorldMarkers_DirectionArrow:setRGBA(arg0, arg1, arg2, arg3) end
 
 ---@public
----@return int
-function WorldMarkers_DirectionArrow:getZ() end
-
----@public
----@return int
-function WorldMarkers_DirectionArrow:getID() end
-
----@public
----@return boolean
-function WorldMarkers_DirectionArrow:isActive() end
-
----@public
----@return int
-function WorldMarkers_DirectionArrow:getX() end
-
----@public
----@return float
-function WorldMarkers_DirectionArrow:getA() end
-
----@public
----@return float
-function WorldMarkers_DirectionArrow:getR() end
-
----@public
----@param arg0 float
 ---@return void
-function WorldMarkers_DirectionArrow:setB(arg0) end
-
----@public
----@param arg0 float
----@return void
-function WorldMarkers_DirectionArrow:setRenderHeight(arg0) end
-
----@public
----@param arg0 float
----@return void
-function WorldMarkers_DirectionArrow:setA(arg0) end
+function WorldMarkers_DirectionArrow:remove() end
 
 ---@public
 ---@param arg0 int
@@ -100,53 +58,9 @@ function WorldMarkers_DirectionArrow:setA(arg0) end
 function WorldMarkers_DirectionArrow:setY(arg0) end
 
 ---@public
----@return float
-function WorldMarkers_DirectionArrow:getRenderHeight() end
-
----@public
----@return void
-function WorldMarkers_DirectionArrow:remove() end
-
----@public
----@return float
-function WorldMarkers_DirectionArrow:getG() end
-
----@public
----@return boolean
-function WorldMarkers_DirectionArrow:isRemoved() end
-
----@public
----@param arg0 float
----@return void
-function WorldMarkers_DirectionArrow:setRenderWidth(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function WorldMarkers_DirectionArrow:setActive(arg0) end
-
----@public
 ---@param arg0 float
 ---@return void
 function WorldMarkers_DirectionArrow:setR(arg0) end
-
----@public
----@param arg0 int
----@return void
-function WorldMarkers_DirectionArrow:setX(arg0) end
-
----@public
----@param arg0 float
----@return void
-function WorldMarkers_DirectionArrow:setG(arg0) end
-
----@public
----@return float
-function WorldMarkers_DirectionArrow:getB() end
-
----@public
----@return float
-function WorldMarkers_DirectionArrow:getRenderWidth() end
 
 ---@public
 ---@param arg0 String
@@ -156,4 +70,90 @@ function WorldMarkers_DirectionArrow:setTexture(arg0) end
 ---@public
 ---@param arg0 String
 ---@return void
+function WorldMarkers_DirectionArrow:setTexStairsUp(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function WorldMarkers_DirectionArrow:setX(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
 function WorldMarkers_DirectionArrow:setTexStairsDown(arg0) end
+
+---@public
+---@return int
+function WorldMarkers_DirectionArrow:getID() end
+
+---@public
+---@param arg0 String
+---@return void
+function WorldMarkers_DirectionArrow:setTexDown(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function WorldMarkers_DirectionArrow:setRenderWidth(arg0) end
+
+---@public
+---@return float
+function WorldMarkers_DirectionArrow:getRenderWidth() end
+
+---@public
+---@return float
+function WorldMarkers_DirectionArrow:getA() end
+
+---@public
+---@param arg0 float
+---@return void
+function WorldMarkers_DirectionArrow:setG(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function WorldMarkers_DirectionArrow:setA(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function WorldMarkers_DirectionArrow:setRenderHeight(arg0) end
+
+---@public
+---@return int
+function WorldMarkers_DirectionArrow:getZ() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function WorldMarkers_DirectionArrow:setActive(arg0) end
+
+---@public
+---@return float
+function WorldMarkers_DirectionArrow:getG() end
+
+---@public
+---@return int
+function WorldMarkers_DirectionArrow:getY() end
+
+---@public
+---@return float
+function WorldMarkers_DirectionArrow:getB() end
+
+---@public
+---@return boolean
+function WorldMarkers_DirectionArrow:isRemoved() end
+
+---@public
+---@return boolean
+function WorldMarkers_DirectionArrow:isActive() end
+
+---@public
+---@param arg0 float
+---@return void
+function WorldMarkers_DirectionArrow:setB(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function WorldMarkers_DirectionArrow:setZ(arg0) end

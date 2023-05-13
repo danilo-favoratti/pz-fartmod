@@ -3,10 +3,6 @@
 PlayerGetUpState = {}
 
 ---@public
----@return PlayerGetUpState
-function PlayerGetUpState:instance() end
-
----@public
 ---@param arg0 IsoGameCharacter
 ---@return void
 function PlayerGetUpState:execute(arg0) end
@@ -14,9 +10,13 @@ function PlayerGetUpState:execute(arg0) end
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function PlayerGetUpState:enter(arg0) end
+function PlayerGetUpState:exit(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function PlayerGetUpState:exit(arg0) end
+function PlayerGetUpState:enter(arg0) end
+
+---@public
+---@return PlayerGetUpState
+function PlayerGetUpState:instance() end

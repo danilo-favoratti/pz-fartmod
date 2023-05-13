@@ -10,12 +10,12 @@
 ClimateManager_DayInfo = {}
 
 ---@public
----@return ErosionSeason
-function ClimateManager_DayInfo:getSeason() end
+---@return int
+function ClimateManager_DayInfo:getHour() end
 
 ---@public
 ---@return int
-function ClimateManager_DayInfo:getHour() end
+function ClimateManager_DayInfo:getMinutes() end
 
 ---@public
 ---@return long
@@ -24,6 +24,14 @@ function ClimateManager_DayInfo:getDateValue() end
 ---@public
 ---@return int
 function ClimateManager_DayInfo:getMonth() end
+
+---@public
+---@return ErosionSeason
+function ClimateManager_DayInfo:getSeason() end
+
+---@public
+---@return int
+function ClimateManager_DayInfo:getDay() end
 
 ---@public
 ---@param arg0 int
@@ -35,11 +43,3 @@ function ClimateManager_DayInfo:set(arg0, arg1, arg2) end
 ---@public
 ---@return int
 function ClimateManager_DayInfo:getYear() end
-
----@public
----@return int
-function ClimateManager_DayInfo:getMinutes() end
-
----@public
----@return int
-function ClimateManager_DayInfo:getDay() end

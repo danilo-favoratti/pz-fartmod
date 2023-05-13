@@ -24,35 +24,8 @@
 IsoLightSource = {}
 
 ---@public
----@param arg0 int
----@return void
-function IsoLightSource:setZ(arg0) end
-
----@public
----@return boolean
-function IsoLightSource:isActive() end
-
----@public
----@return int
-function IsoLightSource:getZ() end
-
----@public
----@return int
-function IsoLightSource:getX() end
-
----@public
----@return boolean
-function IsoLightSource:isHydroPowered() end
-
----@public
----@param arg0 int
----@return void
-function IsoLightSource:setY(arg0) end
-
----@public
----@param arg0 float
----@return void
-function IsoLightSource:setB(arg0) end
+---@return float
+function IsoLightSource:getR() end
 
 ---@public
 ---@return int
@@ -60,24 +33,26 @@ function IsoLightSource:getRadius() end
 
 ---@public
 ---@return int
-function IsoLightSource:getY() end
+function IsoLightSource:getX() end
 
 ---@public
----@return float
-function IsoLightSource:getR() end
-
----@public
----@return IsoBuilding
-function IsoLightSource:getLocalToBuilding() end
-
----@public
----@return float
-function IsoLightSource:getG() end
-
----@public
----@param arg0 ArrayList|Unknown
+---@param arg0 int
 ---@return void
-function IsoLightSource:setSwitches(arg0) end
+function IsoLightSource:setY(arg0) end
+
+---@public
+---@return void
+function IsoLightSource:update() end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoLightSource:setR(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoLightSource:setActive(arg0) end
 
 ---@public
 ---@param arg0 int
@@ -85,9 +60,18 @@ function IsoLightSource:setSwitches(arg0) end
 function IsoLightSource:setX(arg0) end
 
 ---@public
----@param arg0 float
+---@return boolean
+function IsoLightSource:wasActive() end
+
+---@public
+---@param arg0 int
 ---@return void
-function IsoLightSource:setR(arg0) end
+function IsoLightSource:setRadius(arg0) end
+
+---@public
+---@param arg0 ArrayList|Unknown
+---@return void
+function IsoLightSource:setSwitches(arg0) end
 
 ---@public
 ---@return boolean
@@ -103,18 +87,42 @@ function IsoLightSource:isInBounds() end
 function IsoLightSource:isInBounds(arg0, arg1, arg2, arg3) end
 
 ---@public
+---@return void
+function IsoLightSource:clearInfluence() end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoLightSource:setB(arg0) end
+
+---@public
+---@return ArrayList|Unknown
+function IsoLightSource:getSwitches() end
+
+---@public
 ---@return float
-function IsoLightSource:getB() end
+function IsoLightSource:getG() end
 
 ---@public
----@param arg0 boolean
----@return void
-function IsoLightSource:setWasActive(arg0) end
+---@return boolean
+function IsoLightSource:isHydroPowered() end
 
 ---@public
----@param arg0 boolean
+---@return IsoBuilding
+function IsoLightSource:getLocalToBuilding() end
+
+---@public
+---@param arg0 int
 ---@return void
-function IsoLightSource:setActive(arg0) end
+function IsoLightSource:setZ(arg0) end
+
+---@public
+---@return int
+function IsoLightSource:getY() end
+
+---@public
+---@return int
+function IsoLightSource:getZ() end
 
 ---@public
 ---@param arg0 float
@@ -122,22 +130,14 @@ function IsoLightSource:setActive(arg0) end
 function IsoLightSource:setG(arg0) end
 
 ---@public
+---@param arg0 boolean
 ---@return void
-function IsoLightSource:clearInfluence() end
+function IsoLightSource:setWasActive(arg0) end
 
 ---@public
----@param arg0 int
----@return void
-function IsoLightSource:setRadius(arg0) end
-
----@public
----@return ArrayList|Unknown
-function IsoLightSource:getSwitches() end
+---@return float
+function IsoLightSource:getB() end
 
 ---@public
 ---@return boolean
-function IsoLightSource:wasActive() end
-
----@public
----@return void
-function IsoLightSource:update() end
+function IsoLightSource:isActive() end

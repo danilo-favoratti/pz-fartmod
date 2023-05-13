@@ -352,457 +352,150 @@
 Item = {}
 
 ---@public
+---@return float
+function Item:getWeightWet() end
+
+---@public
 ---@param arg0 float
 ---@return void
-function Item:setToHitModifier(arg0) end
+function Item:setWeightWet(arg0) end
+
+---@public
+---@return Texture
+function Item:getNormalTexture() end
 
 ---@public
 ---@return String
-function Item:getUnequipSound() end
+function Item:getExplosionSound() end
 
 ---@public
 ---@return boolean
-function Item:isCosmetic() end
+function Item:isConditionAffectsCapacity() end
+
+---@public
+---@return short
+function Item:getRegistry_id() end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setThirstChange(arg0) end
 
 ---@public
 ---@return boolean
-function Item:isUseSelf() end
-
----@public
----@return String
-function Item:getPhysicsObject() end
-
----@public
----@return float
-function Item:getNPCSoundBoost() end
+function Item:isMultipleHitConditionAffected() end
 
 ---@public
 ---@return int
-function Item:getChanceToFall() end
-
----@public
----@return boolean
-function Item:isUseEndurance() end
-
----@public
----@return float
-function Item:getEnduranceMod() end
+function Item:getConditionMax() end
 
 ---@public
 ---@param arg0 String
----@return void
-function Item:setSwingAnim(arg0) end
-
----@public
----@param arg0 short
----@return void
-function Item:setRegistry_id(arg0) end
-
----@public
----@return int
-function Item:getNoiseDuration() end
-
----@public
----@return void
-function Item:resolveModelScripts() end
-
----@public
 ---@return boolean
-function Item:isShareEndurance() end
-
----@public
----@return String
-function Item:getSwingAnim() end
-
----@public
----@param arg0 boolean
----@return void
-function Item:setCanBandage(arg0) end
-
----@public
----@return String
-function Item:getSwingSound() end
-
----@public
----@return int
-function Item:getNumLevelsTrained() end
-
----@public
----@return int
-function Item:getNumberOfPages() end
-
----@public
----@return int
-function Item:getSplatNumber() end
-
----@public
----@param arg0 boolean
----@return void
-function Item:setSplatBloodOnNoDeath(arg0) end
+function Item:hasReplaceType(arg0) end
 
 ---@public
 ---@param arg0 int
 ---@return void
-function Item:setMinutesToBurn(arg0) end
+function Item:setTicksPerEquipUse(arg0) end
+
+---@public
+---@return String
+function Item:getName() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function Item:setUseSelf(arg0) end
-
----@public
----@param arg0 float
----@return void
-function Item:setWaterresist(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function Item:setCantAttackWithLowestEndurance(arg0) end
-
----@public
----@return boolean
-function Item:isCantAttackWithLowestEndurance() end
-
----@public
----@param arg0 String
----@return void
-function Item:setDisplayName(arg0) end
-
----@public
----@param arg0 ArrayList|Unknown
----@return void
-function Item:setCategories(arg0) end
+function Item:setUseWhileEquipped(arg0) end
 
 ---@public
 ---@return int
-function Item:getCount() end
+function Item:getDaysFresh() end
 
 ---@public
----@return float
-function Item:getStressChange() end
+---@return String
+function Item:getDisplayName() end
 
 ---@public
----@return boolean
-function Item:getObsolete() end
-
----@public
----@return float
-function Item:getWeaponWeight() end
-
----@public
----@return HashMap|Unknown|Unknown
-function Item:getReplaceTypesMap() end
+---@return String
+function Item:getImpactSound() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function Item:setAngleFalloff(arg0) end
+function Item:setDisappearOnUse(arg0) end
+
+---@public
+---@return float
+function Item:getWaterresist() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function Item:setRanged(arg0) end
-
----@public
----@param arg0 float
----@return void
-function Item:setTemperature(arg0) end
+function Item:setOtherHandUse(arg0) end
 
 ---@public
 ---@return boolean
-function Item:getExistsAsVanilla() end
-
----@public
----@return List|Unknown
-function Item:getTeachedRecipes() end
-
----@public
----@return String
-function Item:getPalettesStart() end
-
----@public
----@return String
-function Item:getEquipSound() end
+function Item:isShareDamage() end
 
 ---@public
 ---@return Boolean
-function Item:isCantEat() end
-
----@public
----@param arg0 Stack|Unknown
----@return void
-function Item:setPaletteChoices(arg0) end
-
----@public
----@return boolean
-function Item:isAlwaysWelcomeGift() end
-
----@public
----@return float
-function Item:getRainFactor() end
+function Item:isWorldRender() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function Item:setShareEndurance(arg0) end
+function Item:setDangerousUncooked(arg0) end
 
 ---@public
----@param arg0 String
----@return void
-function Item:setDoorHitSound(arg0) end
-
----@public
----@return boolean
-function Item:isSplatBloodOnNoDeath() end
+---@return String
+function Item:getRecordedMediaCat() end
 
 ---@public
 ---@param arg0 float
 ---@return void
-function Item:setMaxRange(arg0) end
-
----@public
----@return boolean
-function Item:isRanged() end
-
----@public
----@return String
-function Item:getFillFromDispenserSound() end
-
----@public
----@param arg0 boolean
----@return void
-function Item:setUseWhileUnequipped(arg0) end
+function Item:setEnduranceChange(arg0) end
 
 ---@public
 ---@param arg0 float
 ---@return void
-function Item:setSwingAmountBeforeImpact(arg0) end
+function Item:setKnockdownMod(arg0) end
 
 ---@public
 ---@param arg0 String
 ---@return void
-function Item:setImpactSound(arg0) end
-
----@public
----@return String
-function Item:getFabricType() end
-
----@public
----@return int
-function Item:getConditionLowerChance() end
-
----@public
----@param arg0 int
----@return void
-function Item:setDoorDamage(arg0) end
-
----@public
----@return float
-function Item:getEnduranceChange() end
-
----@public
----@param arg0 int
----@return void
-function Item:setMaxHitCount(arg0) end
-
----@public
----@return boolean
-function Item:isUseWhileUnequipped() end
-
----@public
----@param arg0 boolean
----@return void
-function Item:setMultipleHitConditionAffected(arg0) end
-
----@public
----@return String
-function Item:getPutInSound() end
-
----@public
----@return String
-function Item:getLuaCreate() end
-
----@public
----@return float
-function Item:getInsulation() end
+function Item:setSpriteName(arg0) end
 
 ---@public
 ---@param arg0 String
 ---@return void
-function Item:setSwingSound(arg0) end
-
----@public
----@return ArrayList|Unknown
-function Item:getClothingItemExtra() end
-
----@public
----@return float
-function Item:getMinAngle() end
-
----@public
----@param arg0 int
----@return void
-function Item:setCount(arg0) end
-
----@public
----@param arg0 String
----@return void
-function Item:setOtherHandRequire(arg0) end
+function Item:setPalettesStart(arg0) end
 
 ---@public
 ---@return String
-function Item:getOtherHandRequire() end
-
----@public
----@param arg0 String
----@return void
-function Item:setReplaceOnDeplete(arg0) end
-
----@public
----@return boolean
-function Item:isDisappearOnUse() end
+function Item:getDisplayCategory() end
 
 ---@public
 ---@return String
-function Item:getTypeString() end
-
----@public
----@param arg0 float
----@return void
-function Item:setWeightEmpty(arg0) end
-
----@public
----@return String
-function Item:getReplaceOnDeplete() end
-
----@public
----@return float
-function Item:getThirstChange() end
-
----@public
----@param arg0 float
----@return void
-function Item:setPushBackMod(arg0) end
-
----@public
----@return String
-function Item:getEjectAmmoStopSound() end
-
----@public
----@param arg0 int
----@return void
-function Item:setSoundVolume(arg0) end
-
----@public
----@return String
-function Item:getFileAbsPath() end
-
----@public
----@return float
-function Item:getWindresist() end
-
----@public
----@return ArrayList|Unknown
-function Item:getClothingItemExtraOption() end
-
----@public
----@return String
-function Item:getFullName() end
-
----@public
----@return String
-function Item:getSkillTrained() end
-
----@public
----@return int
-function Item:getSoundRadius() end
-
----@public
----@return String
-function Item:getIcon() end
-
----@public
----@return String
-function Item:getSpriteName() end
-
----@public
----@param arg0 int
----@return void
-function Item:setDaysTotallyRotten(arg0) end
-
----@public
----@return boolean
-function Item:isIsCookable() end
-
----@public
----@return String
-function Item:getInsertAmmoStartSound() end
-
----@public
----@return String
-function Item:getAmmoType() end
-
----@public
----@param arg0 int
----@return void
-function Item:setConditionLowerChance(arg0) end
-
----@public
----@return int
-function Item:getMaxHitCount() end
-
----@public
----@param arg0 float
----@return void
-function Item:setStressChange(arg0) end
-
----@public
----@return boolean
-function Item:isHidden() end
-
----@public
----@return Stack|Unknown
-function Item:getPaletteChoices() end
-
----@public
----@return float
-function Item:getMaxRange() end
-
----@public
----@param arg0 String
----@return String
-function Item:getSoundByID(arg0) end
-
----@public
----@return ArrayList|Unknown
-function Item:getCategories() end
-
----@public
----@param arg0 float
----@return void
-function Item:setHungerChange(arg0) end
-
----@public
----@param arg0 String
----@return void
-function Item:setName(arg0) end
-
----@public
----@return String
-function Item:getCloseSound() end
-
----@public
----@return String
-function Item:getCookingSound() end
+function Item:getClothingItem() end
 
 ---@public
 ---@return float
 function Item:getHungerChange() end
 
 ---@public
----@return float
-function Item:getTemperature() end
+---@param arg0 ClothingItem
+---@return void
+function Item:setClothingItemAsset(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function Item:setAlcoholic(arg0) end
+
+---@public
+---@return String
+function Item:getBodyLocation() end
 
 ---@public
 ---@param arg0 float
@@ -810,17 +503,12 @@ function Item:getTemperature() end
 function Item:setNPCSoundBoost(arg0) end
 
 ---@public
----@param arg0 Item.Type
----@return void
-function Item:setType(arg0) end
+---@return String
+function Item:getReplaceTypes() end
 
 ---@public
----@return String
-function Item:getModuleName() end
-
----@public
----@return String
-function Item:toString() end
+---@return ArrayList|Unknown
+function Item:getCategories() end
 
 ---@public
 ---@param arg0 boolean
@@ -829,7 +517,7 @@ function Item:setIsCookable(arg0) end
 
 ---@public
 ---@return boolean
-function Item:isShareDamage() end
+function Item:isDangerousUncooked() end
 
 ---@public
 ---@return boolean
@@ -837,160 +525,11 @@ function Item:isOtherHandUse() end
 
 ---@public
 ---@return String
-function Item:getReplaceWhenUnequip() end
-
----@public
----@param arg0 int
----@return void
-function Item:setTicksPerEquipUse(arg0) end
-
----@public
----@param arg0 String
----@return void
-function Item:setReplaceOnUse(arg0) end
+function Item:getModID() end
 
 ---@public
 ---@return String
-function Item:getEatType() end
-
----@public
----@param arg0 boolean
----@return void
-function Item:setUseWhileEquipped(arg0) end
-
----@public
----@param arg0 String
----@return String
-function Item:getReplaceType(arg0) end
-
----@public
----@return String
-function Item:getBringToBearSound() end
-
----@public
----@param arg0 String
----@return void
-function Item:DoParam(arg0) end
-
----@public
----@param arg0 float
----@return void
-function Item:setActualWeight(arg0) end
-
----@public
----@return String
-function Item:getReplaceTypes() end
-
----@public
----@param arg0 int
----@return void
-function Item:setConditionMax(arg0) end
-
----@public
----@return float
-function Item:getSwingAmountBeforeImpact() end
-
----@public
----@param arg0 int
----@return void
-function Item:setMinutesToCook(arg0) end
-
----@public
----@return String
-function Item:getReplaceOnUse() end
-
----@public
----@return float
-function Item:getActualWeight() end
-
----@public
----@param arg0 String
----@return void
-function Item:setAmmoType(arg0) end
-
----@public
----@return boolean
-function Item:isManuallyRemoveSpentRounds() end
-
----@public
----@param arg0 boolean
----@return void
-function Item:setDangerousUncooked(arg0) end
-
----@public
----@return int
-function Item:getConditionMax() end
-
----@public
----@return String
-function Item:getAcceptItemFunction() end
-
----@public
----@param arg0 float
----@return void
-function Item:setThirstChange(arg0) end
-
----@public
----@param arg0 String
----@return InventoryItem
-function Item:InstanceItem(arg0) end
-
----@public
----@param arg0 float
----@return void
-function Item:setInsulation(arg0) end
-
----@public
----@return String
-function Item:getName() end
-
----@public
----@return String
-function Item:getDisplayName() end
-
----@public
----@param arg0 String
----@return void
-function Item:setPalettesStart(arg0) end
-
----@public
----@return boolean
-function Item:isMultipleHitConditionAffected() end
-
----@public
----@return Texture
-function Item:getNormalTexture() end
-
----@public
----@return short
-function Item:getRegistry_id() end
-
----@public
----@return Item.Type
-function Item:getType() end
-
----@public
----@param arg0 float
----@return void
-function Item:setKnockdownMod(arg0) end
-
----@public
----@return String
-function Item:getExplosionSound() end
-
----@public
----@param arg0 boolean
----@return void
-function Item:setShareDamage(arg0) end
-
----@public
----@return String
-function Item:getRecordedMediaCat() end
-
----@public
----@param arg0 String
----@return void
-function Item:setSpriteName(arg0) end
+function Item:getStaticModel() end
 
 ---@public
 ---@param arg0 float
@@ -998,53 +537,173 @@ function Item:setSpriteName(arg0) end
 function Item:setWindresist(arg0) end
 
 ---@public
----@param arg0 boolean
+---@param arg0 int
 ---@return void
-function Item:setOtherHandUse(arg0) end
+function Item:setSoundRadius(arg0) end
 
 ---@public
 ---@return String
-function Item:getImpactSound() end
+function Item:getBringToBearSound() end
+
+---@public
+---@return float
+function Item:getActualWeight() end
+
+---@public
+---@return String
+function Item:getBreakSound() end
+
+---@public
+---@param arg0 String
+---@return void
+function Item:setWeaponSprite(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function Item:setKnockBackOnNoDeath(arg0) end
+
+---@public
+---@return String
+function Item:getReplaceWhenUnequip() end
+
+---@public
+---@return boolean
+function Item:isRangeFalloff() end
+
+---@public
+---@param arg0 String
+---@return InventoryItem
+function Item:InstanceItem(arg0) end
+
+---@public
+---@return boolean
+function Item:isKnockBackOnNoDeath() end
+
+---@public
+---@param arg0 String
+---@return void
+function Item:setReplaceOnUse(arg0) end
+
+---@public
+---@return boolean
+function Item:isCanBarricade() end
 
 ---@public
 ---@param arg0 float
 ---@return void
-function Item:setWeightWet(arg0) end
+function Item:setInsulation(arg0) end
 
 ---@public
----@return int
-function Item:getLevelSkillTrained() end
-
----@public
----@return float
-function Item:getToHitModifier() end
-
----@public
----@return float
-function Item:getBoredomChange() end
-
----@public
----@return String
-function Item:getMapID() end
-
----@public
----@return String
-function Item:getFillFromTapSound() end
+---@return boolean
+function Item:isAlwaysKnockdown() end
 
 ---@public
 ---@param arg0 String
----@param arg1 String[]
 ---@return void
-function Item:Load(arg0, arg1) end
+function Item:setReplaceOnDeplete(arg0) end
 
 ---@public
+---@param arg0 int
 ---@return void
-function Item:resolveItemTypes() end
+function Item:setDaysTotallyRotten(arg0) end
+
+---@public
+---@return float
+function Item:getKnockdownMod() end
+
+---@public
+---@return float
+function Item:getThirstChange() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function Item:setDisappearOnUse(arg0) end
+function Item:setRangeFalloff(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function Item:setSoundVolume(arg0) end
+
+---@public
+---@return String
+function Item:getFullName() end
+
+---@public
+---@return ClothingItem
+function Item:getClothingItemAsset() end
+
+---@public
+---@return String
+function Item:getAmmoType() end
+
+---@public
+---@return float
+function Item:getOtherCharacterVolumeBoost() end
+
+---@public
+---@return float
+function Item:getMinDamage() end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setMinDamage(arg0) end
+
+---@public
+---@return boolean
+function Item:isIsCookable() end
+
+---@public
+---@return float
+function Item:getTicksPerEquipUse() end
+
+---@public
+---@return String
+function Item:getEjectAmmoStartSound() end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setMinimumSwingTime(arg0) end
+
+---@public
+---@return String
+function Item:getInsertAmmoSound() end
+
+---@public
+---@return float
+function Item:getMaxDamage() end
+
+---@public
+---@return boolean
+function Item:getCanStoreWater() end
+
+---@public
+---@return String
+function Item:getReplaceOnDeplete() end
+
+---@public
+---@return ArrayList|Unknown
+function Item:getClothingItemExtraOption() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function Item:setUseEndurance(arg0) end
+
+---@public
+---@return float
+function Item:getSwingTime() end
+
+---@public
+---@return float
+function Item:getRainFactor() end
+
+---@public
+---@return boolean
+function Item:isDisappearOnUse() end
 
 ---@public
 ---@return ArrayList|Unknown
@@ -1056,29 +715,57 @@ function Item:getIconsForTexture() end
 function Item:setPhysicsObject(arg0) end
 
 ---@public
----@return ArrayList|Unknown
-function Item:getBloodClothingType() end
-
----@public
----@return int
-function Item:getDaysTotallyRotten() end
-
----@public
 ---@return String
-function Item:getInsertAmmoStopSound() end
+function Item:getCountDownSound() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function Item:setUseWhileUnequipped(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function Item:setShareEndurance(arg0) end
 
 ---@public
 ---@return float
 function Item:getUnhappyChange() end
 
 ---@public
----@return String
-function Item:getCustomEatSound() end
+---@param arg0 boolean
+---@return void
+function Item:setShareDamage(arg0) end
+
+---@public
+---@return int
+function Item:getLevelSkillTrained() end
+
+---@public
+---@return boolean
+function Item:getObsolete() end
+
+---@public
+---@return boolean
+function Item:isCantAttackWithLowestEndurance() end
+
+---@public
+---@return int
+function Item:getSplatNumber() end
 
 ---@public
 ---@param arg0 float
 ---@return void
-function Item:setMinAngle(arg0) end
+function Item:setEnduranceMod(arg0) end
+
+---@public
+---@return boolean
+function Item:isSplatBloodOnNoDeath() end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setMaxDamage(arg0) end
 
 ---@public
 ---@param arg0 int
@@ -1086,27 +773,74 @@ function Item:setMinAngle(arg0) end
 function Item:setDaysFresh(arg0) end
 
 ---@public
+---@return void
+function Item:resolveItemTypes() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function Item:setMultipleHitConditionAffected(arg0) end
+
+---@public
+---@return String
+function Item:getPutInSound() end
+
+---@public
+---@param arg0 int
+---@return void
+function Item:setMaxHitCount(arg0) end
+
+---@public
+---@return float
+function Item:getEnduranceMod() end
+
+---@public
+---@return int
+function Item:getDoorDamage() end
+
+---@public
+---@return int
+function Item:getChanceToFall() end
+
+---@public
+---@param arg0 String
+---@return void
+function Item:setSwingAnim(arg0) end
+
+---@public
+---@return float
+function Item:getToHitModifier() end
+
+---@public
+---@return String
+function Item:getFillFromDispenserSound() end
+
+---@public
+---@return String
+function Item:getSwingSound() end
+
+---@public
+---@return String
+function Item:getAcceptItemFunction() end
+
+---@public
+---@return Item.Type
+function Item:getType() end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setBoredomChange(arg0) end
+
+---@public
 ---@param arg0 float
 ---@return void
 function Item:setSwingTime(arg0) end
 
 ---@public
----@param arg0 int
----@return void
-function Item:setSplatNumber(arg0) end
-
----@public
 ---@param arg0 String
----@return boolean
-function Item:hasReplaceType(arg0) end
-
----@public
----@return float
-function Item:getUseDelta() end
-
----@public
----@return float
-function Item:getWaterresist() end
+---@return void
+function Item:setDoorHitSound(arg0) end
 
 ---@public
 ---@return String
@@ -1115,203 +849,87 @@ function Item:getDoorHitSound() end
 ---@public
 ---@param arg0 float
 ---@return void
-function Item:setMaxDamage(arg0) end
-
----@public
----@return float
-function Item:getWeightWet() end
+function Item:setTemperature(arg0) end
 
 ---@public
 ---@return boolean
-function Item:isAngleFalloff() end
-
----@public
----@return int
-function Item:getDoorDamage() end
-
----@public
----@param arg0 float
----@return void
-function Item:setMinDamage(arg0) end
+function Item:isAlwaysWelcomeGift() end
 
 ---@public
 ---@param arg0 String
+---@param arg1 String[]
 ---@return void
-function Item:setLuaCreate(arg0) end
-
----@public
----@return float
-function Item:getTicksPerEquipUse() end
-
----@public
----@param arg0 boolean
----@return void
-function Item:setAlwaysWelcomeGift(arg0) end
+function Item:Load(arg0, arg1) end
 
 ---@public
 ---@return String
-function Item:getShellFallSound() end
-
----@public
----@param arg0 String
----@return void
-function Item:setWeaponSprite(arg0) end
-
----@public
----@param arg0 float
----@return void
-function Item:setUnhappyChange(arg0) end
+function Item:getInsertAmmoStopSound() end
 
 ---@public
 ---@return float
-function Item:getWeightEmpty() end
+function Item:getNPCSoundBoost() end
 
 ---@public
----@return ArrayList|Unknown
-function Item:getTags() end
-
----@public
----@return float
-function Item:getPushBackMod() end
-
----@public
----@return float
-function Item:getKnockdownMod() end
-
----@public
----@return ClothingItem
-function Item:getClothingItemAsset() end
-
----@public
----@param arg0 float
 ---@return void
-function Item:setBoredomChange(arg0) end
+function Item:resolveModelScripts() end
 
 ---@public
 ---@return int
-function Item:getSoundVolume() end
+function Item:getCount() end
 
 ---@public
----@param arg0 boolean
+---@return boolean
+function Item:isUseWhileUnequipped() end
+
+---@public
+---@return String
+function Item:getWeaponSprite() end
+
+---@public
+---@return String
+function Item:getPhysicsObject() end
+
+---@public
+---@param arg0 short
 ---@return void
-function Item:setUseEndurance(arg0) end
+function Item:setRegistry_id(arg0) end
+
+---@public
+---@return boolean
+function Item:isShareEndurance() end
+
+---@public
+---@return boolean
+function Item:isUseSelf() end
 
 ---@public
 ---@return float
-function Item:getOtherCharacterVolumeBoost() end
+function Item:getWeaponWeight() end
 
 ---@public
 ---@return float
-function Item:getSwingTime() end
-
----@public
----@param arg0 String
----@return void
-function Item:setModID(arg0) end
-
----@public
----@return String
-function Item:getOpenSound() end
-
----@public
----@return String
-function Item:getEjectAmmoSound() end
-
----@public
----@return String
-function Item:getInsertAmmoSound() end
-
----@public
----@param arg0 float
----@return void
-function Item:setEnduranceMod(arg0) end
+function Item:getStressChange() end
 
 ---@public
 ---@return int
-function Item:getMinutesToBurn() end
+function Item:getNumberOfPages() end
+
+---@public
+---@return List|Unknown
+function Item:getTeachedRecipes() end
+
+---@public
+---@return Boolean
+function Item:isCantEat() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function Item:setAlcoholic(arg0) end
-
----@public
----@return String
-function Item:getPlaceMultipleSound() end
-
----@public
----@return float
-function Item:getMaxDamage() end
+function Item:setRanged(arg0) end
 
 ---@public
 ---@return boolean
-function Item:getCanStoreWater() end
-
----@public
----@param arg0 float
----@return void
-function Item:setMinimumSwingTime(arg0) end
-
----@public
----@param arg0 float
----@return void
-function Item:setWeaponWeight(arg0) end
-
----@public
----@return float
-function Item:getMinDamage() end
-
----@public
----@param arg0 float
----@return void
-function Item:setEnduranceChange(arg0) end
-
----@public
----@param arg0 boolean
----@return void
-function Item:setCanBarricade(arg0) end
-
----@public
----@return String
-function Item:getCountDownSound() end
-
----@public
----@return String
-function Item:getBulletOutSound() end
-
----@public
----@return String
-function Item:getClothingItem() end
-
----@public
----@return int
-function Item:getDaysFresh() end
-
----@public
----@param arg0 float
----@return void
-function Item:setOtherCharacterVolumeBoost(arg0) end
-
----@public
----@return boolean
-function Item:isUseWhileEquipped() end
-
----@public
----@return boolean
-function Item:isCanBandage() end
-
----@public
----@param arg0 ClothingItem
----@return void
-function Item:setClothingItemAsset(arg0) end
-
----@public
----@return boolean
-function Item:isAlwaysKnockdown() end
-
----@public
----@return String
-function Item:getDisplayCategory() end
+function Item:isUseEndurance() end
 
 ---@public
 ---@param arg0 String
@@ -1320,16 +938,19 @@ function Item:getSoundParameter(arg0) end
 
 ---@public
 ---@return String
-function Item:getPlaceOneSound() end
+function Item:getUnequipSound() end
 
 ---@public
 ---@return String
-function Item:getBodyLocation() end
+function Item:getSwingAnim() end
 
 ---@public
----@param arg0 float
----@return void
-function Item:setUseDelta(arg0) end
+---@return boolean
+function Item:isAlcoholic() end
+
+---@public
+---@return int
+function Item:getNumLevelsTrained() end
 
 ---@public
 ---@param arg0 String
@@ -1337,67 +958,65 @@ function Item:setUseDelta(arg0) end
 function Item:setBodyLocation(arg0) end
 
 ---@public
----@return Boolean
-function Item:isWorldRender() end
+---@param arg0 boolean
+---@return void
+function Item:setCantAttackWithLowestEndurance(arg0) end
+
+---@public
+---@return int
+function Item:getNoiseDuration() end
+
+---@public
+---@return boolean
+function Item:isCosmetic() end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function Item:setKnockBackOnNoDeath(arg0) end
+function Item:setSplatBloodOnNoDeath(arg0) end
 
 ---@public
----@return boolean
-function Item:isAlcoholic() end
+---@return String
+function Item:getEquipSound() end
 
 ---@public
----@return boolean
-function Item:isKnockBackOnNoDeath() end
+---@return String
+function Item:getPalettesStart() end
 
 ---@public
----@return boolean
-function Item:isRangeFalloff() end
+---@return HashMap|Unknown|Unknown
+function Item:getReplaceTypesMap() end
 
 ---@public
----@param arg0 int
+---@param arg0 Item.Type
 ---@return void
-function Item:setSoundRadius(arg0) end
+function Item:setType(arg0) end
 
 ---@public
----@return String
-function Item:getBreakSound() end
-
----@public
----@return boolean
-function Item:isCanBarricade() end
-
----@public
----@return float
-function Item:getMinimumSwingTime() end
-
----@public
----@return String
-function Item:getWeaponSprite() end
-
----@public
----@param arg0 boolean
+---@param arg0 ArrayList|Unknown
 ---@return void
-function Item:setAlwaysKnockdown(arg0) end
-
----@public
----@return int
-function Item:getMaxLevelTrained() end
+function Item:setCategories(arg0) end
 
 ---@public
 ---@return boolean
-function Item:isDangerousUncooked() end
-
----@public
----@return int
-function Item:getMinutesToCook() end
+function Item:isUseWhileEquipped() end
 
 ---@public
 ---@return String
-function Item:getStaticModel() end
+function Item:toString() end
+
+---@public
+---@return String
+function Item:getModuleName() end
+
+---@public
+---@param arg0 String
+---@return String
+function Item:getReplaceType(arg0) end
+
+---@public
+---@return String
+function Item:getPlaceMultipleSound() end
 
 ---@public
 ---@param arg0 String
@@ -1405,18 +1024,399 @@ function Item:getStaticModel() end
 function Item:setIcon(arg0) end
 
 ---@public
----@return String
-function Item:getEjectAmmoStartSound() end
+---@return float
+function Item:getWindresist() end
 
 ---@public
----@return boolean
-function Item:isConditionAffectsCapacity() end
+---@param arg0 String
+---@return void
+function Item:setAmmoType(arg0) end
 
 ---@public
 ---@param arg0 boolean
 ---@return void
-function Item:setRangeFalloff(arg0) end
+function Item:setUseSelf(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function Item:setCanBarricade(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function Item:setName(arg0) end
 
 ---@public
 ---@return String
-function Item:getModID() end
+function Item:getSkillTrained() end
+
+---@public
+---@return int
+function Item:getSoundRadius() end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setHungerChange(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function Item:setMinutesToBurn(arg0) end
+
+---@public
+---@return int
+function Item:getMinutesToCook() end
+
+---@public
+---@param arg0 int
+---@return void
+function Item:setMinutesToCook(arg0) end
+
+---@public
+---@return String
+function Item:getReplaceOnUse() end
+
+---@public
+---@param arg0 String
+---@return void
+function Item:setDisplayName(arg0) end
+
+---@public
+---@param arg0 boolean
+---@return void
+function Item:setCanBandage(arg0) end
+
+---@public
+---@return String
+function Item:getBulletOutSound() end
+
+---@public
+---@return boolean
+function Item:isCanBandage() end
+
+---@public
+---@return int
+function Item:getMaxLevelTrained() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function Item:setAlwaysKnockdown(arg0) end
+
+---@public
+---@return String
+function Item:getCookingSound() end
+
+---@public
+---@return float
+function Item:getSwingAmountBeforeImpact() end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setWaterresist(arg0) end
+
+---@public
+---@return String
+function Item:getPlaceOneSound() end
+
+---@public
+---@return boolean
+function Item:isManuallyRemoveSpentRounds() end
+
+---@public
+---@return String
+function Item:getEatType() end
+
+---@public
+---@return float
+function Item:getInsulation() end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setUseDelta(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setActualWeight(arg0) end
+
+---@public
+---@return float
+function Item:getMinimumSwingTime() end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setPushBackMod(arg0) end
+
+---@public
+---@return String
+function Item:getEjectAmmoStopSound() end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setOtherCharacterVolumeBoost(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function Item:setCount(arg0) end
+
+---@public
+---@return float
+function Item:getWeightEmpty() end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setWeightEmpty(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setUnhappyChange(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setStressChange(arg0) end
+
+---@public
+---@return boolean
+function Item:isAngleFalloff() end
+
+---@public
+---@param arg0 String
+---@return void
+function Item:DoParam(arg0) end
+
+---@public
+---@return int
+function Item:getSoundVolume() end
+
+---@public
+---@return float
+function Item:getUseDelta() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function Item:setAlwaysWelcomeGift(arg0) end
+
+---@public
+---@return float
+function Item:getMaxRange() end
+
+---@public
+---@return boolean
+function Item:isHidden() end
+
+---@public
+---@return boolean
+function Item:isRanged() end
+
+---@public
+---@return String
+function Item:getOpenSound() end
+
+---@public
+---@return float
+function Item:getMinAngle() end
+
+---@public
+---@param arg0 int
+---@return void
+function Item:setConditionLowerChance(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function Item:setLuaCreate(arg0) end
+
+---@public
+---@return String
+function Item:getFabricType() end
+
+---@public
+---@return int
+function Item:getMinutesToBurn() end
+
+---@public
+---@return String
+function Item:getIcon() end
+
+---@public
+---@return String
+function Item:getLuaCreate() end
+
+---@public
+---@param arg0 int
+---@return void
+function Item:setConditionMax(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setMaxRange(arg0) end
+
+---@public
+---@return String
+function Item:getOtherHandRequire() end
+
+---@public
+---@return String
+function Item:getSpriteName() end
+
+---@public
+---@return String
+function Item:getInsertAmmoStartSound() end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setWeaponWeight(arg0) end
+
+---@public
+---@return String
+function Item:getEjectAmmoSound() end
+
+---@public
+---@return String
+function Item:getShellFallSound() end
+
+---@public
+---@return String
+function Item:getCloseSound() end
+
+---@public
+---@return ArrayList|Unknown
+function Item:getTags() end
+
+---@public
+---@param arg0 String
+---@return String
+function Item:getSoundByID(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function Item:setModID(arg0) end
+
+---@public
+---@return int
+function Item:getMaxHitCount() end
+
+---@public
+---@return Stack|Unknown
+function Item:getPaletteChoices() end
+
+---@public
+---@return float
+function Item:getPushBackMod() end
+
+---@public
+---@return ArrayList|Unknown
+function Item:getClothingItemExtra() end
+
+---@public
+---@return boolean
+function Item:getExistsAsVanilla() end
+
+---@public
+---@return float
+function Item:getTemperature() end
+
+---@public
+---@return String
+function Item:getCustomEatSound() end
+
+---@public
+---@return int
+function Item:getDaysTotallyRotten() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function Item:setAngleFalloff(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function Item:setSplatNumber(arg0) end
+
+---@public
+---@return String
+function Item:getMapID() end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setSwingAmountBeforeImpact(arg0) end
+
+---@public
+---@param arg0 int
+---@return void
+function Item:setDoorDamage(arg0) end
+
+---@public
+---@return String
+function Item:getTypeString() end
+
+---@public
+---@param arg0 String
+---@return void
+function Item:setImpactSound(arg0) end
+
+---@public
+---@return ArrayList|Unknown
+function Item:getBloodClothingType() end
+
+---@public
+---@param arg0 String
+---@return void
+function Item:setSwingSound(arg0) end
+
+---@public
+---@return float
+function Item:getEnduranceChange() end
+
+---@public
+---@return int
+function Item:getConditionLowerChance() end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setMinAngle(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function Item:setToHitModifier(arg0) end
+
+---@public
+---@return String
+function Item:getFileAbsPath() end
+
+---@public
+---@return String
+function Item:getFillFromTapSound() end
+
+---@public
+---@return float
+function Item:getBoredomChange() end
+
+---@public
+---@param arg0 Stack|Unknown
+---@return void
+function Item:setPaletteChoices(arg0) end
+
+---@public
+---@param arg0 String
+---@return void
+function Item:setOtherHandRequire(arg0) end

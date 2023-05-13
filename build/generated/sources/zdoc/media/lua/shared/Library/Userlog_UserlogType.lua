@@ -15,9 +15,13 @@ Userlog_UserlogType = {}
 function Userlog_UserlogType:values() end
 
 ---@public
+---@return int
+function Userlog_UserlogType:index() end
+
+---@public
 ---@param arg0 String
 ---@return Userlog.UserlogType
-function Userlog_UserlogType:valueOf(arg0) end
+function Userlog_UserlogType:FromString(arg0) end
 
 ---@public
 ---@param arg0 int
@@ -27,8 +31,4 @@ function Userlog_UserlogType:fromIndex(arg0) end
 ---@public
 ---@param arg0 String
 ---@return Userlog.UserlogType
-function Userlog_UserlogType:FromString(arg0) end
-
----@public
----@return int
-function Userlog_UserlogType:index() end
+function Userlog_UserlogType:valueOf(arg0) end

@@ -19,14 +19,22 @@
 IsoObjectPicker = {}
 
 ---@public
----@return IsoObjectPicker
-function IsoObjectPicker:getInstance() end
+---@param arg0 int
+---@param arg1 int
+---@return IsoObject
+function IsoObjectPicker:PickWindowFrame(arg0, arg1) end
 
 ---@public
 ---@param arg0 int
 ---@param arg1 int
----@return IsoMovingObject
-function IsoObjectPicker:PickTarget(arg0, arg1) end
+---@return IsoObject
+function IsoObjectPicker:PickThumpable(arg0, arg1) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return IsoObject
+function IsoObjectPicker:PickWindow(arg0, arg1) end
 
 ---@public
 ---@param arg0 int
@@ -37,14 +45,35 @@ function IsoObjectPicker:PickCorpse(arg0, arg1) end
 ---@public
 ---@param arg0 int
 ---@param arg1 int
+---@return IsoMovingObject
+function IsoObjectPicker:PickTarget(arg0, arg1) end
+
+---@public
+---@return void
+function IsoObjectPicker:Init() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 boolean
 ---@return IsoObject
-function IsoObjectPicker:PickTree(arg0, arg1) end
+function IsoObjectPicker:PickDoor(arg0, arg1, arg2) end
+
+---@public
+---@return IsoObjectPicker
+function IsoObjectPicker:getInstance() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@return IsoObjectPicker.ClickObject
+function IsoObjectPicker:ContextPick(arg0, arg1) end
 
 ---@public
 ---@param arg0 int
 ---@param arg1 int
 ---@return IsoObject
-function IsoObjectPicker:PickHoppable(arg0, arg1) end
+function IsoObjectPicker:PickTree(arg0, arg1) end
 
 ---@public
 ---@param arg0 int
@@ -55,31 +84,14 @@ function IsoObjectPicker:PickVehicle(arg0, arg1) end
 ---@public
 ---@param arg0 int
 ---@param arg1 int
----@return IsoObject
-function IsoObjectPicker:PickWindowFrame(arg0, arg1) end
+---@return IsoObjectPicker.ClickObject
+function IsoObjectPicker:Pick(arg0, arg1) end
 
 ---@public
 ---@param arg0 int
 ---@param arg1 int
 ---@return IsoObject
-function IsoObjectPicker:PickWindow(arg0, arg1) end
-
----@public
----@return void
-function IsoObjectPicker:StartRender() end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 boolean
----@return IsoObject
-function IsoObjectPicker:PickDoor(arg0, arg1, arg2) end
-
----@public
----@param arg0 int
----@param arg1 int
----@return IsoObject
-function IsoObjectPicker:PickThumpable(arg0, arg1) end
+function IsoObjectPicker:PickHoppable(arg0, arg1) end
 
 ---@public
 ---@param arg0 int
@@ -96,16 +108,4 @@ function IsoObjectPicker:Add(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg
 
 ---@public
 ---@return void
-function IsoObjectPicker:Init() end
-
----@public
----@param arg0 int
----@param arg1 int
----@return IsoObjectPicker.ClickObject
-function IsoObjectPicker:Pick(arg0, arg1) end
-
----@public
----@param arg0 int
----@param arg1 int
----@return IsoObjectPicker.ClickObject
-function IsoObjectPicker:ContextPick(arg0, arg1) end
+function IsoObjectPicker:StartRender() end

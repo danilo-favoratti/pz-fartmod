@@ -15,30 +15,12 @@
 IsoFireplace = {}
 
 ---@public
----@return String
-function IsoFireplace:getObjectName() end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 int
----@param arg2 boolean
 ---@return void
-function IsoFireplace:load(arg0, arg1, arg2) end
+function IsoFireplace:extinguish() end
 
----@public
----@param arg0 ByteBuffer
----@param arg1 boolean
+---@private
 ---@return void
-function IsoFireplace:save(arg0, arg1) end
-
----@public
----@param arg0 int
----@return void
-function IsoFireplace:setFuelAmount(arg0) end
-
----@public
----@return int
-function IsoFireplace:getFuelAmount() end
+function IsoFireplace:updateFuelSprite() end
 
 ---@public
 ---@return void
@@ -48,34 +30,16 @@ function IsoFireplace:removeFromWorld() end
 ---@return void
 function IsoFireplace:update() end
 
----@private
----@return void
-function IsoFireplace:updateSound() end
-
 ---@public
----@return float
-function IsoFireplace:getTemperature() end
-
----@public
----@param arg0 int
----@return int
-function IsoFireplace:useFuel(arg0) end
-
----@private
+---@param arg0 String
+---@param arg1 KahluaTable
+---@param arg2 ByteBuffer
 ---@return void
-function IsoFireplace:updateFireSprite() end
-
----@private
----@return int
-function IsoFireplace:calcLightRadius() end
+function IsoFireplace:saveChange(arg0, arg1, arg2) end
 
 ---@private
 ---@return void
 function IsoFireplace:updateLightSource() end
-
----@public
----@return boolean
-function IsoFireplace:isSmouldering() end
 
 ---@public
 ---@param arg0 float
@@ -88,35 +52,35 @@ function IsoFireplace:isSmouldering() end
 ---@return void
 function IsoFireplace:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 
+---@public
+---@param arg0 boolean
+---@return void
+function IsoFireplace:setLit(arg0) end
+
+---@public
+---@return float
+function IsoFireplace:getTemperature() end
+
 ---@private
 ---@return void
-function IsoFireplace:updateHeatSource() end
+function IsoFireplace:updateFireSprite() end
+
+---@public
+---@return boolean
+function IsoFireplace:isLit() end
 
 ---@public
 ---@return boolean
 function IsoFireplace:hasFuel() end
 
 ---@public
----@param arg0 String
----@param arg1 KahluaTable
----@param arg2 ByteBuffer
----@return void
-function IsoFireplace:saveChange(arg0, arg1, arg2) end
-
----@public
----@param arg0 String
----@param arg1 ByteBuffer
----@return void
-function IsoFireplace:loadChange(arg0, arg1) end
+---@param arg0 JVector2
+---@return JVector2
+function IsoFireplace:getFacingPosition(arg0) end
 
 ---@public
 ---@return void
-function IsoFireplace:extinguish() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoFireplace:setLit(arg0) end
+function IsoFireplace:addToWorld() end
 
 ---@public
 ---@param arg0 int
@@ -125,17 +89,53 @@ function IsoFireplace:addFuel(arg0) end
 
 ---@private
 ---@return void
-function IsoFireplace:updateFuelSprite() end
+function IsoFireplace:updateSound() end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 boolean
+---@return void
+function IsoFireplace:save(arg0, arg1) end
+
+---@private
+---@return void
+function IsoFireplace:updateHeatSource() end
+
+---@public
+---@return String
+function IsoFireplace:getObjectName() end
+
+---@private
+---@return int
+function IsoFireplace:calcLightRadius() end
+
+---@public
+---@return int
+function IsoFireplace:getFuelAmount() end
+
+---@public
+---@param arg0 ByteBuffer
+---@param arg1 int
+---@param arg2 boolean
+---@return void
+function IsoFireplace:load(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 int
+---@return void
+function IsoFireplace:setFuelAmount(arg0) end
+
+---@public
+---@param arg0 int
+---@return int
+function IsoFireplace:useFuel(arg0) end
+
+---@public
+---@param arg0 String
+---@param arg1 ByteBuffer
+---@return void
+function IsoFireplace:loadChange(arg0, arg1) end
 
 ---@public
 ---@return boolean
-function IsoFireplace:isLit() end
-
----@public
----@return void
-function IsoFireplace:addToWorld() end
-
----@public
----@param arg0 JVector2
----@return JVector2
-function IsoFireplace:getFacingPosition(arg0) end
+function IsoFireplace:isSmouldering() end

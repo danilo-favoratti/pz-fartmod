@@ -5,20 +5,19 @@ WorldMapSymbolsV1_WorldMapTextSymbolV1 = {}
 ---@public
 ---@param arg0 String
 ---@return void
-function WorldMapSymbolsV1_WorldMapTextSymbolV1:setTranslatedText(arg0) end
+function WorldMapSymbolsV1_WorldMapTextSymbolV1:setUntranslatedText(arg0) end
 
 ---@public
----@param arg0 String
----@return void
-function WorldMapSymbolsV1_WorldMapTextSymbolV1:setUntranslatedText(arg0) end
+---@return boolean
+function WorldMapSymbolsV1_WorldMapTextSymbolV1:isText() end
 
 ---@public
 ---@return String
 function WorldMapSymbolsV1_WorldMapTextSymbolV1:getUntranslatedText() end
 
 ---@public
----@return boolean
-function WorldMapSymbolsV1_WorldMapTextSymbolV1:isText() end
+---@return String
+function WorldMapSymbolsV1_WorldMapTextSymbolV1:getTranslatedText() end
 
 ---@param arg0 WorldMapSymbolsV1
 ---@param arg1 WorldMapTextSymbol
@@ -26,5 +25,6 @@ function WorldMapSymbolsV1_WorldMapTextSymbolV1:isText() end
 function WorldMapSymbolsV1_WorldMapTextSymbolV1:init(arg0, arg1) end
 
 ---@public
----@return String
-function WorldMapSymbolsV1_WorldMapTextSymbolV1:getTranslatedText() end
+---@param arg0 String
+---@return void
+function WorldMapSymbolsV1_WorldMapTextSymbolV1:setTranslatedText(arg0) end

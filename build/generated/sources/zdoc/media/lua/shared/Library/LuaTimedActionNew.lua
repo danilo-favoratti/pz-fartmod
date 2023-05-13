@@ -3,35 +3,6 @@
 LuaTimedActionNew = {}
 
 ---@public
----@param arg0 Path
----@param arg1 Mover
----@return void
-function LuaTimedActionNew:Succeeded(arg0, arg1) end
-
----@public
----@param arg0 AnimEvent
----@return void
-function LuaTimedActionNew:OnAnimEvent(arg0) end
-
----@public
----@param arg0 float
----@return void
-function LuaTimedActionNew:setCurrentTime(arg0) end
-
----@public
----@param arg0 Mover
----@return void
-function LuaTimedActionNew:Failed(arg0) end
-
----@public
----@return boolean
-function LuaTimedActionNew:valid() end
-
----@public
----@return void
-function LuaTimedActionNew:update() end
-
----@public
 ---@return void
 function LuaTimedActionNew:start() end
 
@@ -40,25 +11,36 @@ function LuaTimedActionNew:start() end
 function LuaTimedActionNew:stop() end
 
 ---@public
+---@return void
+function LuaTimedActionNew:update() end
+
+---@public
+---@return void
+function LuaTimedActionNew:waitToStart() end
+
+---@public
 ---@param arg0 int
 ---@return void
 function LuaTimedActionNew:setTime(arg0) end
+
+---@public
+---@param arg0 AnimEvent
+---@return void
+function LuaTimedActionNew:OnAnimEvent(arg0) end
 
 ---@public
 ---@return String
 function LuaTimedActionNew:getMetaType() end
 
 ---@public
----@return String
-function LuaTimedActionNew:getName() end
+---@param arg0 Path
+---@param arg1 Mover
+---@return void
+function LuaTimedActionNew:Succeeded(arg0, arg1) end
 
 ---@public
 ---@return void
 function LuaTimedActionNew:perform() end
-
----@public
----@return void
-function LuaTimedActionNew:waitToStart() end
 
 ---@public
 ---@param arg0 IsoGameCharacter
@@ -67,3 +49,21 @@ function LuaTimedActionNew:waitToStart() end
 ---@param arg3 int
 ---@return void
 function LuaTimedActionNew:Pathfind(arg0, arg1, arg2, arg3) end
+
+---@public
+---@param arg0 float
+---@return void
+function LuaTimedActionNew:setCurrentTime(arg0) end
+
+---@public
+---@return String
+function LuaTimedActionNew:getName() end
+
+---@public
+---@return boolean
+function LuaTimedActionNew:valid() end
+
+---@public
+---@param arg0 Mover
+---@return void
+function LuaTimedActionNew:Failed(arg0) end

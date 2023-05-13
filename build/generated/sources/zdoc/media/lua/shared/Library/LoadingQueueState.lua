@@ -8,25 +8,25 @@ LoadingQueueState = {}
 
 ---@public
 ---@return void
-function LoadingQueueState:enter() end
-
----@public
----@return void
 function LoadingQueueState:render() end
 
 ---@public
 ---@return void
-function LoadingQueueState:onConnectionImmediate() end
-
----@public
----@return GameState
-function LoadingQueueState:redirectState() end
+function LoadingQueueState:enter() end
 
 ---@public
 ---@return GameStateMachine.StateAction
 function LoadingQueueState:update() end
 
 ---@public
+---@return GameState
+function LoadingQueueState:redirectState() end
+
+---@public
 ---@param arg0 int
 ---@return void
 function LoadingQueueState:onPlaceInQueue(arg0) end
+
+---@public
+---@return void
+function LoadingQueueState:onConnectionImmediate() end

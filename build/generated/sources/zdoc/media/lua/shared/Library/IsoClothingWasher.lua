@@ -3,22 +3,35 @@
 IsoClothingWasher = {}
 
 ---@public
----@return boolean
-function IsoClothingWasher:isActivated() end
-
----@public
----@param arg0 ByteBuffer
----@param arg1 boolean
----@return void
-function IsoClothingWasher:save(arg0, arg1) end
-
----@public
 ---@return void
 function IsoClothingWasher:update() end
 
 ---@public
+---@param arg0 ItemContainer
+---@param arg1 InventoryItem
+---@return boolean
+function IsoClothingWasher:isRemoveItemAllowedFromContainer(arg0, arg1) end
+
+---@public
 ---@return void
 function IsoClothingWasher:removeFromWorld() end
+
+---@public
+---@param arg0 ItemContainer
+---@param arg1 InventoryItem
+---@return boolean
+function IsoClothingWasher:isItemAllowedInContainer(arg0, arg1) end
+
+---@public
+---@return boolean
+function IsoClothingWasher:isActivated() end
+
+---@public
+---@param arg0 String
+---@param arg1 KahluaTable
+---@param arg2 ByteBuffer
+---@return void
+function IsoClothingWasher:saveChange(arg0, arg1, arg2) end
 
 ---@public
 ---@param arg0 ByteBuffer
@@ -28,9 +41,8 @@ function IsoClothingWasher:removeFromWorld() end
 function IsoClothingWasher:load(arg0, arg1, arg2) end
 
 ---@public
----@param arg0 boolean
----@return void
-function IsoClothingWasher:setActivated(arg0) end
+---@return String
+function IsoClothingWasher:getObjectName() end
 
 ---@public
 ---@param arg0 String
@@ -43,24 +55,12 @@ function IsoClothingWasher:loadChange(arg0, arg1) end
 function IsoClothingWasher:addToWorld() end
 
 ---@public
----@return String
-function IsoClothingWasher:getObjectName() end
-
----@public
----@param arg0 ItemContainer
----@param arg1 InventoryItem
----@return boolean
-function IsoClothingWasher:isItemAllowedInContainer(arg0, arg1) end
-
----@public
----@param arg0 String
----@param arg1 KahluaTable
----@param arg2 ByteBuffer
+---@param arg0 boolean
 ---@return void
-function IsoClothingWasher:saveChange(arg0, arg1, arg2) end
+function IsoClothingWasher:setActivated(arg0) end
 
 ---@public
----@param arg0 ItemContainer
----@param arg1 InventoryItem
----@return boolean
-function IsoClothingWasher:isRemoveItemAllowedFromContainer(arg0, arg1) end
+---@param arg0 ByteBuffer
+---@param arg1 boolean
+---@return void
+function IsoClothingWasher:save(arg0, arg1) end

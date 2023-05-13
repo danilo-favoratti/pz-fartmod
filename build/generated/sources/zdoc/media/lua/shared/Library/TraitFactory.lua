@@ -4,13 +4,24 @@ TraitFactory = {}
 
 ---@public
 ---@param arg0 String
----@param arg1 String
+---@return TraitFactory.Trait
+function TraitFactory:getTrait(arg0) end
+
+---@public
 ---@return void
-function TraitFactory:setMutualExclusive(arg0, arg1) end
+function TraitFactory:sortList() end
+
+---@public
+---@return ArrayList|Unknown
+function TraitFactory:getTraits() end
 
 ---@public
 ---@return void
 function TraitFactory:Reset() end
+
+---@public
+---@return void
+function TraitFactory:init() end
 
 ---@public
 ---@param arg0 String
@@ -33,18 +44,7 @@ function TraitFactory:addTrait(arg0, arg1, arg2, arg3, arg4) end
 function TraitFactory:addTrait(arg0, arg1, arg2, arg3, arg4, arg5) end
 
 ---@public
----@return ArrayList|Unknown
-function TraitFactory:getTraits() end
-
----@public
 ---@param arg0 String
----@return TraitFactory.Trait
-function TraitFactory:getTrait(arg0) end
-
----@public
+---@param arg1 String
 ---@return void
-function TraitFactory:init() end
-
----@public
----@return void
-function TraitFactory:sortList() end
+function TraitFactory:setMutualExclusive(arg0, arg1) end

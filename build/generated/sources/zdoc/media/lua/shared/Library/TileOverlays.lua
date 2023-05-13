@@ -9,15 +9,21 @@ TileOverlays = {}
 ---@return void
 function TileOverlays:fixTableTopOverlays(arg0) end
 
+---@public
+---@param arg0 KahluaTableImpl
+---@return void
+function TileOverlays:addOverlays(arg0) end
+
+---@private
+---@param arg0 IsoObject
+---@return boolean
+function TileOverlays:hasObjectOnTop(arg0) end
+
 ---@private
 ---@param arg0 ArrayList|Unknown
 ---@param arg1 String
 ---@return void
 function TileOverlays:tryRemoveAttachedSprite(arg0, arg1) end
-
----@public
----@return void
-function TileOverlays:Reset() end
 
 ---@private
 ---@param arg0 IsoObject
@@ -26,20 +32,14 @@ function TileOverlays:removeTableTopOverlays(arg0) end
 
 ---@public
 ---@param arg0 IsoObject
+---@return void
+function TileOverlays:updateTileOverlaySprite(arg0) end
+
+---@public
+---@param arg0 IsoObject
 ---@return boolean
 function TileOverlays:hasOverlays(arg0) end
 
----@private
----@param arg0 IsoObject
----@return boolean
-function TileOverlays:hasObjectOnTop(arg0) end
-
 ---@public
----@param arg0 KahluaTableImpl
 ---@return void
-function TileOverlays:addOverlays(arg0) end
-
----@public
----@param arg0 IsoObject
----@return void
-function TileOverlays:updateTileOverlaySprite(arg0) end
+function TileOverlays:Reset() end

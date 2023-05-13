@@ -14,9 +14,9 @@ function BurntToDeath:instance() end
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function BurntToDeath:exit(arg0) end
+function BurntToDeath:execute(arg0) end
 
 ---@public
 ---@param arg0 IsoGameCharacter
 ---@return void
-function BurntToDeath:execute(arg0) end
+function BurntToDeath:exit(arg0) end

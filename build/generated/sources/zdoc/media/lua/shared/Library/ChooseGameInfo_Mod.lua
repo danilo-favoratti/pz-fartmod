@@ -24,48 +24,25 @@
 ChooseGameInfo_Mod = {}
 
 ---@public
----@param arg0 ArrayList|Unknown
----@return void
-function ChooseGameInfo_Mod:setRequire(arg0) end
-
----@public
----@param arg0 String
----@return void
-function ChooseGameInfo_Mod:setId(arg0) end
-
----@public
----@return Texture
-function ChooseGameInfo_Mod:getTexture() end
-
----@public
----@return String
-function ChooseGameInfo_Mod:getDescription() end
-
----@public
----@return ArrayList|Unknown
-function ChooseGameInfo_Mod:getTileDefs() end
-
----@public
 ---@return ArrayList|Unknown
 function ChooseGameInfo_Mod:getRequire() end
 
 ---@public
----@return String
-function ChooseGameInfo_Mod:getWorkshopID() end
+---@return ArrayList|Unknown
+function ChooseGameInfo_Mod:getPacks() end
 
 ---@public
----@param arg0 int
----@return String
-function ChooseGameInfo_Mod:getPoster(arg0) end
-
----@private
----@param arg0 ArrayList|Unknown
----@return boolean
-function ChooseGameInfo_Mod:isAvailableRequired(arg0) end
+---@return GameVersion
+function ChooseGameInfo_Mod:getVersionMax() end
 
 ---@public
 ---@return String
-function ChooseGameInfo_Mod:getUrl() end
+function ChooseGameInfo_Mod:getId() end
+
+---@public
+---@param arg0 String
+---@return void
+function ChooseGameInfo_Mod:setUrl(arg0) end
 
 ---@public
 ---@param arg0 boolean
@@ -73,10 +50,74 @@ function ChooseGameInfo_Mod:getUrl() end
 function ChooseGameInfo_Mod:setAvailable(arg0) end
 
 ---@public
+---@return Texture
+function ChooseGameInfo_Mod:getTexture() end
+
+---@public
+---@param arg0 int
+---@return String
+function ChooseGameInfo_Mod:getPoster(arg0) end
+
+---@public
+---@return String
+function ChooseGameInfo_Mod:getName() end
+
+---@public
+---@param arg0 String
+---@return void
+function ChooseGameInfo_Mod:setName(arg0) end
+
+---@public
+---@param arg0 Texture
+---@return void
+function ChooseGameInfo_Mod:setTexture(arg0) end
+
+---@private
+---@param arg0 ArrayList|Unknown
+---@return boolean
+function ChooseGameInfo_Mod:isAvailableRequired(arg0) end
+
+---@public
+---@return GameVersion
+function ChooseGameInfo_Mod:getVersionMin() end
+
+---@public
 ---@param arg0 String
 ---@param arg1 int
 ---@return void
 function ChooseGameInfo_Mod:addPack(arg0, arg1) end
+
+---@public
+---@return int
+function ChooseGameInfo_Mod:getPosterCount() end
+
+---@public
+---@return String
+function ChooseGameInfo_Mod:getUrl() end
+
+---@public
+---@param arg0 String
+---@return void
+function ChooseGameInfo_Mod:setId(arg0) end
+
+---@public
+---@param arg0 ArrayList|Unknown
+---@return void
+function ChooseGameInfo_Mod:setRequire(arg0) end
+
+---@public
+---@param arg0 String
+---@param arg1 int
+---@return void
+function ChooseGameInfo_Mod:addTileDef(arg0, arg1) end
+
+---@private
+---@return boolean
+function ChooseGameInfo_Mod:isAvailableSelf() end
+
+---@public
+---@return String
+function ChooseGameInfo_Mod:getWorkshopID() end
 
 ---@public
 ---@return String
@@ -87,50 +128,9 @@ function ChooseGameInfo_Mod:getDir() end
 function ChooseGameInfo_Mod:isAvailable() end
 
 ---@public
----@param arg0 String
----@param arg1 int
----@return void
-function ChooseGameInfo_Mod:addTileDef(arg0, arg1) end
-
----@public
 ---@return String
-function ChooseGameInfo_Mod:getName() end
-
----@private
----@return boolean
-function ChooseGameInfo_Mod:isAvailableSelf() end
-
----@public
----@param arg0 Texture
----@return void
-function ChooseGameInfo_Mod:setTexture(arg0) end
-
----@public
----@param arg0 String
----@return void
-function ChooseGameInfo_Mod:setName(arg0) end
-
----@public
----@return GameVersion
-function ChooseGameInfo_Mod:getVersionMax() end
-
----@public
----@param arg0 String
----@return void
-function ChooseGameInfo_Mod:setUrl(arg0) end
-
----@public
----@return String
-function ChooseGameInfo_Mod:getId() end
+function ChooseGameInfo_Mod:getDescription() end
 
 ---@public
 ---@return ArrayList|Unknown
-function ChooseGameInfo_Mod:getPacks() end
-
----@public
----@return GameVersion
-function ChooseGameInfo_Mod:getVersionMin() end
-
----@public
----@return int
-function ChooseGameInfo_Mod:getPosterCount() end
+function ChooseGameInfo_Mod:getTileDefs() end

@@ -23,24 +23,11 @@ IsoMarkers_IsoMarker = {}
 
 ---@public
 ---@return float
-function IsoMarkers_IsoMarker:getY() end
+function IsoMarkers_IsoMarker:getX() end
 
 ---@public
----@param arg0 float
----@return void
-function IsoMarkers_IsoMarker:setA(arg0) end
-
----@public
----@param arg0 KahluaTable
----@param arg1 KahluaTable
----@param arg2 int
----@param arg3 int
----@param arg4 int
----@param arg5 IsoGridSquare
----@return void
----@overload fun(arg0:String, arg1:int, arg2:int, arg3:int, arg4:IsoGridSquare, arg5:boolean)
----@overload fun(arg0:KahluaTable, arg1:KahluaTable, arg2:int, arg3:int, arg4:int, arg5:IsoGridSquare, arg6:boolean)
-function IsoMarkers_IsoMarker:init(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@return boolean
+function IsoMarkers_IsoMarker:isActive() end
 
 ---@public
 ---@param arg0 String
@@ -49,6 +36,18 @@ function IsoMarkers_IsoMarker:init(arg0, arg1, arg2, arg3, arg4, arg5) end
 ---@param arg3 int
 ---@param arg4 IsoGridSquare
 ---@param arg5 boolean
+---@return void
+---@overload fun(arg0:KahluaTable, arg1:KahluaTable, arg2:int, arg3:int, arg4:int, arg5:IsoGridSquare)
+---@overload fun(arg0:KahluaTable, arg1:KahluaTable, arg2:int, arg3:int, arg4:int, arg5:IsoGridSquare, arg6:boolean)
+function IsoMarkers_IsoMarker:init(arg0, arg1, arg2, arg3, arg4, arg5) end
+
+---@public
+---@param arg0 KahluaTable
+---@param arg1 KahluaTable
+---@param arg2 int
+---@param arg3 int
+---@param arg4 int
+---@param arg5 IsoGridSquare
 ---@return void
 function IsoMarkers_IsoMarker:init(arg0, arg1, arg2, arg3, arg4, arg5) end
 
@@ -64,12 +63,38 @@ function IsoMarkers_IsoMarker:init(arg0, arg1, arg2, arg3, arg4, arg5) end
 function IsoMarkers_IsoMarker:init(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 
 ---@public
----@return boolean
-function IsoMarkers_IsoMarker:hasTempSquareObject() end
+---@return void
+function IsoMarkers_IsoMarker:removeTempSquareObjects() end
 
 ---@public
 ---@return float
-function IsoMarkers_IsoMarker:getZ() end
+function IsoMarkers_IsoMarker:getAlphaMin() end
+
+---@public
+---@return float
+function IsoMarkers_IsoMarker:getAlpha() end
+
+---@public
+---@return float
+function IsoMarkers_IsoMarker:getY() end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoMarkers_IsoMarker:setAlpha(arg0) end
+
+---@public
+---@return int
+function IsoMarkers_IsoMarker:getID() end
+
+---@public
+---@return void
+function IsoMarkers_IsoMarker:remove() end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoMarkers_IsoMarker:setAlphaMin(arg0) end
 
 ---@public
 ---@return float
@@ -77,7 +102,11 @@ function IsoMarkers_IsoMarker:getA() end
 
 ---@public
 ---@return float
-function IsoMarkers_IsoMarker:getAlphaMax() end
+function IsoMarkers_IsoMarker:getR() end
+
+---@public
+---@return boolean
+function IsoMarkers_IsoMarker:isDoAlpha() end
 
 ---@public
 ---@param arg0 boolean
@@ -85,43 +114,13 @@ function IsoMarkers_IsoMarker:getAlphaMax() end
 function IsoMarkers_IsoMarker:setDoAlpha(arg0) end
 
 ---@public
----@return void
-function IsoMarkers_IsoMarker:removeTempSquareObjects() end
-
----@public
----@return float
-function IsoMarkers_IsoMarker:getB() end
-
----@public
----@return float
-function IsoMarkers_IsoMarker:getX() end
-
----@public
----@return float
-function IsoMarkers_IsoMarker:getG() end
+---@return IsoGridSquare
+function IsoMarkers_IsoMarker:getSquare() end
 
 ---@public
 ---@param arg0 float
 ---@return void
-function IsoMarkers_IsoMarker:setB(arg0) end
-
----@public
----@param arg0 float
----@return void
-function IsoMarkers_IsoMarker:setG(arg0) end
-
----@public
----@param arg0 IsoObject
----@return void
-function IsoMarkers_IsoMarker:addTempSquareObject(arg0) end
-
----@public
----@return boolean
-function IsoMarkers_IsoMarker:isActive() end
-
----@public
----@return float
-function IsoMarkers_IsoMarker:getR() end
+function IsoMarkers_IsoMarker:setA(arg0) end
 
 ---@public
 ---@param arg0 float
@@ -129,34 +128,8 @@ function IsoMarkers_IsoMarker:getR() end
 function IsoMarkers_IsoMarker:setR(arg0) end
 
 ---@public
----@param arg0 float
----@return void
-function IsoMarkers_IsoMarker:setAlphaMax(arg0) end
-
----@public
----@return IsoGridSquare
-function IsoMarkers_IsoMarker:getSquare() end
-
----@public
 ---@return float
-function IsoMarkers_IsoMarker:getAlphaMin() end
-
----@public
----@return boolean
-function IsoMarkers_IsoMarker:isRemoved() end
-
----@public
----@return boolean
-function IsoMarkers_IsoMarker:isDoAlpha() end
-
----@public
----@return void
-function IsoMarkers_IsoMarker:remove() end
-
----@public
----@param arg0 boolean
----@return void
-function IsoMarkers_IsoMarker:setActive(arg0) end
+function IsoMarkers_IsoMarker:getZ() end
 
 ---@public
 ---@param arg0 int
@@ -166,6 +139,28 @@ function IsoMarkers_IsoMarker:setActive(arg0) end
 function IsoMarkers_IsoMarker:setPos(arg0, arg1, arg2) end
 
 ---@public
+---@return float
+function IsoMarkers_IsoMarker:getB() end
+
+---@public
+---@return float
+function IsoMarkers_IsoMarker:getG() end
+
+---@public
+---@param arg0 boolean
+---@return void
+function IsoMarkers_IsoMarker:setActive(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoMarkers_IsoMarker:setG(arg0) end
+
+---@public
+---@return boolean
+function IsoMarkers_IsoMarker:isRemoved() end
+
+---@public
 ---@param arg0 IsoGridSquare
 ---@return void
 function IsoMarkers_IsoMarker:setSquare(arg0) end
@@ -173,7 +168,12 @@ function IsoMarkers_IsoMarker:setSquare(arg0) end
 ---@public
 ---@param arg0 float
 ---@return void
-function IsoMarkers_IsoMarker:setAlpha(arg0) end
+function IsoMarkers_IsoMarker:setB(arg0) end
+
+---@public
+---@param arg0 float
+---@return void
+function IsoMarkers_IsoMarker:setAlphaMax(arg0) end
 
 ---@public
 ---@return float
@@ -185,14 +185,14 @@ function IsoMarkers_IsoMarker:getFadeSpeed() end
 function IsoMarkers_IsoMarker:setFadeSpeed(arg0) end
 
 ---@public
----@return float
-function IsoMarkers_IsoMarker:getAlpha() end
-
----@public
----@param arg0 float
+---@param arg0 IsoObject
 ---@return void
-function IsoMarkers_IsoMarker:setAlphaMin(arg0) end
+function IsoMarkers_IsoMarker:addTempSquareObject(arg0) end
 
 ---@public
----@return int
-function IsoMarkers_IsoMarker:getID() end
+---@return float
+function IsoMarkers_IsoMarker:getAlphaMax() end
+
+---@public
+---@return boolean
+function IsoMarkers_IsoMarker:hasTempSquareObject() end

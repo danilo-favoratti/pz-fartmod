@@ -11,66 +11,12 @@
 ProfessionFactory_Profession = {}
 
 ---@public
----@return Texture
-function ProfessionFactory_Profession:getTexture() end
-
----@public
----@param arg0 String
----@return void
-function ProfessionFactory_Profession:setDescription(arg0) end
-
----@public
----@return int
-function ProfessionFactory_Profession:getCost() end
-
----@public
----@return String
-function ProfessionFactory_Profession:getDescription() end
-
----@public
----@return String
-function ProfessionFactory_Profession:getType() end
-
----@public
----@param arg0 Stack|Unknown
----@return void
-function ProfessionFactory_Profession:setFreeTraitStack(arg0) end
-
----@public
----@return String
-function ProfessionFactory_Profession:getName() end
-
----@public
----@return ArrayList|Unknown
-function ProfessionFactory_Profession:getFreeTraits() end
+---@return List|Unknown
+function ProfessionFactory_Profession:getFreeRecipes() end
 
 ---@public
 ---@return String
 function ProfessionFactory_Profession:getLabel() end
-
----@public
----@param arg0 String
----@return void
-function ProfessionFactory_Profession:setType(arg0) end
-
----@public
----@return String
-function ProfessionFactory_Profession:getLeftLabel() end
-
----@public
----@param arg0 PerkFactory.Perk
----@param arg1 int
----@return void
-function ProfessionFactory_Profession:addXPBoost(arg0, arg1) end
-
----@public
----@param arg0 int
----@return void
-function ProfessionFactory_Profession:setCost(arg0) end
-
----@public
----@return HashMap|Unknown|Unknown
-function ProfessionFactory_Profession:getXPBoostMap() end
 
 ---@public
 ---@param arg0 List|Unknown
@@ -83,16 +29,9 @@ function ProfessionFactory_Profession:setFreeRecipes(arg0) end
 function ProfessionFactory_Profession:setIconPath(arg0) end
 
 ---@public
----@return Stack|Unknown
-function ProfessionFactory_Profession:getFreeTraitStack() end
-
----@public
----@return List|Unknown
-function ProfessionFactory_Profession:getFreeRecipes() end
-
----@public
----@return String
-function ProfessionFactory_Profession:getIconPath() end
+---@param arg0 int
+---@return void
+function ProfessionFactory_Profession:setCost(arg0) end
 
 ---@public
 ---@param arg0 String
@@ -100,10 +39,71 @@ function ProfessionFactory_Profession:getIconPath() end
 function ProfessionFactory_Profession:setName(arg0) end
 
 ---@public
----@return String
-function ProfessionFactory_Profession:getRightLabel() end
+---@param arg0 Stack|Unknown
+---@return void
+function ProfessionFactory_Profession:setFreeTraitStack(arg0) end
 
 ---@public
 ---@param arg0 String
 ---@return void
 function ProfessionFactory_Profession:addFreeTrait(arg0) end
+
+---@public
+---@return String
+function ProfessionFactory_Profession:getType() end
+
+---@public
+---@return String
+function ProfessionFactory_Profession:getIconPath() end
+
+---@public
+---@return Texture
+function ProfessionFactory_Profession:getTexture() end
+
+---@public
+---@return HashMap|Unknown|Unknown
+function ProfessionFactory_Profession:getXPBoostMap() end
+
+---@public
+---@param arg0 String
+---@return void
+function ProfessionFactory_Profession:setType(arg0) end
+
+---@public
+---@return String
+function ProfessionFactory_Profession:getLeftLabel() end
+
+---@public
+---@return int
+function ProfessionFactory_Profession:getCost() end
+
+---@public
+---@return ArrayList|Unknown
+function ProfessionFactory_Profession:getFreeTraits() end
+
+---@public
+---@param arg0 String
+---@return void
+function ProfessionFactory_Profession:setDescription(arg0) end
+
+---@public
+---@return String
+function ProfessionFactory_Profession:getRightLabel() end
+
+---@public
+---@return String
+function ProfessionFactory_Profession:getDescription() end
+
+---@public
+---@param arg0 PerkFactory.Perk
+---@param arg1 int
+---@return void
+function ProfessionFactory_Profession:addXPBoost(arg0, arg1) end
+
+---@public
+---@return Stack|Unknown
+function ProfessionFactory_Profession:getFreeTraitStack() end
+
+---@public
+---@return String
+function ProfessionFactory_Profession:getName() end

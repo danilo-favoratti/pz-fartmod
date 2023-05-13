@@ -17,95 +17,12 @@
 ThunderStorm = {}
 
 ---@private
----@return ThunderStorm.ThunderEvent
-function ThunderStorm:getFreeEvent() end
-
----@public
----@param arg0 ByteBuffer
----@return void
-function ThunderStorm:writeNetThunderEvent(arg0) end
-
----@public
----@return ArrayList|Unknown
-function ThunderStorm:getClouds() end
-
----@public
----@param arg0 DataOutputStream
----@return void
-function ThunderStorm:save(arg0) end
-
----@public
----@param arg0 int
----@return void
-function ThunderStorm:stopCloud(arg0) end
-
----@public
----@return boolean
-function ThunderStorm:isModifyingNight() end
-
----@public
----@param arg0 RenderSettings.PlayerRenderSettings
----@param arg1 int
----@param arg2 IsoPlayer
----@return void
-function ThunderStorm:applyLightningForPlayer(arg0, arg1, arg2) end
-
----@private
----@return ThunderStorm.ThunderCloud
-function ThunderStorm:getFreeCloud() end
-
----@private
----@param arg0 int
----@return ThunderStorm.ThunderCloud
-function ThunderStorm:getCloud(arg0) end
-
----@public
 ---@param arg0 int
 ---@param arg1 int
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 boolean
----@return void
-function ThunderStorm:enqueueThunderEvent(arg0, arg1, arg2, arg3, arg4) end
-
----@public
----@param arg0 DataInputStream
----@return void
-function ThunderStorm:load(arg0) end
-
----@public
----@return void
-function ThunderStorm:stopAllClouds() end
-
----@public
----@param arg0 String
----@return void
-function ThunderStorm:noise(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 boolean
----@return void
-function ThunderStorm:triggerThunderEvent(arg0, arg1, arg2, arg3, arg4) end
-
----@public
----@param arg0 ByteBuffer
----@return void
-function ThunderStorm:readNetThunderEvent(arg0) end
-
----@public
----@param arg0 double
----@return void
-function ThunderStorm:update(arg0) end
-
----@private
----@param arg0 float
----@param arg1 float
----@return float
-function ThunderStorm:addToAngle(arg0, arg1) end
+---@param arg2 int
+---@param arg3 int
+---@return int
+function ThunderStorm:GetDistance(arg0, arg1, arg2, arg3) end
 
 ---@public
 ---@param arg0 float
@@ -131,18 +48,101 @@ function ThunderStorm:startThunderCloud(arg0, arg1, arg2, arg3, arg4, arg5, arg6
 ---@return ThunderStorm.ThunderCloud
 function ThunderStorm:startThunderCloud(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
 
----@public
----@return boolean
-function ThunderStorm:HasActiveThunderClouds() end
-
 ---@private
----@param arg0 int
----@param arg1 int
----@param arg2 int
----@param arg3 int
----@return int
-function ThunderStorm:GetDistance(arg0, arg1, arg2, arg3) end
+---@return ThunderStorm.ThunderEvent
+function ThunderStorm:getFreeEvent() end
 
 ---@public
 ---@return int
 function ThunderStorm:getMapDiagonal() end
+
+---@public
+---@return boolean
+function ThunderStorm:HasActiveThunderClouds() end
+
+---@public
+---@return boolean
+function ThunderStorm:isModifyingNight() end
+
+---@public
+---@param arg0 ByteBuffer
+---@return void
+function ThunderStorm:readNetThunderEvent(arg0) end
+
+---@private
+---@param arg0 int
+---@return ThunderStorm.ThunderCloud
+function ThunderStorm:getCloud(arg0) end
+
+---@public
+---@return ArrayList|Unknown
+function ThunderStorm:getClouds() end
+
+---@private
+---@param arg0 float
+---@param arg1 float
+---@return float
+function ThunderStorm:addToAngle(arg0, arg1) end
+
+---@public
+---@param arg0 DataOutputStream
+---@return void
+function ThunderStorm:save(arg0) end
+
+---@public
+---@param arg0 ByteBuffer
+---@return void
+function ThunderStorm:writeNetThunderEvent(arg0) end
+
+---@public
+---@param arg0 DataInputStream
+---@return void
+function ThunderStorm:load(arg0) end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 boolean
+---@param arg3 boolean
+---@param arg4 boolean
+---@return void
+function ThunderStorm:triggerThunderEvent(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@return void
+function ThunderStorm:stopAllClouds() end
+
+---@public
+---@param arg0 int
+---@param arg1 int
+---@param arg2 boolean
+---@param arg3 boolean
+---@param arg4 boolean
+---@return void
+function ThunderStorm:enqueueThunderEvent(arg0, arg1, arg2, arg3, arg4) end
+
+---@public
+---@param arg0 RenderSettings.PlayerRenderSettings
+---@param arg1 int
+---@param arg2 IsoPlayer
+---@return void
+function ThunderStorm:applyLightningForPlayer(arg0, arg1, arg2) end
+
+---@public
+---@param arg0 String
+---@return void
+function ThunderStorm:noise(arg0) end
+
+---@private
+---@return ThunderStorm.ThunderCloud
+function ThunderStorm:getFreeCloud() end
+
+---@public
+---@param arg0 int
+---@return void
+function ThunderStorm:stopCloud(arg0) end
+
+---@public
+---@param arg0 double
+---@return void
+function ThunderStorm:update(arg0) end

@@ -21,48 +21,12 @@
 ---@field private e float
 WeatherPeriod_WeatherStage = {}
 
----@private
----@param arg0 double
----@return WeatherPeriod.WeatherStage
-function WeatherPeriod_WeatherStage:updateT(arg0) end
-
----@public
----@return int
-function WeatherPeriod_WeatherStage:getStageID() end
-
----@protected
----@return void
-function WeatherPeriod_WeatherStage:reset() end
-
----@public
----@return double
-function WeatherPeriod_WeatherStage:getStageStart() end
-
----@public
----@return boolean
-function WeatherPeriod_WeatherStage:getHasStartedCloud() end
-
----@public
----@return float
-function WeatherPeriod_WeatherStage:getParabolicT() end
-
----@private
----@param arg0 double
----@return float
-function WeatherPeriod_WeatherStage:getPeriodLerpT(arg0) end
-
 ---@protected
 ---@param arg0 WeatherPeriod.StrLerpVal
 ---@return void
----@overload fun(arg0:int, arg1:int)
 ---@overload fun(arg0:WeatherPeriod.StrLerpVal, arg1:WeatherPeriod.StrLerpVal)
+---@overload fun(arg0:int, arg1:int)
 function WeatherPeriod_WeatherStage:lerpEntryTo(arg0) end
-
----@public
----@param arg0 int
----@param arg1 int
----@return void
-function WeatherPeriod_WeatherStage:lerpEntryTo(arg0, arg1) end
 
 ---@protected
 ---@param arg0 WeatherPeriod.StrLerpVal
@@ -71,21 +35,15 @@ function WeatherPeriod_WeatherStage:lerpEntryTo(arg0, arg1) end
 function WeatherPeriod_WeatherStage:lerpEntryTo(arg0, arg1) end
 
 ---@public
----@return double
-function WeatherPeriod_WeatherStage:getStageDuration() end
+---@param arg0 int
+---@param arg1 int
+---@return void
+function WeatherPeriod_WeatherStage:lerpEntryTo(arg0, arg1) end
 
 ---@public
----@return float
-function WeatherPeriod_WeatherStage:getLinearT() end
-
----@public
----@return double
-function WeatherPeriod_WeatherStage:getStageEnd() end
-
----@private
----@param arg0 WeatherPeriod.StrLerpVal
----@return float
-function WeatherPeriod_WeatherStage:getLerpValue(arg0) end
+---@param arg0 boolean
+---@return void
+function WeatherPeriod_WeatherStage:setHasStartedCloud(arg0) end
 
 ---@public
 ---@param arg0 float
@@ -93,15 +51,35 @@ function WeatherPeriod_WeatherStage:getLerpValue(arg0) end
 function WeatherPeriod_WeatherStage:setTargetStrength(arg0) end
 
 ---@public
----@param arg0 DataInputStream
----@param arg1 int
----@return void
-function WeatherPeriod_WeatherStage:load(arg0, arg1) end
+---@return float
+function WeatherPeriod_WeatherStage:getLinearT() end
+
+---@public
+---@return double
+function WeatherPeriod_WeatherStage:getStageDuration() end
+
+---@private
+---@param arg0 double
+---@return float
+function WeatherPeriod_WeatherStage:getPeriodLerpT(arg0) end
+
+---@public
+---@return float
+function WeatherPeriod_WeatherStage:getStageCurrentStrength() end
+
+---@public
+---@return boolean
+function WeatherPeriod_WeatherStage:getHasStartedCloud() end
 
 ---@protected
 ---@param arg0 double
 ---@return WeatherPeriod.WeatherStage
-function WeatherPeriod_WeatherStage:overrideStageDuration(arg0) end
+function WeatherPeriod_WeatherStage:startStage(arg0) end
+
+---@protected
+---@param arg0 double
+---@return double
+function WeatherPeriod_WeatherStage:setStageStart(arg0) end
 
 ---@public
 ---@return String
@@ -117,14 +95,20 @@ function WeatherPeriod_WeatherStage:save(arg0) end
 ---@return WeatherPeriod.WeatherStage
 function WeatherPeriod_WeatherStage:setStageDuration(arg0) end
 
----@protected
+---@private
 ---@param arg0 double
 ---@return WeatherPeriod.WeatherStage
-function WeatherPeriod_WeatherStage:startStage(arg0) end
+function WeatherPeriod_WeatherStage:updateT(arg0) end
 
 ---@public
 ---@return float
-function WeatherPeriod_WeatherStage:getStageCurrentStrength() end
+function WeatherPeriod_WeatherStage:getParabolicT() end
+
+---@public
+---@param arg0 DataInputStream
+---@param arg1 int
+---@return void
+function WeatherPeriod_WeatherStage:load(arg0, arg1) end
 
 ---@public
 ---@param arg0 int
@@ -133,10 +117,26 @@ function WeatherPeriod_WeatherStage:setStageID(arg0) end
 
 ---@protected
 ---@param arg0 double
----@return double
-function WeatherPeriod_WeatherStage:setStageStart(arg0) end
+---@return WeatherPeriod.WeatherStage
+function WeatherPeriod_WeatherStage:overrideStageDuration(arg0) end
 
 ---@public
----@param arg0 boolean
+---@return double
+function WeatherPeriod_WeatherStage:getStageEnd() end
+
+---@public
+---@return int
+function WeatherPeriod_WeatherStage:getStageID() end
+
+---@protected
 ---@return void
-function WeatherPeriod_WeatherStage:setHasStartedCloud(arg0) end
+function WeatherPeriod_WeatherStage:reset() end
+
+---@public
+---@return double
+function WeatherPeriod_WeatherStage:getStageStart() end
+
+---@private
+---@param arg0 WeatherPeriod.StrLerpVal
+---@return float
+function WeatherPeriod_WeatherStage:getLerpValue(arg0) end

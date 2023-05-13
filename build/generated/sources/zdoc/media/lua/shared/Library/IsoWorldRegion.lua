@@ -12,49 +12,68 @@
 ---@field private neighbors ArrayList|Unknown
 IsoWorldRegion = {}
 
+---@public
+---@param arg0 ArrayList|Unknown
+---@return ArrayList|Unknown
+function IsoWorldRegion:swapIsoChunkRegions(arg0) end
+
+---@public
+---@return float
+function IsoWorldRegion:getRoofedPercentage() end
+
+---@public
+---@return int
+function IsoWorldRegion:getID() end
+
+---@public
+---@return ArrayList|Unknown
+function IsoWorldRegion:getNeighbors() end
+
+---@public
+---@return int
+function IsoWorldRegion:getSquareSize() end
+
+---@private
+---@param arg0 IsoWorldRegion
+---@return void
+function IsoWorldRegion:removeNeighbor(arg0) end
+
+---@public
+---@return Color
+function IsoWorldRegion:getColor() end
+
 ---@protected
 ---@return void
 function IsoWorldRegion:resetSquareSize() end
 
 ---@public
 ---@return boolean
-function IsoWorldRegion:isFullyRoofed() end
-
----@protected
----@param arg0 IsoChunkRegion
----@return void
-function IsoWorldRegion:removeIsoChunkRegion(arg0) end
+function IsoWorldRegion:isFogMask() end
 
 ---@public
 ---@return ArrayList|Unknown
 function IsoWorldRegion:getDebugIsoChunkRegionCopy() end
 
----@protected
----@param arg0 int
----@return void
-function IsoWorldRegion:init(arg0) end
+---@public
+---@param arg0 IsoChunkRegion
+---@return boolean
+function IsoWorldRegion:containsIsoChunkRegion(arg0) end
 
 ---@private
 ---@return void
 function IsoWorldRegion:recalcEnclosed() end
 
 ---@public
----@return ArrayList|Unknown
-function IsoWorldRegion:getDebugConnectedNeighborCopy() end
+---@return boolean
+function IsoWorldRegion:isEnclosed() end
+
+---@public
+---@return int
+function IsoWorldRegion:getRoofCnt() end
 
 ---@protected
----@return void
-function IsoWorldRegion:addRoof() end
-
----@public
----@param arg0 IsoChunkRegion
----@return void
-function IsoWorldRegion:addIsoChunkRegion(arg0) end
-
----@public
----@param arg0 IsoChunkRegion
----@return boolean
-function IsoWorldRegion:containsIsoChunkRegion(arg0) end
+---@return IsoWorldRegion
+function IsoWorldRegion:reset() end
 
 ---@protected
 ---@param arg0 int
@@ -63,80 +82,61 @@ function IsoWorldRegion:removeRoofs(arg0) end
 
 ---@public
 ---@return void
-function IsoWorldRegion:linkNeighbors() end
+function IsoWorldRegion:unlinkNeighbors() end
+
+---@protected
+---@return void
+function IsoWorldRegion:addRoof() end
 
 ---@protected
 ---@return boolean
 function IsoWorldRegion:isInPool() end
 
 ---@public
+---@return ArrayList|Unknown
+function IsoWorldRegion:getDebugConnectedNeighborCopy() end
+
+---@public
 ---@return boolean
 function IsoWorldRegion:isPlayerRoom() end
 
----@public
----@return int
-function IsoWorldRegion:getRoofCnt() end
-
----@public
----@param arg0 ArrayList|Unknown
----@return ArrayList|Unknown
-function IsoWorldRegion:swapIsoChunkRegions(arg0) end
-
----@public
----@param arg0 IsoWorldRegion
+---@protected
+---@param arg0 IsoChunkRegion
 ---@return void
-function IsoWorldRegion:merge(arg0) end
+function IsoWorldRegion:removeIsoChunkRegion(arg0) end
 
 ---@protected
----@return IsoWorldRegion
-function IsoWorldRegion:reset() end
-
----@protected
+---@param arg0 int
 ---@return void
-function IsoWorldRegion:setDirtyEnclosed() end
+function IsoWorldRegion:init(arg0) end
 
 ---@public
 ---@return int
 function IsoWorldRegion:size() end
 
 ---@public
----@return int
-function IsoWorldRegion:getID() end
+---@return boolean
+function IsoWorldRegion:isFullyRoofed() end
+
+---@protected
+---@return void
+function IsoWorldRegion:setDirtyEnclosed() end
+
+---@public
+---@param arg0 IsoChunkRegion
+---@return void
+function IsoWorldRegion:addIsoChunkRegion(arg0) end
+
+---@public
+---@param arg0 IsoWorldRegion
+---@return void
+function IsoWorldRegion:merge(arg0) end
+
+---@public
+---@return void
+function IsoWorldRegion:linkNeighbors() end
 
 ---@private
 ---@param arg0 IsoWorldRegion
 ---@return void
 function IsoWorldRegion:addNeighbor(arg0) end
-
----@public
----@return float
-function IsoWorldRegion:getRoofedPercentage() end
-
----@public
----@return boolean
-function IsoWorldRegion:isFogMask() end
-
----@public
----@return int
-function IsoWorldRegion:getSquareSize() end
-
----@public
----@return boolean
-function IsoWorldRegion:isEnclosed() end
-
----@public
----@return Color
-function IsoWorldRegion:getColor() end
-
----@private
----@param arg0 IsoWorldRegion
----@return void
-function IsoWorldRegion:removeNeighbor(arg0) end
-
----@public
----@return void
-function IsoWorldRegion:unlinkNeighbors() end
-
----@public
----@return ArrayList|Unknown
-function IsoWorldRegion:getNeighbors() end
