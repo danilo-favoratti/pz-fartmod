@@ -1,0 +1,5 @@
+UI_EN = {
+UI_trait_lactose_intolerant = "Lactose Intolerant",
+
+UI_traitdesc_lactose_intolerant = "Fart randomly attracting zombies",
+}

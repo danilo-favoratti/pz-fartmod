@@ -8,5 +8,23 @@ module Base
 			file = media/sound/fart1.mp3,
 		}
 	}
+
+	sound Fart2
+    {
+        category = Player,
+        clip
+        {
+            file = media/sound/fart2.mp3,
+        }
+    }
+
+    sound Fart3
+    {
+        category = Player,
+        clip
+        {
+            file = media/sound/fart3.wav,
+        }
+    }
 	
 }
