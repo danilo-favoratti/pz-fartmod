@@ -37,18 +37,23 @@ end
 
 local playFartSound = function(player, fartType)
     if fartType == 0 then
-        fartType = ZombRand(3); -- choose which sound randomly
+        fartType = ZombRand(3) + 1; -- choose which type of song randomly
     end
 
+    fartSong = ZombRand(3) + 1; -- choose which sound randomly
+
     if fartType == 1 then
-        printLog("Fart 1 played");
-        playWorldSound(player, "Fart1", 15, 7);
+        local fart = "Fart_1_".. tostring(fartSong)
+        printLog("Fart 1 played: ".. fart);
+        playWorldSound(player, fart, 10, 3);
     elseif fartType == 2 then
-        printLog("Fart 2 played");
-        playWorldSound(player, "Fart2", 10, 7);
+        local fart = "Fart_2_".. tostring(fartSong)
+        printLog("Fart 2 played: ".. fart);
+        playWorldSound(player, fart, 15, 5);
     elseif fartType == 3 then
-        printLog("Fart 3 played");
-        playWorldSound(player, "Fart3", 10, 5);
+        local fart = "Fart_3_".. tostring(fartSong)
+        printLog("Fart 3 played: ".. fart);
+        playWorldSound(player, fart, 20, 7);
     end
 end
 
@@ -58,7 +63,7 @@ local updateChanceToFart = function(player)
     else
         chanceToFartPerHour = chanceToFartPerHour + UNHAPPINESS_WORSEN_BY_UPDATE_WITH_TRAIT;
     end
-    printLog("chanceToFartPerHour: " .. tostring(chanceToFartPerHour));
+    --printLog("chanceToFartPerHour: " .. tostring(chanceToFartPerHour));
 end
 
 local function updateUnhappiness ()
@@ -68,7 +73,7 @@ local function updateUnhappiness ()
     if bodyDamage:getUnhappynessLevel() > 100 then
         bodyDamage:setUnhappynessLevel(100);
     end
-    printLog("Unhappiness: " .. bodyDamage:getUnhappynessLevel());
+    --printLog("Unhappiness: " .. bodyDamage:getUnhappynessLevel());
 end
 
 local onPlayerUpdate = function(player)
