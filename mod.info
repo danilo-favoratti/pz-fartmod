@@ -1,6 +1,6 @@
-name=TNTFartMod
+name=Fartpocalypse: Unleashing the Undead Wind
 poster=poster.png
-description=Something's not smelling right (new -4 trait that makes you fart randomly attracting zombies)
+description=This Zomboid Mod adds a hilarious -4 trait altering unhappiness levels, and includes audible farts that catch the attention of nearby zombies!
 id=pz-fartmod
 url=https://github.com/danilo-favoratti/pz-fartmod
 modversion=0.1.0
