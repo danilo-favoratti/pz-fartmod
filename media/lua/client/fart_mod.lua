@@ -17,7 +17,7 @@ local function initTraits()
     local lactoseIntolerant = TraitFactory.addTrait(lactoseIntolerantTrait, getText("UI_trait_lactose_intolerant"), TRAIT_POINTS, getText("UI_traitdesc_lactose_intolerant"), false, false);
 end
 
-local printLog = function (message)
+local printLog = function(message)
     if (isDebugEnabled()) then
         print(message);
     end
@@ -52,48 +52,42 @@ local playFartSound = function(player, fartType)
     end
 end
 
-local updateChanceToFart = function (player)
+local updateChanceToFart = function(player)
     if player:HasTrait(lactoseIntolerantTrait) then
         chanceToFartPerHour = chanceToFartPerHour + UNHAPPINESS_WORSEN_BY_UPDATE;
     else
         chanceToFartPerHour = chanceToFartPerHour + UNHAPPINESS_WORSEN_BY_UPDATE_WITH_TRAIT;
     end
-    printLog("chanceToFartPerHour: ".. tostring(chanceToFartPerHour));
+    printLog("chanceToFartPerHour: " .. tostring(chanceToFartPerHour));
 end
 
 local function updateUnhappiness ()
-    local activePlayersNum = getNumActivePlayers() - 1;
-    for playerIndex = 0, activePlayersNum do
-        local player = getSpecificPlayer(playerIndex);
-        local bodyDamage = player:getBodyDamage();
-        bodyDamage:setUnhappynessLevel(bodyDamage:getUnhappynessLevel() + UNHAPPINESS_WORSEN_BY_UPDATE);
-        if bodyDamage:getUnhappynessLevel() > 100 then
-            bodyDamage:setUnhappynessLevel(100);
-        end
-        printLog("Unhappiness: ".. bodyDamage:getUnhappynessLevel());
+    local player = getPlayer();
+    local bodyDamage = player:getBodyDamage();
+    bodyDamage:setUnhappynessLevel(bodyDamage:getUnhappynessLevel() + UNHAPPINESS_WORSEN_BY_UPDATE);
+    if bodyDamage:getUnhappynessLevel() > 100 then
+        bodyDamage:setUnhappynessLevel(100);
     end
+    printLog("Unhappiness: " .. bodyDamage:getUnhappynessLevel());
 end
 
-local onPlayerUpdate = function (player)
+local onPlayerUpdate = function(player)
     updateUnhappiness();
     updateChanceToFart(player);
 end
 
-local fart = function (fartType)
-    local activePlayersNum = getNumActivePlayers() - 1;
-    for playerIndex = 0, activePlayersNum do
-        local player = getSpecificPlayer(playerIndex);
-        chanceToFartPerHour = INIT_FART_PER_HOUR; -- go back to initial level
-        playFartSound(player, fartType);
-        local bodyDamage = player:getBodyDamage();
-        bodyDamage:setUnhappynessLevel(bodyDamage:getUnhappynessLevel() - UNHAPPINESS_IMPROVE_WHEN_FART);
-        if bodyDamage:getUnhappynessLevel() < 0 then
-            bodyDamage:setUnhappynessLevel(0);
-        end
+local fart = function(fartType)
+    local player = getPlayer();
+    chanceToFartPerHour = INIT_FART_PER_HOUR; -- go back to initial level
+    playFartSound(player, fartType);
+    local bodyDamage = player:getBodyDamage();
+    bodyDamage:setUnhappynessLevel(bodyDamage:getUnhappynessLevel() - UNHAPPINESS_IMPROVE_WHEN_FART);
+    if bodyDamage:getUnhappynessLevel() < 0 then
+        bodyDamage:setUnhappynessLevel(0);
     end
 end
 
-local fartByChance = function (chance)
+local fartByChance = function(chance)
     local fartRand = ZombRand(100);
     if fartRand < 100 * chanceToFartPerHour / chance then
         fart(RANDOM_FART);

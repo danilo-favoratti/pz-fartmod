@@ -2,6 +2,6 @@ name=TNTFartMod
 poster=poster.png
 description=Something's not smelling right (new -4 trait that makes you fart randomly attracting zombies)
 id=pz-fartmod
-url=https://github.com/danilo-favoratti/TNTFartMod
+url=https://github.com/danilo-favoratti/pz-fartmod
 modversion=0.1.0
 pzversion=41.78
