@@ -26,5 +26,80 @@ module Base
             file = media/sound/fart3.wav,
         }
     }
-	
+
+    sound Fart_1_1
+    {
+        category = Player,
+        clip
+        {
+            file = media/sound/fart_1_1.ogg,
+        }
+    }
+    sound Fart_1_2
+    {
+        category = Player,
+        clip
+        {
+            file = media/sound/fart_1_2.ogg,
+        }
+    }
+    sound Fart_1_3
+    {
+        category = Player,
+        clip
+        {
+            file = media/sound/fart_1_3.ogg,
+        }
+    }
+
+    sound Fart_2_1
+    {
+        category = Player,
+        clip
+        {
+            file = media/sound/fart_2_1.ogg,
+        }
+    }
+    sound Fart_2_2
+    {
+        category = Player,
+        clip
+        {
+            file = media/sound/fart_2_2.ogg,
+        }
+    }
+    sound Fart_2_3
+    {
+        category = Player,
+        clip
+        {
+            file = media/sound/fart_2_3.ogg,
+        }
+    }
+
+    sound Fart_3_1
+    {
+        category = Player,
+        clip
+        {
+            file = media/sound/fart_3_1.ogg,
+        }
+    }
+    sound Fart_3_2
+    {
+        category = Player,
+        clip
+        {
+            file = media/sound/fart_3_2.ogg,
+        }
+    }
+    sound Fart_3_3
+    {
+        category = Player,
+        clip
+        {
+            file = media/sound/fart_3_3.ogg,
+        }
+    }
+
 }
